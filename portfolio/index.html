@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enes Efe Tokta - Yazılım Geliştirici</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="description" content="Unity Oyun Geliştirici, Android Uygulama Geliştirici ve .NET Geliştirici olarak profesyonel yazılım çözümleri sunuyorum.">
 </head>
 <body>
     <!-- Navbar -->
@@ -15,17 +20,32 @@
                 <li><a href="#home">Ana Sayfa</a></li>
                 <li><a href="#about">Hakkımda</a></li>
                 <li><a href="#projects">Projeler</a></li>
+                <li><a href="#skills">Yetenekler</a></li>
                 <li><a href="#contact">İletişim</a></li>
             </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
-            <h1>Merhaba, Ben Enes Efe Tokta</h1>
-            <p>Unity Oyun Geliştirici | Android Uygulama Geliştirici | .NET Geliştirici</p>
-            <a href="#projects" class="btn">Projelerimi Gör</a>
+            <div class="hero-content">
+                <h1>Merhaba, Ben <span>Enes Efe Tokta</span></h1>
+                <p>Unity Oyun Geliştirici | Android Uygulama Geliştirici | .NET Geliştirici</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn">
+                        <i class="fas fa-code"></i>
+                        Projelerimi Gör
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <i class="fas fa-paper-plane"></i>
+                        İletişime Geç
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -33,7 +53,9 @@
     <section id="about" class="about">
         <div class="container">
             <h2>Hakkımda</h2>
-            <p>Ben bir yazılım geliştiriciyim ve Unity ile oyun geliştirme, Android ile mobil uygulama geliştirme ve .NET ile güçlü backend çözümleri üretme konusunda uzmanım. Teknolojiye olan tutkumla yenilikçi ve kullanıcı dostu projeler tasarlıyorum.</p>
+            <div class="about-content">
+                <p>Ben bir yazılım geliştiriciyim ve Unity ile oyun geliştirme, Android ile mobil uygulama geliştirme ve .NET ile güçlü backend çözümleri üretme konusunda uzmanım. Teknolojiye olan tutkumla yenilikçi ve kullanıcı dostu projeler tasarlıyorum.</p>
+            </div>
         </div>
     </section>
 
@@ -43,22 +65,34 @@
             <h2>Projelerim</h2>
             <div class="project-grid">
                 <!-- Unity Project -->
-                <div class="project-card unity">
+                <div class="project-card">
+                    <i class="fab fa-unity project-icon"></i>
                     <h3>Unity - 3D Oyun</h3>
                     <p>C# ile geliştirilmiş, fizik tabanlı bir 3D platform oyunu. Oyuncular engelleri aşarak hedefe ulaşıyor.</p>
-                    <a href="#" class="btn">Detaylar</a>
+                    <a href="#" class="btn">
+                        <i class="fas fa-external-link-alt"></i>
+                        Detaylar
+                    </a>
                 </div>
                 <!-- Android Project -->
-                <div class="project-card android">
+                <div class="project-card">
+                    <i class="fab fa-android project-icon"></i>
                     <h3>Android - Not Uygulaması</h3>
                     <p>Kotlin kullanılarak geliştirilen, yerel veritabanı ile çalışan bir not alma uygulaması.</p>
-                    <a href="#" class="btn">Detaylar</a>
+                    <a href="#" class="btn">
+                        <i class="fas fa-external-link-alt"></i>
+                        Detaylar
+                    </a>
                 </div>
                 <!-- .NET Project -->
-                <div class="project-card dotnet">
+                <div class="project-card">
+                    <i class="fab fa-microsoft project-icon"></i>
                     <h3>.NET - E-Ticaret API</h3>
                     <p>ASP.NET Core ile geliştirilmiş, güvenli ve ölçeklenebilir bir e-ticaret REST API'si.</p>
-                    <a href="#" class="btn">Detaylar</a>
+                    <a href="#" class="btn">
+                        <i class="fas fa-external-link-alt"></i>
+                        Detaylar
+                    </a>
                 </div>
             </div>
         </div>
@@ -70,14 +104,17 @@
             <h2>Yeteneklerim</h2>
             <div class="skills-grid">
                 <div class="skill-item">
+                    <i class="fab fa-unity skill-icon"></i>
                     <h3>Unity</h3>
                     <p>3D/2D oyun geliştirme, C# scripting, fizik sistemleri</p>
                 </div>
                 <div class="skill-item">
+                    <i class="fab fa-android skill-icon"></i>
                     <h3>Android</h3>
                     <p>Java/Kotlin, Material Design, SQLite, REST API entegrasyonu</p>
                 </div>
                 <div class="skill-item">
+                    <i class="fab fa-microsoft skill-icon"></i>
                     <h3>.NET</h3>
                     <p>ASP.NET Core, Entity Framework, RESTful servisler, C#</p>
                 </div>
@@ -89,18 +126,35 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2>İletişim</h2>
-            <p>E-posta: enesefetokta009@gmail.com</p>
-            <p>Telefon: +90 541 586 9564</p>
-            <p>Adres: Erzurum, Türkiye</p>
-            <p>CV: <a href="https://drive.google.com/file/d/16wiv2p6nvsPfgr-qiahCJPAARb4M5ryU/view?usp=sharing" download>Google Drive'da CV indir</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/">LinkedIn hesabım.</a></p>
-            <p>GitHub: <a href="https://github.com/EnesEfeTokta">GitHub hesabım.</a></p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> enesefetokta009@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +90 541 586 9564</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Erzurum, Türkiye</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://drive.google.com/file/d/16wiv2p6nvsPfgr-qiahCJPAARb4M5ryU/view?usp=sharing" class="social-link" target="_blank">
+                        <i class="fas fa-file-alt"></i>
+                        <span>CV</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/EnesEfeTokta" class="social-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>© 2025 Enes Efe Tokta. Tüm hakları saklıdır.</p>
+        <div class="container">
+            <p>© 2025 Enes Efe Tokta. Tüm hakları saklıdır.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
