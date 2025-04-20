@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- Language set to English -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title updated for the new project -->
+    <title>Weather Plus Zero - C# Weather App | Enes Efe Tokta</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <!-- Basic styling for code blocks and images -->
+    <style>
+        .code-block {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            margin-top: 15px;
+            overflow-x: auto; /* Horizontal scroll for code */
+        }
+        .code-block pre {
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 3px;
+            white-space: pre-wrap; /* Allows code to wrap */
+            word-wrap: break-word;
+        }
+         .screenshots img {
+            max-width: 250px; /* Adjust size as needed */
+            height: auto;
+            margin: 5px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .logo-img {
+             max-width: 100px;
+             height: auto;
+             margin-bottom: 15px;
+        }
+         .tech-list i, .feature-list i {
+            margin-right: 8px;
+         }
+        .project-links .btn {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar (Assuming this is standard for your portfolio) -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Enes Efe Tokta</a>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Project Header (Updated for Weather Plus Zero) -->
+    <section class="project-header">
+        <div class="container">
+            <div class="project-header-content">
+                <!-- Changed icon to represent weather/Windows app -->
+                <i class="fas fa-cloud-sun project-icon"></i>
+                <h1>Weather Plus Zero</h1>
+                <p class="project-subtitle">A modern and user-friendly C# weather application for Windows.</p>
+                 <!-- Badges from README -->
+                 <div style="margin-top: 15px;">
+                    <img src="https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white" alt=".NET Badge">
+                    <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase Badge">
+                    <img src="https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=csharp&logoColor=white" alt="C# Badge">
+                    <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows Badge">
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details (Populated with Weather Plus Zero README info) -->
+    <section class="project-details">
+        <div class="container">
+            <div class="project-content">
+
+                <div class="project-section">
+                    <h2>About the Project</h2>
+                    <p>Weather Plus Zero is a comprehensive weather application designed for Windows operating systems, developed using C#. It aims to provide users with instant weather information, hourly/daily forecasts, and essential data like temperature, humidity, and wind speed to help plan their daily lives. It features a modern, user-friendly interface optimized for performance and low resource usage.</p>
+                     <img src="https://raw.githubusercontent.com/EnesEfeTokta/WeatherPlusZero/main/WeatherPlusZero/Images/AppLogo.png" alt="Weather Plus Zero Logo" class="logo-img">
+                </div>
+
+                <div class="project-section">
+                    <h2>Key Features</h2>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-thermometer-half"></i> Instant weather information</li>
+                        <li><i class="fas fa-clock"></i> Hourly and daily forecasts</li>
+                        <li><i class="fas fa-wind"></i> Temperature, humidity, wind speed & direction data</li>
+                        <li><i class="fas fa-eye"></i> Visual weather indicators</li>
+                        <li><i class="fas fa-bell"></i> Customizable notification system</li>
+                        <li><i class="fas fa-desktop"></i> Windows compatible modern interface (WPF)</li>
+                        <li><i class="fas fa-bolt"></i> Fast and optimized performance</li>
+                        <li><i class="fas fa-sync-alt"></i> Real-time data updates (pulled periodically)</li>
+                        <li><i class="fas fa-microchip"></i> Low system resource utilization</li>
+                        <li><i class="fas fa-user-shield"></i> Secure user authentication and email verification</li>
+                        <li><i class="fas fa-key"></i> Password reset functionality</li>
+                        <li><i class="fas fa-file-alt"></i> Encrypted local storage for sensitive user data</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2>Technologies Used</h2>
+                    <ul class="tech-list">
+                        <li><i class="fas fa-code"></i> C# (C Sharp) Programming Language</li>
+                        <li><i class="fab fa-microsoft"></i> .NET Core 6.0+</li>
+                        <li><i class="fab fa-windows"></i> WPF (Windows Presentation Foundation)</li>
+                        <li><i class="fas fa-database"></i> Supabase (PostgreSQL Database & Authentication)</li>
+                        <li><i class="fas fa-envelope"></i> Twilio SendGrid (Email Services)</li>
+                        <li><i class="fas fa-cloud"></i> Visual Crossing Weather API (Weather Data)</li>
+                        <li><i class="fas fa-network-wired"></i> Ip-Api (IP-based Geolocation)</li>
+                        <li><i class="fas fa-file-code"></i> JSON (Local Data Storage & Configuration)</li>
+                    </ul>
+                </div>
+
+                 <div class="project-section">
+                    <h2>Setup & Configuration</h2>
+                    <p>To run this project locally after cloning, API keys need to be configured in the <code>appsettings.json</code> file. These keys are essential for accessing external services like Supabase, SendGrid, and Visual Crossing.</p>
+                    <p><strong>Important:</strong> Do not commit your actual API keys to version control.</p>
+                    <div class="code-block">
+                        <pre><code class="hljs language-json">{
+    "Authentication": {
+        "Supabase_Url": "Your_Supabase_URL",
+        "Supabase_Key": "Your_Supabse_KEY",
+        "Supabase_Service_Role": "Your_Supabase_ROLE",
+        "SendGrid_ApiKey": "Your_Twilio_SendGrid_API_KEY",
+        "Weather_BaseUrl": "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/{0}?key={1}&unitGroup=metric",
+        "Weather_ApiKey": "Your_Visual_Crossing_API_KEY",
+        "Ip_Api_Url": "http://ip-api.com/json"
+    },
+    "BackgroundImageURLs": {
+        "clear-day-background": "https://img.freepik.com/free-photo/sun-flare_74190-1494.jpg"
+    },
+    "Logging": {
+        "LogLevel": {
+            "Default": "Information",
+            "Microsoft": "Warning",
+            "Microsoft.Hosting.Lifetime": "Information"
+        }
+    },
+    "AllowedHosts": "*"
+}</code></pre>
+                    </div>
+                </div>
+
+                 <div class="project-section">
+                    <h2>Local Data Storage</h2>
+                    <p>The application utilizes two local JSON files stored in <code>C:/Users/UserName/AppData/Local/WeatherZeroPlus/</code>:</p>
+                    <ul>
+                        <li><strong>WeatherData.json:</strong> Stores detailed weather data for registered cities (not encrypted).</li>
+                        <li><strong>ApplicationActivityData.json:</strong> Records user's in-app activities, including email and password. This file is encrypted for security.</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2>Screenshots</h2>
+                     <div class="screenshots">
+                        <p><strong>User Authentication:</strong></p>
+                        <img src="https://raw.githubusercontent.com/EnesEfeTokta/WeatherPlusZero/main/Screenshots/LogIn.png" alt="Login Screen">
+                        <img src="https://raw.githubusercontent.com/EnesEfeTokta/WeatherPlusZero/main/Screenshots/NewUser.png" alt="New User Registration">
+                        <img src="https://raw.githubusercontent.com/EnesEfeTokta/WeatherPlusZero/main/Screenshots/Forgot.png" alt="Forgot Password Screen">
+
+                        <p style="margin-top:15px;"><strong>Main Application Interface:</strong></p>
+                        <img src="https://raw.githubusercontent.com/EnesEfeTokta/WeatherPlusZero/main/Screenshots/Home1.png" alt="Home Screen 1">
+                        <img src="https://raw.githubusercontent.com/EnesEfeTokta/WeatherPlusZero/main/Screenshots/Home2.png" alt="Home Screen 2">
+
+                        <p style="margin-top:15px;"><strong>Email Notifications:</strong></p>
+                        <img src="https://raw.githubusercontent.com/EnesEfeTokta/WeatherPlusZero/main/Screenshots/NewUserVerificationEmail.png" alt="Verification Email">
+                        <img src="https://raw.githubusercontent.com/EnesEfeTokta/WeatherPlusZero/main/Screenshots/PasswordResetRequest.png" alt="Password Reset Email">
+                        <img src="https://raw.githubusercontent.com/EnesEfeTokta/WeatherPlusZero/main/Screenshots/UrgentWeatherWarning.png" alt="Urgent Warning Email">
+                        <!-- Removed the very tall WeatherUpdate image for layout purposes, can be added back if needed -->
+                        <!-- <img src="https://raw.githubusercontent.com/EnesEfeTokta/WeatherPlusZero/main/Screenshots/WeatherUpdate.png" alt="Weather Update Email"> -->
+                    </div>
+                </div>
+
+                 <div class="project-section">
+                    <h2>System Architecture & Security</h2>
+                    <p>The project follows a layered architecture (Presentation/WPF, Application/Business Logic, Data/API Access). Security is addressed through Supabase authentication, password hashing, email verification, and encryption of local sensitive data.</p>
+                 </div>
+
+                <!-- Removed API Endpoints section as it's not relevant -->
+
+                <div class="project-section">
+                    <h2>Project Links</h2>
+                    <div class="project-links">
+                        <a href="https://github.com/EnesEfeTokta/WeatherPlusZero" class="btn" target="_blank">
+                            <i class="fab fa-github"></i>
+                            GitHub Repository
+                        </a>
+                         <a href="https://github.com/EnesEfeTokta/WeatherPlusZero/blob/main/README.md" class="btn" target="_blank">
+                            <i class="fas fa-book-open"></i>
+                            View Full README
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Updated year) -->
+    <footer>
+        <div class="container">
+            <!-- Updated year to 2024 -->
+            <p>© 2024 Enes Efe Tokta. All rights reserved.</p>
+            <p style="font-size: 0.8em; margin-top: 5px;"><em>Disclaimer: Weather Zero Plus is a university student project.</em></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

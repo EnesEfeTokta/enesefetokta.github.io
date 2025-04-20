@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- Language changed to English -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title updated based on README -->
+    <title>Fishing - Spear Fishing Game | Enes Efe Tokta</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Style additions for tables and iframe (optional, can also be added to styles.css) -->
+    <style>
+        .project-details table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        .project-details th, .project-details td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .project-details th {
+            background-color: #f2f2f2;
+            font-weight: 600;
+        }
+        .project-details tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .screenshots img {
+            max-width: 100%; /* Prevents images from overflowing */
+            height: auto;
+            margin-bottom: 10px; /* Space between images */
+            border: 1px solid #eee; /* Thin border */
+            border-radius: 4px; /* Rounded corners */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Light shadow */
+        }
+        .itchio-embed iframe {
+             max-width: 100%; /* Prevents iframe from overflowing */
+             border-radius: 5px;
+        }
+        .tech-list i, .feature-list i {
+            margin-right: 8px; /* Space between icon and text */
+        }
+        .project-links .btn {
+            margin-right: 10px; /* Space between buttons */
+            margin-bottom: 10px; /* Space when stacked vertically */
+        }
+         /* Code block styles (if a different code example is added) */
+        .code-block {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            margin-top: 15px;
+            overflow-x: auto; /* Horizontal scroll */
+        }
+        .code-block h3 {
+            margin-top: 0;
+            font-size: 1.1em;
+            color: #333;
+        }
+        .code-block pre {
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 3px;
+            white-space: pre-wrap; /* Allows code to wrap */
+            word-wrap: break-word;
+        }
+        .code-block .code-description {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar (Unchanged) -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Enes Efe Tokta</a>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Project Header (Updated based on README) -->
+    <section class="project-header">
+        <div class="container">
+            <div class="project-header-content">
+                <i class="fab fa-unity project-icon"></i> <!-- Unity icon kept -->
+                <h1>Fishing</h1>
+                <p class="project-subtitle">A fun spear throwing game about fishing in a lake, developed with Unity.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details (Populated with README content) -->
+    <section class="project-details">
+        <div class="container">
+            <div class="project-content">
+
+                <!-- About the Project (General) -->
+                <div class="project-section">
+                    <h2>About the Project</h2>
+                    <p>Fishing is a game project launched on August 15, 2024, using Unity v2022.3.25f1. Players hunt fish appearing in a lake by throwing spears. Core gameplay mechanics include spear throwing, fish spawning, an XP (experience points) system, and sound settings. The project is developed for Android, Web, and Windows platforms and is planned for release on itch.io.</p>
+                </div>
+
+                <!-- Gameplay Mechanics -->
+                 <div class="project-section">
+                    <h2>Gameplay Mechanics</h2>
+                    <p>Players attempt to hunt fish in the lake by throwing spears towards the point they click/tap on the screen. Thanks to its simple and intuitive control mechanism, players of all levels can easily adapt.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-bullseye"></i> Precise Spear Throwing System</li>
+                        <li><i class="fas fa-fish"></i> Dynamic Fish Spawning Mechanism</li>
+                        <li><i class="fas fa-tint"></i> Visual Damage Indication Upon Hit</li>
+                        <li><i class="fas fa-volume-up"></i> Sound Control with On/Off and Adjustment Options</li>
+                        <li><i class="fas fa-star"></i> Animated Addition of Earned XP to the XP Bar</li>
+                    </ul>
+                 </div>
+
+                <!-- Technologies and Assets Used -->
+                <div class="project-section">
+                    <h2>Technologies and Assets Used</h2>
+                    <p>The following technologies and asset types were used in the development of the project:</p>
+                    <ul class="tech-list">
+                        <li><i class="fab fa-unity"></i> Unity Game Engine (v2022.3.25f1)</li>
+                        <li><i class="fas fa-code"></i> C# Programming Language</li>
+                        <li><i class="fas fa-cube"></i> 3D Models (Low Poly Animals, Stone Age Weapons)</li>
+                        <li><i class="fas fa-music"></i> Sound Effects and Music (Casual Game FX, Happy Bouncy Music)</li>
+                        <li><i class="fas fa-desktop"></i> User Interface (UI) Kits (2D Casual UI HD, Free Jungle GUI, etc.)</li>
+                        <li><i class="fas fa-magic"></i> Visual Effects (VFX) and Particles (Cartoon FX Remaster)</li>
+                        <li><i class="fab fa-git-alt"></i> Git (Version Control System)</li>
+                        <li><i class="fab fa-github"></i> GitHub (Code Repository and Collaboration)</li>
+                    </ul>
+                     <p>For a detailed list of assets used and their license information, please refer to the <a href="https://github.com/EnesEfeTokta/Fishing#varl%C4%B1klar-%F0%9F%92%8E" target="_blank">Assets section in the README file</a>.</p> <!-- Link kept pointing to Turkish header ID, update if necessary -->
+                </div>
+
+                 <!-- Screenshots -->
+                <div class="project-section">
+                    <h2>Screenshots</h2>
+                    <div class="screenshots">
+                        <!-- Image paths from README used. Ensure these paths are correct relative to the HTML file. -->
+                        <img src="https://raw.githubusercontent.com/EnesEfeTokta/Fishing/main/Screenshots/i1-min.png" alt="Fishing Screenshot 1">
+                        <img src="https://raw.githubusercontent.com/EnesEfeTokta/Fishing/main/Screenshots/i2-min.png" alt="Fishing Screenshot 2">
+                        <img src="https://raw.githubusercontent.com/EnesEfeTokta/Fishing/main/Screenshots/i3-min.png" alt="Fishing Screenshot 3">
+                        <img src="https://raw.githubusercontent.com/EnesEfeTokta/Fishing/main/Screenshots/i4-min.png" alt="Fishing Screenshot 4">
+                        <img src="https://raw.githubusercontent.com/EnesEfeTokta/Fishing/main/Screenshots/i5-min.png" alt="Fishing Screenshot 5">
+                        <img src="https://raw.githubusercontent.com/EnesEfeTokta/Fishing/main/Screenshots/i6-min.png" alt="Fishing Screenshot 6">
+                        <img src="https://raw.githubusercontent.com/EnesEfeTokta/Fishing/main/Screenshots/i7-min.png" alt="Fishing Screenshot 7">
+                        <img src="https://raw.githubusercontent.com/EnesEfeTokta/Fishing/main/Screenshots/i8-min.png" alt="Fishing Screenshot 8">
+                        <img src="https://raw.githubusercontent.com/EnesEfeTokta/Fishing/main/Screenshots/i9-min.png" alt="Fishing Screenshot 9">
+                        <!-- More images can be added here if available -->
+                    </div>
+                </div>
+
+                <!-- Project Links and Play -->
+                <div class="project-section">
+                    <h2>Project Links and Play</h2>
+                    <p>You can use the links below to examine the project, browse its code, or play the game.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/EnesEfeTokta/Fishing" class="btn" target="_blank">
+                            <i class="fab fa-github"></i>
+                            GitHub Repository
+                        </a>
+                        <a href="https://github.com/EnesEfeTokta/Fishing/blob/main/Fishing/Assets/ProjectDiagrams.drawio" class="btn" target="_blank">
+                             <i class="fas fa-project-diagram"></i> <!-- or fa-sitemap -->
+                            Project Diagram (Draw.io)
+                        </a>
+                         <a href="https://enes-efe-tokta.itch.io/fish" class="btn" target="_blank">
+                             <i class="fas fa-gamepad"></i> <!-- or fab fa-itch-io -->
+                            itch.io Page
+                        </a>
+                    </div>
+                    <!-- itch.io Embed -->
+                    <div class="itchio-embed" style="margin-top: 20px;">
+                         <h4>Play the Game in Browser (itch.io)</h4>
+                        <iframe frameborder="0" src="https://itch.io/embed/2902718?linkback=true&bg_color=5aaaff&fg_color=ffffff&link_color=ffffff&border_color=5aaaff" width="552" height="167"><a href="https://enes-efe-tokta.itch.io/fish">Fishing by EnesEfeTokta</a></iframe>
+                    </div>
+                </div>
+
+                 <!-- Fish Species and Characteristics -->
+                <div class="project-section">
+                     <h2>Fish Species and Characteristics</h2>
+                     <p>The different types of fish encountered in the game and their basic characteristics are shown in the table below:</p>
+                     <table>
+                         <thead>
+                             <tr>
+                                 <th>Name</th>
+                                 <th>Level</th>
+                                 <th>Health</th>
+                                 <th>Money</th>
+                                 <th>Point</th>
+                                 <th>Speed</th>
+                                 <th>Damage</th>
+                             </tr>
+                         </thead>
+                         <tbody> <!-- Corrected 'Midile' to 'Middle' -->
+                             <tr><td>Fish1</td><td>Beginning</td><td>80</td><td>20</td><td>40</td><td>Slow</td><td>60</td></tr>
+                             <tr><td>Fish2</td><td>Beginning</td><td>100</td><td>33</td><td>50</td><td>Slow</td><td>50</td></tr>
+                             <tr><td>Fish3</td><td>Middle</td><td>120</td><td>40</td><td>60</td><td>Medium</td><td>45</td></tr>
+                             <tr><td>Fish4</td><td>Middle</td><td>140</td><td>46</td><td>70</td><td>Medium</td><td>40</td></tr>
+                             <tr><td>Fish5</td><td>Middle</td><td>160</td><td>53</td><td>80</td><td>Medium</td><td>35</td></tr>
+                             <tr><td>Fish6</td><td>Middle</td><td>180</td><td>60</td><td>90</td><td>Medium</td><td>30</td></tr>
+                             <tr><td>Fish7</td><td>Hard</td><td>200</td><td>66</td><td>100</td><td>Fast</td><td>25</td></tr>
+                             <tr><td>Fish8</td><td>Hard</td><td>250</td><td>83</td><td>125</td><td>Fast</td><td>20</td></tr>
+                         </tbody>
+                     </table>
+                </div>
+
+                 <!-- Levels and Details -->
+                <div class="project-section">
+                     <h2>Levels and Details</h2>
+                     <p>The game consists of 20 levels with varying difficulty levels and objectives. Details for each level are presented in the table below:</p>
+                     <div style="overflow-x:auto;"> <!-- To prevent table overflow -->
+                         <table>
+                             <thead>
+                                 <tr>
+                                     <th>Level</th>
+                                     <th>Difficulty</th>
+                                     <th>Fish Species and Number</th>
+                                     <th>Completion Time (s)</th>
+                                     <th>Point</th>
+                                     <th>Fish Count</th>
+                                     <th>Money</th>
+                                     <th>Lake Dimensions</th> <!-- Updated header -->
+                                     <th>Description</th>
+                                 </tr>
+                             </thead>
+                             <tbody> <!-- Translated descriptions and updated dimensions format -->
+                                 <tr><td>Level 1</td><td>Easy</td><td>(1 x Fish 1)</td><td>60</td><td>40</td><td>1</td><td>26</td><td>W(-5, 5) & H(-5, 5)</td><td>Learn basic mechanics, smooth gameplay.</td></tr>
+                                 <tr><td>Level 2</td><td>Easy</td><td>(5 x Fish 1), (1 x Fish 2)</td><td>90</td><td>250</td><td>6</td><td>163</td><td>W(-5, 5) & H(-5, 5)</td><td>Introduction to fish, requires a bit more attention.</td></tr>
+                                 <tr><td>Level 3</td><td>Easy</td><td>(5 x Fish 1), (2 x Fish 2)</td><td>90</td><td>450</td><td>10</td><td>295</td><td>W(-5, 5) & H(-5, 5)</td><td>Introduction to fish, requires a bit more attention.</td></tr>
+                                 <tr><td>Level 4</td><td>Easy</td><td>(5 x Fish 1), (3 x Fish 2)</td><td>90</td><td>510</td><td>11</td><td>335</td><td>W(-5, 5) & H(-5, 5)</td><td>Introduction to fish, requires a bit more attention.</td></tr>
+                                 <tr><td>Level 5</td><td>Easy</td><td>(5 x Fish 1), (5 x Fish 2)</td><td>100</td><td>750</td><td>15</td><td>495</td><td>W(-5, 5) & H(-5, 5)</td><td>Player aims not to miss many fish.</td></tr>
+                                 <tr><td>Level 6</td><td>Easy</td><td>(7 x Fish 1), (5 x Fish 2), (3 x Fish 3)</td><td>110</td><td>880</td><td>18</td><td>580</td><td>W(-5, 5) & H(-5, 5)</td><td>Increasing fish count aims to enhance player engagement.</td></tr>
+                                 <tr><td>Level 7</td><td>Easy</td><td>(7 x Fish 1), (6 x Fish 2), (5 x Fish 3)</td><td>110</td><td>1050</td><td>21</td><td>693</td><td>W(-5, 5) & H(-5, 5)</td><td>Player is expected to catch many fish in a short time.</td></tr>
+                                 <tr><td>Level 8</td><td>Medium</td><td>(4 x Fish 1), (5 x Fish 2), (5 x Fish 3), (1 x Fish 4)</td><td>110</td><td>780</td><td>15</td><td>515</td><td>W(-5, 5) & H(-5, 5)</td><td>Player can now interact with medium-level fish.</td></tr>
+                                 <tr><td>Level 9</td><td>Medium</td><td>(4 x Fish 1), (5 x Fish 2), (5 x Fish 3), (3 x Fish 4)</td><td>110</td><td>920</td><td>17</td><td>607</td><td>W(-5, 5) & H(-5, 5)</td><td>Additional challenges are introduced to the player.</td></tr>
+                                 <tr><td>Level 10</td><td>Medium</td><td>(3 x Fish 1), (5 x Fish 2), (7 x Fish 3), (5 x Fish 4)</td><td>130</td><td>1120</td><td>20</td><td>739</td><td>W(-5, 5) & H(-5, 5)</td><td>Increased fish count puts the player under stress.</td></tr>
+                                 <tr><td>Level 11</td><td>Medium</td><td>(4 x Fish 1), (5 x Fish 2), (7 x Fish 3), (5 x Fish 4)</td><td>130</td><td>1170</td><td>21</td><td>772</td><td>W(-5, 5) & H(-5, 5)</td><td>Player is expected to catch many fish in a short time.</td></tr>
+                                 <tr><td>Level 12</td><td>Medium</td><td>(4 x Fish 1), (5 x Fish 2), (7 x Fish 3), (5 x Fish 4)</td><td>130</td><td>1180</td><td>21</td><td>779</td><td>W(-5, 5) & H(-5, 5)</td><td>Player is expected to catch many fish in a short time.</td></tr>
+                                 <tr><td>Level 13</td><td>Medium</td><td>(4 x Fish 1), (5 x Fish 2), (5 x Fish 3), (1 x Fish 4), (1 x Fish 5)</td><td>140</td><td>1260</td><td>22</td><td>832</td><td>W(-5, 5) & H(-5, 5)</td><td>Increased fish count aims to challenge the player.</td></tr>
+                                 <tr><td>Level 14</td><td>Medium</td><td>(4 x Fish 1), (5 x Fish 2), (5 x Fish 3), (3 x Fish 4), (5 x Fish 5)</td><td>160</td><td>1580</td><td>26</td><td>1044</td><td>W(-5, 5) & H(-5, 5)</td><td>New fish count increase will stress the player.</td></tr>
+                                 <tr><td>Level 15</td><td>Medium</td><td>(4 x Fish 1), (5 x Fish 2), (5 x Fish 3), (5 x Fish 4), (1 x Fish 6)</td><td>160</td><td>1700</td><td>26</td><td>1124</td><td>W(-5, 5) & H(-5, 5)</td><td>Increased fish count aims to challenge the player.</td></tr>
+                                 <tr><td>Level 16</td><td>Hard</td><td>(2 x Fish 1), (3 x Fish 2), (5 x Fish 3), (5 x Fish 4), (5 x Fish 5)</td><td>170</td><td>1530</td><td>23</td><td>1012</td><td>W(-5, 5) & H(-5, 5)</td><td>Player now faces hard-level fish.</td></tr>
+                                 <tr><td>Level 17</td><td>Hard</td><td>(2 x Fish 1), (3 x Fish 2), (5 x Fish 3), (5 x Fish 4), (7 x Fish 5), (1 x Fish 6)</td><td>170</td><td>1710</td><td>24</td><td>1132</td><td>W(-5, 5) & H(-5, 5)</td><td>Player is challenged with many fish.</td></tr>
+                                 <tr><td>Level 18</td><td>Hard</td><td>(2 x Fish 1), (3 x Fish 2), (5 x Fish 3), (5 x Fish 4), (7 x Fish 5), (5 x Fish 6), (1 x Fish 7)</td><td>180</td><td>1990</td><td>28</td><td>1318</td><td>W(-5, 5) & H(-5, 5)</td><td>Player now faces hard-level fish.</td></tr>
+                                 <tr><td>Level 19</td><td>Hard</td><td>(2 x Fish 1), (3 x Fish 2), (5 x Fish 3), (5 x Fish 4), (7 x Fish 5), (5 x Fish 6), (5 x Fish 7)</td><td>170</td><td>2390</td><td>32</td><td>1582</td><td>W(-5, 5) & H(-5, 5)</td><td>Reduced time adds extra difficulty for the player.</td></tr>
+                                 <tr><td>Level 20</td><td>Hard</td><td>(2 x Fish 1), (3 x Fish 2), (5 x Fish 3), (5 x Fish 4), (7 x Fish 5), (5 x Fish 6), (5 x Fish 7), (5 x Fish 8)</td><td>170</td><td>3015</td><td>37</td><td>1997</td><td>W(-5, 5) & H(-5, 5)</td><td>The most challenging level for the player.</td></tr>
+                             </tbody>
+                         </table>
+                     </div>
+                </div>
+
+                <!-- Achievement Calculations -->
+                <div class="project-section">
+                     <h2>Achievement Calculations</h2>
+                     <p>The achievement calculation algorithm is based on the player's completion time and the predefined point/money values for each fish. Four different earning ratios are determined based on the level duration (S) and the player's completion time (T):</p>
+                     <ul>
+                         <li><strong>T ≤ S/4:</strong> Full Point (P) & Money (M) are earned.</li>
+                         <li><strong>S/4 < T ≤ S/2:</strong> Half of Point & Money are awarded (P/2 & M/2).</li>
+                         <li><strong>S/2 < T ≤ 3S/4:</strong> A quarter of Point & Money are awarded (P/4 & M/4).</li>
+                         <li><strong>T > 3S/4:</strong> A quarter of Point & Money are awarded (P/4 & M/4).</li>
+                     </ul>
+                     <p>Total earned points and money are calculated and summed for each fish according to the rules above. This algorithm provides a flexible reward system based on player performance.</p>
+                </div>
+
+                <!-- System Requirements -->
+                <div class="project-section">
+                     <h2>System Requirements (Android)</h2>
+                     <ul class="feature-list">
+                          <li><i class="fab fa-android"></i> Android Version: 7.0 (Nougat) or higher</li>
+                          <li><i class="fas fa-hdd"></i> Storage Space: 1 GB</li>
+                          <li><i class="fas fa-memory"></i> RAM: 2 GB</li>
+                     </ul>
+                     <p><em>Note: Requirements for Web and Windows versions are not specified.</em></p>
+                </div>
+
+                 <!-- Game Controls -->
+                <div class="project-section">
+                     <h2>Game Controls</h2>
+                      <ul class="feature-list">
+                          <li><i class="fas fa-mobile-alt"></i> <strong>Android:</strong> Tap the screen to throw the spear.</li>
+                          <li><i class="fas fa-mouse-pointer"></i> <strong>Web/Windows:</strong> Click the mouse to throw the spear (Estimated).</li>
+                      </ul>
+                </div>
+
+                <!-- Legal Notices and Licensing -->
+                <div class="project-section">
+                    <h2>Legal Notices and Licensing</h2>
+                    <p>Important legal information and license details regarding the project and its components are below:</p>
+                    <ul>
+                        <li><strong>Visual Assets:</strong> Logo, banner, and background images were generated using OpenAI ChatGPT-4, and usage rights belong to the developer.</li>
+                        <li><strong>Version Control:</strong> Open-source Git is used.</li>
+                        <li><strong>Code Repository:</strong> The free version of the GitHub platform is used.</li>
+                        <li><strong>Project License:</strong> The project is open-source under the <a href="https://github.com/EnesEfeTokta/Fishing/blob/main/LICENSE" target="_blank">GPL-3.0 license</a>. Educational and non-profit use is permitted. For-profit use requires permission from the project owner.</li>
+                        <li><strong>Game Engine:</strong> Unity Engine is used under the Personal license.</li>
+                        <li><strong>Development Tools:</strong> Visual Studio Code and Unity Asset Store assets are subject to their own license terms (MIT, Unity Asset Store EULA, etc.).</li>
+                    </ul>
+                     <p>For more details, please refer to the <a href="https://github.com/EnesEfeTokta/Fishing#prohibited-and-legal-warnings-%EF%B8%8F" target="_blank">relevant section</a> on the project's GitHub page and the <a href="https://github.com/EnesEfeTokta/Fishing/blob/main/LICENSE" target="_blank">License file</a>.</p> <!-- Link kept pointing to Turkish header ID, update if necessary -->
+                </div>
+
+                 <!-- Marketing and Feedback -->
+                <div class="project-section">
+                    <h2>Marketing and Feedback</h2>
+                    <p>Gameplay videos will be shared on platforms like LinkedIn and TikTok for promotion (during the first 3 months after the game's release). User feedback is valuable for the game's improvement.</p>
+                    <p>You can provide your feedback through the following channels:</p>
+                     <ul class="feature-list">
+                         <li><i class="fas fa-envelope"></i> <a href="mailto:enesefetokta009@gmail.com">Email</a></li>
+                         <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank">LinkedIn</a></li>
+                         <li><i class="fab fa-github"></i> <a href="https://github.com/EnesEfeTokta/Fishing/issues" target="_blank">GitHub Issues</a></li>
+                     </ul>
+                     <p>🚨 As the project does not have a long-term goal, the active support and feedback collection period is limited to the first 5 months after the game's release. However, since the project is open-source, providing feedback via GitHub Issues will remain possible for a long time.</p>
+                </div>
+
+                <!-- Contact (Added again specifically for the project page) -->
+                <div class="project-section">
+                    <h2>Contact</h2>
+                     <p>For questions about the project or collaboration inquiries, you can reach me through the following channels:</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:enesefetokta009@gmail.com">enesefetokta009@gmail.com</a></li>
+                        <li><i class="fas fa-phone"></i> (+90) 541 586 95 64</li>
+                        <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank">My LinkedIn Profile</a></li>
+                        <li><i class="fab fa-github"></i> <a href="https://github.com/EnesEfeTokta" target="_blank">My GitHub Profile</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Year updated, text translated) -->
+    <footer>
+        <div class="container">
+            <p>© 2024 Enes Efe Tokta. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
