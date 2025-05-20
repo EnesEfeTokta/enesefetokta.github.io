@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinTrackWebApi - Financial Management API | Enes Efe Tokta</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <style>
+        .code-block {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            margin-top: 15px;
+            overflow-x: auto;
+        }
+        .code-block pre {
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 3px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .screenshots img {
+            max-width: 250px;
+            height: auto;
+            margin: 5px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .tech-list i, .feature-list i {
+            margin-right: 8px;
+        }
+        .project-links .btn {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Enes Efe Tokta</a>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Project Header -->
+    <section class="project-header">
+        <div class="container">
+            <div class="project-header-content">
+                <i class="fas fa-chart-line project-icon"></i>
+                <h1>FinTrackWebApi</h1>
+                <p class="project-subtitle">A Comprehensive Financial Management RESTful API</p>
+                <div style="margin-top: 15px;">
+                    <img src="https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white" alt=".NET Badge">
+                    <img src="https://img.shields.io/badge/ASP.NET%20Core-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" alt="ASP.NET Core Badge">
+                    <img src="https://img.shields.io/badge/Entity%20Framework-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" alt="Entity Framework Badge">
+                    <img src="https://img.shields.io/badge/AI-FF6B6B?style=for-the-badge&logo=openai&logoColor=white" alt="AI Badge">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details -->
+    <section class="project-details">
+        <div class="container">
+            <div class="project-content">
+                <div class="project-section">
+                    <h2>About the Project</h2>
+                    <p>FinTrackWebApi is a robust financial management system that provides comprehensive tools for personal and business financial tracking. Built with ASP.NET Core, it offers a secure and scalable solution for managing finances with modern features and AI integration.</p>
+                </div>
+
+                <div class="project-section">
+                    <h2>Key Features</h2>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-chart-line"></i> Comprehensive expense tracking with detailed analytics</li>
+                        <li><i class="fas fa-wallet"></i> Income and expense management with real-time updates</li>
+                        <li><i class="fas fa-piggy-bank"></i> Smart budget planning and recommendations</li>
+                        <li><i class="fas fa-university"></i> Multi-account management and transaction tracking</li>
+                        <li><i class="fas fa-robot"></i> AI-powered chatbot for financial assistance</li>
+                        <li><i class="fas fa-handshake"></i> Secure lending and borrowing system</li>
+                        <li><i class="fas fa-chart-pie"></i> Advanced financial reporting and analytics</li>
+                        <li><i class="fas fa-bell"></i> Customizable notifications and alerts</li>
+                        <li><i class="fas fa-shield-alt"></i> Role-based access control and security</li>
+                        <li><i class="fas fa-sync"></i> Real-time data synchronization</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2>Technologies Used</h2>
+                    <ul class="tech-list">
+                        <li><i class="fab fa-microsoft"></i> ASP.NET Core 7.0+</li>
+                        <li><i class="fas fa-database"></i> Entity Framework Core</li>
+                        <li><i class="fas fa-server"></i> PostgreSQL</li>
+                        <li><i class="fas fa-memory"></i> Redis Cache</li>
+                        <li><i class="fas fa-shield-alt"></i> JWT Authentication</li>
+                        <li><i class="fas fa-network-wired"></i> SignalR for Real-time Updates</li>
+                        <li><i class="fas fa-code"></i> C# Programming Language</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2>API Endpoints</h2>
+                    <div class="code-block">
+                        <pre><code class="language-http">
+# Authentication
+POST /api/auth/login
+POST /api/auth/register
+POST /api/auth/refresh-token
+
+# Financial Management
+GET    /api/transactions
+POST   /api/transactions
+PUT    /api/transactions/{id}
+DELETE /api/transactions/{id}
+
+# Budget Management
+GET    /api/budgets
+POST   /api/budgets
+PUT    /api/budgets/{id}
+DELETE /api/budgets/{id}
+
+# Account Management
+GET    /api/accounts
+POST   /api/accounts
+PUT    /api/accounts/{id}
+DELETE /api/accounts/{id}
+
+# AI Chatbot
+POST   /api/chatbot/query
+GET    /api/chatbot/history
+
+# Lending System
+GET    /api/loans
+POST   /api/loans
+PUT    /api/loans/{id}
+DELETE /api/loans/{id}
+                        </code></pre>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h2>Database Schema</h2>
+                    <div class="code-block">
+                        <pre><code class="language-sql">
+-- Core Tables
+CREATE TABLE Users (
+    Id INT PRIMARY KEY,
+    Username NVARCHAR(50),
+    Email NVARCHAR(100),
+    PasswordHash NVARCHAR(MAX),
+    CreatedAt DATETIME
+);
+
+CREATE TABLE Accounts (
+    Id INT PRIMARY KEY,
+    UserId INT,
+    Name NVARCHAR(50),
+    Balance DECIMAL(18,2),
+    Currency NVARCHAR(3),
+    CreatedAt DATETIME
+);
+
+CREATE TABLE Transactions (
+    Id INT PRIMARY KEY,
+    AccountId INT,
+    Amount DECIMAL(18,2),
+    Type NVARCHAR(20),
+    Category NVARCHAR(50),
+    Description NVARCHAR(MAX),
+    Date DATETIME
+);
+
+CREATE TABLE Budgets (
+    Id INT PRIMARY KEY,
+    UserId INT,
+    Category NVARCHAR(50),
+    Amount DECIMAL(18,2),
+    Period NVARCHAR(20),
+    StartDate DATETIME,
+    EndDate DATETIME
+);
+
+CREATE TABLE Loans (
+    Id INT PRIMARY KEY,
+    LenderId INT,
+    BorrowerId INT,
+    Amount DECIMAL(18,2),
+    InterestRate DECIMAL(5,2),
+    Status NVARCHAR(20),
+    DueDate DATETIME
+);
+                        </code></pre>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h2>Security Features</h2>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-key"></i> JWT-based authentication with refresh tokens</li>
+                        <li><i class="fas fa-user-shield"></i> Role-based access control (RBAC)</li>
+                        <li><i class="fas fa-lock"></i> Data encryption at rest and in transit</li>
+                        <li><i class="fas fa-shield-alt"></i> Input validation and sanitization</li>
+                        <li><i class="fas fa-history"></i> Audit logging for all operations</li>
+                        <li><i class="fas fa-clock"></i> Rate limiting and request throttling</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h2>Project Links</h2>
+                    <div class="project-links">
+                        <a href="https://github.com/EnesEfeTokta/FinTrackWebApi" class="btn" target="_blank">
+                            <i class="fab fa-github"></i>
+                            GitHub Repository
+                        </a>
+                        <a href="https://github.com/EnesEfeTokta/FinTrackWebApi/blob/main/README.md" class="btn" target="_blank">
+                            <i class="fas fa-book-open"></i>
+                            View Full README
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2024 Enes Efe Tokta. All rights reserved.</p>
+            <p style="font-size: 0.8em; margin-top: 5px;"><em>Disclaimer: FinTrackWebApi is a personal project.</em></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html> 
