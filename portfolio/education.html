@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education & Certifications - Enes Efe Tokta</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .education-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .education-card:hover {
+            transform: translateY(-5px);
+        }
+        .education-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .education-icon {
+            font-size: 2em;
+            margin-right: 15px;
+            color: #4a90e2;
+        }
+        .education-content {
+            flex: 1;
+        }
+        .education-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .education-subtitle {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .education-date {
+            color: #888;
+            font-size: 0.8em;
+        }
+        .certification-badge {
+            display: inline-block;
+            padding: 5px 10px;
+            background: #f0f0f0;
+            border-radius: 15px;
+            margin: 5px;
+            font-size: 0.9em;
+        }
+        .certification-image {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 8px;
+            margin: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .certification-image:hover {
+            transform: scale(1.02);
+        }
+        .certification-links {
+            margin-top: 15px;
+        }
+        .certification-links a {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 15px;
+            color: #4a90e2;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .certification-links a:hover {
+            text-decoration: underline;
+        }
+        .certification-links i {
+            margin-right: 5px;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #e0e0e0;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -34px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #4a90e2;
+            border: 2px solid #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Enes Efe Tokta</a>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="education.html" class="active">Education</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Education Header -->
+    <section class="projects-header">
+        <div class="container">
+            <div class="projects-header-content">
+                <i class="fas fa-graduation-cap projects-icon"></i>
+                <h1>Education & Certifications</h1>
+                <p class="projects-subtitle">My academic journey and professional certifications</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Content -->
+    <section class="project-details">
+        <div class="container">
+            <div class="project-content">
+                <!-- Academic Education -->
+                <div class="project-section">
+                    <h2>Academic Education</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="education-card">
+                                <div class="education-header">
+                                    <i class="fas fa-university education-icon"></i>
+                                    <div class="education-content">
+                                        <h3 class="education-title">Information Systems and Technologies</h3>
+                                        <p class="education-subtitle">Atatürk University</p>
+                                        <p class="education-date">2023 - 2027</p>
+                                    </div>
+                                </div>
+                                <p>Bachelor's degree program focusing on software development, database management, and information systems.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Certifications -->
+                <div class="project-section">
+                    <h2>Professional Certifications</h2>
+                    <div class="education-card">
+                        <div class="education-header">
+                            <i class="fas fa-gamepad education-icon"></i>
+                            <div class="education-content">
+                                <h3 class="education-title">Game and Application Academy Bootcamp Finalist</h3>
+                                <p class="education-subtitle">Game and Application Academy</p>
+                                <p class="education-date">2024</p>
+                            </div>
+                        </div>
+                        <p>In the Graduation Bootcamp organized within the scope of the Oyun ve Uygulama Akademisi, he competed with his team against 300+ teams in 6 weeks and qualified to be among the last 14 finalist teams.</p>
+                        <img src="Images/CertificationImages/game-academy-certificate-finalist.png" alt="Game and Application Academy Certificate" class="certification-image">
+                        <div class="certification-links">
+                            <a href="Images/CertificationImages/game-academy-certificate-finalist.png" target="_blank">
+                                <i class="fas fa-image"></i> View Certificate
+                            </a>
+                            <a href="https://verified.sertifier.com/tr/verify/29758255143465/" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Visit Academy
+                            </a>
+                        </div>
+                        <div class="certification-badges">
+                            <span class="certification-badge">Unity 2D/3D</span>
+                            <span class="certification-badge">C#</span>
+                            <span class="certification-badge">Game Development</span>
+                            <span class="certification-badge">Game Design</span>
+                            <span class="certification-badge">Game Programming</span>
+                            <span class="certification-badge">Game Testing</span>
+                            <span class="certification-badge">Game Art</span>
+                            <span class="certification-badge">Game Audio</span>
+                        </div>
+                    </div>
+
+                    <div class="education-card">
+                        <div class="education-header">
+                            <i class="fas fa-tasks education-icon"></i>
+                            <div class="education-content">
+                                <h3 class="education-title">Project Management</h3>
+                                <p class="education-subtitle">Google</p>
+                                <p class="education-date">2024</p>
+                            </div>
+                        </div>
+                        <p>I successfully completed Google's comprehensive Project Management course on Coursera, which offers in-depth training in key areas such as project planning, risk management, and team dynamics. By reinforcing theoretical knowledge with hands-on projects, I gained the ability to manage my projects more effectively and efficiently. This course, taught by Google's experienced instructors, has significantly improved my professional skills.</p>
+                        <img src="Images/CertificationImages/google-project-management.png" alt="Google Project Management Certificate" class="certification-image">
+                        <div class="certification-links">
+                            <a href="Images/CertificationImages/google-project-management.png" target="_blank">
+                                <i class="fas fa-image"></i> View Certificate
+                            </a>
+                            <a href="https://www.coursera.org/account/accomplishments/specialization/4ZPSKQNT46SK" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Course Details
+                            </a>
+                        </div>
+                        <div class="certification-badges">
+                            <span class="certification-badge">Project Management</span>
+                            <span class="certification-badge">Project Planning</span>
+                            <span class="certification-badge">Project Monitoring</span>
+                            <span class="certification-badge">Project Control</span>
+                            <span class="certification-badge">Project Reporting</span>
+                            <span class="certification-badge">Project Evaluation</span>
+                            <span class="certification-badge">Asana</span>
+                            <span class="certification-badge">Trello</span>
+                            <span class="certification-badge">Notion</span>
+                            <span class="certification-badge">Jira</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Development -->
+                <div class="project-section">
+                    <h2>Skills Development</h2>
+                    <div class="education-card">
+                        <div class="education-header">
+                            <i class="fas fa-code education-icon"></i>
+                            <div class="education-content">
+                                <h3 class="education-title">C# Programming</h3>
+                                <p class="education-subtitle">Pluralsight</p>
+                                <p class="education-date">2023</p>
+                            </div>
+                        </div>
+                        <p>Advanced concepts in C# programming including async/await, LINQ, and design patterns.</p>
+                        <div class="certification-badges">
+                            <span class="certification-badge">C#</span>
+                            <span class="certification-badge">Advanced Programming</span>
+                            <span class="certification-badge">Design Patterns</span>
+                        </div>
+                    </div>
+
+                    <div class="education-card">
+                        <div class="education-header">
+                            <i class="fab fa-git-alt education-icon"></i>
+                            <div class="education-content">
+                                <h3 class="education-title">Version Control & Collaboration</h3>
+                                <p class="education-subtitle">Self-Learning & Professional Experience</p>
+                                <p class="education-date">2023 - Present</p>
+                            </div>
+                        </div>
+                        <p>Proficient in Git version control system and GitHub collaboration platform, managing code repositories, branches, and pull requests effectively.</p>
+                        <div class="certification-badges">
+                            <span class="certification-badge">Git</span>
+                            <span class="certification-badge">GitHub</span>
+                            <span class="certification-badge">Version Control</span>
+                            <span class="certification-badge">Collaboration</span>
+                            <span class="certification-badge">Code Review</span>
+                        </div>
+                    </div>
+
+                    <div class="education-card">
+                        <div class="education-header">
+                            <i class="fas fa-database education-icon"></i>
+                            <div class="education-content">
+                                <h3 class="education-title">Database Management Systems</h3>
+                                <p class="education-subtitle">Professional Development</p>
+                                <p class="education-date">2023 - Present</p>
+                            </div>
+                        </div>
+                        <p>Experience with various database systems including SQL, PostgreSQL, and MongoDB, implementing efficient data storage and retrieval solutions.</p>
+                        <div class="certification-badges">
+                            <span class="certification-badge">SQL</span>
+                            <span class="certification-badge">PostgreSQL</span>
+                            <span class="certification-badge">MongoDB</span>
+                            <span class="certification-badge">Database Design</span>
+                            <span class="certification-badge">Data Modeling</span>
+                        </div>
+                    </div>
+
+                    <div class="education-card">
+                        <div class="education-header">
+                            <i class="fab fa-docker education-icon"></i>
+                            <div class="education-content">
+                                <h3 class="education-title">Containerization & DevOps</h3>
+                                <p class="education-subtitle">Professional Development</p>
+                                <p class="education-date">2023 - Present</p>
+                            </div>
+                        </div>
+                        <p>Practical experience with Docker containerization, enabling consistent deployment environments and streamlined development workflows.</p>
+                        <div class="certification-badges">
+                            <span class="certification-badge">Docker</span>
+                            <span class="certification-badge">Containerization</span>
+                            <span class="certification-badge">DevOps</span>
+                            <span class="certification-badge">Deployment</span>
+                            <span class="certification-badge">Environment Management</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2024 Enes Efe Tokta. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
