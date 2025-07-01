@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinTrack - Windows Financial Management App | Enes Efe Tokta</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .project-details table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        .project-details th, .project-details td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .project-details th {
+            background-color: #f2f2f2;
+            font-weight: 600;
+        }
+        .project-details tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .screenshots img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .tech-list i, .feature-list i {
+            margin-right: 8px;
+        }
+        .project-links .btn {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .code-block {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            margin-top: 15px;
+            overflow-x: auto;
+        }
+        .code-block h3 {
+            margin-top: 0;
+            font-size: 1.1em;
+            color: #333;
+        }
+        .code-block pre {
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 3px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .code-block .code-description {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #555;
+        }
+        .architecture-diagram {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .architecture-diagram h3 {
+            margin-top: 0;
+            color: #495057;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Enes Efe Tokta</a>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Project Header -->
+    <section class="project-header">
+        <div class="container">
+            <div class="project-header-content">
+                <i class="fab fa-microsoft project-icon"></i>
+                <h1>FinTrack</h1>
+                <p class="project-subtitle">Windows Desktop Financial Management Application</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details -->
+    <section class="project-details">
+        <div class="container">
+            <div class="project-content">
+
+                <!-- About the Project -->
+                <div class="project-section">
+                    <h2>About the Project</h2>
+                    <p>FinTrack is a comprehensive Windows desktop application designed for personal and small business financial management. Built with WPF (Windows Presentation Foundation) and .NET, it provides an intuitive interface for tracking expenses, managing budgets, and generating financial reports. The application serves as the Windows client for the FinTrackWebApi backend, offering seamless integration with the cloud-based financial management system.</p>
+                </div>
+
+                <!-- Key Features -->
+                <div class="project-section">
+                    <h2>Key Features</h2>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-chart-line"></i> Real-time financial dashboard with interactive charts</li>
+                        <li><i class="fas fa-wallet"></i> Expense and income tracking with categorization</li>
+                        <li><i class="fas fa-piggy-bank"></i> Budget planning and monitoring</li>
+                        <li><i class="fas fa-credit-card"></i> Multiple account management</li>
+                        <li><i class="fas fa-file-invoice"></i> Detailed financial reports and analytics</li>
+                        <li><i class="fas fa-sync"></i> Cloud synchronization with FinTrackWebApi</li>
+                        <li><i class="fas fa-shield-alt"></i> Secure local data storage with encryption</li>
+                        <li><i class="fas fa-download"></i> Export functionality (PDF, Excel, CSV)</li>
+                        <li><i class="fas fa-bell"></i> Budget alerts and notifications</li>
+                        <li><i class="fas fa-search"></i> Advanced search and filtering capabilities</li>
+                    </ul>
+                </div>
+
+                <!-- Technologies Used -->
+                <div class="project-section">
+                    <h2>Technologies Used</h2>
+                    <ul class="tech-list">
+                        <li><i class="fab fa-microsoft"></i> .NET Framework 6.0</li>
+                        <li><i class="fas fa-desktop"></i> WPF (Windows Presentation Foundation)</li>
+                        <li><i class="fas fa-code"></i> C# Programming Language</li>
+                        <li><i class="fas fa-database"></i> SQLite (Local Database)</li>
+                        <li><i class="fas fa-cloud"></i> Entity Framework Core</li>
+                        <li><i class="fas fa-chart-bar"></i> LiveCharts2 (Data Visualization)</li>
+                        <li><i class="fas fa-palette"></i> Material Design in XAML</li>
+                        <li><i class="fas fa-lock"></i> AES Encryption for Data Security</li>
+                        <li><i class="fas fa-network-wired"></i> HTTP Client for API Communication</li>
+                        <li><i class="fas fa-file-pdf"></i> iTextSharp (PDF Generation)</li>
+                        <li><i class="fas fa-file-excel"></i> EPPlus (Excel Export)</li>
+                    </ul>
+                </div>
+
+                <!-- Architecture Overview -->
+                <div class="project-section">
+                    <h2>Architecture Overview</h2>
+                    <div class="architecture-diagram">
+                        <h3>Application Architecture</h3>
+                        <p>The application follows the MVVM (Model-View-ViewModel) pattern for clean separation of concerns:</p>
+                        <ul>
+                            <li><strong>View Layer:</strong> XAML-based user interface with responsive design</li>
+                            <li><strong>ViewModel Layer:</strong> Business logic and data binding</li>
+                            <li><strong>Model Layer:</strong> Data models and database entities</li>
+                            <li><strong>Service Layer:</strong> API communication and local data management</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Screenshots -->
+                <div class="project-section">
+                    <h2>Application Screenshots</h2>
+                    <div class="screenshots">
+                        <p><em>Screenshots will be added here once the application is completed.</em></p>
+                        <!-- Placeholder for screenshots -->
+                        <div style="background: #f0f0f0; padding: 40px; text-align: center; border-radius: 8px; color: #666;">
+                            <i class="fas fa-image" style="font-size: 3em; margin-bottom: 10px;"></i>
+                            <p>Application screenshots will be displayed here</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Code Examples -->
+                <div class="project-section">
+                    <h2>Code Examples</h2>
+                    
+                    <div class="code-block">
+                        <h3>MainWindow.xaml - Main Application Interface</h3>
+                        <pre><code>&lt;Window x:Class="FinTrack.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="FinTrack - Financial Management" 
+        Height="800" Width="1200"
+        WindowStartupLocation="CenterScreen"&gt;
+    
+    &lt;Grid&gt;
+        &lt;Grid.RowDefinitions&gt;
+            &lt;RowDefinition Height="Auto"/&gt;
+            &lt;RowDefinition Height="*"/&gt;
+        &lt;/Grid.RowDefinitions&gt;
+        
+        &lt;!-- Navigation Menu --&gt;
+        &lt;Menu Grid.Row="0" Background="#2196F3"&gt;
+            &lt;MenuItem Header="Dashboard" Command="{Binding NavigateCommand}" 
+                      CommandParameter="Dashboard"/&gt;
+            &lt;MenuItem Header="Transactions" Command="{Binding NavigateCommand}" 
+                      CommandParameter="Transactions"/&gt;
+            &lt;MenuItem Header="Budget" Command="{Binding NavigateCommand}" 
+                      CommandParameter="Budget"/&gt;
+            &lt;MenuItem Header="Reports" Command="{Binding NavigateCommand}" 
+                      CommandParameter="Reports"/&gt;
+        &lt;/Menu&gt;
+        
+        &lt;!-- Main Content Area --&gt;
+        &lt;ContentControl Grid.Row="1" Content="{Binding CurrentViewModel}"/&gt;
+    &lt;/Grid&gt;
+&lt;/Window&gt;</code></pre>
+                        <div class="code-description">
+                            Main application window with navigation menu and content area using MVVM pattern.
+                        </div>
+                    </div>
+
+                    <div class="code-block">
+                        <h3>TransactionViewModel.cs - Business Logic</h3>
+                        <pre><code>public class TransactionViewModel : ObservableObject
+{
+    private readonly ITransactionService _transactionService;
+    private ObservableCollection&lt;Transaction&gt; _transactions;
+    
+    public ObservableCollection&lt;Transaction&gt; Transactions
+    {
+        get =&gt; _transactions;
+        set =&gt; SetProperty(ref _transactions, value);
+    }
+    
+    public ICommand AddTransactionCommand { get; }
+    public ICommand DeleteTransactionCommand { get; }
+    public ICommand ExportCommand { get; }
+    
+    public TransactionViewModel(ITransactionService transactionService)
+    {
+        _transactionService = transactionService;
+        AddTransactionCommand = new RelayCommand(AddTransaction);
+        DeleteTransactionCommand = new RelayCommand&lt;Transaction&gt;(DeleteTransaction);
+        ExportCommand = new RelayCommand(ExportData);
+        
+        LoadTransactions();
+    }
+    
+    private async void LoadTransactions()
+    {
+        var transactions = await _transactionService.GetTransactionsAsync();
+        Transactions = new ObservableCollection&lt;Transaction&gt;(transactions);
+    }
+    
+    private async void AddTransaction()
+    {
+        // Implementation for adding new transaction
+    }
+}</code></pre>
+                        <div class="code-description">
+                            ViewModel implementing MVVM pattern with data binding and command handling.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Links -->
+                <div class="project-section">
+                    <h2>Project Links</h2>
+                    <p>Access the project source code and related resources:</p>
+                    <div class="project-links">
+                        <a href="#" class="btn" target="_blank">
+                            <i class="fab fa-github"></i>
+                            GitHub Repository
+                        </a>
+                        <a href="fintrackwebapi-dotnet-project.html" class="btn">
+                            <i class="fas fa-server"></i>
+                            FinTrackWebApi (Backend)
+                        </a>
+                        <a href="#" class="btn" target="_blank">
+                            <i class="fas fa-download"></i>
+                            Download Application
+                        </a>
+                    </div>
+                </div>
+
+                <!-- System Requirements -->
+                <div class="project-section">
+                    <h2>System Requirements</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Minimum Requirements</th>
+                                <th>Recommended</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Operating System</td>
+                                <td>Windows 10 (Version 1903)</td>
+                                <td>Windows 11</td>
+                            </tr>
+                            <tr>
+                                <td>.NET Runtime</td>
+                                <td>.NET 6.0 Desktop Runtime</td>
+                                <td>.NET 6.0 Desktop Runtime</td>
+                            </tr>
+                            <tr>
+                                <td>RAM</td>
+                                <td>4 GB</td>
+                                <td>8 GB or higher</td>
+                            </tr>
+                            <tr>
+                                <td>Storage</td>
+                                <td>500 MB free space</td>
+                                <td>1 GB free space</td>
+                            </tr>
+                            <tr>
+                                <td>Display</td>
+                                <td>1024x768 resolution</td>
+                                <td>1920x1080 or higher</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Future Enhancements -->
+                <div class="project-section">
+                    <h2>Future Enhancements</h2>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-mobile-alt"></i> Mobile companion app development</li>
+                        <li><i class="fas fa-robot"></i> AI-powered spending analysis and recommendations</li>
+                        <li><i class="fas fa-share-alt"></i> Multi-user support with role-based access</li>
+                        <li><i class="fas fa-calendar-alt"></i> Advanced calendar integration</li>
+                        <li><i class="fas fa-chart-pie"></i> Enhanced reporting and analytics</li>
+                        <li><i class="fas fa-sync-alt"></i> Real-time synchronization improvements</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Enes Efe Tokta. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -12,82 +12,103 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .education-card {
-            background: #fff;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
         }
         .education-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
+            border-color: var(--neon-blue);
+            box-shadow: 0 8px 32px rgba(88, 166, 255, 0.2);
         }
         .education-header {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 1.5rem;
         }
         .education-icon {
-            font-size: 2em;
-            margin-right: 15px;
-            color: #4a90e2;
+            font-size: 2.5em;
+            margin-right: 1.5rem;
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
         }
         .education-content {
             flex: 1;
         }
         .education-title {
-            font-size: 1.2em;
+            font-size: 1.3em;
             font-weight: 600;
-            margin-bottom: 5px;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
         }
         .education-subtitle {
-            color: #666;
-            font-size: 0.9em;
+            color: var(--neon-green);
+            font-size: 1em;
+            font-weight: 500;
         }
         .education-date {
-            color: #888;
-            font-size: 0.8em;
+            color: var(--text-light);
+            font-size: 0.9em;
         }
         .certification-badge {
             display: inline-block;
-            padding: 5px 10px;
-            background: #f0f0f0;
-            border-radius: 15px;
-            margin: 5px;
-            font-size: 0.9em;
+            padding: 0.5rem 1rem;
+            background: var(--light-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            margin: 0.25rem;
+            font-size: 0.85em;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+        .certification-badge:hover {
+            border-color: var(--neon-green);
+            color: var(--neon-green);
+            box-shadow: 0 2px 8px rgba(126, 231, 135, 0.2);
         }
         .certification-image {
             width: 100%;
             max-width: 300px;
             height: auto;
-            border-radius: 8px;
-            margin: 15px 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease;
+            border: 1px solid var(--border-color);
         }
         .certification-image:hover {
             transform: scale(1.02);
+            box-shadow: 0 8px 24px rgba(88, 166, 255, 0.2);
         }
         .certification-links {
-            margin-top: 15px;
+            margin-top: 1.5rem;
         }
         .certification-links a {
             display: inline-flex;
             align-items: center;
-            margin-right: 15px;
-            color: #4a90e2;
+            margin-right: 1.5rem;
+            color: var(--neon-blue);
             text-decoration: none;
             font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
         }
         .certification-links a:hover {
-            text-decoration: underline;
+            background: var(--hover-bg);
+            color: var(--neon-blue);
+            text-shadow: 0 0 8px rgba(88, 166, 255, 0.6);
         }
         .certification-links i {
-            margin-right: 5px;
+            margin-right: 0.5rem;
         }
         .timeline {
             position: relative;
-            padding-left: 30px;
+            padding-left: 2rem;
         }
         .timeline::before {
             content: '';
@@ -96,22 +117,23 @@
             top: 0;
             bottom: 0;
             width: 2px;
-            background: #e0e0e0;
+            background: linear-gradient(180deg, var(--neon-blue), var(--neon-green));
         }
         .timeline-item {
             position: relative;
-            margin-bottom: 30px;
+            margin-bottom: 2rem;
         }
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -34px;
+            left: -2.5rem;
             top: 0;
-            width: 10px;
-            height: 10px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
-            background: #4a90e2;
-            border: 2px solid #fff;
+            background: var(--neon-green);
+            border: 3px solid var(--card-bg);
+            box-shadow: 0 0 10px rgba(126, 231, 135, 0.5);
         }
     </style>
 </head>
@@ -321,7 +343,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>© 2024 Enes Efe Tokta. All rights reserved.</p>
+            <p>© 2025 Enes Efe Tokta. All rights reserved.</p>
         </div>
     </footer>
 
