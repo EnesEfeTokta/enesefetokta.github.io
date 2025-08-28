@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FinTrackWebApi - Financial Management API | Enes Efe Tokta</title>
+    <title>FinTrack - Microservices Financial API | Enes Efe Tokta</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,30 +13,24 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
     <style>
         .code-block {
-            background-color: #f5f5f5;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            padding: 15px;
-            margin-top: 15px;
+            background-color: #2d2d2d;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
             overflow-x: auto;
+            border: 1px solid #444;
         }
         .code-block pre {
-            background-color: #eee;
-            padding: 10px;
-            border-radius: 3px;
+            background: none;
+            padding: 0;
+            margin: 0;
             white-space: pre-wrap;
             word-wrap: break-word;
         }
-        .screenshots img {
-            max-width: 250px;
-            height: auto;
-            margin: 5px;
-            border: 1px solid #eee;
-            border-radius: 4px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .tech-list i, .feature-list i {
-            margin-right: 8px;
+        .feature-list i, .tech-list i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
         }
         .project-links .btn {
             margin-right: 10px;
@@ -56,9 +50,7 @@
                 <li><a href="index.html#skills">Skills</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
         </div>
     </nav>
 
@@ -66,14 +58,16 @@
     <section class="project-header">
         <div class="container">
             <div class="project-header-content">
-                <i class="fas fa-chart-line project-icon"></i>
-                <h1>FinTrackWebApi</h1>
-                <p class="project-subtitle">A Comprehensive Financial Management RESTful API</p>
-                <div style="margin-top: 15px;">
-                    <img src="https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white" alt=".NET Badge">
-                    <img src="https://img.shields.io/badge/ASP.NET%20Core-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" alt="ASP.NET Core Badge">
-                    <img src="https://img.shields.io/badge/Entity%20Framework-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" alt="Entity Framework Badge">
-                    <img src="https://img.shields.io/badge/AI-FF6B6B?style=for-the-badge&logo=openai&logoColor=white" alt="AI Badge">
+                <i class="fas fa-coins project-icon"></i>
+                <h1>FinTrack Platform</h1>
+                <p class="project-subtitle">A Next-Generation Financial Management Platform with a Microservices Architecture</p>
+                <div style="margin-top: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+                    <img src="https://img.shields.io/badge/.NET-8.0-5C2D91?style=for-the-badge&logo=.net&logoColor=white" alt=".NET 8 Badge">
+                    <img src="https://img.shields.io/badge/ASP.NET Core-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" alt="ASP.NET Core Badge">
+                    <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python Badge">
+                    <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker Badge">
+                    <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL Badge">
+                    <img src="https://img.shields.io/badge/Stripe-626CD9?style=for-the-badge&logo=stripe&logoColor=white" alt="Stripe Badge">
                 </div>
             </div>
         </div>
@@ -85,128 +79,118 @@
             <div class="project-content">
                 <div class="project-section">
                     <h2>About the Project</h2>
-                    <p>FinTrackWebApi is a robust financial management system that provides comprehensive tools for personal and business financial tracking. Built with ASP.NET Core, it offers a secure and scalable solution for managing finances with modern features and AI integration.</p>
+                    <p>FinTrack is a comprehensive Software as a Service (SaaS) platform designed to empower users with full control over their financial lives. Built on a modern **microservices architecture**, the system features a core .NET 8 API for business logic, a Python/FastAPI service for AI operations, and a complete DevOps stack for monitoring and deployment. It offers a secure, scalable, and feature-rich foundation for next-generation financial applications.</p>
                 </div>
 
                 <div class="project-section">
                     <h2>Key Features</h2>
                     <ul class="feature-list">
-                        <li><i class="fas fa-chart-line"></i> Comprehensive expense tracking with detailed analytics</li>
-                        <li><i class="fas fa-wallet"></i> Income and expense management with real-time updates</li>
-                        <li><i class="fas fa-piggy-bank"></i> Smart budget planning and recommendations</li>
-                        <li><i class="fas fa-university"></i> Multi-account management and transaction tracking</li>
-                        <li><i class="fas fa-robot"></i> AI-powered chatbot for financial assistance</li>
-                        <li><i class="fas fa-handshake"></i> Secure lending and borrowing system</li>
-                        <li><i class="fas fa-chart-pie"></i> Advanced financial reporting and analytics</li>
-                        <li><i class="fas fa-bell"></i> Customizable notifications and alerts</li>
-                        <li><i class="fas fa-shield-alt"></i> Role-based access control and security</li>
-                        <li><i class="fas fa-sync"></i> Real-time data synchronization</li>
+                        <li><i class="fas fa-users-cog"></i> Robust User Management with a two-step OTP verification</li>
+                        <li><i class="fas fa-wallet"></i> Centralized management of multiple financial accounts (bank, cash, etc.)</li>
+                        <li><i class="fas fa-tasks"></i> Strategic Budget Management with dynamic category support</li>
+                        <li><i class="fas fa-file-invoice-dollar"></i> Detailed Income/Expense Transaction Tracking</li>
+                        <li><i class="fas fa-file-pdf"></i> Multi-Format Reporting (PDF, Excel, Word, XML, Markdown)</li>
+                        <li><i class="fas fa-video"></i> Secure Debt System (GBS) with Video Verification & AES Encryption</li>
+                        <li><i class="fas fa-robot"></i> AI-Powered Financial Assistant (FinBot) with Ollama & Mistral 7B</li>
+                        <li><i class="fab fa-stripe"></i> Subscription & Payment Management via Stripe Integration</li>
+                        <li><i class="fas fa-chart-bar"></i> Real-time System Monitoring with Prometheus & Grafana</li>
+                        <li><i class="fas fa-shield-alt"></i> Granular Role-Based Access Control (RBAC)</li>
                     </ul>
                 </div>
 
                 <div class="project-section">
                     <h2>Technologies Used</h2>
                     <ul class="tech-list">
-                        <li><i class="fab fa-microsoft"></i> ASP.NET Core 7.0+</li>
-                        <li><i class="fas fa-database"></i> Entity Framework Core</li>
-                        <li><i class="fas fa-server"></i> PostgreSQL</li>
-                        <li><i class="fas fa-memory"></i> Redis Cache</li>
-                        <li><i class="fas fa-shield-alt"></i> JWT Authentication</li>
-                        <li><i class="fas fa-network-wired"></i> SignalR for Real-time Updates</li>
-                        <li><i class="fas fa-code"></i> C# Programming Language</li>
+                        <li><i class="fab fa-windows"></i> Backend: .NET 8 (ASP.NET Core), Python 3.10 (FastAPI)</li>
+                        <li><i class="fas fa-database"></i> **Database:** PostgreSQL, Entity Framework Core 8</li>
+                        <li><i class="fab fa-docker"></i> DevOps: Docker, Docker Compose</li>
+                        <li><i class="fas fa-chart-line"></i> Monitoring: Prometheus, Grafana, cAdvisor</li>
+                        <li><i class="fas fa-shield-alt"></i> Authentication: JWT (JSON Web Tokens), ASP.NET Core Identity</li>
+                        <li><i class="fas fa-brain"></i> AI/ML: Ollama, Mistral 7B Language Model</li>
+                        <li><i class="fab fa-stripe-s"></i> Payments: Stripe SDK & Webhooks</li>
+                        <li><i class="fas fa-code"></i> Languages: C# 12, Python 3.10</li>
                     </ul>
                 </div>
 
                 <div class="project-section">
-                    <h2>API Endpoints</h2>
+                    <h2>API Endpoints Showcase</h2>
                     <div class="code-block">
                         <pre><code class="language-http">
-# Authentication
-POST /api/auth/login
-POST /api/auth/register
-POST /api/auth/refresh-token
+# User Authentication (OTP & JWT)
+POST /UserAuth/initiate-registration
+POST /UserAuth/verify-otp-and-register
+POST /UserAuth/login
 
-# Financial Management
-GET    /api/transactions
-POST   /api/transactions
-PUT    /api/transactions/{id}
-DELETE /api/transactions/{id}
+# User Profile Data Hub
+GET /User
 
-# Budget Management
-GET    /api/budgets
-POST   /api/budgets
-PUT    /api/budgets/{id}
-DELETE /api/budgets/{id}
+# Core Financial Management
+GET    /Accounts
+POST   /Transactions
+GET    /Budgets
 
-# Account Management
-GET    /api/accounts
-POST   /api/accounts
-PUT    /api/accounts/{id}
-DELETE /api/accounts/{id}
+# Secure Debt System (GBS)
+POST   /Debt/create-debt-offer
+POST   /Debt/respond-to-offer/{debtId}
+POST   /Videos/user-upload-video
+GET    /Videos/video-metadata-stream/{videoId}?key=...
 
-# AI Chatbot
-POST   /api/chatbot/query
-GET    /api/chatbot/history
+# AI Chat Service (Proxy to Python)
+POST   /Chat/send
 
-# Lending System
-GET    /api/loans
-POST   /api/loans
-PUT    /api/loans/{id}
-DELETE /api/loans/{id}
+# Reporting & Subscriptions
+POST   /Reports/generate
+POST   /Membership/create-checkout-session
+POST   /api/stripe/webhook
                         </code></pre>
                     </div>
                 </div>
 
                 <div class="project-section">
-                    <h2>Database Schema</h2>
+                    <h2>Database Architecture Snippet</h2>
                     <div class="code-block">
                         <pre><code class="language-sql">
--- Core Tables
-CREATE TABLE Users (
-    Id INT PRIMARY KEY,
-    Username NVARCHAR(50),
-    Email NVARCHAR(100),
-    PasswordHash NVARCHAR(MAX),
-    CreatedAt DATETIME
+-- Simplified schema using PostgreSQL syntax
+-- NOTE: The system uses a dual-database strategy:
+-- 1. MainDB: For application data.
+-- 2. LogDB: For auditing all data modifications.
+
+CREATE TABLE "AppUser" (
+    "Id" TEXT PRIMARY KEY,
+    "UserName" TEXT,
+    "Email" TEXT
 );
 
-CREATE TABLE Accounts (
-    Id INT PRIMARY KEY,
-    UserId INT,
-    Name NVARCHAR(50),
-    Balance DECIMAL(18,2),
-    Currency NVARCHAR(3),
-    CreatedAt DATETIME
+CREATE TABLE "Accounts" (
+    "Id" SERIAL PRIMARY KEY,
+    "UserId" TEXT REFERENCES "AppUser"("Id"),
+    "AccountName" TEXT NOT NULL,
+    "Balance" DECIMAL(18,2) DEFAULT 0.0,
+    "Currency" TEXT NOT NULL
 );
 
-CREATE TABLE Transactions (
-    Id INT PRIMARY KEY,
-    AccountId INT,
-    Amount DECIMAL(18,2),
-    Type NVARCHAR(20),
-    Category NVARCHAR(50),
-    Description NVARCHAR(MAX),
-    Date DATETIME
+CREATE TABLE "Transactions" (
+    "Id" SERIAL PRIMARY KEY,
+    "AccountId" INT REFERENCES "Accounts"("Id"),
+    "Amount" DECIMAL(18,2) NOT NULL,
+    "TransactionDateUtc" TIMESTAMPTZ NOT NULL
 );
 
-CREATE TABLE Budgets (
-    Id INT PRIMARY KEY,
-    UserId INT,
-    Category NVARCHAR(50),
-    Amount DECIMAL(18,2),
-    Period NVARCHAR(20),
-    StartDate DATETIME,
-    EndDate DATETIME
+CREATE TABLE "Debts" (
+    "Id" SERIAL PRIMARY KEY,
+    "LenderId" TEXT REFERENCES "AppUser"("Id"),
+    "BorrowerId" TEXT REFERENCES "AppUser"("Id"),
+    "Amount" DECIMAL(18,2) NOT NULL,
+    "Status" TEXT NOT NULL,
+    "DueDateUtc" TIMESTAMPTZ NOT NULL
 );
 
-CREATE TABLE Loans (
-    Id INT PRIMARY KEY,
-    LenderId INT,
-    BorrowerId INT,
-    Amount DECIMAL(18,2),
-    InterestRate DECIMAL(5,2),
-    Status NVARCHAR(20),
-    DueDate DATETIME
+CREATE TABLE "VideoMetadatas" (
+    "Id" SERIAL PRIMARY KEY,
+    "DebtId" INT REFERENCES "Debts"("Id"),
+    "EncryptedFilePath" TEXT,
+    "EncryptionKeyHash" TEXT, -- Key is never stored, only its hash
+    "Status" TEXT NOT NULL
 );
                         </code></pre>
                     </div>
@@ -215,12 +199,12 @@ CREATE TABLE Loans (
                 <div class="project-section">
                     <h2>Security Features</h2>
                     <ul class="feature-list">
-                        <li><i class="fas fa-key"></i> JWT-based authentication with refresh tokens</li>
-                        <li><i class="fas fa-user-shield"></i> Role-based access control (RBAC)</li>
-                        <li><i class="fas fa-lock"></i> Data encryption at rest and in transit</li>
-                        <li><i class="fas fa-shield-alt"></i> Input validation and sanitization</li>
-                        <li><i class="fas fa-history"></i> Audit logging for all operations</li>
-                        <li><i class="fas fa-clock"></i> Rate limiting and request throttling</li>
+                        <li><i class="fas fa-key"></i> JWT-based Authentication with a secure OTP Email Verification flow</li>
+                        <li><i class="fas fa-user-shield"></i> Robust Role-Based Access Control (User, Admin, VideoApproval)</li>
+                        <li><i class="fas fa-lock"></i> AES Encryption for sensitive GBS video evidence</li>
+                        <li><i class="fas fa-file-signature"></i> Secure Webhook Handling for Stripe payments with signature verification</li>
+                        <li><i class="fas fa-history"></i> Comprehensive Audit Logging for all CUD operations into a separate database</li>
+                        <li><i class="fas fa-shield-virus"></i> Path Traversal protection for file access endpoints</li>
                     </ul>
                 </div>
 
@@ -245,7 +229,7 @@ CREATE TABLE Loans (
     <footer>
         <div class="container">
             <p>© 2024 Enes Efe Tokta. All rights reserved.</p>
-            <p style="font-size: 0.8em; margin-top: 5px;"><em>Disclaimer: FinTrackWebApi is a personal project.</em></p>
+            <p style="font-size: 0.8em; margin-top: 5px;"><em>Disclaimer: FinTrack is a personal portfolio project.</em></p>
         </div>
     </footer>
 
@@ -253,4 +237,4 @@ CREATE TABLE Loans (
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
 </body>
-</html> 
+</html>
