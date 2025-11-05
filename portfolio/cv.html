@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +13,9 @@
     <meta name="description" content="Enes Efe Tokta - Junior Software Developer CV">
 </head>
 <body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
@@ -41,7 +44,7 @@
                         <h1>Enes Efe Tokta</h1>
                         <h2>Junior Software Developer</h2>
                         <div class="cv-contact">
-                            <p><i class="fas fa-map-marker-alt"></i> Ankara, Turkey</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Ankara, Turkiye</p>
                             <p><i class="fas fa-envelope"></i> enesefetokta009@gmail.com</p>
                             <p><i class="fas fa-phone"></i> +90-541-586-9564</p>
                         </div>
@@ -53,6 +56,10 @@
                             <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank" class="social-link">
                                 <i class="fab fa-linkedin"></i>
                                 <span>LinkedIn</span>
+                            </a>
+                            <a href="index.html" target="_blank" class="social-link">
+                                <i class="fas fa-briefcase"></i>
+                                <span>Portfolio</span>
                             </a>
                         </div>
                     </div>
@@ -78,7 +85,7 @@
                 <!-- Profile Section -->
                 <div class="cv-section">
                     <h3><i class="fas fa-user"></i> Profile</h3>
-                    <p>Motivated software developer with experience delivering SaaS applications. Skilled in .NET Core, WPF, and Docker. Focused on building secure, scalable solutions and continuous learning.</p>
+                    <p>Innovative and detail-oriented Software Developer with 4+ years of .NET and 5+ years of Unity experience. Strong background in building scalable SaaS and desktop solutions with AI integration. Passionate about solving complex problems, improving user experience, and continuously learning new technologies.</p>
                 </div>
 
                 <!-- Skills Section -->
@@ -87,7 +94,7 @@
                     <div class="skills-categories">
                         <div class="skill-category">
                             <h4>Languages & Frameworks</h4>
-                            <p>C#, ASP.NET Core, WPF, Python</p>
+                            <p>C#, ASP.NET Core, WPF, React, Python</p>
                         </div>
                         <div class="skill-category">
                             <h4>Databases</h4>
@@ -95,19 +102,19 @@
                         </div>
                         <div class="skill-category">
                             <h4>Tools & DevOps</h4>
-                            <p>Docker, Git, GitHub Actions, Swagger, Postman</p>
+                            <p>Docker, GitHub Actions, Prometheus, Grafana, Postman</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Cloud & APIs</h4>
+                            <p>AWS, Azure, Stripe API, Twilio API, REST, JWT</p>
                         </div>
                         <div class="skill-category">
                             <h4>Other</h4>
-                            <p>JWT, REST API, Stripe API, MVC, MVVM</p>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Familiar With</h4>
-                            <p>Blazor, Kotlin, Firebase, MongoDB, SQL Server</p>
+                            <p>MVC, MVVM, Microservices, AI Integration</p>
                         </div>
                         <div class="skill-category">
                             <h4>Soft Skills</h4>
-                            <p>Teamwork, Communication, Problem Solving</p>
+                            <p>Leadership, Empathy, Collaboration, Problem-Solving</p>
                         </div>
                     </div>
                 </div>
@@ -115,40 +122,75 @@
                 <!-- Experience Section -->
                 <div class="cv-section">
                     <h3><i class="fas fa-briefcase"></i> Experience</h3>
+                    
                     <div class="experience-item">
                         <div class="experience-header">
-                            <h4>Freelance Software Developer</h4>
-                            <span class="experience-period">2024 – Present</span>
-                            <span class="experience-location">Remote</span>
+                            <h4>Software Intern</h4>
+                            <span class="experience-period">August 2025</span>
+                            <span class="experience-location">Private Software Company</span>
                         </div>
                         <ul>
-                            <li>Developed and delivered multiple SaaS and desktop applications.</li>
-                            <li>Specialized in .NET Core, WPF, and REST API integration.</li>
+                            <li>Developed and tested internal API modules for a .NET-based ERP system</li>
+                            <li>Participated in code review and debugging sessions for frontend integration</li>
                         </ul>
-                        
-                        <h5>Selected Projects:</h5>
-                        
-                        <div class="project-item">
-                            <h6>FinTrack - Full-stack Financial Management SaaS</h6>
-                            <p class="project-stack"><strong>Stack:</strong> ASP.NET Core, WPF, Docker, PostgreSQL, JWT, Stripe, SQLite, Python</p>
-                            <ul>
-                                <li>Building a full-stack platform to manage personal finances securely.</li>
-                                <li>Integrated Stripe payments and JWT authentication.</li>
-                                <li>Developed a budgeting chatbot using Python and Gemini API.</li>
-                                <li>Tested with 10 users during beta; processed 150+ transactions.</li>
-                            </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h4>Software Intern</h4>
+                            <span class="experience-period">July 2025</span>
+                            <span class="experience-location">T.C. Ministry of Environment, Urbanization and Climate Change</span>
                         </div>
-                        
-                        <div class="project-item">
-                            <h6>Weather Zero Plus - Advanced Weather Alert & Contact System</h6>
-                            <p class="project-stack"><strong>Stack:</strong> WPF, Supabase, SQL, Twilio, SendGrid, Encryption</p>
-                            <ul>
-                                <li>Created a WPF desktop app for real-time weather alerts.</li>
-                                <li>Integrated Twilio and SendGrid for automated notifications.</li>
-                                <li>Applied AES encryption to secure sensitive data.</li>
-                                <li>Tested by 5 users; delivered 50+ notifications in pilot phase.</li>
-                            </ul>
-                        </div>
+                        <ul>
+                            <li>Contributed to internal automation tools using ASP.NET Core and PostgreSQL</li>
+                            <li>Collaborated in a small development team to enhance performance and data security</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Projects Section -->
+                <div class="cv-section">
+                    <h3><i class="fas fa-laptop-code"></i> Projects</h3>
+                    
+                    <div class="project-item">
+                        <h6>VidSync - AI-Powered Video Meeting Platform</h6>
+                        <p class="project-stack"><strong>Stack:</strong> ASP.NET Core, React, PostgreSQL, Redis, Docker, Cloudflare, Ollama, Mistral 7B</p>
+                        <ul>
+                            <li>Built an AI-powered video meeting platform with real-time collaboration features</li>
+                            <li>Integrated Mistral 7B AI model for intelligent meeting assistance</li>
+                            <li>Implemented Redis caching and PostgreSQL for optimal performance</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-item">
+                        <h6>FinTrack - Financial Management SaaS</h6>
+                        <p class="project-stack"><strong>Stack:</strong> ASP.NET Core, WPF, PostgreSQL, Redis, Prometheus, Grafana, Stripe, Gemini API</p>
+                        <ul>
+                            <li>Building a full-stack platform to manage personal finances securely</li>
+                            <li>Integrated Stripe payments and JWT authentication</li>
+                            <li>Developed a budgeting chatbot using Gemini API for financial advice</li>
+                            <li>Implemented monitoring with Prometheus and Grafana</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-item">
+                        <h6>WeatherZeroPlus - Desktop Weather & Alert Application</h6>
+                        <p class="project-stack"><strong>Stack:</strong> WPF, Supabase, Twilio SendGrid</p>
+                        <ul>
+                            <li>Created a WPF desktop app for real-time weather alerts</li>
+                            <li>Integrated Twilio and SendGrid for automated notifications</li>
+                            <li>Applied AES encryption to secure sensitive data</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-item">
+                        <h6>Fishing - Unity Mobile Game</h6>
+                        <p class="project-stack"><strong>Stack:</strong> Unity, C#</p>
+                        <ul>
+                            <li>Developed a Unity-based mobile game with dynamic difficulty system</li>
+                            <li>Implemented rewards and customization features</li>
+                            <li>Designed engaging gameplay mechanics for mobile platforms</li>
+                        </ul>
                     </div>
                 </div>
 
@@ -156,22 +198,42 @@
                 <div class="cv-section">
                     <h3><i class="fas fa-graduation-cap"></i> Education</h3>
                     <div class="education-item">
-                        <h4>Information Systems and Technologies</h4>
+                        <h4>BSc, Information Systems and Technologies</h4>
                         <p>Atatürk University, Erzurum</p>
-                        <span class="education-period">2023 - 2027 (Expected)</span>
+                        <span class="education-period">2023 - 2027 (Expected) | GPA: 3.2/4.0</span>
                     </div>
                 </div>
 
-                <!-- Certificates Section -->
+                <!-- Certificates & Achievements Section -->
                 <div class="cv-section">
-                    <h3><i class="fas fa-certificate"></i> Certificates</h3>
+                    <h3><i class="fas fa-certificate"></i> Certificates & Achievements</h3>
                     <div class="certificate-item">
-                        <h4>Google Game and App Academy Finalist</h4>
-                        <p>Top 7 out of 1,000 competitors</p>
+                        <h4><i class="fab fa-aws"></i> AWS Cloud Practitioner Certificate</h4>
+                        <p>2025</p>
                     </div>
                     <div class="certificate-item">
-                        <h4>Project Management Certificate</h4>
-                        <p>Coursera (2024)</p>
+                        <h4><i class="fab fa-microsoft"></i> Microsoft Full Stack Developer Certificate</h4>
+                        <p>2025</p>
+                    </div>
+                    <div class="certificate-item">
+                        <h4><i class="fab fa-react"></i> Meta Frontend Developer Certificate</h4>
+                        <p>2025</p>
+                    </div>
+                    <div class="certificate-item">
+                        <h4><i class="fab fa-microsoft"></i> Microsoft Azure AZ-900 Preparation</h4>
+                        <p>2025</p>
+                    </div>
+                    <div class="certificate-item">
+                        <h4><i class="fab fa-google"></i> Google Project Management Certificate</h4>
+                        <p>2024</p>
+                    </div>
+                    <div class="certificate-item">
+                        <h4><i class="fas fa-trophy"></i> Google Game and App Academy Finalist – Top 7 in 3000</h4>
+                        <p>2024</p>
+                    </div>
+                    <div class="certificate-item">
+                        <h4><i class="fas fa-plane"></i> KODLAĞRI Estonian Tech Visit</h4>
+                        <p>Represented Türkiye in Skype & TalTech meetings</p>
                     </div>
                 </div>
 
@@ -191,9 +253,21 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer style="background: linear-gradient(135deg, rgba(13, 17, 23, 0.98) 0%, rgba(1, 4, 9, 0.98) 100%); color: var(--text-color); padding: 3rem 0; text-align: center; border-top: 1px solid var(--border-color);">
         <div class="container">
-            <p>© 2025 Enes Efe Tokta. All rights reserved.</p>
+            <p style="font-size: 1.1rem; margin-bottom: 1rem;">© 2025 Enes Efe Tokta. All rights reserved.</p>
+            <p style="color: var(--text-light); font-size: 0.95rem;">
+                <i class="fas fa-code" style="color: var(--neon-blue);"></i> 
+                Made with passion and creativity
+            </p>
+            <div style="margin-top: 1.5rem; display: flex; gap: 1.5rem; justify-content: center; align-items: center;">
+                <a href="https://github.com/EnesEfeTokta" target="_blank" style="color: var(--text-light); transition: var(--transition); text-decoration: none;">
+                    <i class="fab fa-github" style="font-size: 1.5rem;"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank" style="color: var(--text-light); transition: var(--transition); text-decoration: none;">
+                    <i class="fab fa-linkedin" style="font-size: 1.5rem;"></i>
+                </a>
+            </div>
         </div>
     </footer>
 
