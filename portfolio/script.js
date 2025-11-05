@@ -187,25 +187,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Enhanced project card animations with 3D effect
+    // Enhanced project card animations (removed 3D effect, keeping simple hover)
     document.querySelectorAll('.project-card, .skill-item, .education-card').forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const rotateX = (y - centerY) / 10;
-            const rotateY = (centerX - x) / 10;
-            
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px) scale(1.02)`;
-        });
-        
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = '';
-        });
+        // Remove 3D mouse tracking effect
+        // Cards will use CSS hover effects only
     });
 
     // Add loading animation
