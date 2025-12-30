@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,19 +9,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">Enes Efe Tokta</a>
             <ul class="nav-links">
-                <li><a href="index.html#home">Home Page</a></li>
-                <li><a href="index.html#about">About me</a></li>
-                <li><a href="index.html#projects">Projects</a></li>
-                <li><a href="index.html#skills">Capabilities</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#work" style="color: var(--text-main);">Work</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="cv.html">Resume</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
             <button class="mobile-menu-btn">
@@ -29,128 +31,92 @@
         </div>
     </nav>
 
-    <!-- Projects Header -->
-    <section class="projects-header">
+    <section class="section-padding" style="padding-top: 120px;">
         <div class="container">
-            <div class="projects-header-content">
-                <i class="fab fa-microsoft projects-icon"></i>
-                <h1>.NET Projects</h1>
-                <p class="projects-subtitle">.NET applications and APIs I developed</p>
-            </div>
-        </div>
-    </section>
+            <h1 style="font-size: 3rem; margin-bottom: 20px;">.NET Projects</h1>
+            <p style="color: var(--text-secondary); margin-bottom: 60px; max-width: 600px;">
+                Robust enterprise applications and API solutions built with the Microsoft technology stack.
+            </p>
 
-    <!-- Projects List -->
-    <section class="projects-list">
-        <div class="container">
-            <div class="projects-grid">
+            <div class="bento-grid">
 
                 <!-- VidSync -->
-                <div class="project-card">
-                    <div class="project-card-content">
-                        <i class="fas fa-video project-icon"></i>
-                        <h3>VidSync</h3>
-                        <p>AI-powered video meeting platform with real-time collaboration features, built with ASP.NET Core backend and React frontend. Integrated with Mistral 7B AI model for intelligent meeting assistance, transcription, and smart recommendations.</p>
-                        <div class="project-tags">
-                            <span class="tag">.NET</span>
-                            <span class="tag">ASP.NET Core</span>
-                            <span class="tag">React</span>
-                            <span class="tag">PostgreSQL</span>
-                            <span class="tag">Redis</span>
-                            <span class="tag">AI Integration</span>
-                            <span class="tag">WebRTC</span>
-                            <span class="tag">Docker</span>
-                        </div>
-                        <a href="vidsync-dotnet-project.html" class="btn">
-                            <i class="fas fa-external-link-alt"></i>
-                            View Details
-                        </a>
+                <div class="bento-item span-2">
+                    <i class="fas fa-video bento-icon"></i>
+                    <h3 class="bento-title">VidSync</h3>
+                    <p class="bento-text" style="margin-bottom: 16px;">
+                        AI-powered video meeting platform with real-time collaboration. Integrated with Mistral 7B AI
+                        model for meeting assistance.
+                    </p>
+                    <div class="skill-tags" style="margin-bottom: 24px;">
+                        <span class="skill-tag">ASP.NET Core</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">WebRTC</span>
+                        <span class="skill-tag">Docker</span>
                     </div>
+                    <a href="vidsync-dotnet-project.html" class="btn btn-secondary" style="width: fit-content;">View
+                        Details</a>
                 </div>
 
                 <!-- FinTrackWebApi -->
-                <div class="project-card">
-                    <div class="project-card-content">
-                        <i class="fab fa-microsoft project-icon"></i>
-                        <h3>FinTrackWebApi</h3>
-                        <p>A comprehensive financial management RESTful API featuring expense tracking, income/expense management, budget planning, account management, reporting, AI-powered chatbot assistance, and secure lending/borrowing system.</p>
-                        <div class="project-tags">
-                            <span class="tag">.NET</span>
-                            <span class="tag">ASP.NET Core</span>
-                            <span class="tag">REST API</span>
-                            <span class="tag">Entity Framework</span>
-                            <span class="tag">AI Integration</span>
-                            <span class="tag">JWT Auth</span>
-                        </div>
-                        <a href="fintrackwebapi-dotnet-project.html" class="btn">
-                            <i class="fas fa-external-link-alt"></i>
-                            View Details
-                        </a>
+                <div class="bento-item span-2">
+                    <i class="fas fa-server bento-icon"></i>
+                    <h3 class="bento-title">FinTrack API</h3>
+                    <p class="bento-text" style="margin-bottom: 16px;">
+                        Comprehensive financial management RESTful API. Features expense tracking, budget planning, and
+                        AI chatbot.
+                    </p>
+                    <div class="skill-tags" style="margin-bottom: 24px;">
+                        <span class="skill-tag">REST API</span>
+                        <span class="skill-tag">Entity Framework</span>
+                        <span class="skill-tag">JWT Auth</span>
+                        <span class="skill-tag">AI Integration</span>
                     </div>
+                    <a href="fintrackwebapi-dotnet-project.html" class="btn btn-secondary"
+                        style="width: fit-content;">View Details</a>
                 </div>
 
-                <!-- FinTrack -->
-                <div class="project-card">
-                    <div class="project-card-content">
-                        <i class="fab fa-microsoft project-icon"></i>
-                        <h3>FinTrackForWindows</h3>
-                        <p>Windows desktop financial management application built with WPF and .NET. Features real-time dashboard, expense tracking, budget planning, and cloud synchronization with FinTrackWebApi backend.</p>
-                        <div class="project-tags">
-                            <span class="tag">.NET</span>
-                            <span class="tag">WPF</span>
-                            <span class="tag">C#</span>
-                            <span class="tag">MVVM</span>
-                            <span class="tag">Desktop App</span>
-                        </div>
-                        <a href="fintrack-dotnet-project.html" class="btn">
-                            <i class="fas fa-external-link-alt"></i>
-                            View Details
-                        </a>
+                <!-- FinTrack Windows -->
+                <div class="bento-item">
+                    <i class="fab fa-windows bento-icon"></i>
+                    <h3 class="bento-title">FinTrack Desktop</h3>
+                    <p class="bento-text" style="margin-bottom: 16px;">
+                        WPF desktop client for the FinTrack ecosystem.
+                    </p>
+                    <div class="skill-tags" style="margin-bottom: 24px;">
+                        <span class="skill-tag">WPF</span>
+                        <span class="skill-tag">MVVM</span>
+                        <span class="skill-tag">Sync</span>
                     </div>
+                    <a href="fintrack-dotnet-project.html" class="btn btn-secondary" style="width: fit-content;">View
+                        Details</a>
                 </div>
 
-                <!-- Hava Durumu -->
-                <div class="project-card">
-                    <div class="project-card-content">
-                        <i class="fab fa-microsoft project-icon"></i>
-                        <h3>Weather Zero Plus</h3>
-                        <p>A modern and user-friendly C# weather application for Windows.</p>
-                        <div class="project-tags">
-                            <span class="tag">.NET</span>
-                            <span class="tag">ASP.NET Core</span>
-                            <span class="tag">Supabase</span>
-                            <span class="tag">WPF</span>
-                            <span class="tag">C#</span>
-                        </div>
-                        <a href="weatherzeroplus-dotnet-project.html" class="btn">
-                            <i class="fas fa-external-link-alt"></i>
-                            View Details
-                        </a>
+                <!-- Weather Zero Plus -->
+                <div class="bento-item">
+                    <i class="fas fa-cloud-sun bento-icon"></i>
+                    <h3 class="bento-title">Weather Zero+</h3>
+                    <p class="bento-text" style="margin-bottom: 16px;">
+                        Modern weather dashboard application.
+                    </p>
+                    <div class="skill-tags" style="margin-bottom: 24px;">
+                        <span class="skill-tag">WPF</span>
+                        <span class="skill-tag">Supabase</span>
                     </div>
+                    <a href="weatherzeroplus-dotnet-project.html" class="btn btn-secondary"
+                        style="width: fit-content;">View Details</a>
                 </div>
+
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer style="background: linear-gradient(135deg, rgba(13, 17, 23, 0.98) 0%, rgba(1, 4, 9, 0.98) 100%); color: var(--text-color); padding: 3rem 0; text-align: center; border-top: 1px solid var(--border-color);">
-        <div class="container">
-            <p style="font-size: 1.1rem; margin-bottom: 1rem;">© 2025 Enes Efe Tokta. All rights reserved.</p>
-            <p style="color: var(--text-light); font-size: 0.95rem;">
-                <i class="fas fa-code" style="color: var(--neon-blue);"></i> 
-                Made with passion and creativity
-            </p>
-            <div style="margin-top: 1.5rem; display: flex; gap: 1.5rem; justify-content: center; align-items: center;">
-                <a href="https://github.com/EnesEfeTokta" target="_blank" style="color: var(--text-light); transition: var(--transition); text-decoration: none;">
-                    <i class="fab fa-github" style="font-size: 1.5rem;"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank" style="color: var(--text-light); transition: var(--transition); text-decoration: none;">
-                    <i class="fab fa-linkedin" style="font-size: 1.5rem;"></i>
-                </a>
-            </div>
+    <footer style="border-top: 1px solid var(--border-subtle); padding: 40px 0; margin-top: 40px;">
+        <div class="container" style="text-align: center;">
+            <p style="color: var(--text-muted);">© 2025 Enes Efe Tokta.</p>
         </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
-</html> 
+
+</html>

@@ -1,33 +1,31 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enes Efe Tokta - Software Developer</title>
+    <title>Enes Efe Tokta - Software Engineer</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <meta name="description" content="Unity Oyun Geliştirici, Android Uygulama Geliştirici ve .NET Geliştirici olarak profesyonel yazılım çözümleri sunuyorum.">
+    <meta name="description" content="Software Developer specializing in Unity and .NET solutions.">
 </head>
+
 <body>
-    <!-- Scroll Progress Indicator -->
-    <div class="scroll-progress" id="scrollProgress"></div>
-    
+
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
-            <h1 class="logo">Enes Efe Tokta</h1>
+            <a href="#" class="logo">Enes Efe Tokta</a>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About me</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#work">Work</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="education.html">Education</a></li>
-                <li><a href="cv.html">CV</a></li>
-                <li><a href="#contact">Contact me</a></li>
+                <li><a href="cv.html">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
             <button class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
@@ -36,190 +34,419 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-video-bg">
-            <video autoplay muted loop playsinline>
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-futuristic-devices-99786-large.mp4" type="video/mp4">
-            </video>
-            <div class="video-overlay"></div>
-        </div>
+    <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-avatar">
-                    <img src="https://avatars.githubusercontent.com/u/154990402?v=4" alt="Enes Efe Tokta" class="hero-profile-img">
-                    <div class="hero-text">
-                        <h1>Hello, My Name is <span>Enes Efe Tokta</span></h1>
-                        <p>Unity Game Developer | .NET Developer</p>
-                        <div class="scroll-indicator">
-                            <div class="scroll-text">Scroll to explore</div>
-                            <div class="scroll-arrow">
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                        </div>
+                <div class="hero-text">
+                    <h1>Building digital world with <span>Code & Creativity</span></h1>
+                    <p>I'm a Software Developer specializing in Unity Game Development and .NET Enterprise Solutions. I
+                        build scalable applications and immersive gaming experiences.</p>
+                    <div style="display: flex; gap: 16px;">
+                        <a href="#work" class="btn">View My Work <i class="fas fa-arrow-right"></i></a>
+                        <a href="#contact" class="btn btn-secondary">Contact Me</a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Hello! I am Enes Efe Tokta, a passionate software developer with expertise in game development and enterprise solutions. My journey in software development began during my university years, and I have been continuously evolving my skills ever since.</p>
-                    
-                    <p>I specialize in Unity game development and .NET enterprise solutions, focusing on creating high-quality, scalable applications. My approach combines technical excellence with user-centered design principles.</p>
-
-                    <p>With a strong foundation in C# programming and modern development practices, I enjoy tackling complex challenges and delivering innovative solutions that exceed expectations.</p>
-                </div>
-                
-                <div class="professional-info">
-                    <h3>Core Expertise</h3>
-                    <ul class="experience-list">
-                        <li>
-                            <i class="fas fa-gamepad"></i>
-                            <div>
-                                <h4>Unity Game Development</h4>
-                                <p>3D/2D game development, physics engine integration, C# scripting, and game optimization</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-server"></i>
-                            <div>
-                                <h4>.NET Development</h4>
-                                <p>ASP.NET Core, Entity Framework, WPF applications, RESTful APIs, and enterprise solutions</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-code"></i>
-                            <div>
-                                <h4>Software Architecture</h4>
-                                <p>Clean code practices, design patterns, database design, and scalable application development</p>
-                            </div>
-                        </li>
-                    </ul>
+                <div class="hero-image">
+                    <img src="https://avatars.githubusercontent.com/u/154990402?v=4" alt="Enes Efe Tokta"
+                        class="hero-profile-img">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <!-- Bento Grid Section (About & Skills Mixed) -->
+    <section id="about" class="section-padding">
         <div class="container">
-            <h2>My Projects</h2>
-            <div class="project-grid">
-                <!-- .NET Projects -->
-                <div class="project-card glass">
-                    <i class="fab fa-microsoft project-icon"></i>
-                    <h3>.Net Projects</h3>
-                    <p>Desktop applications and Web APIs with .Net.</p>
-                    <a href="dotnet-projects.html" class="btn">
-                        <i class="fas fa-external-link-alt"></i>
-                        Projects view
-                    </a>
+            <div class="bento-grid">
+
+                <!-- About Me - Large Block -->
+                <div class="bento-item span-2 row-2">
+                    <i class="fas fa-user-circle bento-icon"></i>
+                    <h3 class="bento-title">About Me</h3>
+                    <p class="bento-text" style="margin-bottom: 1rem;">
+                        Hello! I am Enes Efe Tokta, a passionate software developer based in Turkey. My journey began in
+                        university and has evolved into a professional career building complex systems.
+                    </p>
+                    <p class="bento-text">
+                        I bridge the gap between interactive entertainment (Unity) and robust enterprise software
+                        (.NET). Whether it's optimizationing game physics or architecting a REST API, I focus on clean
+                        code and user experience.
+                    </p>
                 </div>
-                <!-- Unity Projects -->
-                <div class="project-card glass">
-                    <i class="fab fa-unity project-icon"></i>
-                    <h3>Unity Projects</h3>
-                    <p>3D game development projects and more.</p>
-                    <a href="unity-projects.html" class="btn">
-                        <i class="fas fa-external-link-alt"></i>
-                        Projects view
-                    </a>
+
+                <!-- Core Stack - .NET -->
+                <div class="bento-item">
+                    <i class="fab fa-microsoft bento-icon"></i>
+                    <h3 class="bento-title">.NET Ecosystem</h3>
+                    <p class="bento-text">Enterprise-grade solutions.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">ASP.NET Core</span>
+                        <span class="skill-tag">WPF</span>
+                        <span class="skill-tag">Entity Framework</span>
+                    </div>
                 </div>
+
+                <!-- Core Stack - Unity -->
+                <div class="bento-item">
+                    <i class="fab fa-unity bento-icon"></i>
+                    <h3 class="bento-title">Game Dev</h3>
+                    <p class="bento-text">Immersive 2D/3D experiences.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Unity</span>
+                        <span class="skill-tag">Physics</span>
+                        <span class="skill-tag">3D Math</span>
+                        <span class="skill-tag">Optimization</span>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="bento-item">
+                    <i class="fas fa-tools bento-icon"></i>
+                    <h3 class="bento-title">DevOps & Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">Azure</span>
+                    </div>
+                </div>
+
+                <!-- Location / Contact -->
+                <div class="bento-item">
+                    <i class="fas fa-map-marker-alt bento-icon"></i>
+                    <h3 class="bento-title">Based in Turkey</h3>
+                    <p class="bento-text">Available for remote work worldwide.</p>
+                    <a href="mailto:enesefetokta009@gmail.com"
+                        style="margin-top: auto; color: var(--accent-primary);">enesefetokta009@gmail.com</a>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills">
+    <section id="skills" class="section-padding" style="padding-top: 0;">
         <div class="container">
-            <h2>My Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-item glass">
-                    <i class="fab fa-microsoft skill-icon"></i>
-                    <h3>Languages & Frameworks</h3>
-                    <p>C#, ASP.NET Core, WPF, Python</p>
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 16px;">Core Competencies</h2>
+                <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+                    Technical skills proven through real-world projects
+                </p>
+            </div>
+
+            <div class="bento-grid">
+
+                <!-- Backend Development -->
+                <div class="bento-item span-2">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+                        <i class="fas fa-server" style="font-size: 2rem; color: var(--accent-primary);"></i>
+                        <h3 class="bento-title" style="margin: 0;">Backend Development</h3>
+                    </div>
+                    <p class="bento-text" style="margin-bottom: 20px;">
+                        Building scalable, high-performance server-side applications with modern .NET technologies.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">.NET 8</span>
+                        <span class="skill-tag">ASP.NET Core</span>
+                        <span class="skill-tag">Entity Framework</span>
+                        <span class="skill-tag">RESTful APIs</span>
+                        <span class="skill-tag">Microservices</span>
+                        <span class="skill-tag">SignalR</span>
+                    </div>
                 </div>
-                <div class="skill-item glass">
-                    <i class="fas fa-database skill-icon"></i>
-                    <h3>Databases</h3>
-                    <p>PostgreSQL, SQLite, Supabase</p>
+
+                <!-- Frontend & UI -->
+                <div class="bento-item span-2">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+                        <i class="fas fa-palette" style="font-size: 2rem; color: var(--accent-secondary);"></i>
+                        <h3 class="bento-title" style="margin: 0;">Frontend & UI</h3>
+                    </div>
+                    <p class="bento-text" style="margin-bottom: 20px;">
+                        Creating responsive, user-friendly interfaces for web and desktop applications.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">WPF</span>
+                        <span class="skill-tag">MVVM</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                    </div>
                 </div>
-                <div class="skill-item glass">
-                    <i class="fab fa-docker skill-icon"></i>
-                    <h3>Tools & DevOps</h3>
-                    <p>Docker, Git, GitHub Actions, Swagger, Postman</p>
+
+                <!-- Database & Storage -->
+                <div class="bento-item">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                        <i class="fas fa-database" style="font-size: 1.75rem; color: var(--accent-primary);"></i>
+                        <h3 class="bento-title" style="margin: 0;">Database</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">SQLite</span>
+                        <span class="skill-tag">Supabase</span>
+                        <span class="skill-tag">Redis</span>
+                    </div>
                 </div>
-                <div class="skill-item glass">
-                    <i class="fas fa-code skill-icon"></i>
-                    <h3>APIs & Architecture</h3>
-                    <p>JWT, REST API, Stripe API, MVC, MVVM</p>
+
+                <!-- AI & Machine Learning -->
+                <div class="bento-item">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                        <i class="fas fa-brain" style="font-size: 1.75rem; color: var(--accent-secondary);"></i>
+                        <h3 class="bento-title" style="margin: 0;">AI Integration</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Mistral 7B</span>
+                        <span class="skill-tag">Ollama</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">FastAPI</span>
+                    </div>
                 </div>
-                <div class="skill-item glass">
-                    <i class="fas fa-rocket skill-icon"></i>
-                    <h3>Familiar With</h3>
-                    <p>Blazor, Kotlin, Firebase, MongoDB, SQL Server</p>
+
+                <!-- DevOps & Cloud -->
+                <div class="bento-item">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                        <i class="fab fa-docker" style="font-size: 1.75rem; color: var(--accent-primary);"></i>
+                        <h3 class="bento-title" style="margin: 0;">DevOps</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Nginx</span>
+                        <span class="skill-tag">Prometheus</span>
+                        <span class="skill-tag">Grafana</span>
+                    </div>
                 </div>
-                <div class="skill-item glass">
-                    <i class="fas fa-users skill-icon"></i>
-                    <h3>Soft Skills</h3>
-                    <p>Teamwork, Communication, Problem Solving</p>
+
+                <!-- Game Development -->
+                <div class="bento-item">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                        <i class="fab fa-unity" style="font-size: 1.75rem; color: var(--accent-secondary);"></i>
+                        <h3 class="bento-title" style="margin: 0;">Game Dev</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Unity 3D</span>
+                        <span class="skill-tag">Physics</span>
+                        <span class="skill-tag">WebGL</span>
+                        <span class="skill-tag">C#</span>
+                    </div>
                 </div>
+
+                <!-- Architecture Patterns -->
+                <div class="bento-item span-2">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+                        <i class="fas fa-project-diagram" style="font-size: 2rem; color: var(--accent-primary);"></i>
+                        <h3 class="bento-title" style="margin: 0;">Architecture & Patterns</h3>
+                    </div>
+                    <p class="bento-text" style="margin-bottom: 20px;">
+                        Designing maintainable systems with proven software architecture patterns.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Microservices</span>
+                        <span class="skill-tag">MVVM</span>
+                        <span class="skill-tag">Repository Pattern</span>
+                        <span class="skill-tag">Dependency Injection</span>
+                        <span class="skill-tag">SOLID Principles</span>
+                    </div>
+                </div>
+
+                <!-- Real-time & Communication -->
+                <div class="bento-item span-2">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+                        <i class="fas fa-bolt" style="font-size: 2rem; color: var(--accent-secondary);"></i>
+                        <h3 class="bento-title" style="margin: 0;">Real-time Technologies</h3>
+                    </div>
+                    <p class="bento-text" style="margin-bottom: 20px;">
+                        Implementing live data synchronization and instant communication features.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">WebRTC</span>
+                        <span class="skill-tag">SignalR</span>
+                        <span class="skill-tag">WebSockets</span>
+                        <span class="skill-tag">P2P</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="work" class="section-padding" style="padding-top: 0;">
+        <div class="container">
+            <h2 style="margin-bottom: 40px; font-size: 2rem;">Featured Projects</h2>
+            <div class="bento-grid">
+
+                <!-- Project 1 -->
+                <div class="bento-item span-2">
+                    <i class="fab fa-microsoft bento-icon"></i>
+                    <h3 class="bento-title">.NET Projects Collection</h3>
+                    <p class="bento-text" style="margin-bottom: 20px;">
+                        A collection of desktop applications and Web APIs built with robust architecture patterns.
+                    </p>
+                    <a href="dotnet-projects.html" class="btn btn-secondary" style="width: fit-content;">View
+                        Projects</a>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bento-item span-2">
+                    <i class="fab fa-unity bento-icon"></i>
+                    <h3 class="bento-title">Unity Game Projects</h3>
+                    <p class="bento-text" style="margin-bottom: 20px;">
+                        Various game prototypes and finished projects demonstrating physics, AI, and graphics
+                        programming.
+                    </p>
+                    <a href="unity-projects.html" class="btn btn-secondary" style="width: fit-content;">View Games</a>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="section-padding" style="padding-top: 0;">
         <div class="container">
-            <h2>Contact me</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <p><i class="fas fa-envelope"></i> enesefetokta009@gmail.com</p>
-                    <p><i class="fas fa-phone"></i> +90 541 586 9564</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Erzurum, Turkey</p>
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 16px;">Get In Touch</h2>
+                <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+                    Have a project in mind? Let's build something great together.
+                </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;">
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 32px;">Contact Information</h3>
+
+                    <div style="display: flex; flex-direction: column; gap: 24px;">
+                        <!-- Email -->
+                        <div class="contact-item">
+                            <div style="display: flex; align-items: center; gap: 16px;">
+                                <div
+                                    style="width: 48px; height: 48px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-envelope"
+                                        style="font-size: 1.25rem; color: var(--accent-primary);"></i>
+                                </div>
+                                <div>
+                                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px;">Email
+                                    </p>
+                                    <a href="mailto:enesefetokta009@gmail.com"
+                                        style="color: var(--text-main); font-size: 1.05rem; font-weight: 500;">enesefetokta009@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- LinkedIn -->
+                        <div class="contact-item">
+                            <div style="display: flex; align-items: center; gap: 16px;">
+                                <div
+                                    style="width: 48px; height: 48px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fab fa-linkedin"
+                                        style="font-size: 1.25rem; color: var(--accent-secondary);"></i>
+                                </div>
+                                <div>
+                                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px;">LinkedIn
+                                    </p>
+                                    <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank"
+                                        style="color: var(--text-main); font-size: 1.05rem; font-weight: 500;">Enes Efe
+                                        Tokta</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- GitHub -->
+                        <div class="contact-item">
+                            <div style="display: flex; align-items: center; gap: 16px;">
+                                <div
+                                    style="width: 48px; height: 48px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fab fa-github"
+                                        style="font-size: 1.25rem; color: var(--accent-primary);"></i>
+                                </div>
+                                <div>
+                                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px;">GitHub
+                                    </p>
+                                    <a href="https://github.com/EnesEfeTokta" target="_blank"
+                                        style="color: var(--text-main); font-size: 1.05rem; font-weight: 500;">@EnesEfeTokta</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Location -->
+                        <div class="contact-item">
+                            <div style="display: flex; align-items: center; gap: 16px;">
+                                <div
+                                    style="width: 48px; height: 48px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-map-marker-alt"
+                                        style="font-size: 1.25rem; color: var(--accent-secondary);"></i>
+                                </div>
+                                <div>
+                                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px;">Location
+                                    </p>
+                                    <p
+                                        style="color: var(--text-main); font-size: 1.05rem; font-weight: 500; margin: 0;">
+                                        Turkey</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="social-links">
-                    <a href="cv.html" class="social-link">
-                        <i class="fas fa-file-alt"></i>
-                        <span>CV</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" class="social-link" target="_blank">
-                        <i class="fab fa-linkedin"></i>
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="https://github.com/EnesEfeTokta" class="social-link" target="_blank">
-                        <i class="fab fa-github"></i>
-                        <span>GitHub</span>
-                    </a>
+
+                <!-- Contact Form -->
+                <div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 32px;">Send a Message</h3>
+
+                    <!-- Formspree Form - Kullanıcı kendi email'ini ekleyecek -->
+                    <form action="https://formspree.io/f/xwvkdpjd" method="POST"
+                        style="display: flex; flex-direction: column; gap: 20px;">
+
+                        <div>
+                            <label for="name"
+                                style="display: block; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 8px;">Name</label>
+                            <input type="text" id="name" name="name" required
+                                style="width: 100%; padding: 14px 16px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; color: var(--text-main); font-family: inherit; font-size: 1rem;">
+                        </div>
+
+                        <div>
+                            <label for="email"
+                                style="display: block; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 8px;">Email</label>
+                            <input type="email" id="email" name="_replyto" required
+                                style="width: 100%; padding: 14px 16px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; color: var(--text-main); font-family: inherit; font-size: 1rem;">
+                        </div>
+
+                        <div>
+                            <label for="message"
+                                style="display: block; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 8px;">Message</label>
+                            <textarea id="message" name="message" rows="5" required
+                                style="width: 100%; padding: 14px 16px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 8px; color: var(--text-main); font-family: inherit; font-size: 1rem; resize: vertical;"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn" style="width: fit-content;">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 16px;">
+                        <i class="fas fa-info-circle"></i> Form powered by Formspree - your data is secure.
+                    </p>
                 </div>
+
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer style="background: linear-gradient(135deg, rgba(13, 17, 23, 0.98) 0%, rgba(1, 4, 9, 0.98) 100%); color: var(--text-color); padding: 3rem 0; text-align: center; border-top: 1px solid var(--border-color);">
-        <div class="container">
-            <p style="font-size: 1.1rem; margin-bottom: 1rem;">© 2025 Enes Efe Tokta. All rights reserved.</p>
-            <p style="color: var(--text-light); font-size: 0.95rem;">
-                <i class="fas fa-code" style="color: var(--neon-blue);"></i> 
-                Made with passion and creativity
-            </p>
-            <div style="margin-top: 1.5rem; display: flex; gap: 1.5rem; justify-content: center; align-items: center;">
-                <a href="https://github.com/EnesEfeTokta" target="_blank" style="color: var(--text-light); transition: var(--transition); text-decoration: none;">
-                    <i class="fab fa-github" style="font-size: 1.5rem;"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank" style="color: var(--text-light); transition: var(--transition); text-decoration: none;">
-                    <i class="fab fa-linkedin" style="font-size: 1.5rem;"></i>
-                </a>
+    <footer style="border-top: 1px solid var(--border-subtle); padding: 40px 0; margin-top: 40px;">
+        <div class="container" style="text-align: center;">
+            <p style="color: var(--text-muted);">© 2025 Enes Efe Tokta. Built with modern web technologies.</p>
+            <div style="margin-top: 20px; display: flex; justify-content: center; gap: 20px;">
+                <a href="https://github.com/EnesEfeTokta" target="_blank"
+                    style="font-size: 1.5rem; color: var(--text-secondary);"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank"
+                    style="font-size: 1.5rem; color: var(--text-secondary);"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>

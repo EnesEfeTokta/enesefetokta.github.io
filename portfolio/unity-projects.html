@@ -1,27 +1,29 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unity Projeleri - Enes Efe Tokta</title>
+    <title>Unity Projects - Enes Efe Tokta</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">Enes Efe Tokta</a>
             <ul class="nav-links">
-                <li><a href="index.html#home">Ana Sayfa</a></li>
-                <li><a href="index.html#about">Hakkımda</a></li>
-                <li><a href="index.html#projects">Projeler</a></li>
-                <li><a href="index.html#skills">Yetenekler</a></li>
-                <li><a href="index.html#contact">İletişim</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#work" style="color: var(--text-main);">Work</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="cv.html">Resume</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
             </ul>
             <button class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
@@ -29,61 +31,42 @@
         </div>
     </nav>
 
-    <!-- Projects Header -->
-    <section class="projects-header">
+    <section class="section-padding" style="padding-top: 120px;">
         <div class="container">
-            <div class="projects-header-content">
-                <i class="fab fa-unity projects-icon"></i>
-                <h1>Unity Projeleri</h1>
-                <p class="projects-subtitle">Geliştirdiğim Unity oyun projeleri ve deneyimlerim</p>
-            </div>
-        </div>
-    </section>
+            <h1 style="font-size: 3rem; margin-bottom: 20px;">Unity Projects</h1>
+            <p style="color: var(--text-secondary); margin-bottom: 60px; max-width: 600px;">
+                Immersive game development projects focusing on mechanics and physics.
+            </p>
 
-    <!-- Projects List -->
-    <section class="projects-list">
-        <div class="container">
-            <div class="projects-grid">
-                <!-- 3D Platform Oyunu -->
-                <div class="project-card">
-                    <div class="project-card-content">
-                        <i class="fab fa-unity project-icon"></i>
-                        <h3>Fishing Game</h3>
-                        <p>A fun spear throwing game about fishing in a lake.</p>
-                        <div class="project-tags">
-                            <span class="tag">Unity</span>
-                            <span class="tag">C#</span>
-                            <span class="tag">3D</span>
-                        </div>
-                        <a href="fishing-unity-project.html" class="btn">
-                            <i class="fas fa-external-link-alt"></i>
-                            View Details
-                        </a>
+            <div class="bento-grid">
+
+                <!-- Fishing Game -->
+                <div class="bento-item span-2">
+                    <i class="fas fa-fish bento-icon"></i>
+                    <h3 class="bento-title">Fishing Game</h3>
+                    <p class="bento-text" style="margin-bottom: 16px;">
+                        A fun spear throwing game about fishing in a lake. Features custom physics and dynamic spawning
+                        systems.
+                    </p>
+                    <div class="skill-tags" style="margin-bottom: 24px;">
+                        <span class="skill-tag">Unity 3D</span>
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">Physics</span>
                     </div>
+                    <a href="fishing-unity-project.html" class="btn btn-secondary" style="width: fit-content;">View
+                        Details</a>
                 </div>
+
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer style="background: linear-gradient(135deg, rgba(13, 17, 23, 0.98) 0%, rgba(1, 4, 9, 0.98) 100%); color: var(--text-color); padding: 3rem 0; text-align: center; border-top: 1px solid var(--border-color);">
-        <div class="container">
-            <p style="font-size: 1.1rem; margin-bottom: 1rem;">© 2025 Enes Efe Tokta. All rights reserved.</p>
-            <p style="color: var(--text-light); font-size: 0.95rem;">
-                <i class="fas fa-code" style="color: var(--neon-blue);"></i> 
-                Made with passion and creativity
-            </p>
-            <div style="margin-top: 1.5rem; display: flex; gap: 1.5rem; justify-content: center; align-items: center;">
-                <a href="https://github.com/EnesEfeTokta" target="_blank" style="color: var(--text-light); transition: var(--transition); text-decoration: none;">
-                    <i class="fab fa-github" style="font-size: 1.5rem;"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank" style="color: var(--text-light); transition: var(--transition); text-decoration: none;">
-                    <i class="fab fa-linkedin" style="font-size: 1.5rem;"></i>
-                </a>
-            </div>
+    <footer style="border-top: 1px solid var(--border-subtle); padding: 40px 0; margin-top: 40px;">
+        <div class="container" style="text-align: center;">
+            <p style="color: var(--text-muted);">© 2025 Enes Efe Tokta.</p>
         </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
-</html> 
+
+</html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,188 +9,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        .education-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
-        }
-        .education-card::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 4px;
-            height: 0;
-            background: linear-gradient(180deg, var(--neon-blue), var(--neon-green));
-            transition: var(--transition-smooth);
-        }
-        .education-card:hover {
-            transform: translateY(-5px) scale(1.01);
-            border-color: var(--neon-blue);
-            box-shadow: var(--shadow-xl), var(--neon-shadow);
-        }
-        .education-card:hover::before {
-            height: 100%;
-        }
-        .education-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-        .education-icon {
-            font-size: 2.5em;
-            margin-right: 1.5rem;
-            color: var(--neon-blue);
-            text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
-        }
-        .education-content {
-            flex: 1;
-        }
-        .education-title {
-            font-size: 1.3em;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text-color);
-        }
-        .education-subtitle {
-            color: var(--neon-green);
-            font-size: 1em;
-            font-weight: 500;
-        }
-        .education-date {
-            color: var(--text-light);
-            font-size: 0.9em;
-        }
-        .certification-badge {
-            display: inline-block;
-            padding: 0.6rem 1.2rem;
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            border-radius: 25px;
-            margin: 0.3rem;
-            font-size: 0.85em;
-            color: var(--text-light);
-            transition: var(--transition-smooth);
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-        .certification-badge::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(126, 231, 135, 0.2), transparent);
-            transform: translate(-50%, -50%);
-            transition: width 0.4s ease, height 0.4s ease;
-        }
-        .certification-badge:hover::before {
-            width: 200px;
-            height: 200px;
-        }
-        .certification-badge:hover {
-            border-color: var(--neon-green);
-            color: var(--neon-green);
-            box-shadow: 0 4px 12px rgba(126, 231, 135, 0.3);
-            transform: translateY(-2px) scale(1.05);
-        }
-        .certification-image {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-            border-radius: 12px;
-            margin: 1.5rem 0;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
-            border: 1px solid var(--border-color);
-        }
-        .certification-image:hover {
-            transform: scale(1.02);
-            box-shadow: 0 8px 24px rgba(88, 166, 255, 0.2);
-        }
-        .certification-links {
-            margin-top: 1.5rem;
-        }
-        .certification-links a {
-            display: inline-flex;
-            align-items: center;
-            margin-right: 1.5rem;
-            color: var(--neon-blue);
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-        .certification-links a:hover {
-            background: var(--hover-bg);
-            color: var(--neon-blue);
-            text-shadow: 0 0 8px rgba(88, 166, 255, 0.6);
-        }
-        .certification-links i {
-            margin-right: 0.5rem;
-        }
-        .timeline {
-            position: relative;
-            padding-left: 2rem;
-        }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(180deg, var(--neon-blue), var(--neon-green));
-        }
-        .timeline-item {
-            position: relative;
-            margin-bottom: 2rem;
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -2.5rem;
-            top: 0;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--neon-green);
-            border: 3px solid var(--card-bg);
-            box-shadow: 0 0 10px rgba(126, 231, 135, 0.5);
-        }
-    </style>
 </head>
+
 <body>
-    <!-- Scroll Progress Indicator -->
-    <div class="scroll-progress" id="scrollProgress"></div>
-    
+
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">Enes Efe Tokta</a>
             <ul class="nav-links">
-                <li><a href="index.html#home">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#work">Work</a></li>
                 <li><a href="index.html#skills">Skills</a></li>
-                <li><a href="education.html" class="active">Education</a></li>
+                <li><a href="education.html" style="color: var(--text-main);">Education</a></li>
+                <li><a href="cv.html">Resume</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
             <button class="mobile-menu-btn">
@@ -198,397 +32,152 @@
         </div>
     </nav>
 
-    <!-- Education Header -->
-    <section class="projects-header">
+    <section class="section-padding" style="padding-top: 120px;">
         <div class="container">
-            <div class="projects-header-content">
-                <i class="fas fa-graduation-cap projects-icon"></i>
-                <h1>Education & Certifications</h1>
-                <p class="projects-subtitle">My academic journey and professional certifications</p>
+            <h1 style="font-size: 3rem; margin-bottom: 20px;">Education & Certifications</h1>
+            <p style="color: var(--text-secondary); margin-bottom: 60px; max-width: 600px;">
+                My academic journey and professional certifications that demonstrate my commitment to continuous
+                learning.
+            </p>
+
+            <h2 style="margin-bottom: 32px;">Academic</h2>
+            <div class="bento-grid" style="margin-bottom: 60px;">
+                <div class="bento-item span-2">
+                    <i class="fas fa-university bento-icon"></i>
+                    <h3 class="bento-title">Information Systems and Technologies</h3>
+                    <p style="color: var(--accent-primary); margin-bottom: 8px;">Atatürk University | 2023 - 2027</p>
+                    <p class="bento-text">
+                        Bachelor's degree program focusing on software development, database management, and information
+                        systems.
+                    </p>
+                </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Education Content -->
-    <section class="project-details">
-        <div class="container">
-            <div class="project-content">
-                <!-- Academic Education -->
-                <div class="project-section">
-                    <h2>Academic Education</h2>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="education-card">
-                                <div class="education-header">
-                                    <i class="fas fa-university education-icon"></i>
-                                    <div class="education-content">
-                                        <h3 class="education-title">Information Systems and Technologies</h3>
-                                        <p class="education-subtitle">Atatürk University</p>
-                                        <p class="education-date">2023 - 2027</p>
-                                    </div>
-                                </div>
-                                <p>Bachelor's degree program focusing on software development, database management, and information systems.</p>
-                            </div>
-                        </div>
+            <h2 style="margin-bottom: 32px;">Certifications</h2>
+            <div class="bento-grid">
+
+                <!-- Game Academy -->
+                <div class="bento-item span-2">
+                    <i class="fas fa-gamepad bento-icon"></i>
+                    <h3 class="bento-title">Game & App Academy Finalist</h3>
+                    <p class="bento-text" style="margin-bottom: 16px;">
+                        Top 7 finalist among 3000 participants. Competed in a 6-week intense bootcamp.
+                    </p>
+                    <div class="skill-tags" style="margin-bottom: 20px;">
+                        <span class="skill-tag">Unity</span>
+                        <span class="skill-tag">Team Leadership</span>
+                        <span class="skill-tag">Game Design</span>
                     </div>
+                    <a href="https://verified.sertifier.com/tr/verify/29758255143465/" target="_blank"
+                        class="btn btn-secondary" style="margin-top: auto; width: fit-content;">Verify</a>
                 </div>
 
-                <!-- Professional Certifications -->
-                <div class="project-section">
-                    <h2>Professional Certifications</h2>
-                    
-                    <div class="education-card">
-                        <div class="education-header">
-                            <i class="fas fa-gamepad education-icon"></i>
-                            <div class="education-content">
-                                <h3 class="education-title">Game and Application Academy Bootcamp Finalist</h3>
-                                <p class="education-subtitle">Game and Application Academy</p>
-                                <p class="education-date">2024</p>
-                            </div>
-                        </div>
-                        <p>In the Graduation Bootcamp organized within the scope of the Oyun ve Uygulama Akademisi, he competed with his team against 300+ teams in 6 weeks and qualified to be among the last 14 finalist teams.</p>
-                        <img src="Images/CertificationImages/game-academy-certificate-finalist.png" alt="Game and Application Academy Certificate" class="certification-image">
-                        <div class="certification-links">
-                            <a href="Images/CertificationImages/game-academy-certificate-finalist.png" target="_blank">
-                                <i class="fas fa-image"></i> View Certificate
-                            </a>
-                            <a href="https://verified.sertifier.com/tr/verify/29758255143465/" target="_blank">
-                                <i class="fas fa-external-link-alt"></i> Visit Academy
-                            </a>
-                        </div>
-                        <div class="certification-badges">
-                            <span class="certification-badge">Unity 2D/3D</span>
-                            <span class="certification-badge">C#</span>
-                            <span class="certification-badge">Game Development</span>
-                            <span class="certification-badge">Game Design</span>
-                            <span class="certification-badge">Game Programming</span>
-                            <span class="certification-badge">Game Testing</span>
-                            <span class="certification-badge">Game Art</span>
-                            <span class="certification-badge">Game Audio</span>
-                        </div>
+                <!-- Google Project Management -->
+                <div class="bento-item">
+                    <i class="fas fa-tasks bento-icon"></i>
+                    <h3 class="bento-title">Google Project Management</h3>
+                    <p class="bento-text" style="margin-bottom: 16px;">Comprehensive training in planning, risk
+                        management, and agile.</p>
+                    <div class="skill-tags" style="margin-bottom: 20px;">
+                        <span class="skill-tag">Agile</span>
+                        <span class="skill-tag">Scrum</span>
+                        <span class="skill-tag">Risk Mgmt</span>
                     </div>
-
-                    <div class="education-card">
-                        <div class="education-header">
-                            <i class="fas fa-tasks education-icon"></i>
-                            <div class="education-content">
-                                <h3 class="education-title">Project Management</h3>
-                                <p class="education-subtitle">Google</p>
-                                <p class="education-date">2024</p>
-                            </div>
-                        </div>
-                        <p>I successfully completed Google's comprehensive Project Management course on Coursera, which offers in-depth training in key areas such as project planning, risk management, and team dynamics. By reinforcing theoretical knowledge with hands-on projects, I gained the ability to manage my projects more effectively and efficiently. This course, taught by Google's experienced instructors, has significantly improved my professional skills.</p>
-                        <img src="Images/CertificationImages/google-project-management.png" alt="Google Project Management Certificate" class="certification-image">
-                        <div class="certification-links">
-                            <a href="Images/CertificationImages/google-project-management.png" target="_blank">
-                                <i class="fas fa-image"></i> View Certificate
-                            </a>
-                            <a href="https://www.coursera.org/account/accomplishments/specialization/4ZPSKQNT46SK" target="_blank">
-                                <i class="fas fa-external-link-alt"></i> Course Details
-                            </a>
-                        </div>
-                        <div class="certification-badges">
-                            <span class="certification-badge">Project Management</span>
-                            <span class="certification-badge">Project Planning</span>
-                            <span class="certification-badge">Project Monitoring</span>
-                            <span class="certification-badge">Project Control</span>
-                            <span class="certification-badge">Project Reporting</span>
-                            <span class="certification-badge">Project Evaluation</span>
-                            <span class="certification-badge">Asana</span>
-                            <span class="certification-badge">Trello</span>
-                            <span class="certification-badge">Notion</span>
-                            <span class="certification-badge">Jira</span>
-                        </div>
-                    </div>
-
-                    <div class="education-card">
-                        <div class="education-header">
-                            <i class="fab fa-aws education-icon"></i>
-                            <div class="education-content">
-                                <h3 class="education-title">AWS Cloud Solutions Architect</h3>
-                                <p class="education-subtitle">Amazon Web Services</p>
-                                <p class="education-date">2025</p>
-                            </div>
-                        </div>
-                        <p>Successfully achieved AWS Cloud Solutions Architect certification, demonstrating comprehensive understanding of AWS cloud services, architecture best practices, security, and pricing models. This certification validates my ability to work with AWS infrastructure and cloud-based solutions.</p>
-                        <img src="Images/CertificationImages/aws-cloud-solutions-architect.jpeg" alt="AWS Cloud Solutions Architect Certificate" class="certification-image">
-                        <div class="certification-links">
-                            <a href="Images/CertificationImages/aws-cloud-solutions-architect.jpeg" target="_blank">
-                                <i class="fas fa-image"></i> View Certificate
-                            </a>
-                            <a href="https://www.coursera.org/account/accomplishments/specialization/SNCZBILFS6GJ" target="_blank">
-                                <i class="fas fa-external-link-alt"></i> Course Details
-                            </a>
-                        </div>
-                        <div class="certification-badges">
-                            <span class="certification-badge">AWS</span>
-                            <span class="certification-badge">Cloud Computing</span>
-                            <span class="certification-badge">Cloud Architecture</span>
-                            <span class="certification-badge">EC2</span>
-                            <span class="certification-badge">S3</span>
-                            <span class="certification-badge">IAM</span>
-                            <span class="certification-badge">Cloud Security</span>
-                            <span class="certification-badge">Cost Management</span>
-                        </div>
-                    </div>
-
-                    <div class="education-card">
-                        <div class="education-header">
-                            <i class="fab fa-microsoft education-icon"></i>
-                            <div class="education-content">
-                                <h3 class="education-title">Microsoft Full Stack Developer</h3>
-                                <p class="education-subtitle">Microsoft</p>
-                                <p class="education-date">2025</p>
-                            </div>
-                        </div>
-                        <p>Completed Microsoft's comprehensive Full Stack Developer certification program, gaining expertise in modern web development technologies, .NET Core, ASP.NET, database management, and cloud integration. This certification demonstrates proficiency in building end-to-end enterprise applications.</p>
-                        <img src="Images/CertificationImages/microsoft-full-stack-developer.png" alt="Microsoft Full Stack Developer Certificate" class="certification-image">
-                        <div class="certification-links">
-                            <a href="Images/CertificationImages/microsoft-full-stack-developer.png" target="_blank">
-                                <i class="fas fa-image"></i> View Certificate
-                            </a>
-                            <a href="https://learn.microsoft.com/en-us/training/" target="_blank">
-                                <i class="fas fa-external-link-alt"></i> Course Details
-                            </a>
-                        </div>
-                        <div class="certification-badges">
-                            <span class="certification-badge">ASP.NET Core</span>
-                            <span class="certification-badge">C#</span>
-                            <span class="certification-badge">Entity Framework</span>
-                            <span class="certification-badge">SQL Server</span>
-                            <span class="certification-badge">REST API</span>
-                            <span class="certification-badge">Frontend Development</span>
-                            <span class="certification-badge">Backend Development</span>
-                            <span class="certification-badge">Azure Integration</span>
-                        </div>
-                    </div>
-
-                    <div class="education-card">
-                        <div class="education-header">
-                            <i class="fab fa-react education-icon"></i>
-                            <div class="education-content">
-                                <h3 class="education-title">Meta Frontend Developer</h3>
-                                <p class="education-subtitle">Meta (Facebook)</p>
-                                <p class="education-date">2025</p>
-                            </div>
-                        </div>
-                        <p>Earned Meta Frontend Developer certification, mastering modern frontend technologies including React, JavaScript ES6+, HTML5, CSS3, and responsive design principles. This certification validates my ability to build dynamic, user-friendly web applications using industry-standard tools and frameworks.</p>
-                        <img src="Images/CertificationImages/meta-frontend-developer.png" alt="Meta Frontend Developer Certificate" class="certification-image">
-                        <div class="certification-links">
-                            <a href="Images/CertificationImages/meta-frontend-developer.png" target="_blank">
-                                <i class="fas fa-image"></i> View Certificate
-                            </a>
-                            <a href="https://www.coursera.org/professional-certificates/meta-front-end-developer" target="_blank">
-                                <i class="fas fa-external-link-alt"></i> Course Details
-                            </a>
-                        </div>
-                        <div class="certification-badges">
-                            <span class="certification-badge">React</span>
-                            <span class="certification-badge">JavaScript</span>
-                            <span class="certification-badge">HTML5</span>
-                            <span class="certification-badge">CSS3</span>
-                            <span class="certification-badge">Responsive Design</span>
-                            <span class="certification-badge">UI/UX</span>
-                            <span class="certification-badge">Version Control</span>
-                            <span class="certification-badge">Modern Web Development</span>
-                        </div>
-                    </div>
-
-                    <div class="education-card">
-                        <div class="education-header">
-                            <i class="fab fa-microsoft education-icon"></i>
-                            <div class="education-content">
-                                <h3 class="education-title">Microsoft Azure Fundamentals AZ-900 Exam Prep</h3>
-                                <p class="education-subtitle">Microsoft Azure</p>
-                                <p class="education-date">2025</p>
-                            </div>
-                        </div>
-                        <p>Completed comprehensive preparation program for Microsoft Azure Fundamentals (AZ-900) certification. Gained solid understanding of cloud concepts, Azure services, security, privacy, compliance, trust, and Azure pricing and support. Prepared to leverage Azure cloud platform for modern application development and deployment.</p>
-                        <img src="Images/CertificationImages/microsoft-azure-az900-exam-prep.jpeg" alt="Microsoft Azure Fundamentals AZ-900 Exam Prep" class="certification-image">
-                        <div class="certification-links">
-                            <a href="Images/CertificationImages/microsoft-azure-az900-exam-prep.jpeg" target="_blank">
-                                <i class="fas fa-image"></i> View Certificate
-                            </a>
-                            <a href="https://www.coursera.org/account/accomplishments/specialization/5XA2CUEQZTEV" target="_blank">
-                                <i class="fas fa-external-link-alt"></i> Course Details
-                            </a>
-                        </div>
-                        <div class="certification-badges">
-                            <span class="certification-badge">Microsoft Azure</span>
-                            <span class="certification-badge">Cloud Fundamentals</span>
-                            <span class="certification-badge">Azure Services</span>
-                            <span class="certification-badge">Virtual Machines</span>
-                            <span class="certification-badge">Azure Storage</span>
-                            <span class="certification-badge">Cloud Security</span>
-                            <span class="certification-badge">Azure Pricing</span>
-                            <span class="certification-badge">Compliance</span>
-                        </div>
-                    </div>
-
-                    <div class="education-card">
-                        <div class="education-header">
-                            <i class="fas fa-trophy education-icon" style="color: var(--neon-purple);"></i>
-                            <div class="education-content">
-                                <h3 class="education-title">Google Game and App Academy Finalist – Top 7 in 3000</h3>
-                                <p class="education-subtitle">Google Game and App Academy</p>
-                                <p class="education-date">2024</p>
-                            </div>
-                        </div>
-                        <p>Achieved remarkable recognition by ranking in the top 7 finalists among 3000 participants in Google's prestigious Game and App Academy competition. This achievement demonstrates exceptional skills in game development, mobile application design, and innovative problem-solving. Successfully completed intensive training and presented a standout project that impressed Google's expert judges.</p>
-                        <img src="Images/CertificationImages/google-game-app-academy-finalist.png" alt="Google Game and App Academy Finalist Certificate" class="certification-image">
-                        <div class="certification-links">
-                            <a href="Images/CertificationImages/google-game-app-academy-finalist.png" target="_blank">
-                                <i class="fas fa-image"></i> View Certificate
-                            </a>
-                            <a href="https://www.oyunveuygulamaakademisi.com/" target="_blank">
-                                <i class="fas fa-external-link-alt"></i> Academy Details
-                            </a>
-                        </div>
-                        <div class="certification-badges">
-                            <span class="certification-badge">Game Development</span>
-                            <span class="certification-badge">Mobile Apps</span>
-                            <span class="certification-badge">Unity</span>
-                            <span class="certification-badge">Innovation</span>
-                            <span class="certification-badge">Competition Winner</span>
-                            <span class="certification-badge">Top Performer</span>
-                            <span class="certification-badge">Google Recognition</span>
-                        </div>
-                    </div>
-
-                    <div class="education-card">
-                        <div class="education-header">
-                            <i class="fab fa-ibm education-icon" style="color: var(--neon-blue);"></i>
-                            <div class="education-content">
-                                <h3 class="education-title">IBM DevOps, Cloud, and Agile Foundations</h3>
-                                <p class="education-subtitle">IBM</p>
-                                <p class="education-date">2025</p>
-                            </div>
-                        </div>
-                        <p>Successfully completed IBM's comprehensive DevOps, Cloud, and Agile Foundations certification program. Gained in-depth knowledge of modern software development practices, including CI/CD pipelines, cloud infrastructure, containerization, and agile methodologies. This certification demonstrates proficiency in implementing DevOps practices and managing cloud-based development workflows.</p>
-                        <img src="Images/CertificationImages/ibm-devops-cloud-agile.jpeg" alt="IBM DevOps, Cloud, and Agile Foundations Certificate" class="certification-image">
-                        <div class="certification-links">
-                            <a href="Images/CertificationImages/ibm-devops-cloud-agile.jpeg" target="_blank">
-                                <i class="fas fa-image"></i> View Certificate
-                            </a>
-                            <a href="https://www.coursera.org/account/accomplishments/specialization/GVRHJCJYQKY3" target="_blank">
-                                <i class="fas fa-external-link-alt"></i> Course Details
-                            </a>
-                        </div>
-                        <div class="certification-badges">
-                            <span class="certification-badge">DevOps</span>
-                            <span class="certification-badge">CI/CD</span>
-                            <span class="certification-badge">Cloud Computing</span>
-                            <span class="certification-badge">Agile Methodologies</span>
-                            <span class="certification-badge">Containerization</span>
-                            <span class="certification-badge">Kubernetes</span>
-                            <span class="certification-badge">Git</span>
-                            <span class="certification-badge">Jenkins</span>
-                            <span class="certification-badge">Microservices</span>
-                            <span class="certification-badge">Infrastructure as Code</span>
-                        </div>
-                    </div>
+                    <a href="https://www.coursera.org/account/accomplishments/specialization/4ZPSKQNT46SK"
+                        target="_blank" class="btn btn-secondary"
+                        style="margin-top: auto; width: fit-content;">Verify</a>
                 </div>
 
-                <!-- Skills Development -->
-                <div class="project-section">
-                    <h2>Skills Development</h2>
-                    <div class="education-card">
-                        <div class="education-header">
-                            <i class="fas fa-code education-icon"></i>
-                            <div class="education-content">
-                                <h3 class="education-title">C# Programming</h3>
-                                <p class="education-subtitle">Pluralsight</p>
-                                <p class="education-date">2023</p>
-                            </div>
-                        </div>
-                        <p>Advanced concepts in C# programming including async/await, LINQ, and design patterns.</p>
-                        <div class="certification-badges">
-                            <span class="certification-badge">C#</span>
-                            <span class="certification-badge">Advanced Programming</span>
-                            <span class="certification-badge">Design Patterns</span>
-                        </div>
+                <!-- AWS -->
+                <div class="bento-item">
+                    <i class="fab fa-aws bento-icon"></i>
+                    <h3 class="bento-title">AWS Solutions Architect</h3>
+                    <p class="bento-text" style="margin-bottom: 16px;">Cloud architecture, security, and infrastructure
+                        best practices.</p>
+                    <div class="skill-tags" style="margin-bottom: 20px;">
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Cloud Security</span>
+                        <span class="skill-tag">EC2/S3</span>
                     </div>
-
-                    <div class="education-card">
-                        <div class="education-header">
-                            <i class="fab fa-git-alt education-icon"></i>
-                            <div class="education-content">
-                                <h3 class="education-title">Version Control & Collaboration</h3>
-                                <p class="education-subtitle">Self-Learning & Professional Experience</p>
-                                <p class="education-date">2023 - Present</p>
-                            </div>
-                        </div>
-                        <p>Proficient in Git version control system and GitHub collaboration platform, managing code repositories, branches, and pull requests effectively.</p>
-                        <div class="certification-badges">
-                            <span class="certification-badge">Git</span>
-                            <span class="certification-badge">GitHub</span>
-                            <span class="certification-badge">Version Control</span>
-                            <span class="certification-badge">Collaboration</span>
-                            <span class="certification-badge">Code Review</span>
-                        </div>
-                    </div>
-
-                    <div class="education-card">
-                        <div class="education-header">
-                            <i class="fas fa-database education-icon"></i>
-                            <div class="education-content">
-                                <h3 class="education-title">Database Management Systems</h3>
-                                <p class="education-subtitle">Professional Development</p>
-                                <p class="education-date">2023 - Present</p>
-                            </div>
-                        </div>
-                        <p>Experience with various database systems including SQL, PostgreSQL, and MongoDB, implementing efficient data storage and retrieval solutions.</p>
-                        <div class="certification-badges">
-                            <span class="certification-badge">SQL</span>
-                            <span class="certification-badge">PostgreSQL</span>
-                            <span class="certification-badge">MongoDB</span>
-                            <span class="certification-badge">Database Design</span>
-                            <span class="certification-badge">Data Modeling</span>
-                        </div>
-                    </div>
-
-                    <div class="education-card">
-                        <div class="education-header">
-                            <i class="fab fa-docker education-icon"></i>
-                            <div class="education-content">
-                                <h3 class="education-title">Containerization & DevOps</h3>
-                                <p class="education-subtitle">Professional Development</p>
-                                <p class="education-date">2023 - Present</p>
-                            </div>
-                        </div>
-                        <p>Practical experience with Docker containerization, enabling consistent deployment environments and streamlined development workflows.</p>
-                        <div class="certification-badges">
-                            <span class="certification-badge">Docker</span>
-                            <span class="certification-badge">Containerization</span>
-                            <span class="certification-badge">DevOps</span>
-                            <span class="certification-badge">Deployment</span>
-                            <span class="certification-badge">Environment Management</span>
-                        </div>
-                    </div>
+                    <a href="https://www.coursera.org/account/accomplishments/specialization/SNCZBILFS6GJ"
+                        target="_blank" class="btn btn-secondary"
+                        style="margin-top: auto; width: fit-content;">Verify</a>
                 </div>
+
+                <!-- Microsoft Full Stack -->
+                <div class="bento-item">
+                    <i class="fab fa-microsoft bento-icon"></i>
+                    <h3 class="bento-title">Microsoft Full Stack</h3>
+                    <p class="bento-text" style="margin-bottom: 16px;">End-to-end development with .NET Core and Azure.
+                    </p>
+                    <div class="skill-tags" style="margin-bottom: 20px;">
+                        <span class="skill-tag">.NET Core</span>
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">C#</span>
+                    </div>
+                    <a href="https://learn.microsoft.com/en-us/training/" target="_blank" class="btn btn-secondary"
+                        style="margin-top: auto; width: fit-content;">Verify</a>
+                </div>
+
+                <!-- Meta Frontend -->
+                <div class="bento-item">
+                    <i class="fab fa-react bento-icon"></i>
+                    <h3 class="bento-title">Meta Frontend Developer</h3>
+                    <p class="bento-text" style="margin-bottom: 16px;">Advanced React, UX/UI principles, and modern web
+                        standards.</p>
+                    <div class="skill-tags" style="margin-bottom: 20px;">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">UX/UI</span>
+                        <span class="skill-tag">JavaScript</span>
+                    </div>
+                    <a href="https://www.coursera.org/professional-certificates/meta-front-end-developer"
+                        target="_blank" class="btn btn-secondary"
+                        style="margin-top: auto; width: fit-content;">Verify</a>
+                </div>
+
+                <!-- Azure AZ-900 -->
+                <div class="bento-item">
+                    <i class="fas fa-cloud bento-icon"></i>
+                    <h3 class="bento-title">Azure Fundamentals</h3>
+                    <p class="bento-text" style="margin-bottom: 16px;">Core cloud concepts and Azure services mastery.
+                    </p>
+                    <div class="skill-tags" style="margin-bottom: 20px;">
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">Cloud Basics</span>
+                    </div>
+                    <a href="https://www.coursera.org/account/accomplishments/specialization/5XA2CUEQZTEV"
+                        target="_blank" class="btn btn-secondary"
+                        style="margin-top: auto; width: fit-content;">Verify</a>
+                </div>
+
+                <!-- IBM DevOps -->
+                <div class="bento-item span-2">
+                    <i class="fab fa-ibm bento-icon"></i>
+                    <h3 class="bento-title">IBM DevOps & Cloud</h3>
+                    <p class="bento-text" style="margin-bottom: 16px;">CI/CD pipelines, containerization (Docker/K8s),
+                        and agile methodologies.</p>
+                    <div class="skill-tags" style="margin-bottom: 20px;">
+                        <span class="skill-tag">DevOps</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">CI/CD</span>
+                    </div>
+                    <a href="https://www.coursera.org/account/accomplishments/specialization/GVRHJCJYQKY3"
+                        target="_blank" class="btn btn-secondary"
+                        style="margin-top: auto; width: fit-content;">Verify</a>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer style="background: linear-gradient(135deg, rgba(13, 17, 23, 0.98) 0%, rgba(1, 4, 9, 0.98) 100%); color: var(--text-color); padding: 3rem 0; text-align: center; border-top: 1px solid var(--border-color);">
-        <div class="container">
-            <p style="font-size: 1.1rem; margin-bottom: 1rem;">© 2025 Enes Efe Tokta. All rights reserved.</p>
-            <p style="color: var(--text-light); font-size: 0.95rem;">
-                <i class="fas fa-code" style="color: var(--neon-blue);"></i> 
-                Made with passion and creativity
-            </p>
-            <div style="margin-top: 1.5rem; display: flex; gap: 1.5rem; justify-content: center; align-items: center;">
-                <a href="https://github.com/EnesEfeTokta" target="_blank" style="color: var(--text-light); transition: var(--transition); text-decoration: none;">
-                    <i class="fab fa-github" style="font-size: 1.5rem;"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank" style="color: var(--text-light); transition: var(--transition); text-decoration: none;">
-                    <i class="fab fa-linkedin" style="font-size: 1.5rem;"></i>
-                </a>
-            </div>
+    <footer style="border-top: 1px solid var(--border-subtle); padding: 40px 0; margin-top: 40px;">
+        <div class="container" style="text-align: center;">
+            <p style="color: var(--text-muted);">© 2025 Enes Efe Tokta.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
 </body>
-</html> 
+
+</html>

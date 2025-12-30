@@ -1,177 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FinTrack - Windows Financial Management App | Enes Efe Tokta</title>
+    <title>FinTrack Desktop - Windows App | Enes Efe Tokta</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        .project-details table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.9em; }
-        .project-details th, .project-details td { border: 1px solid #e0e0e0; padding: 12px; text-align: left; }
-        .project-details th { background-color: #f8f9fa; font-weight: 600; }
-        .project-details tr:nth-child(even) { background-color: #fdfdfd; }
-        .video-showcase img { max-width: 100%; height: auto; margin-bottom: 15px; border: 1px solid #e0e0e0; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); transition: transform 0.3s ease; }
-        .video-showcase img:hover { transform: scale(1.03); }
-        .tech-list i, .feature-list i { margin-right: 10px; width: 20px; text-align: center; color: #007bff; }
-        .project-links .btn { margin-right: 10px; margin-bottom: 10px; }
-    </style>
 </head>
+
 <body>
+
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">Enes Efe Tokta</a>
             <ul class="nav-links">
-                <li><a href="index.html#home">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#work" style="color: var(--text-main);">Work</a></li>
                 <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="cv.html">Resume</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
-            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </nav>
 
-    <!-- Project Header -->
-    <section class="project-header">
-        <div class="container">
-            <div class="project-header-content">
-                <i class="fab fa-windows project-icon"></i>
-                <h1>FinTrack for Windows</h1>
-                <p class="project-subtitle">A Modern WPF Desktop Application for Financial Management</p>
-                <div style="margin-top: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
-                    <img src="https://img.shields.io/badge/WPF-68217A?style=for-the-badge&logo=windows&logoColor=white" alt="WPF Badge">
-                    <img src="https://img.shields.io/badge/.NET-8.0-5C2D91?style=for-the-badge&logo=.net&logoColor=white" alt=".NET 8 Badge">
-                    <img src="https://img.shields.io/badge/MVVM-blue?style=for-the-badge&logo=c-sharp&logoColor=white" alt="MVVM Badge">
+    <section class="section-padding" style="padding-top: 120px;">
+        <div class="container" style="max-width: 1100px;">
+
+            <!-- Header -->
+            <div style="margin-bottom: 60px;">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <a href="dotnet-projects.html"
+                        style="color: var(--text-secondary); font-size: 0.9rem; display: flex; align-items: center; gap: 8px; transition: color 0.2s;">
+                        <i class="fas fa-arrow-left"></i> Back to Projects
+                    </a>
+                </div>
+                <h1 style="font-size: 3rem; margin-bottom: 24px; line-height: 1.1; font-weight: 700;">FinTrack Desktop
+                </h1>
+                <p
+                    style="font-size: 1.2rem; color: var(--text-secondary); max-width: 800px; margin-bottom: 32px; line-height: 1.7;">
+                    Modern Financial Management for Windows. Built with WPF and .NET 8.
+                </p>
+                <div class="skill-tags" style="margin-bottom: 24px;">
+                    <span class="skill-tag">WPF</span>
+                    <span class="skill-tag">.NET 8</span>
+                    <span class="skill-tag">MVVM</span>
+                    <span class="skill-tag">LiveCharts2</span>
+                    <span class="skill-tag">SQLite</span>
+                </div>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <a href="https://github.com/EnesEfeTokta/FinTrack" target="_blank" class="btn">
+                        <i class="fab fa-github"></i> View Repository
+                    </a>
+                    <a href="fintrackwebapi-dotnet-project.html" class="btn btn-secondary">
+                        <i class="fas fa-server"></i> Backend API
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Project Details -->
-    <section class="project-details">
-        <div class="container">
-            <div class="project-content">
+            <!-- Content -->
+            <div style="display: flex; flex-direction: column; gap: 48px;">
 
-                <!-- About the Project -->
-                <div class="project-section">
-                    <h2>About the Project</h2>
-                    <p>FinTrack is a comprehensive Windows desktop application designed for personal finance management. Built with **WPF** and **.NET 8**, it provides an intuitive interface for tracking expenses, managing budgets, and generating financial reports. The application can operate in a **standalone mode** using a secure local SQLite database, or it can seamlessly connect to the **FinTrack Web API** for cloud synchronization, AI-powered assistance, and advanced features like the Secure Debt System.</p>
-                </div>
-
-                <!-- Key Features -->
-                <div class="project-section">
-                    <h2>Key Features</h2>
-                    <ul class="feature-list">
-                        <li><i class="fas fa-tachometer-alt"></i> Real-time financial dashboard with interactive charts via LiveCharts2</li>
-                        <li><i class="fas fa-wallet"></i> Detailed expense and income tracking with custom categorization</li>
-                        <li><i class="fas fa-piggy-bank"></i> Dynamic budget planning and progress monitoring</li>
-                        <li><i class="fas fa-cloud-sync-alt"></i> Cloud synchronization with the FinTrack Web API backend</li>
-                        <li><i class="fas fa-robot"></i> Integration with AI FinBot for financial queries and advice</li>
-                        <li><i class="fas fa-video"></i> Full support for the Secure Debt System (GBS), including video uploads</li>
-                        <li><i class="fas fa-file-export"></i> Multi-format report exporting (PDF, Excel, Word, etc.)</li>
-                        <li><i class="fas fa-sign-in-alt"></i> JWT-based secure user authentication and session management</li>
-                    </ul>
-                </div>
-
-                <!-- Technologies Used -->
-                <div class="project-section">
-                    <h2>Technologies Used</h2>
-                    <ul class="tech-list">
-                        <li><i class="fab fa-windows"></i> Platform & UI: .NET 8, WPF (Windows Presentation Foundation)</li>
-                        <li><i class="fas fa-code"></i> Language: C# 12</li>
-                        <li><i class="fas fa-project-diagram"></i> Architecture: MVVM with CommunityToolkit.Mvvm (Source Generators)</li>
-                        <li><i class="fas fa-chart-bar"></i> Data Visualization: LiveCharts2</li>
-                        <li><i class="fas fa-diagnostics"></i> Logging: Serilog</li>
-                        <li><i class="fas fa-network-wired"></i> API Communication: HttpClient, Refit (for type-safe API calls)</li>
-                        <li><i class="fas fa-key"></i> Authentication: System.IdentityModel.Tokens.Jwt</li>
-                    </ul>
-                </div>
-
-                <!-- Application Demo & Video -->
-                <div class="project-section">
-                    <h2>Application Demo & Video</h2>
-                    <div class="video-showcase">
-                        <a href="https://youtu.be/EMGObq-SWrA" target="_blank" title="Watch Demo on YouTube">
-                             <img src="https://i.ytimg.com/vi/0r24kuKRQ6A/hq720.jpg" alt="FinTrack Application Screenshot">
-                        </a>
-                        <p style="text-align: center; font-style: italic; margin-top: 10px;">Click the image to watch the full application demo on YouTube.</p>
+                <!-- Video Demo -->
+                <section class="bento-item" style="padding: 0; overflow: hidden;">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/EMGObq-SWrA?rel=0" title="FinTrack Desktop Demo"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
                     </div>
-                </div>
-
-                <!-- Project Links -->
-                <div class="project-section">
-                    <h2>Project Links</h2>
-                    <div class="project-links">
-                        <a href="https://github.com/EnesEfeTokta/FinTrack" class="btn" target="_blank">
-                            <i class="fab fa-github"></i>
-                            GitHub Repository (WPF)
-                        </a>
-                        <a href="fintrack-webapi-project.html" class="btn">
-                            <i class="fas fa-server"></i>
-                            View Backend API Project
-                        </a>
+                    <div style="padding: 24px; background: var(--bg-secondary);">
+                        <p style="margin: 0; color: var(--text-secondary); font-size: 0.95rem;">
+                            <i class="fab fa-youtube" style="color: #FF0000; margin-right: 8px;"></i>
+                            Watch the full application walkthrough and feature demonstration
+                        </p>
                     </div>
-                </div>
+                </section>
 
-                <!-- System Requirements -->
-                <div class="project-section">
-                    <h2>System Requirements</h2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Component</th>
-                                <th>Minimum Requirements</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Operating System</td>
-                                <td>Windows 10 (Version 1903 or later) / Windows 11</td>
-                            </tr>
-                            <tr>
-                                <td>.NET Runtime</td>
-                                <td>.NET 8.0 Desktop Runtime</td>
-                            </tr>
-                            <tr>
-                                <td>RAM</td>
-                                <td>4 GB</td>
-                            </tr>
-                            <tr>
-                                <td>Storage</td>
-                                <td>250 MB free space</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <!-- Overview -->
+                <section class="bento-item">
+                    <h2
+                        style="font-size: 1.75rem; margin-bottom: 24px; color: var(--text-main); font-weight: 600; display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-info-circle" style="color: var(--accent-primary); font-size: 1.5rem;"></i>
+                        Project Overview
+                    </h2>
+                    <p style="font-size: 1.05rem; line-height: 1.9; margin-bottom: 20px; color: var(--text-secondary);">
+                        FinTrack Desktop is the flagship Windows client for the FinTrack ecosystem. It delivers a
+                        premium financial management experience using <strong>Windows Presentation Foundation
+                            (WPF)</strong> with a clean MVVM architecture.
+                    </p>
+                    <p style="font-size: 1.05rem; line-height: 1.9; color: var(--text-secondary);">
+                        The application supports both <strong>offline SQLite</strong> and <strong>online Cloud
+                            API</strong> modes, giving users flexibility to manage their finances anywhere with
+                        beautiful, real-time data visualizations.
+                    </p>
+                </section>
+
+                <!-- Features -->
+                <section class="bento-item">
+                    <h2
+                        style="font-size: 1.75rem; margin-bottom: 32px; color: var(--text-main); font-weight: 600; display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-star" style="color: var(--accent-secondary); font-size: 1.5rem;"></i>
+                        Key Features
+                    </h2>
+                    <ul class="feature-grid">
+                        <li class="feature-item">
+                            <i class="fas fa-sync-alt feature-icon"></i>
+                            <div>
+                                <strong>Hybrid Sync</strong>
+                                <p>Seamlessly switch between offline SQLite and online Cloud API modes.</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-chart-line feature-icon"></i>
+                            <div>
+                                <strong>Interactive Charts</strong>
+                                <p>Real-time financial insights with LiveCharts2 visualizations.</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-robot feature-icon"></i>
+                            <div>
+                                <strong>AI Financial Advisor</strong>
+                                <p>Chat with FinBot for intelligent financial guidance.</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-file-export feature-icon"></i>
+                            <div>
+                                <strong>Report Generation</strong>
+                                <p>Export comprehensive financial reports to PDF and Excel.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Tech Specs -->
+                <section class="bento-item">
+                    <h2
+                        style="font-size: 1.75rem; margin-bottom: 24px; color: var(--text-main); font-weight: 600; display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-cogs" style="color: var(--accent-primary); font-size: 1.5rem;"></i>
+                        Technical Specifications
+                    </h2>
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 1rem;">
+                            <tbody>
+                                <tr style="border-bottom: 1px solid var(--border-subtle);">
+                                    <td
+                                        style="padding: 16px 0; font-weight: 600; color: var(--text-main); width: 200px;">
+                                        Architecture</td>
+                                    <td style="padding: 16px 0; color: var(--text-secondary);">MVVM
+                                        (CommunityToolkit.Mvvm)</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--border-subtle);">
+                                    <td style="padding: 16px 0; font-weight: 600; color: var(--text-main);">Framework
+                                    </td>
+                                    <td style="padding: 16px 0; color: var(--text-secondary);">.NET 8.0 Desktop Runtime
+                                        (WPF)</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--border-subtle);">
+                                    <td style="padding: 16px 0; font-weight: 600; color: var(--text-main);">HTTP Client
+                                    </td>
+                                    <td style="padding: 16px 0; color: var(--text-secondary);">Refit (Type-safe REST
+                                        API)</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--border-subtle);">
+                                    <td style="padding: 16px 0; font-weight: 600; color: var(--text-main);">Local
+                                        Database</td>
+                                    <td style="padding: 16px 0; color: var(--text-secondary);">SQLite with AES
+                                        Encryption</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--border-subtle);">
+                                    <td style="padding: 16px 0; font-weight: 600; color: var(--text-main);">Charting
+                                    </td>
+                                    <td style="padding: 16px 0; color: var(--text-secondary);">LiveCharts2</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 16px 0; font-weight: 600; color: var(--text-main);">OS
+                                        Requirements</td>
+                                    <td style="padding: 16px 0; color: var(--text-secondary);">Windows 10 version 1809
+                                        or later</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
 
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer style="background: linear-gradient(135deg, rgba(13, 17, 23, 0.98) 0%, rgba(1, 4, 9, 0.98) 100%); color: var(--text-color); padding: 3rem 0; text-align: center; border-top: 1px solid var(--border-color);">
-        <div class="container">
-            <p style="font-size: 1.1rem; margin-bottom: 1rem;">© 2025 Enes Efe Tokta. All rights reserved.</p>
-            <p style="color: var(--text-light); font-size: 0.95rem;">
-                <i class="fas fa-code" style="color: var(--neon-blue);"></i> 
-                Made with passion and creativity
-            </p>
-            <div style="margin-top: 1.5rem; display: flex; gap: 1.5rem; justify-content: center; align-items: center;">
-                <a href="https://github.com/EnesEfeTokta" target="_blank" style="color: var(--text-light); transition: var(--transition); text-decoration: none;">
-                    <i class="fab fa-github" style="font-size: 1.5rem;"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank" style="color: var(--text-light); transition: var(--transition); text-decoration: none;">
-                    <i class="fab fa-linkedin" style="font-size: 1.5rem;"></i>
-                </a>
-            </div>
+    <footer style="border-top: 1px solid var(--border-subtle); padding: 40px 0; margin-top: 60px;">
+        <div class="container" style="text-align: center;">
+            <p style="color: var(--text-muted); font-size: 0.9rem;">© 2025 Enes Efe Tokta. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>

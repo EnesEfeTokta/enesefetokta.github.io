@@ -1,32 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enes Efe Tokta - CV</title>
+    <title>CV - Enes Efe Tokta</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <meta name="description" content="Enes Efe Tokta - Junior Software Developer CV">
+    <style>
+        /* Specific CV Styles */
+        .cv-header {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .cv-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: var(--radius-lg);
+            border: 2px solid var(--border-subtle);
+        }
+
+        .cv-section {
+            margin-bottom: 60px;
+        }
+
+        .cv-section h2 {
+            font-size: 1.5rem;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 16px;
+            margin-bottom: 32px;
+            color: var(--accent-primary);
+        }
+
+        .cv-item {
+            margin-bottom: 32px;
+        }
+
+        .cv-item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+
+        .cv-item h3 {
+            font-size: 1.25rem;
+            color: var(--text-main);
+        }
+
+        .cv-item-meta {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .cv-item ul {
+            list-style: disc;
+            padding-left: 20px;
+            color: var(--text-muted);
+            margin-top: 12px;
+        }
+
+        .cv-item ul li {
+            margin-bottom: 8px;
+        }
+    </style>
 </head>
+
 <body>
-    <!-- Scroll Progress Indicator -->
-    <div class="scroll-progress" id="scrollProgress"></div>
-    
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
-            <h1 class="logo">Enes Efe Tokta</h1>
+            <a href="index.html" class="logo">Enes Efe Tokta</a>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About me</a></li>
-                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#work">Work</a></li>
                 <li><a href="index.html#skills">Skills</a></li>
                 <li><a href="education.html">Education</a></li>
-                <li><a href="index.html#contact">Contact me</a></li>
+                <li><a href="cv.html" style="color: var(--text-main);">Resume</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
             </ul>
             <button class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
@@ -34,243 +91,130 @@
         </div>
     </nav>
 
-    <!-- CV Header -->
-    <section class="cv-header">
-        <div class="container">
-            <div class="cv-header-content">
-                <div class="cv-profile">
-                    <img src="https://avatars.githubusercontent.com/u/154990402?v=4" alt="Enes Efe Tokta" class="cv-avatar">
-                    <div class="cv-info">
-                        <h1>Enes Efe Tokta</h1>
-                        <h2>Junior Software Developer</h2>
-                        <div class="cv-contact">
-                            <p><i class="fas fa-map-marker-alt"></i> Ankara, Turkiye</p>
-                            <p><i class="fas fa-envelope"></i> enesefetokta009@gmail.com</p>
-                            <p><i class="fas fa-phone"></i> +90-541-586-9564</p>
-                        </div>
-                        <div class="cv-social">
-                            <a href="https://github.com/EnesEfeTokta" target="_blank" class="social-link">
-                                <i class="fab fa-github"></i>
-                                <span>GitHub</span>
-                            </a>
-                            <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank" class="social-link">
-                                <i class="fab fa-linkedin"></i>
-                                <span>LinkedIn</span>
-                            </a>
-                            <a href="index.html" target="_blank" class="social-link">
-                                <i class="fas fa-briefcase"></i>
-                                <span>Portfolio</span>
-                            </a>
-                        </div>
+    <section class="section-padding" style="padding-top: 120px;">
+        <div class="container" style="max-width: 900px;">
+
+            <!-- CV Header -->
+            <div class="cv-header">
+                <img src="https://avatars.githubusercontent.com/u/154990402?v=4" alt="Enes Efe Tokta" class="cv-avatar">
+                <div>
+                    <h1 style="margin-bottom: 12px;">Enes Efe Tokta</h1>
+                    <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 16px;">Junior Software
+                        Developer</p>
+                    <div style="display: flex; gap: 24px; color: var(--text-muted); font-size: 0.9rem;">
+                        <span><i class="fas fa-map-marker-alt"></i> Ankara, Turkey</span>
+                        <span><i class="fas fa-envelope"></i> enesefetokta009@gmail.com</span>
+                        <span><i class="fab fa-github"></i> github.com/EnesEfeTokta</span>
                     </div>
-                </div>
-                <div class="cv-actions">
-                    <a href="https://drive.google.com/drive/folders/11f-M7UIAoqunNiSYOZepA2s70YURDcmm?usp=sharing" class="btn" target="_blank">
-                        <i class="fas fa-download"></i>
-                        Download CV
-                    </a>
-                    <a href="index.html" class="btn btn-outline">
-                        <i class="fas fa-home"></i>
-                        Back to Portfolio
-                    </a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- CV Content -->
-    <section class="cv-content">
-        <div class="container">
-            <div class="cv-grid">
-                <!-- Profile Section -->
-                <div class="cv-section">
-                    <h3><i class="fas fa-user"></i> Profile</h3>
-                    <p>Innovative and detail-oriented Software Developer with 4+ years of .NET and 5+ years of Unity experience. Strong background in building scalable SaaS and desktop solutions with AI integration. Passionate about solving complex problems, improving user experience, and continuously learning new technologies.</p>
+            <!-- Profile -->
+            <div class="cv-section">
+                <h2>Profile</h2>
+                <p style="color: var(--text-secondary); line-height: 1.7;">
+                    Innovative and detail-oriented Software Developer with broad experience in .NET ecosystem and Unity
+                    game development. Strong background in building scalable SaaS solutions and immersive interactive
+                    applications. Passionate about clean architecture, solving complex problems, and continuous
+                    professional growth.
+                </p>
+            </div>
+
+            <!-- Experience -->
+            <div class="cv-section">
+                <h2>Experience</h2>
+
+                <div class="cv-item">
+                    <div class="cv-item-header">
+                        <h3>Software Intern</h3>
+                        <div class="cv-item-meta">Private Software Company | Aug 2025</div>
+                    </div>
+                    <ul>
+                        <li>Developed and tested internal API modules for a .NET-based ERP system alongside senior
+                            developers.</li>
+                        <li>Participated in code review sessions and implemented unit tests.</li>
+                    </ul>
                 </div>
 
-                <!-- Skills Section -->
-                <div class="cv-section">
-                    <h3><i class="fas fa-code"></i> Skills</h3>
-                    <div class="skills-categories">
-                        <div class="skill-category">
-                            <h4>Languages & Frameworks</h4>
-                            <p>C#, ASP.NET Core, WPF, React, Python</p>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Databases</h4>
-                            <p>PostgreSQL, SQLite, Supabase</p>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Tools & DevOps</h4>
-                            <p>Docker, GitHub Actions, Prometheus, Grafana, Postman</p>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Cloud & APIs</h4>
-                            <p>AWS, Azure, Stripe API, Twilio API, REST, JWT</p>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Other</h4>
-                            <p>MVC, MVVM, Microservices, AI Integration</p>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Soft Skills</h4>
-                            <p>Leadership, Empathy, Collaboration, Problem-Solving</p>
+                <div class="cv-item">
+                    <div class="cv-item-header">
+                        <h3>Software Intern</h3>
+                        <div class="cv-item-meta">Ministry of Environment, Urbanization and Climate Change | July 2025
                         </div>
                     </div>
-                </div>
-
-                <!-- Experience Section -->
-                <div class="cv-section">
-                    <h3><i class="fas fa-briefcase"></i> Experience</h3>
-                    
-                    <div class="experience-item">
-                        <div class="experience-header">
-                            <h4>Software Intern</h4>
-                            <span class="experience-period">August 2025</span>
-                            <span class="experience-location">Private Software Company</span>
-                        </div>
-                        <ul>
-                            <li>Developed and tested internal API modules for a .NET-based ERP system</li>
-                            <li>Participated in code review and debugging sessions for frontend integration</li>
-                        </ul>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="experience-header">
-                            <h4>Software Intern</h4>
-                            <span class="experience-period">July 2025</span>
-                            <span class="experience-location">T.C. Ministry of Environment, Urbanization and Climate Change</span>
-                        </div>
-                        <ul>
-                            <li>Contributed to internal automation tools using ASP.NET Core and PostgreSQL</li>
-                            <li>Collaborated in a small development team to enhance performance and data security</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Projects Section -->
-                <div class="cv-section">
-                    <h3><i class="fas fa-laptop-code"></i> Projects</h3>
-                    
-                    <div class="project-item">
-                        <h6>VidSync - AI-Powered Video Meeting Platform</h6>
-                        <p class="project-stack"><strong>Stack:</strong> ASP.NET Core, React, PostgreSQL, Redis, Docker, Cloudflare, Ollama, Mistral 7B</p>
-                        <ul>
-                            <li>Built an AI-powered video meeting platform with real-time collaboration features</li>
-                            <li>Integrated Mistral 7B AI model for intelligent meeting assistance</li>
-                            <li>Implemented Redis caching and PostgreSQL for optimal performance</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="project-item">
-                        <h6>FinTrack - Financial Management SaaS</h6>
-                        <p class="project-stack"><strong>Stack:</strong> ASP.NET Core, WPF, PostgreSQL, Redis, Prometheus, Grafana, Stripe, Gemini API</p>
-                        <ul>
-                            <li>Building a full-stack platform to manage personal finances securely</li>
-                            <li>Integrated Stripe payments and JWT authentication</li>
-                            <li>Developed a budgeting chatbot using Gemini API for financial advice</li>
-                            <li>Implemented monitoring with Prometheus and Grafana</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="project-item">
-                        <h6>WeatherZeroPlus - Desktop Weather & Alert Application</h6>
-                        <p class="project-stack"><strong>Stack:</strong> WPF, Supabase, Twilio SendGrid</p>
-                        <ul>
-                            <li>Created a WPF desktop app for real-time weather alerts</li>
-                            <li>Integrated Twilio and SendGrid for automated notifications</li>
-                            <li>Applied AES encryption to secure sensitive data</li>
-                        </ul>
-                    </div>
-
-                    <div class="project-item">
-                        <h6>Fishing - Unity Mobile Game</h6>
-                        <p class="project-stack"><strong>Stack:</strong> Unity, C#</p>
-                        <ul>
-                            <li>Developed a Unity-based mobile game with dynamic difficulty system</li>
-                            <li>Implemented rewards and customization features</li>
-                            <li>Designed engaging gameplay mechanics for mobile platforms</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Education Section -->
-                <div class="cv-section">
-                    <h3><i class="fas fa-graduation-cap"></i> Education</h3>
-                    <div class="education-item">
-                        <h4>BSc, Information Systems and Technologies</h4>
-                        <p>Atatürk University, Erzurum</p>
-                        <span class="education-period">2023 - 2027 (Expected) | GPA: 3.2/4.0</span>
-                    </div>
-                </div>
-
-                <!-- Certificates & Achievements Section -->
-                <div class="cv-section">
-                    <h3><i class="fas fa-certificate"></i> Certificates & Achievements</h3>
-                    <div class="certificate-item">
-                        <h4><i class="fab fa-aws"></i> AWS Cloud Practitioner Certificate</h4>
-                        <p>2025</p>
-                    </div>
-                    <div class="certificate-item">
-                        <h4><i class="fab fa-microsoft"></i> Microsoft Full Stack Developer Certificate</h4>
-                        <p>2025</p>
-                    </div>
-                    <div class="certificate-item">
-                        <h4><i class="fab fa-react"></i> Meta Frontend Developer Certificate</h4>
-                        <p>2025</p>
-                    </div>
-                    <div class="certificate-item">
-                        <h4><i class="fab fa-microsoft"></i> Microsoft Azure AZ-900 Preparation</h4>
-                        <p>2025</p>
-                    </div>
-                    <div class="certificate-item">
-                        <h4><i class="fab fa-google"></i> Google Project Management Certificate</h4>
-                        <p>2024</p>
-                    </div>
-                    <div class="certificate-item">
-                        <h4><i class="fas fa-trophy"></i> Google Game and App Academy Finalist – Top 7 in 3000</h4>
-                        <p>2024</p>
-                    </div>
-                    <div class="certificate-item">
-                        <h4><i class="fas fa-plane"></i> KODLAĞRI Estonian Tech Visit</h4>
-                        <p>Represented Türkiye in Skype & TalTech meetings</p>
-                    </div>
-                </div>
-
-                <!-- Languages Section -->
-                <div class="cv-section">
-                    <h3><i class="fas fa-language"></i> Languages</h3>
-                    <p><strong>Turkish</strong> (Native) | <strong>English</strong> (Professional Proficiency)</p>
-                </div>
-
-                <!-- Availability Section -->
-                <div class="cv-section">
-                    <h3><i class="fas fa-clock"></i> Availability</h3>
-                    <p>Open to junior developer roles, internships, and remote freelance opportunities.</p>
+                    <ul>
+                        <li>Contributed to internal automation tools using ASP.NET Core and PostgreSQL.</li>
+                        <li>Enhanced data security protocols and optimized database queries.</li>
+                    </ul>
                 </div>
             </div>
+
+            <!-- Projects -->
+            <div class="cv-section">
+                <h2>Key Projects</h2>
+
+                <div class="cv-item">
+                    <div class="cv-item-header">
+                        <h3>VidSync</h3>
+                        <div class="cv-item-meta">ASP.NET Core, React, AI Integration</div>
+                    </div>
+                    <ul>
+                        <li>Built an AI-powered video meeting platform with real-time collaboration.</li>
+                        <li>Integrated Mistral 7B AI for intelligent meeting notes and transcription.</li>
+                        <li>Used Redis for caching and Docker for containerized deployment.</li>
+                    </ul>
+                </div>
+
+                <div class="cv-item">
+                    <div class="cv-item-header">
+                        <h3>FinTrack SaaS</h3>
+                        <div class="cv-item-meta">ASP.NET Core, WPF, PostgreSQL</div>
+                    </div>
+                    <ul>
+                        <li>Full-stack financial management platform with desktop and web clients.</li>
+                        <li>Implemented Stripe payments, JWT auth, and AI financial chatbot (Gemini).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Skills -->
+            <div class="cv-section">
+                <h2>Skills</h2>
+                <div class="skill-tags">
+                    <span class="skill-tag">C#</span>
+                    <span class="skill-tag">.NET Core</span>
+                    <span class="skill-tag">Unity 3D</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Azure</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Agile/Scrum</span>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="cv-section">
+                <h2>Education</h2>
+                <div class="cv-item">
+                    <div class="cv-item-header">
+                        <h3>BSc, Information Systems and Technologies</h3>
+                        <div class="cv-item-meta">Atatürk University | 2023 - 2027 (Expected)</div>
+                    </div>
+                    <p style="color: var(--text-muted);">GPA: 3.2/4.0</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <!-- Footer -->
-    <footer style="background: linear-gradient(135deg, rgba(13, 17, 23, 0.98) 0%, rgba(1, 4, 9, 0.98) 100%); color: var(--text-color); padding: 3rem 0; text-align: center; border-top: 1px solid var(--border-color);">
-        <div class="container">
-            <p style="font-size: 1.1rem; margin-bottom: 1rem;">© 2025 Enes Efe Tokta. All rights reserved.</p>
-            <p style="color: var(--text-light); font-size: 0.95rem;">
-                <i class="fas fa-code" style="color: var(--neon-blue);"></i> 
-                Made with passion and creativity
-            </p>
-            <div style="margin-top: 1.5rem; display: flex; gap: 1.5rem; justify-content: center; align-items: center;">
-                <a href="https://github.com/EnesEfeTokta" target="_blank" style="color: var(--text-light); transition: var(--transition); text-decoration: none;">
-                    <i class="fab fa-github" style="font-size: 1.5rem;"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank" style="color: var(--text-light); transition: var(--transition); text-decoration: none;">
-                    <i class="fab fa-linkedin" style="font-size: 1.5rem;"></i>
-                </a>
-            </div>
+    <footer style="border-top: 1px solid var(--border-subtle); padding: 40px 0; margin-top: 40px;">
+        <div class="container" style="text-align: center;">
+            <a href="pdf/EnesEfeTokta_CV.pdf" class="btn btn-secondary">Download PDF Version</a>
+            <p style="color: var(--text-muted); margin-top: 20px;">© 2025 Enes Efe Tokta.</p>
         </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
-</html> 
+
+</html>
