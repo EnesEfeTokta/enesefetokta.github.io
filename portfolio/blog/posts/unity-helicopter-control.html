@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Basic Helicopter Control System in Unity - Enes Efe Tokta</title>
+    <meta name="title" content="Basic Helicopter Control System in Unity">
+    <meta name="description"
+        content="Step-by-step guide to creating a physics-based helicopter control system in Unity. Learn how to implement realistic helicopter movements with C# code examples.">
+    <meta name="keywords"
+        content="Unity Tutorial, Helicopter Control, Unity Physics, Game Development, Unity Rigidbody, Flight Simulation, Unity C#, Helicopter Game">
+    <meta name="author" content="Enes Efe Tokta">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://enesefetokta.github.io/portfolio/blog/posts/unity-helicopter-control.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://enesefetokta.github.io/portfolio/blog/posts/unity-helicopter-control.html">
+    <meta property="og:title" content="Basic Helicopter Control System in Unity">
+    <meta property="og:description"
+        content="Complete tutorial on implementing a physics-based helicopter control system in Unity.">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/154990402?v=4">
+    <meta property="article:published_time" content="2024-05-01T00:00:00Z">
+    <meta property="article:author" content="Enes Efe Tokta">
+    <meta property="article:section" content="Game Development">
+    <meta property="article:tag" content="Unity">
+    <meta property="article:tag" content="Tutorial">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url"
+        content="https://enesefetokta.github.io/portfolio/blog/posts/unity-helicopter-control.html">
+    <meta name="twitter:title" content="Basic Helicopter Control System in Unity">
+    <meta name="twitter:description" content="Learn to build a helicopter control system with Unity physics">
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/154990402?v=4">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Basic Helicopter Control System in Unity",
+      "image": "https://avatars.githubusercontent.com/u/154990402?v=4",
+      "author": {
+        "@type": "Person",
+        "name": "Enes Efe Tokta",
+        "url": "https://enesefetokta.github.io/portfolio/"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Enes Efe Tokta",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://avatars.githubusercontent.com/u/154990402?v=4"
+        }
+      },
+      "datePublished": "2024-05-01",
+      "dateModified": "2024-05-01",
+      "description": "Step-by-step guide to creating a physics-based helicopter control system in Unity with complete code examples.",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://enesefetokta.github.io/portfolio/blog/posts/unity-helicopter-control.html"
+      },
+      "keywords": "Unity, Tutorial, Helicopter Control, Game Development, Physics"
+    }
+    </script>
+
+    <style>
+        /* Blog Post Specific Styles - Same as other posts */
+        .blog-post {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .blog-header {
+            margin-bottom: 48px;
+        }
+
+        .blog-title {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--text-main);
+        }
+
+        .blog-meta-info {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            padding: 20px 0;
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px solid var(--border-subtle);
+        }
+
+        .author-details h4 {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .author-details p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .blog-content {
+            line-height: 1.8;
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+        }
+
+        .blog-content h2 {
+            font-size: 1.8rem;
+            margin-top: 48px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .blog-content h3 {
+            font-size: 1.4rem;
+            margin-top: 36px;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .blog-content p {
+            margin-bottom: 20px;
+        }
+
+        .blog-content ul,
+        .blog-content ol {
+            margin-bottom: 20px;
+            padding-left: 28px;
+        }
+
+        .blog-content li {
+            margin-bottom: 12px;
+        }
+
+        .blog-content pre {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            overflow-x: auto;
+            margin: 24px 0;
+            font-size: 0.9rem;
+        }
+
+        .blog-content code {
+            background: rgba(99, 102, 241, 0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: var(--accent-primary);
+        }
+
+        .blog-content pre code {
+            background: none;
+            padding: 0;
+            color: var(--text-secondary);
+        }
+
+        .blog-content blockquote {
+            border-left: 4px solid var(--accent-primary);
+            padding-left: 24px;
+            margin: 32px 0;
+            font-style: italic;
+            color: var(--text-main);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05));
+            border: 1px solid var(--accent-primary);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin: 32px 0;
+        }
+
+        .highlight-box h4 {
+            margin-top: 0;
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .control-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+        }
+
+        .control-table th,
+        .control-table td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .control-table th {
+            background: var(--bg-card);
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .control-table td:first-child {
+            font-weight: 500;
+            color: var(--accent-primary);
+        }
+
+        .blog-tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 32px 0;
+        }
+
+        .blog-tag {
+            padding: 6px 16px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--accent-primary);
+        }
+
+        .back-to-blog {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-primary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            font-weight: 500;
+            transition: gap 0.3s ease;
+        }
+
+        .back-to-blog:hover {
+            gap: 12px;
+        }
+
+        .share-section {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .share-twitter {
+            background: #1DA1F2;
+            color: white;
+        }
+
+        .share-linkedin {
+            background: #0077B5;
+            color: white;
+        }
+
+        .share-facebook {
+            background: #1877F2;
+            color: white;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../../index.html" class="logo">Enes Efe Tokta</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#about">About</a></li>
+                <li><a href="../../index.html#work">Work</a></li>
+                <li><a href="../../index.html#skills">Skills</a></li>
+                <li><a href="../../pages/education.html">Education</a></li>
+                <li><a href="../../pages/cv.html">Resume</a></li>
+                <li><a href="../../pages/biography.html">Biography</a></li>
+                <li><a href="../index.html" style="color: var(--text-main);">Blog</a></li>
+                <li><a href="../../index.html#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Blog Post -->
+    <section class="section-padding" style="padding-top: 120px;">
+        <div class="container">
+            <div class="blog-post">
+
+                <!-- Back Button -->
+                <a href="../index.html" class="back-to-blog">
+                    <i class="fas fa-arrow-left"></i> Back to Blog
+                </a>
+
+                <!-- Blog Header -->
+                <header class="blog-header">
+                    <h1 class="blog-title">Basic Helicopter Control System in Unity</h1>
+
+                    <div class="blog-meta-info">
+                        <div class="author-info">
+                            <img src="https://avatars.githubusercontent.com/u/154990402?v=4" alt="Enes Efe Tokta"
+                                class="author-avatar">
+                            <div class="author-details">
+                                <h4>Enes Efe Tokta</h4>
+                                <p>May 1, 2024 • 9 min read</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-tags-container">
+                        <span class="blog-tag">Unity</span>
+                        <span class="blog-tag">Tutorial</span>
+                        <span class="blog-tag">Physics</span>
+                        <span class="blog-tag">C#</span>
+                    </div>
+                </header>
+
+                <!-- Blog Content -->
+                <article class="blog-content">
+
+                    <p>
+                        Many helicopter games exist today. The mere mention of helicopters can intimidate people.
+                        Issues like heavy physics controls can scare game developers. Actually, it's not that difficult,
+                        but this depends on the features and realism of the helicopter control system you want to
+                        create.
+                    </p>
+
+                    <p>
+                        If you want to create a realistic helicopter system, you need to dedicate a significant amount
+                        of time. However, creating a system that is not realistic but has basic helicopter features is
+                        quite easy. Basic helicopter systems are generally not physics-based.
+                    </p>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-info-circle"></i> About This Tutorial</h4>
+                        <p>
+                            I will explain to you, valuable developers, step-by-step, as best as I can, how to create
+                            a basic helicopter control system. In the helicopter control system we will create, the
+                            helicopter's movements will be based on physics using Unity's Rigidbody component.
+                        </p>
+                    </div>
+
+                    <h2>Basic Helicopter Features</h2>
+
+                    <p>
+                        Let's start by explaining the basic features a helicopter should have. These basic movements
+                        are actually similar to basic character control features:
+                    </p>
+
+                    <ul>
+                        <li>Ascend</li>
+                        <li>Descend</li>
+                        <li>Forward</li>
+                        <li>Backward</li>
+                        <li>Turn right</li>
+                        <li>Turn left</li>
+                        <li>Move right</li>
+                        <li>Move left</li>
+                    </ul>
+
+                    <h3>Control Mapping</h3>
+
+                    <p>
+                        In the helicopter control system we will build, the properties assigned to each feature are
+                        as follows:
+                    </p>
+
+                    <table class="control-table">
+                        <thead>
+                            <tr>
+                                <th>Action</th>
+                                <th>Key Binding</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ascend ⬆️</td>
+                                <td>Left Shift</td>
+                            </tr>
+                            <tr>
+                                <td>Descend ⬇️</td>
+                                <td>Left Alt</td>
+                            </tr>
+                            <tr>
+                                <td>Forward ⬆️</td>
+                                <td>W</td>
+                            </tr>
+                            <tr>
+                                <td>Backward ⬇️</td>
+                                <td>S</td>
+                            </tr>
+                            <tr>
+                                <td>Turn Right ↪️</td>
+                                <td>Q</td>
+                            </tr>
+                            <tr>
+                                <td>Turn Left ↩️</td>
+                                <td>E</td>
+                            </tr>
+                            <tr>
+                                <td>Move Right ➡️</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>Move Left ⬅️</td>
+                                <td>D</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>
+                        I wanted to use the old Unity Input system for this. However, our system will work completely
+                        smoothly with the new Input system as well.
+                    </p>
+
+                    <h2>Understanding Helicopter Physics</h2>
+
+                    <p>
+                        When helicopters move, they normally tilt in that direction. For example:
+                    </p>
+
+                    <ul>
+                        <li>When moving <strong>forward</strong>, they make a 15-degree clockwise tilt</li>
+                        <li>When moving <strong>backward</strong>, they make a 15-degree counterclockwise tilt</li>
+                        <li>Similarly, when <strong>turning right and left</strong>, they make a 15-degree turn</li>
+                    </ul>
+
+                    <p>
+                        Of course, when turning, the helicopter no longer stays at 15 degrees. When the movement is
+                        finished, it needs to return to its original rotation value. <strong>This is the basic logic
+                            of a helicopter.</strong>
+                    </p>
+
+                    <h2>Setting Up the Component</h2>
+
+                    <p>
+                        First, let's add our Rigidbody component to our helicopter object. I want to do this code-wise,
+                        not through the Inspector. I'm using the <code>RequireComponent</code> attribute for this:
+                    </p>
+
+                    <pre><code>[RequireComponent(typeof(Rigidbody))]
+public class Helicopter : MonoBehaviour
+{
+    // Class code here
+}</code></pre>
+
+                    <p>
+                        This way, our Rigidbody object will be automatically added to every object containing our
+                        <code>Helicopter.cs</code> code. Also, when you download an object from GitHub, the Rigidbody
+                        will be added directly.
+                    </p>
+
+                    <h2>Defining Variables</h2>
+
+                    <p>
+                        I wanted to divide the variables into four groups: Force, Rotation Speed, Angle, and Propeller.
+                        I used <code>[SerializeField]</code> for better organization and to make the code more readable:
+                    </p>
+
+                    <pre><code>// Force Variables
+[Header("Forces")]
+[SerializeField] private float engineForce = 10f;
+[SerializeField] private float altitudeChangeForce = 5f;
+
+// Rotation Speed Variables
+[Header("Rotation Speeds")]
+[SerializeField] private float rotateSpeed = 50f;
+[SerializeField] private float anglesSpeed = 2f;
+
+// Angle Variables
+[Header("Tilt Angles")]
+[SerializeField] private float maxTiltAngle = 30f;
+
+// Propeller Variables
+[Header("Propellers")]
+[SerializeField] private Transform propeller;
+[SerializeField] private Transform propellerTail;
+[SerializeField] private float propellerSpeed = 500f;
+
+// Rigidbody
+private Rigidbody rb;</code></pre>
+
+                    <h3>Variable Explanations:</h3>
+
+                    <ul>
+                        <li><code>engineForce</code> and <code>altitudeChangeForce</code> - Determine the speed of
+                            movement</li>
+                        <li><code>rotateSpeed</code> and <code>anglesSpeed</code> - Control rotation speeds</li>
+                        <li><code>maxTiltAngle</code> - Maximum angle for maneuvers (I set it to 30 degrees)</li>
+                        <li><code>propeller</code> and <code>propellerTail</code> - References to propeller transforms
+                        </li>
+                        <li><code>rb</code> - Reference to the Rigidbody component</li>
+                    </ul>
+
+                    <p>
+                        Actually, the presence or absence of propellers doesn't affect the operation of our system,
+                        but what truly makes a helicopter a helicopter, different from airplanes, is its propellers!
+                    </p>
+
+                    <h2>Initialization</h2>
+
+                    <p>
+                        We didn't write much code in the Start method. We only used it to access our Rigidbody
+                        component and disable gravity:
+                    </p>
+
+                    <pre><code>void Start()
+{
+    rb = GetComponent<Rigidbody>();
+    rb.useGravity = false;
+}</code></pre>
+
+                    <p>
+                        We're turning off the force of gravity to keep the helicopter airborne. Otherwise, the
+                        helicopter would fall if we release our fingers from the keys.
+                    </p>
+
+                    <h2>Physics Update Loop</h2>
+
+                    <p>
+                        We use <code>FixedUpdate</code> instead of <code>Update</code> because Unity recommends using
+                        FixedUpdate for physics operations. First, let's gather our inputs:
+                    </p>
+
+                    <pre><code>void FixedUpdate()
+{
+    // Get inputs
+    float verticalInput = Input.GetAxis("Vertical");      // W/S
+    float horizontalInput = Input.GetAxis("Horizontal");  // A/D
+    float altitudeInput = Input.GetAxis("Altitude");      // Left Shift/Alt
+    float rotationInput = Input.GetAxis("Rotation");      // Q/E
+    
+    // Process movement and rotation
+    Move(verticalInput, horizontalInput, altitudeInput);
+    Rotate(rotationInput);
+    Tilt(verticalInput, horizontalInput);
+    RotatePropellers();
+}</code></pre>
+
+                    <h3>Input Manager Setup</h3>
+
+                    <p>
+                        For <code>altitudeInput</code> and <code>rotationInput</code>, special settings need to be
+                        made in Unity → Edit → Project Settings → Input Manager:
+                    </p>
+
+                    <p><strong>Altitude Input:</strong></p>
+                    <ul>
+                        <li>Name: "Altitude"</li>
+                        <li>Negative Button: "left alt"</li>
+                        <li>Positive Button: "left shift"</li>
+                    </ul>
+
+                    <p><strong>Rotation Input:</strong></p>
+                    <ul>
+                        <li>Name: "Rotation"</li>
+                        <li>Negative Button: "e"</li>
+                        <li>Positive Button: "q"</li>
+                    </ul>
+
+                    <h2>Movement Implementation</h2>
+
+                    <p>
+                        Now let's define our movement vectors and apply forces:
+                    </p>
+
+                    <pre><code>void Move(float vertical, float horizontal, float altitude)
+{
+    // Forward/Backward movement
+    Vector3 forwardForce = transform.forward * vertical * engineForce * Time.deltaTime;
+    
+    // Right/Left movement
+    Vector3 sidewaysForce = transform.right * horizontal * engineForce * Time.deltaTime;
+    
+    // Altitude control
+    Vector3 altitudeForce = transform.up * altitude * altitudeChangeForce * Time.deltaTime;
+    
+    // Apply all forces
+    rb.AddForce(altitudeForce);
+    rb.AddForce(forwardForce + sidewaysForce);
+}</code></pre>
+
+                    <h2>Rotation and Tilting</h2>
+
+                    <p>
+                        Now we come to the turns that will make our helicopter resemble a real helicopter. The tilting
+                        creates realistic-looking movement:
+                    </p>
+
+                    <pre><code>void Rotate(float rotationInput)
+{
+    // Rotate helicopter around Y-axis
+    float rotation = rotationInput * rotateSpeed * Time.deltaTime;
+    transform.Rotate(Vector3.up, rotation);
+}
+
+void Tilt(float vertical, float horizontal)
+{
+    // Calculate tilt angles based on input
+    float WS_TiltAngle = -vertical * maxTiltAngle;  // Forward/back tilt
+    float AD_TiltAngle = horizontal * maxTiltAngle;  // Side tilt
+    
+    // Create target rotation
+    Quaternion targetRotation = Quaternion.Euler(WS_TiltAngle, transform.eulerAngles.y, AD_TiltAngle);
+    
+    // Smoothly interpolate to target rotation
+    transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, anglesSpeed * Time.deltaTime);
+}</code></pre>
+
+                    <h3>How Tilting Works:</h3>
+
+                    <ol>
+                        <li>Calculate the desired tilt angle based on input (multiplied by <code>maxTiltAngle</code>)
+                        </li>
+                        <li>Create a target rotation quaternion</li>
+                        <li>Use <code>Quaternion.Lerp</code> to smoothly transition to the target rotation</li>
+                        <li>When input stops, the helicopter naturally returns to level position</li>
+                    </ol>
+
+                    <h2>Propeller Rotation</h2>
+
+                    <p>
+                        With these two lines of code, we can rotate our main rotor and tail rotor:
+                    </p>
+
+                    <pre><code>void RotatePropellers()
+{
+    if (propeller != null)
+        propeller.Rotate(Vector3.up * propellerSpeed * Time.deltaTime);
+        
+    if (propellerTail != null)
+        propellerTail.Rotate(Vector3.right * propellerSpeed * Time.deltaTime);
+}</code></pre>
+
+                    <p>
+                        Actually, you could also rotate them with animation, although it wouldn't be very efficient
+                        in my opinion.
+                    </p>
+
+                    <h2>Complete Code</h2>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-code"></i> Full Implementation</h4>
+                        <p>
+                            Here's the complete helicopter control script ready to use:
+                        </p>
+                    </div>
+
+                    <pre><code>using UnityEngine;
+
+[RequireComponent(typeof(Rigidbody))]
+public class Helicopter : MonoBehaviour
+{
+    [Header("Forces")]
+    [SerializeField] private float engineForce = 10f;
+    [SerializeField] private float altitudeChangeForce = 5f;
+
+    [Header("Rotation Speeds")]
+    [SerializeField] private float rotateSpeed = 50f;
+    [SerializeField] private float anglesSpeed = 2f;
+
+    [Header("Tilt Angles")]
+    [SerializeField] private float maxTiltAngle = 30f;
+
+    [Header("Propellers")]
+    [SerializeField] private Transform propeller;
+    [SerializeField] private Transform propellerTail;
+    [SerializeField] private float propellerSpeed = 500f;
+
+    private Rigidbody rb;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        rb.useGravity = false;
+    }
+
+    void FixedUpdate()
+    {
+        float verticalInput = Input.GetAxis("Vertical");
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float altitudeInput = Input.GetAxis("Altitude");
+        float rotationInput = Input.GetAxis("Rotation");
+
+        Move(verticalInput, horizontalInput, altitudeInput);
+        Rotate(rotationInput);
+        Tilt(verticalInput, horizontalInput);
+        RotatePropellers();
+    }
+
+    void Move(float vertical, float horizontal, float altitude)
+    {
+        Vector3 forwardForce = transform.forward * vertical * engineForce * Time.deltaTime;
+        Vector3 sidewaysForce = transform.right * horizontal * engineForce * Time.deltaTime;
+        Vector3 altitudeForce = transform.up * altitude * altitudeChangeForce * Time.deltaTime;
+
+        rb.AddForce(altitudeForce);
+        rb.AddForce(forwardForce + sidewaysForce);
+    }
+
+    void Rotate(float rotationInput)
+    {
+        float rotation = rotationInput * rotateSpeed * Time.deltaTime;
+        transform.Rotate(Vector3.up, rotation);
+    }
+
+    void Tilt(float vertical, float horizontal)
+    {
+        float WS_TiltAngle = -vertical * maxTiltAngle;
+        float AD_TiltAngle = horizontal * maxTiltAngle;
+
+        Quaternion targetRotation = Quaternion.Euler(WS_TiltAngle, transform.eulerAngles.y, AD_TiltAngle);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, anglesSpeed * Time.deltaTime);
+    }
+
+    void RotatePropellers()
+    {
+        if (propeller != null)
+            propeller.Rotate(Vector3.up * propellerSpeed * Time.deltaTime);
+            
+        if (propellerTail != null)
+            propellerTail.Rotate(Vector3.right * propellerSpeed * Time.deltaTime);
+    }
+}</code></pre>
+
+                    <h2>Tips and Customization</h2>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-Wrench"></i> Enhancement Ideas</h4>
+                        <ul>
+                            <li><strong>Add drag:</strong> Set Rigidbody drag values for more realistic deceleration
+                            </li>
+                            <li><strong>Camera shake:</strong> Add screen shake when the helicopter moves</li>
+                            <li><strong>Sound effects:</strong> Include propeller and engine sounds</li>
+                            <li><strong>Particle effects:</strong> Add dust or smoke when near the ground</li>
+                            <li><strong>Damage system:</strong> Implement health and collision damage</li>
+                            <li><strong>Fuel system:</strong> Add limited fuel requiring refueling</li>
+                        </ul>
+                    </div>
+
+                    <h2>Conclusion</h2>
+
+                    <p>
+                        Congratulations! You now have a basic helicopter control system. This is a foundation that
+                        you can build upon and customize to suit your own game's needs.
+                    </p>
+
+                    <p>
+                        I want to tell you, valuable developers, that this is a basic helicopter control system I've
+                        created. You can add or remove features to it to suit your own system. I just wanted to explain
+                        the basic logic.
+                    </p>
+
+                    <p>
+                        If you want to download the complete project, you can check my
+                        <a href="https://github.com/EnesEfeTokta" target="_blank"
+                            style="color: var(--accent-primary);">GitHub</a>.
+                        Happy coding!
+                    </p>
+
+                </article>
+
+                <!-- Share Section -->
+                <div class="share-section">
+                    <h3 style="margin-bottom: 16px;">Share this article</h3>
+                    <div class="share-buttons">
+                        <a href="https://twitter.com/intent/tweet?text=Basic%20Helicopter%20Control%20System%20in%20Unity&url=https://enesefetokta.github.io/portfolio/blog/posts/unity-helicopter-control.html"
+                            target="_blank" class="share-btn share-twitter">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://enesefetokta.github.io/portfolio/blog/posts/unity-helicopter-control.html"
+                            target="_blank" class="share-btn share-linkedin">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://enesefetokta.github.io/portfolio/blog/posts/unity-helicopter-control.html"
+                            target="_blank" class="share-btn share-facebook">
+                            <i class="fab fa-facebook"></i> Facebook
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="border-top: 1px solid var(--border-subtle); padding: 40px 0; margin-top: 60px;">
+        <div class="container" style="text-align: center;">
+            <p style="color: var(--text-muted);">© 2025 Enes Efe Tokta. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>

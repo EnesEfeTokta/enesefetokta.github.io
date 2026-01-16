@@ -16,11 +16,11 @@
     <meta name="robots" content="index, follow">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://enesefetokta.github.io/portfolio/blog.html">
+    <link rel="canonical" href="https://enesefetokta.github.io/portfolio/blog/index.html">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://enesefetokta.github.io/portfolio/blog.html">
+    <meta property="og:url" content="https://enesefetokta.github.io/portfolio/blog/index.html">
     <meta property="og:title" content="Blog - Enes Efe Tokta">
     <meta property="og:description"
         content="Software development insights, tutorials, and experiences from Unity and .NET development.">
@@ -28,13 +28,13 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://enesefetokta.github.io/portfolio/blog.html">
+    <meta name="twitter:url" content="https://enesefetokta.github.io/portfolio/blog/index.html">
     <meta name="twitter:title" content="Blog - Enes Efe Tokta">
     <meta name="twitter:description" content="Software development insights and tutorials">
     <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/154990402?v=4">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -180,16 +180,16 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
-            <a href="index.html" class="logo">Enes Efe Tokta</a>
+            <a href="../index.html" class="logo">Enes Efe Tokta</a>
             <ul class="nav-links">
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#work">Work</a></li>
-                <li><a href="index.html#skills">Skills</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="cv.html">Resume</a></li>
-                <li><a href="biography.html">Biography</a></li>
-                <li><a href="blog.html" style="color: var(--text-main);">Blog</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#work">Work</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../pages/education.html">Education</a></li>
+                <li><a href="../pages/cv.html">Resume</a></li>
+                <li><a href="../pages/biography.html">Biography</a></li>
+                <li><a href="index.html" style="color: var(--text-main);">Blog</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
             </ul>
             <button class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
@@ -221,6 +221,84 @@
             <!-- Blog Grid -->
             <div class="blog-grid">
 
+                <!-- Unity vs Unreal Engine -->
+                <article class="blog-card" data-category="unity comparison">
+                    <div class="blog-card-image">
+                        <i class="fab fa-unity"></i>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> Nov 30, 2023</span>
+                            <span><i class="far fa-clock"></i> 6 min read</span>
+                        </div>
+                        <h3>Unity vs Unreal Engine: Which Should You Choose?</h3>
+                        <p class="blog-excerpt">
+                            Comprehensive comparison of Unity and Unreal Engine game engines. Explore advantages,
+                            disadvantages, use cases, and which engine is right for your game development project.
+                        </p>
+                        <div class="blog-tags">
+                            <span class="blog-tag">Unity</span>
+                            <span class="blog-tag">Unreal Engine</span>
+                            <span class="blog-tag">Comparison</span>
+                        </div>
+                        <a href="posts/unity-vs-unreal-engine.html" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Off-screen Indicator Tutorial -->
+                <article class="blog-card" data-category="unity tutorial">
+                    <div class="blog-card-image">
+                        <i class="fab fa-unity"></i>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> Feb 19, 2024</span>
+                            <span><i class="far fa-clock"></i> 7 min read</span>
+                        </div>
+                        <h3>Off-screen Player Indicator in Unity</h3>
+                        <p class="blog-excerpt">
+                            Learn how to implement an off-screen player indicator system in Unity. Complete guide with
+                            code examples for tracking enemies and targets outside the camera view.
+                        </p>
+                        <div class="blog-tags">
+                            <span class="blog-tag">Unity</span>
+                            <span class="blog-tag">Tutorial</span>
+                            <span class="blog-tag">UI System</span>
+                        </div>
+                        <a href="posts/unity-offscreen-indicator.html" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Helicopter Control Tutorial -->
+                <article class="blog-card" data-category="unity tutorial">
+                    <div class="blog-card-image">
+                        <i class="fab fa-unity"></i>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> May 1, 2024</span>
+                            <span><i class="far fa-clock"></i> 9 min read</span>
+                        </div>
+                        <h3>Basic Helicopter Control System in Unity</h3>
+                        <p class="blog-excerpt">
+                            Step-by-step guide to creating a physics-based helicopter control system in Unity.
+                            Learn realistic helicopter movements with complete C# code examples.
+                        </p>
+                        <div class="blog-tags">
+                            <span class="blog-tag">Unity</span>
+                            <span class="blog-tag">Tutorial</span>
+                            <span class="blog-tag">Physics</span>
+                        </div>
+                        <a href="posts/unity-helicopter-control.html" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
                 <!-- Example Blog Post 1 -->
                 <article class="blog-card" data-category="dotnet tutorial">
                     <div class="blog-card-image">
@@ -243,7 +321,7 @@
                             <span class="blog-tag">Microservices</span>
                             <span class="blog-tag">Docker</span>
                         </div>
-                        <a href="blog/building-microservices-dotnet.html" class="read-more">
+                        <a href="posts/building-microservices-dotnet.html" class="read-more">
                             Read More <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
@@ -314,7 +392,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="../assets/js/main.js"></script>
     <script>
         // Simple blog filter functionality
         const filterBtns = document.querySelectorAll('.filter-btn');

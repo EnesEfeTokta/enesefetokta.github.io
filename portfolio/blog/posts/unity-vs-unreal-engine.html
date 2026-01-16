@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Unity vs Unreal Engine: Comprehensive Comparison Guide - Enes Efe Tokta</title>
+    <meta name="title" content="Unity vs Unreal Engine: Comprehensive Comparison Guide">
+    <meta name="description"
+        content="Detailed comparison of Unity and Unreal Engine game engines. Explore advantages, disadvantages, use cases, and which engine is right for your game development project. Written by Enes Efe Tokta.">
+    <meta name="keywords"
+        content="Unity vs Unreal, Game Engine Comparison, Unity Engine, Unreal Engine, Game Development, Unity Tutorial, Unreal Engine 5, Mobile Game Development, PC Game Development">
+    <meta name="author" content="Enes Efe Tokta">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://enesefetokta.github.io/portfolio/blog/posts/unity-vs-unreal-engine.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://enesefetokta.github.io/portfolio/blog/posts/unity-vs-unreal-engine.html">
+    <meta property="og:title" content="Unity vs Unreal Engine: Comprehensive Comparison Guide">
+    <meta property="og:description"
+        content="Detailed comparison of Unity and Unreal Engine. Learn which game engine is right for your project.">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/154990402?v=4">
+    <meta property="article:published_time" content="2023-11-30T00:00:00Z">
+    <meta property="article:author" content="Enes Efe Tokta">
+    <meta property="article:section" content="Game Development">
+    <meta property="article:tag" content="Unity">
+    <meta property="article:tag" content="Unreal Engine">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://enesefetokta.github.io/portfolio/blog/posts/unity-vs-unreal-engine.html">
+    <meta name="twitter:title" content="Unity vs Unreal Engine: Comprehensive Comparison">
+    <meta name="twitter:description" content="Which game engine should you choose? A detailed comparison guide.">
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/154990402?v=4">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Unity vs Unreal Engine: Comprehensive Comparison Guide",
+      "image": "https://avatars.githubusercontent.com/u/154990402?v=4",
+      "author": {
+        "@type": "Person",
+        "name": "Enes Efe Tokta",
+        "url": "https://enesefetokta.github.io/portfolio/"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Enes Efe Tokta",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://avatars.githubusercontent.com/u/154990402?v=4"
+        }
+      },
+      "datePublished": "2023-11-30",
+      "dateModified": "2023-11-30",
+      "description": "Detailed comparison of Unity and Unreal Engine game engines, exploring advantages, disadvantages, and use cases.",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://enesefetokta.github.io/portfolio/blog/posts/unity-vs-unreal-engine.html"
+      },
+      "keywords": "Unity, Unreal Engine, Game Development, Game Engine Comparison"
+    }
+    </script>
+
+    <style>
+        /* Blog Post Specific Styles */
+        .blog-post {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .blog-header {
+            margin-bottom: 48px;
+        }
+
+        .blog-title {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--text-main);
+        }
+
+        .blog-meta-info {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            padding: 20px 0;
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px solid var(--border-subtle);
+        }
+
+        .author-details h4 {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .author-details p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .blog-content {
+            line-height: 1.8;
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+        }
+
+        .blog-content h2 {
+            font-size: 1.8rem;
+            margin-top: 48px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .blog-content h3 {
+            font-size: 1.4rem;
+            margin-top: 36px;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .blog-content p {
+            margin-bottom: 20px;
+        }
+
+        .blog-content ul,
+        .blog-content ol {
+            margin-bottom: 20px;
+            padding-left: 28px;
+        }
+
+        .blog-content li {
+            margin-bottom: 12px;
+        }
+
+        .blog-content blockquote {
+            border-left: 4px solid var(--accent-primary);
+            padding-left: 24px;
+            margin: 32px 0;
+            font-style: italic;
+            color: var(--text-main);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05));
+            border: 1px solid var(--accent-primary);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin: 32px 0;
+        }
+
+        .highlight-box h4 {
+            margin-top: 0;
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .comparison-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+        }
+
+        .comparison-card h4 {
+            margin-top: 0;
+            color: var(--text-main);
+            font-size: 1.2rem;
+        }
+
+        .pros-cons {
+            margin: 24px 0;
+        }
+
+        .pros-cons h4 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .pros-cons.pros h4 {
+            color: #10b981;
+        }
+
+        .pros-cons.cons h4 {
+            color: #ef4444;
+        }
+
+        .blog-tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 32px 0;
+        }
+
+        .blog-tag {
+            padding: 6px 16px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--accent-primary);
+        }
+
+        .back-to-blog {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-primary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            font-weight: 500;
+            transition: gap 0.3s ease;
+        }
+
+        .back-to-blog:hover {
+            gap: 12px;
+        }
+
+        .share-section {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .share-twitter {
+            background: #1DA1F2;
+            color: white;
+        }
+
+        .share-linkedin {
+            background: #0077B5;
+            color: white;
+        }
+
+        .share-facebook {
+            background: #1877F2;
+            color: white;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../../index.html" class="logo">Enes Efe Tokta</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#about">About</a></li>
+                <li><a href="../../index.html#work">Work</a></li>
+                <li><a href="../../index.html#skills">Skills</a></li>
+                <li><a href="../../pages/education.html">Education</a></li>
+                <li><a href="../../pages/cv.html">Resume</a></li>
+                <li><a href="../../pages/biography.html">Biography</a></li>
+                <li><a href="../index.html" style="color: var(--text-main);">Blog</a></li>
+                <li><a href="../../index.html#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Blog Post -->
+    <section class="section-padding" style="padding-top: 120px;">
+        <div class="container">
+            <div class="blog-post">
+
+                <!-- Back Button -->
+                <a href="../index.html" class="back-to-blog">
+                    <i class="fas fa-arrow-left"></i> Back to Blog
+                </a>
+
+                <!-- Blog Header -->
+                <header class="blog-header">
+                    <h1 class="blog-title">Unity vs Unreal Engine: Which Game Engine Should You Choose?</h1>
+
+                    <div class="blog-meta-info">
+                        <div class="author-info">
+                            <img src="https://avatars.githubusercontent.com/u/154990402?v=4" alt="Enes Efe Tokta"
+                                class="author-avatar">
+                            <div class="author-details">
+                                <h4>Enes Efe Tokta</h4>
+                                <p>Nov 30, 2023 • 6 min read</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-tags-container">
+                        <span class="blog-tag">Unity</span>
+                        <span class="blog-tag">Unreal Engine</span>
+                        <span class="blog-tag">Game Development</span>
+                        <span class="blog-tag">Comparison</span>
+                    </div>
+                </header>
+
+                <!-- Blog Content -->
+                <article class="blog-content">
+
+                    <p>
+                        These two engines are two important players in the world gaming industry. Although there are
+                        other alternatives, they make their presence felt in the gaming sector. Naturally, people can
+                        be undecided about which engine is better for them. Since it is impossible to categorize this
+                        under a single heading, it would be much better to classify it under a few headings.
+                    </p>
+
+                    <h2>What is Unity?</h2>
+
+                    <p>
+                        Unity was released as open source by Unity Technologies on June 8, 2006, at Apple WWDC 2006.
+                        Today, you can access it seamlessly on many different platforms such as Android, iOS, PC,
+                        Sony Playstation, and Xbox. Unity can be a good alternative for independent developers and
+                        low-budget game studios.
+                    </p>
+
+                    <p>
+                        Before Unity, people and game studios had to write their own game engines. This led to both
+                        time and money loss. Although Unity is closed source, the free version is valid as long as
+                        your income does not exceed $100,000. After that, you are subject to billing.
+                    </p>
+
+                    <p>
+                        Unity, which initially started with C# and JavaScript, now continues its journey solely with
+                        C#. Because C# is an easy-to-learn and powerful language, it provides various advantages.
+                    </p>
+
+                    <h3>Unity's Advantages</h3>
+
+                    <div class="pros-cons pros">
+                        <h4><i class="fas fa-check-circle"></i> Strengths</h4>
+                        <ul>
+                            <li><strong>Cross-platform support</strong> - Deploy to 25+ platforms from a single codebase
+                            </li>
+                            <li><strong>Large community and resources</strong> - Extensive documentation and tutorials
+                            </li>
+                            <li><strong>Coding support</strong> - Excellent C# integration and IDE support</li>
+                            <li><strong>Development speed</strong> - Rapid prototyping and iteration</li>
+                            <li><strong>Graphics and animation</strong> - Powerful 2D and 3D capabilities</li>
+                            <li><strong>Ease of publishing</strong> - Streamlined build and deployment process</li>
+                            <li><strong>Low system requirements</strong> - Runs well on modest hardware</li>
+                            <li><strong>Mobile dominance</strong> - Industry standard for mobile game development</li>
+                            <li><strong>Asset Store</strong> - Massive marketplace with thousands of free and paid
+                                assets</li>
+                            <li><strong>Job opportunities</strong> - High demand for Unity developers globally</li>
+                            <li><strong>Unity Cloud Services</strong> - Analytics, multiplayer, and cloud build
+                                solutions</li>
+                            <li><strong>Unity Learn</strong> - Free official training and certification programs</li>
+                        </ul>
+                    </div>
+
+                    <h3>Disadvantages of Unity</h3>
+
+                    <div class="pros-cons cons">
+                        <h4><i class="fas fa-times-circle"></i> Weaknesses</h4>
+                        <ul>
+                            <li><strong>Optimization difficulties</strong> - Requires careful optimization for large
+                                projects</li>
+                            <li><strong>Pricing cost</strong> - Enterprise licenses can be expensive</li>
+                            <li><strong>Learning curve</strong> - Advanced features require time to master</li>
+                            <li><strong>UI design limitations</strong> - UI system can be restrictive for complex
+                                interfaces</li>
+                            <li><strong>Visual quality</strong> - Default graphics don't match Unreal's out-of-the-box
+                                quality</li>
+                            <li><strong>Console market</strong> - Less preferred for AAA console titles</li>
+                        </ul>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-building"></i> Game Companies Using Unity</h4>
+                        <p style="margin-bottom: 12px;">Unity powers games from some of the world's most successful
+                            studios:</p>
+                        <ul style="margin: 0; columns: 2;">
+                            <li>SuperCell (Clash of Clans)</li>
+                            <li>Niantic (Pokémon GO)</li>
+                            <li>Ubisoft</li>
+                            <li>EA Sports</li>
+                            <li>Blizzard Entertainment</li>
+                            <li>King (Candy Crush)</li>
+                        </ul>
+                    </div>
+
+                    <h2>What is Unreal Engine?</h2>
+
+                    <p>
+                        Unreal Engine is a game engine that was released in 1998 and has been strengthened with many
+                        updates to this day. It is an engine written in C++, UnrealScript, and Assembly. This game
+                        engine, which has a very enjoyable development process, allows you to program your games with
+                        C++ and Blueprints.
+                    </p>
+
+                    <p>
+                        Blueprints work with ready-made C++ code using a drag-and-drop method, making it accessible
+                        for artists and designers. Although Unreal Engine is a game engine, it is also a preferred
+                        program in the film industry. Furthermore, you can easily work with your audio files with
+                        Unreal Audio Engine.
+                    </p>
+
+                    <h3>Unreal Engine Advantages</h3>
+
+                    <div class="pros-cons pros">
+                        <h4><i class="fas fa-check-circle"></i> Strengths</h4>
+                        <ul>
+                            <li><strong>Graphics quality</strong> - Industry-leading visuals, especially with UE5 and
+                                Nanite/Lumen</li>
+                            <li><strong>Advanced physics</strong> - Realistic simulations and destruction systems</li>
+                            <li><strong>Blueprints</strong> - Visual scripting for rapid prototyping</li>
+                            <li><strong>Particle system</strong> - Powerful Niagara VFX system</li>
+                            <li><strong>VR/AR support</strong> - Excellent tools for immersive experiences</li>
+                            <li><strong>PC and console dominance</strong> - Standard for AAA game development</li>
+                            <li><strong>Unreal Marketplace</strong> - High-quality assets and plugins</li>
+                            <li><strong>Marketplace campaigns</strong> - Regular free asset promotions</li>
+                            <li><strong>Epic Games publishing</strong> - Revenue share discounts for Epic Games Store
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h3>Unreal Engine Disadvantages</h3>
+
+                    <div class="pros-cons cons">
+                        <h4><i class="fas fa-times-circle"></i> Weaknesses</h4>
+                        <ul>
+                            <li><strong>Steep learning curve</strong> - Complexity can be overwhelming for beginners
+                            </li>
+                            <li><strong>High system requirements</strong> - Requires powerful hardware for development
+                            </li>
+                            <li><strong>Large file size</strong> - Project sizes can grow very large</li>
+                            <li><strong>UI design complexity</strong> - UMG can be complex for custom interfaces</li>
+                            <li><strong>Mobile performance</strong> - Higher overhead for mobile platforms</li>
+                            <li><strong>Blueprint limitations</strong> - Complex logic eventually requires C++</li>
+                        </ul>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-building"></i> Game Companies Using Unreal Engine</h4>
+                        <p style="margin-bottom: 12px;">Unreal Engine is the choice of AAA game developers worldwide:
+                        </p>
+                        <ul style="margin: 0; columns: 2;">
+                            <li>Activision-Blizzard</li>
+                            <li>Microsoft</li>
+                            <li>Nintendo</li>
+                            <li>Rockstar Games</li>
+                            <li>Sony</li>
+                            <li>Valve</li>
+                        </ul>
+                    </div>
+
+                    <h2>Quick Comparison: Unity vs Unreal Engine</h2>
+
+                    <div class="comparison-grid">
+                        <div class="comparison-card">
+                            <h4><i class="fab fa-unity"></i> Unity</h4>
+                            <p><strong>Best For:</strong></p>
+                            <ul>
+                                <li>Mobile games</li>
+                                <li>2D games</li>
+                                <li>Indie developers</li>
+                                <li>Cross-platform development</li>
+                                <li>Rapid prototyping</li>
+                            </ul>
+                        </div>
+                        <div class="comparison-card">
+                            <h4><i class="fas fa-cube"></i> Unreal Engine</h4>
+                            <p><strong>Best For:</strong></p>
+                            <ul>
+                                <li>AAA console/PC games</li>
+                                <li>High-fidelity graphics</li>
+                                <li>VR/AR experiences</li>
+                                <li>Architectural visualization</li>
+                                <li>Film production</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h2>So Which One Would I Choose?</h2>
+
+                    <p>
+                        Honestly, I used Unity out of necessity because I entered the gaming industry with a modest
+                        computer, and I still use it. However, I never regret it because Unity satisfies me quite a
+                        bit with its wide range of job opportunities and developer kits.
+                    </p>
+
+                    <p>
+                        Most importantly, I also appreciate that more than 50% of the world's game market value
+                        revolves around the mobile sector. When I encounter any problems, I can easily solve them on
+                        local and international forum sites, if not 100%, then 90%. As a person, I like simplicity,
+                        so I really like Unity's interface.
+                    </p>
+
+                    <h2>Final Thoughts</h2>
+
+                    <p>
+                        As you can see, when we talk about Unity vs Unreal Engine, both sides have quite a few
+                        strengths and weaknesses. My advice is to <strong>list the needs of your project and compare
+                            them</strong>. Continue with whichever engine better meets your needs.
+                    </p>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-lightbulb"></i> Key Takeaway</h4>
+                        <p>
+                            Remember that no game engine is 100% perfect or necessarily meets all your needs. Choose
+                            based on your project requirements, team skills, target platform, and budget. Both engines
+                            are capable of creating amazing games—it's all about finding the right tool for your
+                            specific vision.
+                        </p>
+                    </div>
+
+                </article>
+
+                <!-- Share Section -->
+                <div class="share-section">
+                    <h3 style="margin-bottom: 16px;">Share this article</h3>
+                    <div class="share-buttons">
+                        <a href="https://twitter.com/intent/tweet?text=Unity%20vs%20Unreal%20Engine%3A%20Comprehensive%20Comparison&url=https://enesefetokta.github.io/portfolio/blog/posts/unity-vs-unreal-engine.html"
+                            target="_blank" class="share-btn share-twitter">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://enesefetokta.github.io/portfolio/blog/posts/unity-vs-unreal-engine.html"
+                            target="_blank" class="share-btn share-linkedin">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://enesefetokta.github.io/portfolio/blog/posts/unity-vs-unreal-engine.html"
+                            target="_blank" class="share-btn share-facebook">
+                            <i class="fab fa-facebook"></i> Facebook
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="border-top: 1px solid var(--border-subtle); padding: 40px 0; margin-top: 60px;">
+        <div class="container" style="text-align: center;">
+            <p style="color: var(--text-muted);">© 2025 Enes Efe Tokta. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>

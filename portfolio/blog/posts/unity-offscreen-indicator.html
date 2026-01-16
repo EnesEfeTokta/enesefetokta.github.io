@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Off-screen Player Indicator in Unity - Enes Efe Tokta</title>
+    <meta name="title" content="Off-screen Player Indicator in Unity - Tutorial">
+    <meta name="description"
+        content="Learn how to implement an off-screen player indicator system in Unity. A complete guide with code examples for tracking enemies and targets outside the camera view in Unity games.">
+    <meta name="keywords"
+        content="Unity Tutorial, Off-screen Indicator, Unity UI, Game Development, Unity Canvas, Player Indicator, Enemy Tracking, Unity C#">
+    <meta name="author" content="Enes Efe Tokta">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://enesefetokta.github.io/portfolio/blog/posts/unity-offscreen-indicator.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url"
+        content="https://enesefetokta.github.io/portfolio/blog/posts/unity-offscreen-indicator.html">
+    <meta property="og:title" content="Off-screen Player Indicator in Unity">
+    <meta property="og:description"
+        content="Complete tutorial on implementing off-screen indicators in Unity for tracking enemies and targets.">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/154990402?v=4">
+    <meta property="article:published_time" content="2024-02-19T00:00:00Z">
+    <meta property="article:author" content="Enes Efe Tokta">
+    <meta property="article:section" content="Game Development">
+    <meta property="article:tag" content="Unity">
+    <meta property="article:tag" content="Tutorial">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url"
+        content="https://enesefetokta.github.io/portfolio/blog/posts/unity-offscreen-indicator.html">
+    <meta name="twitter:title" content="Off-screen Player Indicator in Unity">
+    <meta name="twitter:description" content="Complete Unity tutorial with code examples">
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/154990402?v=4">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Off-screen Player Indicator in Unity",
+      "image": "https://avatars.githubusercontent.com/u/154990402?v=4",
+      "author": {
+        "@type": "Person",
+        "name": "Enes Efe Tokta",
+        "url": "https://enesefetokta.github.io/portfolio/"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Enes Efe Tokta",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://avatars.githubusercontent.com/u/154990402?v=4"
+        }
+      },
+      "datePublished": "2024-02-19",
+      "dateModified": "2024-02-19",
+      "description": "Learn how to implement an off-screen player indicator system in Unity with complete code examples.",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://enesefetokta.github.io/portfolio/blog/posts/unity-offscreen-indicator.html"
+      },
+      "keywords": "Unity, Tutorial, Off-screen Indicator, Game Development"
+    }
+    </script>
+
+    <style>
+        /* Blog Post Specific Styles */
+        .blog-post {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .blog-header {
+            margin-bottom: 48px;
+        }
+
+        .blog-title {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--text-main);
+        }
+
+        .blog-meta-info {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            padding: 20px 0;
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px solid var(--border-subtle);
+        }
+
+        .author-details h4 {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .author-details p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .blog-content {
+            line-height: 1.8;
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+        }
+
+        .blog-content h2 {
+            font-size: 1.8rem;
+            margin-top: 48px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .blog-content h3 {
+            font-size: 1.4rem;
+            margin-top: 36px;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .blog-content p {
+            margin-bottom: 20px;
+        }
+
+        .blog-content ul,
+        .blog-content ol {
+            margin-bottom: 20px;
+            padding-left: 28px;
+        }
+
+        .blog-content li {
+            margin-bottom: 12px;
+        }
+
+        .blog-content pre {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            overflow-x: auto;
+            margin: 24px 0;
+            font-size: 0.9rem;
+        }
+
+        .blog-content code {
+            background: rgba(99, 102, 241, 0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: var(--accent-primary);
+        }
+
+        .blog-content pre code {
+            background: none;
+            padding: 0;
+            color: var(--text-secondary);
+        }
+
+        .blog-content blockquote {
+            border-left: 4px solid var(--accent-primary);
+            padding-left: 24px;
+            margin: 32px 0;
+            font-style: italic;
+            color: var(--text-main);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05));
+            border: 1px solid var(--accent-primary);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin: 32px 0;
+        }
+
+        .highlight-box h4 {
+            margin-top: 0;
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .blog-tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 32px 0;
+        }
+
+        .blog-tag {
+            padding: 6px 16px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--accent-primary);
+        }
+
+        .back-to-blog {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-primary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            font-weight: 500;
+            transition: gap 0.3s ease;
+        }
+
+        .back-to-blog:hover {
+            gap: 12px;
+        }
+
+        .share-section {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .share-twitter {
+            background: #1DA1F2;
+            color: white;
+        }
+
+        .share-linkedin {
+            background: #0077B5;
+            color: white;
+        }
+
+        .share-facebook {
+            background: #1877F2;
+            color: white;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../../index.html" class="logo">Enes Efe Tokta</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#about">About</a></li>
+                <li><a href="../../index.html#work">Work</a></li>
+                <li><a href="../../index.html#skills">Skills</a></li>
+                <li><a href="../../pages/education.html">Education</a></li>
+                <li><a href="../../pages/cv.html">Resume</a></li>
+                <li><a href="../../pages/biography.html">Biography</a></li>
+                <li><a href="../index.html" style="color: var(--text-main);">Blog</a></li>
+                <li><a href="../../index.html#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Blog Post -->
+    <section class="section-padding" style="padding-top: 120px;">
+        <div class="container">
+            <div class="blog-post">
+
+                <!-- Back Button -->
+                <a href="../index.html" class="back-to-blog">
+                    <i class="fas fa-arrow-left"></i> Back to Blog
+                </a>
+
+                <!-- Blog Header -->
+                <header class="blog-header">
+                    <h1 class="blog-title">Off-screen Player Indicator in Unity</h1>
+
+                    <div class="blog-meta-info">
+                        <div class="author-info">
+                            <img src="https://avatars.githubusercontent.com/u/154990402?v=4" alt="Enes Efe Tokta"
+                                class="author-avatar">
+                            <div class="author-details">
+                                <h4>Enes Efe Tokta</h4>
+                                <p>Feb 19, 2024 • 7 min read</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-tags-container">
+                        <span class="blog-tag">Unity</span>
+                        <span class="blog-tag">Tutorial</span>
+                        <span class="blog-tag">UI System</span>
+                        <span class="blog-tag">C#</span>
+                    </div>
+                </header>
+
+                <!-- Blog Content -->
+                <article class="blog-content">
+
+                    <p>
+                        Imagine you're making a space combat game. You need to show the player the location of enemy
+                        fighter jets; otherwise, they'll waste time searching for them. They might even get bored and
+                        quit the game. You need to find a way to show the player where the enemy planes are.
+                    </p>
+
+                    <p>
+                        A popular system solves this problem: the <strong>off-screen player indicator</strong>. This
+                        system uses icons on the canvas to show the player the location of other players. This system
+                        significantly improves the player experience and is found in many modern games.
+                    </p>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-lightbulb"></i> Why Use Off-screen Indicators?</h4>
+                        <p>
+                            Although it might seem difficult to implement at first glance, in practice it has a very
+                            simple and easy development process. However, it's worth noting that this system may vary
+                            slightly from game to game. I will explain it to you in the basic and simplest way here,
+                            but you can customize it as you wish.
+                        </p>
+                    </div>
+
+                    <h2>Setting Up Variables</h2>
+
+                    <p>
+                        First, let's call the UnityEngine.UI library, which allows us to access Unity's UI components.
+                        Then, we'll set up our essential variables:
+                    </p>
+
+                    <pre><code>using UnityEngine;
+using UnityEngine.UI;
+using System.Collections.Generic;
+
+public class OffScreenIndicator : MonoBehaviour
+{
+    [Header("References")]
+    public Camera mainCamera;
+    public GameObject markerPrefab;
+    public Transform canvas;
+    
+    [Header("Sprites")]
+    public Sprite arrowSprite;
+    public Sprite squareSprite;
+    
+    [Header("Settings")]
+    public bool isTargetFollow = true;
+    public string targetTag = "Enemy";
+    
+    private GameObject[] targetObjects;
+    private Dictionary<GameObject, GameObject> markerIcons = new Dictionary<GameObject, GameObject>();
+}</code></pre>
+
+                    <p><strong>Variable Explanations:</strong></p>
+                    <ul>
+                        <li><code>mainCamera</code> - Determines whether target objects are inside or outside the
+                            player's field of view</li>
+                        <li><code>isTargetFollow</code> - Boolean control to enable/disable the system</li>
+                        <li><code>targetObjects</code> - Array containing all target objects in the scene</li>
+                        <li><code>markerPrefab</code> - Image prefab to instantiate markers in the Canvas</li>
+                        <li><code>markerIcons</code> - Dictionary holding target objects and their corresponding icons
+                        </li>
+                        <li><code>arrowSprite</code> - Icon when target is outside the screen</li>
+                        <li><code>squareSprite</code> - Icon when target is inside the screen</li>
+                    </ul>
+
+                    <h2>Finding Target Objects</h2>
+
+                    <p>
+                        We need to create a method called <code>TargetFind</code>. This method will list all objects
+                        with the relevant tag:
+                    </p>
+
+                    <pre><code>void TargetFind()
+{
+    targetObjects = GameObject.FindGameObjectsWithTag(targetTag);
+    
+    if (targetObjects.Length == 0)
+    {
+        Debug.LogWarning("No target objects found with tag: " + targetTag);
+    }
+}</code></pre>
+
+                    <h2>Update Loop Implementation</h2>
+
+                    <p>
+                        Now let's implement the main logic inside the Update method. It might be a bit long, but it's
+                        very straightforward:
+                    </p>
+
+                    <pre><code>void Update()
+{
+    if (!isTargetFollow) return;
+    
+    // Refresh target list
+    TargetFind();
+    
+    // Process each target
+    for (int i = 0; i < targetObjects.Length; i++)
+    {
+        GameObject targetObject = targetObjects[i];
+        
+        if (targetObject == null || !targetObject.activeInHierarchy)
+            continue;
+            
+        // Check if marker exists for this target
+        GameObject markerIcon;
+        
+        if (markerIcons.TryGetValue(targetObject, out markerIcon))
+        {
+            // Update existing marker
+            TargetFollow(targetObject, markerIcon);
+        }
+        else
+        {
+            // Create new marker
+            markerIcon = Instantiate(markerPrefab, canvas);
+            markerIcons.Add(targetObject, markerIcon);
+        }
+    }
+    
+    // Clean up destroyed targets
+    List<GameObject> targetsToRemove = new List<GameObject>();
+    
+    foreach (KeyValuePair<GameObject, GameObject> pair in markerIcons)
+    {
+        if (pair.Key == null || !pair.Key.activeInHierarchy)
+        {
+            Destroy(pair.Value);
+            targetsToRemove.Add(pair.Key);
+        }
+    }
+    
+    foreach (GameObject target in targetsToRemove)
+    {
+        markerIcons.Remove(target);
+    }
+}</code></pre>
+
+                    <h3>How It Works:</h3>
+
+                    <ol>
+                        <li>Check if <code>isTargetFollow</code> is enabled</li>
+                        <li>Loop through all target objects</li>
+                        <li>For each target, check if a marker already exists in the Dictionary</li>
+                        <li>If it exists, update its position; if not, create a new marker in the Canvas</li>
+                        li>Create a cleanup list for destroyed or inactive targets</li>
+                        <li>Remove markers for deleted targets and clean up the Dictionary</li>
+                    </ol>
+
+                    <h2>The TargetFollow Method</h2>
+
+                    <p>
+                        This is the really important part! This method activates our marker icon by determining whether
+                        our target object is within the field of view:
+                    </p>
+
+                    <pre><code>void TargetFollow(GameObject targetObject, GameObject markerIcon)
+{
+    // Convert world position to screen position
+    Vector3 screenPosition = mainCamera.WorldToScreenPoint(targetObject.transform.position);
+    
+    // Check if target is in view
+    bool isInView = screenPosition.z > 0 && 
+                    screenPosition.x > 0 && screenPosition.x < Screen.width &&
+                    screenPosition.y > 0 && screenPosition.y < Screen.height;
+    
+    Image markerImage = markerIcon.GetComponent<Image>();
+    
+    if (!isInView)
+    {
+        // Target is off-screen - use arrow sprite
+        markerImage.sprite = arrowSprite;
+        markerIcon.SetActive(true);
+        
+        // Clamp position to screen boundaries
+        float xPos = Mathf.Clamp(screenPosition.x, 50, Screen.width - 50);
+        float yPos = Mathf.Clamp(screenPosition.y, 50, Screen.height - 50);
+        
+        Vector3 iconPosition = new Vector3(xPos, yPos, 0);
+        markerIcon.transform.position = iconPosition;
+        
+        // Rotate arrow to point at target
+        LookAtTarget(markerIcon, targetObject, true);
+    }
+    else
+    {
+        // Target is on-screen - use square sprite
+        markerImage.sprite = squareSprite;
+        markerIcon.SetActive(true);
+        markerIcon.transform.position = screenPosition;
+        
+        // Reset rotation
+        LookAtTarget(markerIcon, targetObject, false);
+    }
+}</code></pre>
+
+                    <h3>Understanding the Field of View Check</h3>
+
+                    <p>
+                        If the object is between 0 and <code>Screen.height</code> on the y-axis and between 0 and
+                        <code>Screen.width</code> on the x-axis, the target object is within the field of view.
+                        Anything outside these values is naturally outside the visible area.
+                    </p>
+
+                    <p>
+                        When the target is <strong>outside the view</strong>:</p>
+                    <ul>
+                        <li>Assign the arrow sprite</li>
+                        <li>Clamp the marker position to stay within Canvas boundaries using <code>Mathf.Clamp</code>
+                        </li>
+                        <li>Rotate the marker to point at the target</li>
+                    </ul>
+
+                    <p>When the target is <strong>inside the view</strong>:</p>
+                    <ul>
+                        <li>Assign the square sprite</li>
+                        <li>Position the marker at the target's screen position</li>
+                        <li>Reset the rotation</li>
+                    </ul>
+
+                    <h2>Rotation Control</h2>
+
+                    <p>
+                        The <code>LookAtTarget</code> method performs rotation operations on our marker based on the
+                        state of our target object:
+                    </p>
+
+                    <pre><code>void LookAtTarget(GameObject markerIcon, GameObject targetObject, bool isLookAtTarget)
+{
+    if (isLookAtTarget)
+    {
+        // Create direction vector from camera to target
+        Vector3 direction = (targetObject.transform.position - mainCamera.transform.position).normalized;
+        
+        // Calculate angle from direction
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        
+        // Apply rotation (add 90 to correct sprite orientation)
+        markerIcon.transform.rotation = Quaternion.Euler(0, 0, angle + 90);
+    }
+    else
+    {
+        // Reset rotation
+        markerIcon.transform.rotation = Quaternion.Euler(0, 0, 0);
+    }
+}</code></pre>
+
+                    <h3>How Rotation Works:</h3>
+
+                    <ol>
+                        <li>Check the <code>isLookAtTarget</code> parameter</li>
+                        <li>If true, create a normalized vector between the target and camera</li>
+                        <li>Calculate the angle from the x and y components of this vector</li>
+                        <li>Apply the rotation using Quaternion.Euler (adding 90° to align the arrow sprite correctly)
+                        </li>
+                        <li>If false, reset the marker's rotation to zero</li>
+                    </ol>
+
+                    <h2>Complete Implementation</h2>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-code"></i> Full Script Available</h4>
+                        <p>
+                            All this might be confusing at first, but believe me, this system is quite simple once you
+                            understand it. Now you have icons that track target objects within the boundaries of the
+                            Canvas. If the target object is within the field of view, it will appear as a square icon,
+                            while if it is outside the field of view, it will appear as an arrow icon.
+                        </p>
+                        <p>
+                            If you want to access the complete code file, you can visit my
+                            <a href="https://github.com/EnesEfeTokta" target="_blank"
+                                style="color: var(--accent-primary);">GitHub</a>.
+                        </p>
+                    </div>
+
+                    <h2>Key Takeaways</h2>
+
+                    <ul>
+                        <li><strong>User Experience:</strong> Off-screen indicators significantly improve gameplay by
+                            helping players locate important objects</li>
+                        <li><strong>Simple Implementation:</strong> Despite seeming complex, the system uses basic Unity
+                            concepts</li>
+                        <li><strong>Customizable:</strong> The system can be adapted for different game types and visual
+                            styles</li>
+                        <li><strong>Performance:</strong> Using dictionaries and proper cleanup ensures efficient
+                            performance</li>
+                        <li><strong>Visual Feedback:</strong> Different sprites for on-screen vs off-screen provides
+                            clear player feedback</li>
+                    </ul>
+
+                    <h2>Next Steps</h2>
+
+                    <p>
+                        You can enhance this system further by:
+                    </p>
+
+                    <ul>
+                        <li>Adding distance-based scaling (closer targets appear larger)</li>
+                        <li>Implementing color coding for different enemy types</li>
+                        <li>Adding fade-in/fade-out animations</li>
+                        <li>Including a minimap integration</li>
+                        <li>Adding sound cues when targets come into view</li>
+                    </ul>
+
+                    <p>
+                        This off-screen indicator system is a powerful tool in your Unity development arsenal.
+                        It's used in countless successful games, from racing games to battle royales, and now
+                        you know how to implement it yourself!
+                    </p>
+
+                </article>
+
+                <!-- Share Section -->
+                <div class="share-section">
+                    <h3 style="margin-bottom: 16px;">Share this article</h3>
+                    <div class="share-buttons">
+                        <a href="https://twitter.com/intent/tweet?text=Off-screen%20Player%20Indicator%20in%20Unity&url=https://enesefetokta.github.io/portfolio/blog/posts/unity-offscreen-indicator.html"
+                            target="_blank" class="share-btn share-twitter">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://enesefetokta.github.io/portfolio/blog/posts/unity-offscreen-indicator.html"
+                            target="_blank" class="share-btn share-linkedin">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://enesefetokta.github.io/portfolio/blog/posts/unity-offscreen-indicator.html"
+                            target="_blank" class="share-btn share-facebook">
+                            <i class="fab fa-facebook"></i> Facebook
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="border-top: 1px solid var(--border-subtle); padding: 40px 0; margin-top: 60px;">
+        <div class="container" style="text-align: center;">
+            <p style="color: var(--text-muted);">© 2025 Enes Efe Tokta. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>
