@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Blog - Enes Efe Tokta | Software Development Insights</title>
+    <meta name="title" content="Blog - Enes Efe Tokta">
+    <meta name="description"
+        content="Read articles and insights about Unity game development, .NET programming, software architecture, and technology by Enes Efe Tokta. Practical tutorials and development experiences.">
+    <meta name="keywords"
+        content="Enes Efe Tokta Blog, Unity Development Blog, .NET Blog, Software Development Articles, Programming Tutorials, Game Development Tips">
+    <meta name="author" content="Enes Efe Tokta">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://enesefetokta.github.io/portfolio/blog.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://enesefetokta.github.io/portfolio/blog.html">
+    <meta property="og:title" content="Blog - Enes Efe Tokta">
+    <meta property="og:description"
+        content="Software development insights, tutorials, and experiences from Unity and .NET development.">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/154990402?v=4">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://enesefetokta.github.io/portfolio/blog.html">
+    <meta name="twitter:title" content="Blog - Enes Efe Tokta">
+    <meta name="twitter:description" content="Software development insights and tutorials">
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/154990402?v=4">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .blog-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 0;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.15);
+        }
+
+        .blog-card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .blog-card-content {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 12px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .blog-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: var(--text-main);
+            line-height: 1.3;
+        }
+
+        .blog-excerpt {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .blog-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .blog-tag {
+            padding: 4px 12px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 16px;
+            font-size: 0.8rem;
+            color: var(--accent-primary);
+        }
+
+        .read-more {
+            color: var(--accent-primary);
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            transition: gap 0.3s ease;
+        }
+
+        .read-more:hover {
+            gap: 12px;
+        }
+
+        .blog-filter {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            font-size: 0.9rem;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--accent-primary);
+            color: white;
+            border-color: var(--accent-primary);
+        }
+
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Enes Efe Tokta</a>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#work">Work</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="cv.html">Resume</a></li>
+                <li><a href="biography.html">Biography</a></li>
+                <li><a href="blog.html" style="color: var(--text-main);">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Blog Section -->
+    <section class="section-padding" style="padding-top: 120px;">
+        <div class="container">
+
+            <!-- Header -->
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h1 style="font-size: 3rem; margin-bottom: 16px;">Blog</h1>
+                <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+                    Insights, tutorials, and experiences from my journey in software development
+                </p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="blog-filter">
+                <button class="filter-btn active" data-category="all">All Posts</button>
+                <button class="filter-btn" data-category="unity">Unity</button>
+                <button class="filter-btn" data-category="dotnet">.NET</button>
+                <button class="filter-btn" data-category="tutorial">Tutorials</button>
+                <button class="filter-btn" data-category="architecture">Architecture</button>
+            </div>
+
+            <!-- Blog Grid -->
+            <div class="blog-grid">
+
+                <!-- Example Blog Post 1 -->
+                <article class="blog-card" data-category="dotnet tutorial">
+                    <div class="blog-card-image">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> Jan 15, 2026</span>
+                            <span><i class="far fa-clock"></i> 8 min read</span>
+                        </div>
+                        <h3>Building a Microservices Architecture with .NET 8</h3>
+                        <p class="blog-excerpt">
+                            Learn how to design and implement a scalable microservices architecture using .NET 8,
+                            Docker, and modern communication patterns. This comprehensive guide covers service
+                            isolation,
+                            API gateways, and inter-service communication.
+                        </p>
+                        <div class="blog-tags">
+                            <span class="blog-tag">.NET 8</span>
+                            <span class="blog-tag">Microservices</span>
+                            <span class="blog-tag">Docker</span>
+                        </div>
+                        <a href="blog/building-microservices-dotnet.html" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Example Blog Post 2 -->
+                <article class="blog-card" data-category="unity tutorial">
+                    <div class="blog-card-image">
+                        <i class="fab fa-unity"></i>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> Jan 10, 2026</span>
+                            <span><i class="far fa-clock"></i> 6 min read</span>
+                        </div>
+                        <h3>Optimizing Unity Performance: A Practical Guide</h3>
+                        <p class="blog-excerpt">
+                            Discover practical techniques to improve your Unity game's performance. From object pooling
+                            to LOD systems, learn how to create smooth 60 FPS experiences on various platforms.
+                        </p>
+                        <div class="blog-tags">
+                            <span class="blog-tag">Unity</span>
+                            <span class="blog-tag">Performance</span>
+                            <span class="blog-tag">Optimization</span>
+                        </div>
+                        <a href="blog/unity-performance-optimization.html" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Example Blog Post 3 -->
+                <article class="blog-card" data-category="architecture">
+                    <div class="blog-card-image">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> Jan 5, 2026</span>
+                            <span><i class="far fa-clock"></i> 10 min read</span>
+                        </div>
+                        <h3>Clean Architecture in Modern Applications</h3>
+                        <p class="blog-excerpt">
+                            Explore the principles of Clean Architecture and how to apply them in real-world projects.
+                            Learn about separation of concerns, dependency inversion, and creating maintainable
+                            codebases.
+                        </p>
+                        <div class="blog-tags">
+                            <span class="blog-tag">Architecture</span>
+                            <span class="blog-tag">Clean Code</span>
+                            <span class="blog-tag">SOLID</span>
+                        </div>
+                        <a href="blog/clean-architecture-guide.html" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="border-top: 1px solid var(--border-subtle); padding: 40px 0; margin-top: 60px;">
+        <div class="container" style="text-align: center;">
+            <p style="color: var(--text-muted);">© 2025 Enes Efe Tokta. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Simple blog filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const blogCards = document.querySelectorAll('.blog-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const category = btn.dataset.category;
+
+                // Filter cards
+                blogCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category.includes(category)) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Building a Microservices Architecture with .NET 8 - Enes Efe Tokta</title>
+    <meta name="title" content="Building a Microservices Architecture with .NET 8">
+    <meta name="description"
+        content="Learn how to design and implement a scalable microservices architecture using .NET 8, Docker, and modern communication patterns. A comprehensive guide covering service isolation, API gateways, and inter-service communication.">
+    <meta name="keywords" content=".NET 8, Microservices, Docker, ASP.NET Core, Software Architecture, Enes Efe Tokta">
+    <meta name="author" content="Enes Efe Tokta">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://enesefetokta.github.io/portfolio/blog/building-microservices-dotnet.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://enesefetokta.github.io/portfolio/blog/building-microservices-dotnet.html">
+    <meta property="og:title" content="Building a Microservices Architecture with .NET 8">
+    <meta property="og:description"
+        content="Learn how to design and implement a scalable microservices architecture using .NET 8, Docker, and modern communication patterns.">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/154990402?v=4">
+    <meta property="article:published_time" content="2026-01-15T10:00:00Z">
+    <meta property="article:author" content="Enes Efe Tokta">
+    <meta property="article:section" content="Software Development">
+    <meta property="article:tag" content=".NET 8">
+    <meta property="article:tag" content="Microservices">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://enesefetokta.github.io/portfolio/blog/building-microservices-dotnet.html">
+    <meta name="twitter:title" content="Building a Microservices Architecture with .NET 8">
+    <meta name="twitter:description" content="A comprehensive guide to building scalable microservices with .NET 8">
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/154990402?v=4">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Building a Microservices Architecture with .NET 8",
+      "image": "https://avatars.githubusercontent.com/u/154990402?v=4",
+      "author": {
+        "@type": "Person",
+        "name": "Enes Efe Tokta",
+        "url": "https://enesefetokta.github.io/portfolio/"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Enes Efe Tokta",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://avatars.githubusercontent.com/u/154990402?v=4"
+        }
+      },
+      "datePublished": "2026-01-15",
+      "dateModified": "2026-01-15",
+      "description": "Learn how to design and implement a scalable microservices architecture using .NET 8, Docker, and modern communication patterns.",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://enesefetokta.github.io/portfolio/blog/building-microservices-dotnet.html"
+      },
+      "keywords": ".NET 8, Microservices, Docker, ASP.NET Core, Software Architecture"
+    }
+    </script>
+
+    <style>
+        /* Blog Post Specific Styles */
+        .blog-post {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .blog-header {
+            margin-bottom: 48px;
+        }
+
+        .blog-title {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--text-main);
+        }
+
+        .blog-meta-info {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            padding: 20px 0;
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px solid var(--border-subtle);
+        }
+
+        .author-details h4 {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .author-details p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .blog-content {
+            line-height: 1.8;
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+        }
+
+        .blog-content h2 {
+            font-size: 1.8rem;
+            margin-top: 48px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .blog-content h3 {
+            font-size: 1.4rem;
+            margin-top: 36px;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .blog-content p {
+            margin-bottom: 20px;
+        }
+
+        .blog-content ul,
+        .blog-content ol {
+            margin-bottom: 20px;
+            padding-left: 28px;
+        }
+
+        .blog-content li {
+            margin-bottom: 12px;
+        }
+
+        .blog-content img {
+            max-width: 100%;
+            border-radius: var(--radius-lg);
+            margin: 32px 0;
+        }
+
+        .blog-content pre {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            overflow-x: auto;
+            margin: 24px 0;
+            font-size: 0.9rem;
+        }
+
+        .blog-content code {
+            background: rgba(99, 102, 241, 0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: var(--accent-primary);
+        }
+
+        .blog-content pre code {
+            background: none;
+            padding: 0;
+            color: var(--text-secondary);
+        }
+
+        .blog-content blockquote {
+            border-left: 4px solid var(--accent-primary);
+            padding-left: 24px;
+            margin: 32px 0;
+            font-style: italic;
+            color: var(--text-main);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05));
+            border: 1px solid var(--accent-primary);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin: 32px 0;
+        }
+
+        .highlight-box h4 {
+            margin-top: 0;
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .blog-tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 32px 0;
+        }
+
+        .blog-tag {
+            padding: 6px 16px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--accent-primary);
+        }
+
+        .back-to-blog {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-primary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            font-weight: 500;
+            transition: gap 0.3s ease;
+        }
+
+        .back-to-blog:hover {
+            gap: 12px;
+        }
+
+        .share-section {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .share-twitter {
+            background: #1DA1F2;
+            color: white;
+        }
+
+        .share-linkedin {
+            background: #0077B5;
+            color: white;
+        }
+
+        .share-facebook {
+            background: #1877F2;
+            color: white;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">Enes Efe Tokta</a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#work">Work</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../education.html">Education</a></li>
+                <li><a href="../cv.html">Resume</a></li>
+                <li><a href="../biography.html">Biography</a></li>
+                <li><a href="../blog.html" style="color: var(--text-main);">Blog</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Blog Post -->
+    <section class="section-padding" style="padding-top: 120px;">
+        <div class="container">
+            <div class="blog-post">
+
+                <!-- Back Button -->
+                <a href="../blog.html" class="back-to-blog">
+                    <i class="fas fa-arrow-left"></i> Back to Blog
+                </a>
+
+                <!-- Blog Header -->
+                <header class="blog-header">
+                    <h1 class="blog-title">Building a Microservices Architecture with .NET 8</h1>
+
+                    <div class="blog-meta-info">
+                        <div class="author-info">
+                            <img src="https://avatars.githubusercontent.com/u/154990402?v=4" alt="Enes Efe Tokta"
+                                class="author-avatar">
+                            <div class="author-details">
+                                <h4>Enes Efe Tokta</h4>
+                                <p>Jan 15, 2026 • 8 min read</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-tags-container">
+                        <span class="blog-tag">.NET 8</span>
+                        <span class="blog-tag">Microservices</span>
+                        <span class="blog-tag">Docker</span>
+                        <span class="blog-tag">Architecture</span>
+                    </div>
+                </header>
+
+                <!-- Blog Content -->
+                <article class="blog-content">
+
+                    <p>
+                        Microservices architecture has become the de facto standard for building scalable, maintainable
+                        enterprise applications. In this comprehensive guide, I'll walk you through the process of
+                        designing and implementing a microservices system using .NET 8, sharing insights from my
+                        experience building production-ready distributed systems.
+                    </p>
+
+                    <h2>Why Microservices?</h2>
+
+                    <p>
+                        Before diving into implementation, it's crucial to understand when microservices make sense.
+                        While they offer numerous benefits, they also introduce complexity. Here are scenarios where
+                        microservices excel:
+                    </p>
+
+                    <ul>
+                        <li><strong>Independent Scaling:</strong> Different parts of your application have varying
+                            resource requirements</li>
+                        <li><strong>Team Autonomy:</strong> Multiple teams working on different features without
+                            stepping on each other's toes</li>
+                        <li><strong>Technology Flexibility:</strong> Freedom to choose the best technology stack for
+                            each service</li>
+                        <li><strong>Fault Isolation:</strong> Failures in one service don't bring down the entire system
+                        </li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-lightbulb"></i> Pro Tip</h4>
+                        <p>
+                            Don't start with microservices if you're building an MVP or a small application.
+                            The operational complexity isn't worth it. Start monolithic and migrate to microservices
+                            when you have clear domain boundaries and scaling needs.
+                        </p>
+                    </div>
+
+                    <h2>Core Principles of Microservices</h2>
+
+                    <h3>1. Service Independence</h3>
+
+                    <p>
+                        Each microservice should be independently deployable and have its own database. This principle,
+                        known as <strong>database per service</strong>, ensures that services don't share data stores,
+                        preventing tight coupling.
+                    </p>
+
+                    <pre><code>// Example: Service structure in .NET 8
+services/
+├── UserService/
+│   ├── UserService.API/
+│   ├── UserService.Domain/
+│   └── UserService.Infrastructure/
+├── ProductService/
+│   ├── ProductService.API/
+│   ├── ProductService.Domain/
+│   └── ProductService.Infrastructure/
+└── OrderService/
+    ├── OrderService.API/
+    ├── OrderService.Domain/
+    └── OrderService.Infrastructure/</code></pre>
+
+                    <h3>2. API Gateway Pattern</h3>
+
+                    <p>
+                        An API Gateway serves as the single entry point for clients, routing requests to appropriate
+                        microservices. In .NET, we can use <code>Ocelot</code> or <code>YARP</code> (Yet Another Reverse
+                        Proxy)
+                        for this purpose.
+                    </p>
+
+                    <pre><code>// Ocelot configuration example
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/users/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "user-service",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/users/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    }
+  ]
+}</code></pre>
+
+                    <h3>3. Service Communication</h3>
+
+                    <p>
+                        Microservices need to communicate with each other. There are two main patterns:
+                    </p>
+
+                    <ul>
+                        <li><strong>Synchronous (HTTP/gRPC):</strong> Direct request-response communication</li>
+                        <li><strong>Asynchronous (Message Queue):</strong> Event-driven communication using RabbitMQ,
+                            Azure Service Bus, or Kafka</li>
+                    </ul>
+
+                    <blockquote>
+                        "In my experience, a hybrid approach works best. Use synchronous communication for queries
+                        and asynchronous messaging for commands and events."
+                    </blockquote>
+
+                    <h2>Implementation Example: Order Processing System</h2>
+
+                    <p>
+                        Let's build a simple order processing system with three microservices: User Service,
+                        Product Service, and Order Service.
+                    </p>
+
+                    <h3>Setting Up the Project</h3>
+
+                    <pre><code>// Creating a new microservice with .NET CLI
+dotnet new webapi -n OrderService.API
+dotnet new classlib -n OrderService.Domain
+dotnet new classlib -n OrderService.Infrastructure
+
+// Add necessary packages
+cd OrderService.API
+dotnet add package Microsoft.EntityFrameworkCore
+dotnet add package MassTransit.RabbitMQ
+dotnet add package Serilog.AspNetCore</code></pre>
+
+                    <h3>Domain Model Example</h3>
+
+                    <pre><code>// OrderService.Domain/Entities/Order.cs
+public class Order
+{
+    public Guid Id { get; set; }
+    public Guid UserId { get; set; }
+    public List&lt;OrderItem&gt; Items { get; set; } = new();
+    public decimal TotalAmount { get; set; }
+    public OrderStatus Status { get; set; }
+    public DateTime CreatedAt { get; set; }
+    
+    public void CalculateTotal()
+    {
+        TotalAmount = Items.Sum(item =&gt; item.Price * item.Quantity);
+    }
+}
+
+public enum OrderStatus
+{
+    Pending,
+    Confirmed,
+    Shipping,
+    Delivered,
+    Cancelled
+}</code></pre>
+
+                    <h3>Event-Driven Communication</h3>
+
+                    <pre><code>// Publishing an event when order is created
+public async Task&lt;IActionResult&gt; CreateOrder([FromBody] CreateOrderDto dto)
+{
+    var order = new Order
+    {
+        Id = Guid.NewGuid(),
+        UserId = dto.UserId,
+        Items = dto.Items,
+        Status = OrderStatus.Pending,
+        CreatedAt = DateTime.UtcNow
+    };
+    
+    order.CalculateTotal();
+    await _orderRepository.AddAsync(order);
+    
+    // Publish event
+    await _publishEndpoint.Publish(new OrderCreatedEvent
+    {
+        OrderId = order.Id,
+        UserId = order.UserId,
+        TotalAmount = order.TotalAmount
+    });
+    
+    return Ok(order);
+}</code></pre>
+
+                    <h2>Containerization with Docker</h2>
+
+                    <p>
+                        Docker is essential for microservices. Here's a production-ready Dockerfile for our .NET
+                        service:
+                    </p>
+
+                    <pre><code># Dockerfile
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+WORKDIR /app
+EXPOSE 80
+
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+COPY ["OrderService.API/OrderService.API.csproj", "OrderService.API/"]
+RUN dotnet restore "OrderService.API/OrderService.API.csproj"
+COPY . .
+WORKDIR "/src/OrderService.API"
+RUN dotnet build "OrderService.API.csproj" -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish "OrderService.API.csproj" -c Release -o /app/publish
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "OrderService.API.dll"]</code></pre>
+
+                    <h2>Best Practices & Lessons Learned</h2>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-check-circle"></i> Key Takeaways</h4>
+                        <ol>
+                            <li><strong>Start Simple:</strong> Don't over-engineer from day one. Add complexity as
+                                needed.</li>
+                            <li><strong>Observability is Crucial:</strong> Implement logging, monitoring, and
+                                distributed tracing from the start (Serilog, OpenTelemetry).</li>
+                            <li><strong>Health Checks:</strong> Every service should expose health check endpoints for
+                                orchestrators like Kubernetes.</li>
+                            <li><strong>Resilience Patterns:</strong> Implement Circuit Breaker, Retry, and Timeout
+                                patterns using Polly.</li>
+                            <li><strong>API Versioning:</strong> Plan for API evolution from the beginning.</li>
+                        </ol>
+                    </div>
+
+                    <h2>Common Pitfalls to Avoid</h2>
+
+                    <ul>
+                        <li><strong>Distributed Monolith:</strong> Creating many services that are still tightly coupled
+                        </li>
+                        <li><strong>Network Chattiness:</strong> Too many inter-service calls degrading performance</li>
+                        <li><strong>Inconsistent Data:</strong> Not handling eventual consistency properly</li>
+                        <li><strong>Missing Service Discovery:</strong> Hardcoding service URLs instead of using service
+                            discovery</li>
+                    </ul>
+
+                    <h2>Conclusion</h2>
+
+                    <p>
+                        Building microservices with .NET 8 is powerful but requires careful planning and discipline.
+                        Focus on domain boundaries, embrace asynchronous communication where appropriate, and invest
+                        in observability from the start.
+                    </p>
+
+                    <p>
+                        Remember: microservices are a means to an end, not the end itself. The goal is to build
+                        maintainable, scalable systems that deliver business value.
+                    </p>
+
+                    <p>
+                        In future posts, I'll dive deeper into specific aspects like service mesh implementation,
+                        advanced messaging patterns, and production deployment strategies. Stay tuned!
+                    </p>
+
+                </article>
+
+                <!-- Share Section -->
+                <div class="share-section">
+                    <h3 style="margin-bottom: 16px;">Share this article</h3>
+                    <div class="share-buttons">
+                        <a href="https://twitter.com/intent/tweet?text=Building%20a%20Microservices%20Architecture%20with%20.NET%208&url=https://enesefetokta.github.io/portfolio/blog/building-microservices-dotnet.html"
+                            target="_blank" class="share-btn share-twitter">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://enesefetokta.github.io/portfolio/blog/building-microservices-dotnet.html"
+                            target="_blank" class="share-btn share-linkedin">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://enesefetokta.github.io/portfolio/blog/building-microservices-dotnet.html"
+                            target="_blank" class="share-btn share-facebook">
+                            <i class="fab fa-facebook"></i> Facebook
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="border-top: 1px solid var(--border-subtle); padding: 40px 0; margin-top: 60px;">
+        <div class="container" style="text-align: center;">
+            <p style="color: var(--text-muted);">© 2025 Enes Efe Tokta. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>
