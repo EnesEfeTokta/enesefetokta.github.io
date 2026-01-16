@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>The Fear of Artificial Intelligence - Software Engineering Perspective | Enes Efe Tokta</title>
+    <meta name="title" content="The Fear of Artificial Intelligence from a Software Engineering Student's Perspective">
+    <meta name="description"
+        content="A candid reflection on AI's impact on software careers from a student's perspective. Exploring fears, challenges, and adaptation in an AI-driven world.">
+    <meta name="keywords"
+        content="Artificial Intelligence, AI Impact, Software Engineering, Career Anxiety, AI in Software, Job Market, Technology Future, Student Perspective">
+    <meta name="author" content="Enes Efe Tokta">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://enesefetokta.github.io/portfolio/blog/posts/ai-fear-perspective.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://enesefetokta.github.io/portfolio/blog/posts/ai-fear-perspective.html">
+    <meta property="og:title" content="The Fear of Artificial Intelligence - A Software Student's Perspective">
+    <meta property="og:description"
+        content="Honest reflections on AI's impact on software careers and the future of our profession.">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/154990402?v=4">
+    <meta property="article:published_time" content="2026-01-16T00:00:00Z">
+    <meta property="article:author" content="Enes Efe Tokta">
+    <meta property="article:section" content="Opinion">
+    <meta property="article:tag" content="Artificial Intelligence">
+    <meta property="article:tag" content="Career">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://enesefetokta.github.io/portfolio/blog/posts/ai-fear-perspective.html">
+    <meta name="twitter:title" content="The Fear of AI - Software Engineering Student's Perspective">
+    <meta name="twitter:description" content="A candid reflection on AI's impact on software careers">
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/154990402?v=4">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "The Fear of Artificial Intelligence from the Perspective of a Software Engineering Student",
+      "image": "https://avatars.githubusercontent.com/u/154990402?v=4",
+      "author": {
+        "@type": "Person",
+        "name": "Enes Efe Tokta",
+        "url": "https://enesefetokta.github.io/portfolio/",
+        "affiliation": "Atatürk University - Information Systems and Technologies"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Enes Efe Tokta",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://avatars.githubusercontent.com/u/154990402?v=4"
+        }
+      },
+      "datePublished": "2026-01-16",
+      "dateModified": "2026-01-16",
+      "description": "A candid reflection on AI's impact on software careers from a student's perspective, exploring fears, challenges, and adaptation.",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://enesefetokta.github.io/portfolio/blog/posts/ai-fear-perspective.html"
+      },
+      "keywords": "Artificial Intelligence, Software Engineering, Career, Technology Future"
+    }
+    </script>
+
+    <style>
+        /* Blog Post Specific Styles */
+        .blog-post {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .blog-header {
+            margin-bottom: 48px;
+        }
+
+        .blog-title {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--text-main);
+        }
+
+        .blog-meta-info {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            padding: 20px 0;
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px solid var(--border-subtle);
+        }
+
+        .author-details h4 {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .author-details p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .blog-content {
+            line-height: 1.8;
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+        }
+
+        .blog-content h2 {
+            font-size: 1.8rem;
+            margin-top: 48px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .blog-content h3 {
+            font-size: 1.4rem;
+            margin-top: 36px;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .blog-content p {
+            margin-bottom: 20px;
+        }
+
+        .blog-content ul,
+        .blog-content ol {
+            margin-bottom: 20px;
+            padding-left: 28px;
+        }
+
+        .blog-content li {
+            margin-bottom: 12px;
+        }
+
+        .blog-content blockquote {
+            border-left: 4px solid var(--accent-primary);
+            padding-left: 24px;
+            margin: 32px 0;
+            font-style: italic;
+            color: var(--text-main);
+            font-size: 1.15rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05));
+            border: 1px solid var(--accent-primary);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin: 32px 0;
+        }
+
+        .highlight-box h4 {
+            margin-top: 0;
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .thought-box {
+            background: linear-gradient(135deg, rgba(255, 159, 67, 0.05), rgba(255, 107, 107, 0.05));
+            border-left: 4px solid #ff9f43;
+            padding: 20px 24px;
+            margin: 32px 0;
+            border-radius: var(--radius-md);
+        }
+
+        .thought-box p {
+            margin: 0;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .blog-tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 32px 0;
+        }
+
+        .blog-tag {
+            padding: 6px 16px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--accent-primary);
+        }
+
+        .back-to-blog {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-primary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            font-weight: 500;
+            transition: gap 0.3s ease;
+        }
+
+        .back-to-blog:hover {
+            gap: 12px;
+        }
+
+        .share-section {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .share-twitter {
+            background: #1DA1F2;
+            color: white;
+        }
+
+        .share-linkedin {
+            background: #0077B5;
+            color: white;
+        }
+
+        .share-facebook {
+            background: #1877F2;
+            color: white;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../../index.html" class="logo">Enes Efe Tokta</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#about">About</a></li>
+                <li><a href="../../index.html#work">Work</a></li>
+                <li><a href="../../index.html#skills">Skills</a></li>
+                <li><a href="../../pages/education.html">Education</a></li>
+                <li><a href="../../pages/cv.html">Resume</a></li>
+                <li><a href="../../pages/biography.html">Biography</a></li>
+                <li><a href="../index.html" style="color: var(--text-main);">Blog</a></li>
+                <li><a href="../../index.html#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Blog Post -->
+    <section class="section-padding" style="padding-top: 120px;">
+        <div class="container">
+            <div class="blog-post">
+
+                <!-- Back Button -->
+                <a href="../index.html" class="back-to-blog">
+                    <i class="fas fa-arrow-left"></i> Back to Blog
+                </a>
+
+                <!-- Blog Header -->
+                <header class="blog-header">
+                    <h1 class="blog-title">The Fear of Artificial Intelligence from the Perspective of a Software
+                        Engineering Student</h1>
+
+                    <div class="blog-meta-info">
+                        <div class="author-info">
+                            <img src="https://avatars.githubusercontent.com/u/154990402?v=4" alt="Enes Efe Tokta"
+                                class="author-avatar">
+                            <div class="author-details">
+                                <h4>Enes Efe Tokta</h4>
+                                <p>Jan 16, 2026 • 5 min read</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-tags-container">
+                        <span class="blog-tag">Artificial Intelligence</span>
+                        <span class="blog-tag">Opinion</span>
+                        <span class="blog-tag">Career</span>
+                        <span class="blog-tag">Future of Work</span>
+                    </div>
+                </header>
+
+                <!-- Blog Content -->
+                <article class="blog-content">
+
+                    <p>
+                        My name is Enes Efe Tokta. In 2023, I am a third-year student in the Department of Information
+                        Systems and Technologies at Atatürk University.
+                    </p>
+
+                    <p><strong>And yes, I'll be frank: We are afraid.</strong></p>
+
+                    <h2>The Transformation of Software Ecosystem</h2>
+
+                    <p>
+                        As artificial intelligence transforms the world, one of the areas where this transformation is
+                        felt most acutely is the software ecosystem. This is especially true for us, software students
+                        and junior candidates who are just starting out in the profession.
+                    </p>
+
+                    <p>Our fear is simple but profound: <strong>unemployment</strong>.</p>
+
+                    <div class="thought-box">
+                        <p>Because artificial intelligence can write code faster than us.</p>
+                    </div>
+
+                    <div class="thought-box">
+                        <p>It can generate answers faster.</p>
+                    </div>
+
+                    <div class="thought-box">
+                        <p>It can research faster.</p>
+                    </div>
+
+                    <div class="thought-box">
+                        <p>And it's much less expensive for companies compared to a human resource.</p>
+                    </div>
+
+                    <h2>The Creativity Argument</h2>
+
+                    <p>
+                        "They lack creativity," people say. That's true.
+                    </p>
+
+                    <p>
+                        But let's be honest: <strong>how much creative space is given to a student or junior developer
+                            in today's market?</strong> Often, what's expected is not questioning, but completing the
+                        given
+                        task quickly and flawlessly.
+                    </p>
+
+                    <blockquote>
+                        "Don't learn to code."
+                        <br>— NVIDIA's CEO
+                    </blockquote>
+
+                    <p>
+                        At this point, the picture gets even tougher. Companies that thrive on AI products are
+                        aggressively shaping the market. NVIDIA's CEO's statement wasn't just a sentence; it was an
+                        <strong>alarm for our generation</strong>.
+                    </p>
+
+                    <h2>The Job Market Reality</h2>
+
+                    <p>
+                        When you add the job market shrinking after COVID-19, an ironic reality emerges:
+                    </p>
+
+                    <ul>
+                        <li>Companies require at least two years of experience, even knowing candidates are recent
+                            graduates</li>
+                        <li>Some don't even consider internships as "experience"</li>
+                        <li>Entry-level positions are becoming increasingly rare</li>
+                        <li>Competition for junior roles has intensified dramatically</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-exclamation-triangle"></i> The Result</h4>
+                        <p>
+                            As software students, we are heading towards graduation with ever-increasing anxiety.
+                        </p>
+                    </div>
+
+                    <h2>The Current State of AI</h2>
+
+                    <p>
+                        Yes, today's AI can't completely replace a good programmer.
+                    </p>
+
+                    <p>
+                        <strong>But let's be honest: it can replace a recent graduate.</strong>
+                    </p>
+
+                    <p>
+                        I see this fear not only in myself, but in almost all my friends. We're all grappling with
+                        the same questions:
+                    </p>
+
+                    <ul>
+                        <li>Will there be jobs for us when we graduate?</li>
+                        <li>How can we compete with AI?</li>
+                        <li>Is our education still relevant?</li>
+                        <li>What skills should we focus on?</li>
+                    </ul>
+
+                    <h2>My Motivation for Overcoming This Fear</h2>
+
+                    <p>
+                        Despite these concerns, I remind myself of three crucial facts:
+                    </p>
+
+                    <ol>
+                        <li><strong>Artificial intelligence is still not as creative as humans</strong> - AI can
+                            generate solutions, but it struggles with truly novel problems</li>
+                        <li><strong>It cannot fully grasp the real world, context, and emotion</strong> - Human
+                            understanding of nuance and context remains irreplaceable</li>
+                        <li><strong>It cannot generate intention</strong> - AI lacks purpose and direction; humans
+                            define the "why" behind solutions</li>
+                    </ol>
+
+                    <h2>The Paradox of Our Generation</h2>
+
+                    <p>
+                        The strangest part is this: <strong>Despite our fear, we are surrounded by artificial
+                            intelligence.</strong>
+                    </p>
+
+                    <p>
+                        As Generation Z, we are the generation that uses AI most intensively:
+                    </p>
+
+                    <ul>
+                        <li>In research and homework</li>
+                        <li>In learning processes</li>
+                        <li>In problem-solving</li>
+                        <li>Even in our private lives</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-lightbulb"></i> This Isn't a Contradiction</h4>
+                        <p>
+                            This isn't a contradiction; it's the pains of adaptation. The problem isn't the existence
+                            of artificial intelligence. The problem is that we were caught unprepared for the speed of
+                            this transformation.
+                        </p>
+                    </div>
+
+                    <h2>The Real Question</h2>
+
+                    <p>
+                        Perhaps the real question is not:
+                    </p>
+
+                    <blockquote>
+                        "Will artificial intelligence replace us?"
+                    </blockquote>
+
+                    <p>
+                        But rather:
+                    </p>
+
+                    <blockquote>
+                        "How can we create value together with artificial intelligence?"
+                    </blockquote>
+
+                    <p>
+                        The answer isn't easy. But it's very clear that <strong>those who don't ask this question won't
+                            have a say in the future</strong>.
+                    </p>
+
+                    <h2>Moving Forward</h2>
+
+                    <p>
+                        Instead of fearing AI, we must learn to:
+                    </p>
+
+                    <ul>
+                        <li><strong>Collaborate with AI</strong> - Use it as a tool to augment our capabilities</li>
+                        <li><strong>Focus on uniquely human skills</strong> - Critical thinking, empathy, creativity,
+                            and strategic vision</li>
+                        <li><strong>Continuously adapt</strong> - The only constant in technology is change</li>
+                        <li><strong>Build what AI cannot</strong> - Solutions that require deep understanding of human
+                            needs and contexts</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-heart"></i> Final Thoughts</h4>
+                        <p>
+                            We are not just competing with AI. We are learning to work alongside it, to leverage its
+                            strengths while contributing our uniquely human capabilities. This is our challenge, but
+                            also our opportunity.
+                        </p>
+                        <p>
+                            The future belongs to those who can bridge the gap between human creativity and AI
+                            efficiency.
+                        </p>
+                    </div>
+
+                    <p>
+                        This is my perspective as a software engineering student in 2026. The fear is real, but so is
+                        the potential for growth and adaptation. We are the generation that will define how humans and
+                        AI work together.
+                    </p>
+
+                </article>
+
+                <!-- Share Section -->
+                <div class="share-section">
+                    <h3 style="margin-bottom: 16px;">Share this article</h3>
+                    <div class="share-buttons">
+                        <a href="https://twitter.com/intent/tweet?text=The%20Fear%20of%20AI%20-%20Software%20Student%20Perspective&url=https://enesefetokta.github.io/portfolio/blog/posts/ai-fear-perspective.html"
+                            target="_blank" class="share-btn share-twitter">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://enesefetokta.github.io/portfolio/blog/posts/ai-fear-perspective.html"
+                            target="_blank" class="share-btn share-linkedin">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://enesefetokta.github.io/portfolio/blog/posts/ai-fear-perspective.html"
+                            target="_blank" class="share-btn share-facebook">
+                            <i class="fab fa-facebook"></i> Facebook
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="border-top: 1px solid var(--border-subtle); padding: 40px 0; margin-top: 60px;">
+        <div class="container" style="text-align: center;">
+            <p style="color: var(--text-muted);">© 2025 Enes Efe Tokta. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>
