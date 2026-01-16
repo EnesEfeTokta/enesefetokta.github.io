@@ -1,0 +1,11 @@
+# Robots.txt for Enes Efe Tokta Portfolio
+# This file tells search engine crawlers which pages or files they can or cannot access
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://enesefetokta.github.io/portfolio/sitemap.xml
+
+# Crawl-delay (optional, usually not needed for GitHub Pages)
+# Crawl-delay: 1

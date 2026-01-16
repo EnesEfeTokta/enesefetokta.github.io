@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+    <!-- Homepage -->
+    <url>
+        <loc>https://enesefetokta.github.io/portfolio/</loc>
+        <lastmod>2026-01-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Main Pages -->
+    <url>
+        <loc>https://enesefetokta.github.io/portfolio/biography.html</loc>
+        <lastmod>2026-01-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://enesefetokta.github.io/portfolio/cv.html</loc>
+        <lastmod>2026-01-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://enesefetokta.github.io/portfolio/education.html</loc>
+        <lastmod>2026-01-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Project Overview Pages -->
+    <url>
+        <loc>https://enesefetokta.github.io/portfolio/dotnet-projects.html</loc>
+        <lastmod>2026-01-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://enesefetokta.github.io/portfolio/unity-projects.html</loc>
+        <lastmod>2026-01-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- .NET Project Detail Pages -->
+    <url>
+        <loc>https://enesefetokta.github.io/portfolio/vidsync-dotnet-project.html</loc>
+        <lastmod>2026-01-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://enesefetokta.github.io/portfolio/fintrackwebapi-dotnet-project.html</loc>
+        <lastmod>2026-01-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://enesefetokta.github.io/portfolio/fintrack-dotnet-project.html</loc>
+        <lastmod>2026-01-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://enesefetokta.github.io/portfolio/weatherzeroplus-dotnet-project.html</loc>
+        <lastmod>2026-01-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- Unity Project Detail Pages -->
+    <url>
+        <loc>https://enesefetokta.github.io/portfolio/atlas-unity-project.html</loc>
+        <lastmod>2026-01-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://enesefetokta.github.io/portfolio/fishing-unity-project.html</loc>
+        <lastmod>2026-01-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+</urlset>
