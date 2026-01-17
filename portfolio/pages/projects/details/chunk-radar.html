@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Chunk-Radar: English Learning App | Enes Efe Tokta</title>
+    <meta name="title" content="Chunk-Radar: English Learning App Using Chunking Method">
+    <meta name="description"
+        content="A modern React TypeScript flashcard application for English learning using the chunking method. Features include TTS, progress tracking, analytics dashboard, and smart answer options. Built with Vibe-Coding methodology.">
+    <meta name="keywords"
+        content="chunk-radar, english learning, chunking method, react app, typescript, flashcard app, language learning, vibe-coding, enes efe tokta">
+    <meta name="author" content="Enes Efe Tokta">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://enesefetokta.github.io/portfolio/chunk-radar-ts-project.html">
+    <meta property="og:title" content="Chunk-Radar: English Learning App Using Chunking Method">
+    <meta property="og:description"
+        content="A modern React TypeScript flashcard application for English learning. Features progress tracking, analytics, and smart answer options. Built with Vibe-Coding.">
+    <meta property="og:image" content="https://enesefetokta.github.io/portfolio/Images/chunk-radar-preview.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://enesefetokta.github.io/portfolio/chunk-radar-ts-project.html">
+    <meta property="twitter:title" content="Chunk-Radar: English Learning App Using Chunking Method">
+    <meta property="twitter:description"
+        content="A modern React TypeScript flashcard application for English learning. Features progress tracking, analytics, and smart answer options.">
+    <meta property="twitter:image" content="https://enesefetokta.github.io/portfolio/Images/chunk-radar-preview.png">
+    <meta property="twitter:creator" content="@EnesEfeTokta">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../../assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://enesefetokta.github.io/portfolio/chunk-radar-ts-project.html">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Chunk-Radar",
+      "applicationCategory": "EducationalApplication",
+      "description": "A modern flashcard application using the chunking method for English language learning. Built with React, TypeScript, and developed using the Vibe-Coding approach.",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Enes Efe Tokta",
+        "url": "https://enesefetokta.github.io/portfolio/"
+      },
+      "programmingLanguage": ["TypeScript", "JavaScript"],
+      "url": "https://github.com/EnesEfeTokta/Chunk-Radar",
+      "softwareVersion": "1.0",
+      "datePublished": "2026-01-17",
+      "keywords": "english learning, chunking method, flashcard app, react, typescript, language education"
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../../../index.html" class="logo">Enes Efe Tokta</a>
+            <ul class="nav-links">
+                <li><a href="../../../index.html#about">About</a></li>
+                <li><a href="../../../index.html#work" style="color: var(--text-main);">Work</a></li>
+                <li><a href="../../../index.html#skills">Skills</a></li>
+                <li><a href="../../../pages/education.html">Education</a></li>
+                <li><a href="../../../pages/cv.html">Resume</a></li>
+                <li><a href="../../../pages/biography.html">Biography</a></li>
+                <li><a href="../../../index.html#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="section-padding" style="padding-top: 120px;">
+        <div class="container" style="max-width: 1100px;">
+
+            <!-- Header -->
+            <div style="margin-bottom: 60px;">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <a href="../ts-js.html"
+                        style="color: var(--text-secondary); font-size: 0.9rem; display: flex; align-items: center; gap: 8px; transition: color 0.2s;">
+                        <i class="fas fa-arrow-left"></i> Back to TypeScript Projects
+                    </a>
+                </div>
+                <h1 style="font-size: 3rem; margin-bottom: 24px; line-height: 1.1; font-weight: 700;">🎯 Chunk-Radar
+                </h1>
+                <p
+                    style="font-size: 1.2rem; color: var(--text-secondary); max-width: 800px; margin-bottom: 32px; line-height: 1.7;">
+                    A modern flashcard application for English learning using the chunking method - a proven technique
+                    for language acquisition
+                </p>
+                <div class="skill-tags" style="margin-bottom: 24px;">
+                    <span class="skill-tag">React 18</span>
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">Vite</span>
+                    <span class="skill-tag">Express.js</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Vibe-Coding</span>
+                </div>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <a href="https://github.com/EnesEfeTokta/Chunk-Radar" target="_blank" class="btn">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div style="display: flex; flex-direction: column; gap: 48px;">
+
+                <!-- Screenshots Section -->
+                <section class="bento-item">
+                    <h2
+                        style="font-size: 1.75rem; margin-bottom: 32px; color: var(--text-main); font-weight: 600; display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-images" style="color: var(--accent-primary); font-size: 1.5rem;"></i>
+                        Screenshots
+                    </h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                        <!-- Screenshot Placeholder 1 -->
+                        <div style="border-radius: 12px; overflow: hidden; border: 1px solid var(--border-subtle);">
+                            <img src="https://raw.githubusercontent.com/EnesEfeTokta/Chunk-Radar/main/screenshots/Screenshot1.png"
+                                alt="Chunk Radar Screenshot" style="width: 100%; display: block; object-fit: cover;">
+                        </div>
+                        <!-- Screenshot Placeholder 2 -->
+                        <div style="border-radius: 12px; overflow: hidden; border: 1px solid var(--border-subtle);">
+                            <img src="https://raw.githubusercontent.com/EnesEfeTokta/Chunk-Radar/main/screenshots/Screenshot2.png"
+                                alt="Chunk Radar Screenshot" style="width: 100%; display: block; object-fit: cover;">
+                        </div>
+                        <!-- Screenshot Placeholder 3 -->
+                        <div style="border-radius: 12px; overflow: hidden; border: 1px solid var(--border-subtle);">
+                            <img src="https://raw.githubusercontent.com/EnesEfeTokta/Chunk-Radar/main/screenshots/Screenshot3.png"
+                                alt="Chunk Radar Screenshot" style="width: 100%; display: block; object-fit: cover;">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Overview -->
+                <section class="bento-item">
+                    <h2
+                        style="font-size: 1.75rem; margin-bottom: 24px; color: var(--text-main); font-weight: 600; display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-info-circle" style="color: var(--accent-primary); font-size: 1.5rem;"></i>
+                        About the Project
+                    </h2>
+                    <p style="font-size: 1.05rem; line-height: 1.9; margin-bottom: 20px; color: var(--text-secondary);">
+                        Chunk-Radar is an English learning application designed around the <strong>chunking
+                            method</strong> - a proven technique for language acquisition that focuses on learning
+                        phrases and word combinations as meaningful units rather than individual words.
+                    </p>
+                    <p style="font-size: 1.05rem; line-height: 1.9; margin-bottom: 20px; color: var(--text-secondary);">
+                        This project represents my first experience with <strong>Vibe-Coding</strong>, an AI-assisted
+                        development methodology that emphasizes rapid iteration, modern design patterns, and developer
+                        productivity.
+                    </p>
+                    <p style="font-size: 1.05rem; line-height: 1.9; color: var(--text-secondary);">
+                        The application combines educational psychology with modern web technologies to create an
+                        effective and enjoyable learning experience.
+                    </p>
+                </section>
+
+                <!-- Features -->
+                <section class="bento-item">
+                    <h2
+                        style="font-size: 1.75rem; margin-bottom: 32px; color: var(--text-main); font-weight: 600; display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-star" style="color: var(--accent-secondary); font-size: 1.5rem;"></i>
+                        Key Features
+                    </h2>
+                    <ul class="feature-grid">
+                        <li class="feature-item">
+                            <i class="fas fa-credit-card feature-icon"></i>
+                            <div>
+                                <strong>Modern Flashcard Interface</strong>
+                                <p>Single-click to play audio pronunciation (TTS), double-click to flip card and reveal
+                                    translation. Clean, distraction-free study environment.</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-chart-line feature-icon"></i>
+                            <div>
+                                <strong>Visual Progress Tracking</strong>
+                                <p>Color-coded mini-card navigation: Green (correct), Red (wrong), Blue (skipped), Gray
+                                    (not reviewed). Click any card to jump to that chunk.</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-chart-bar feature-icon"></i>
+                            <div>
+                                <strong>Analytics Dashboard</strong>
+                                <p>30-day progress tracking with visual charts showing correct/wrong ratio, success rate
+                                    percentage, and persistent statistics.</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-folder feature-icon"></i>
+                            <div>
+                                <strong>Flexible Organization</strong>
+                                <p>Create custom chunk groups with modern pill-style tab navigation. Full CRUD
+                                    operations with local JSON persistence.</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <div>
+                                <strong>Smart Answer Options</strong>
+                                <p>Turkish interface: Doğru (I know this), Yanlış (I need to review), Bilmiyorum (Skip
+                                    but mark for review).</p>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Tech Stack -->
+                <section class="bento-item">
+                    <h2
+                        style="font-size: 1.75rem; margin-bottom: 32px; color: var(--text-main); font-weight: 600; display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-code" style="color: var(--accent-primary); font-size: 1.5rem;"></i>
+                        Technology Stack
+                    </h2>
+
+                    <h3 style="font-size: 1.3rem; margin-bottom: 20px; color: var(--text-main); font-weight: 600;">
+                        Frontend
+                    </h3>
+                    <ul class="feature-grid" style="margin-bottom: 32px;">
+                        <li class="feature-item">
+                            <i class="fab fa-react feature-icon" style="color: #61dafb;"></i>
+                            <div>
+                                <strong>React 18</strong>
+                                <p>Modern UI library with hooks and functional components</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-code feature-icon" style="color: #3178c6;"></i>
+                            <div>
+                                <strong>TypeScript</strong>
+                                <p>Type safety and improved developer experience</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-bolt feature-icon" style="color: #646cff;"></i>
+                            <div>
+                                <strong>Vite</strong>
+                                <p>Lightning-fast build tool and development server</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fab fa-css3-alt feature-icon" style="color: #1572b6;"></i>
+                            <div>
+                                <strong>CSS3</strong>
+                                <p>Modern styling with gradients and smooth animations</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <h3 style="font-size: 1.3rem; margin-bottom: 20px; color: var(--text-main); font-weight: 600;">
+                        Backend
+                    </h3>
+                    <ul class="feature-grid">
+                        <li class="feature-item">
+                            <i class="fab fa-node-js feature-icon" style="color: #339933;"></i>
+                            <div>
+                                <strong>Express.js</strong>
+                                <p>RESTful API server for data management</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-server feature-icon"></i>
+                            <div>
+                                <strong>Node.js</strong>
+                                <p>JavaScript runtime environment</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-database feature-icon"></i>
+                            <div>
+                                <strong>File System (JSON)</strong>
+                                <p>Simple, lightweight data persistence</p>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Design Philosophy -->
+                <section class="bento-item">
+                    <h2
+                        style="font-size: 1.75rem; margin-bottom: 24px; color: var(--text-main); font-weight: 600; display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-palette" style="color: var(--accent-secondary); font-size: 1.5rem;"></i>
+                        Design Philosophy
+                    </h2>
+                    <p style="font-size: 1.05rem; line-height: 1.9; margin-bottom: 20px; color: var(--text-secondary);">
+                        Chunk Radar embraces modern web design principles to create an engaging learning experience:
+                    </p>
+                    <ul class="feature-grid">
+                        <li class="feature-item">
+                            <i class="fas fa-layer-group feature-icon"></i>
+                            <div>
+                                <strong>Glassmorphism</strong>
+                                <p>Translucent cards with backdrop blur effects</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-fill-drip feature-icon"></i>
+                            <div>
+                                <strong>Vibrant Gradients</strong>
+                                <p>Purple-to-pink color accents throughout the interface</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-magic feature-icon"></i>
+                            <div>
+                                <strong>Smooth Animations</strong>
+                                <p>CSS transitions and transforms for polished interactions</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-moon feature-icon"></i>
+                            <div>
+                                <strong>Dark Theme</strong>
+                                <p>Easy on the eyes for extended study sessions</p>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- The Chunking Method -->
+                <section class="bento-item"
+                    style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(139, 92, 246, 0.05)); border: 1px solid var(--accent-primary);">
+                    <h2
+                        style="font-size: 1.75rem; margin-bottom: 24px; color: var(--text-main); font-weight: 600; display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-lightbulb" style="color: var(--accent-primary); font-size: 1.5rem;"></i>
+                        The Chunking Method
+                    </h2>
+                    <p style="font-size: 1.05rem; line-height: 1.9; margin-bottom: 20px; color: var(--text-secondary);">
+                        The chunking method is a language learning technique that focuses on:
+                    </p>
+                    <ol style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 16px;">
+                        <li style="display: flex; align-items: flex-start; gap: 16px;">
+                            <div
+                                style="min-width: 40px; height: 40px; background: var(--accent-primary); color: var(--bg-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem;">
+                                1</div>
+                            <div>
+                                <strong style="color: var(--text-main); font-size: 1.05rem;">Learn Phrases as
+                                    Units</strong>
+                                <p style="color: var(--text-secondary); margin-top: 4px;">Instead of individual words,
+                                    learn meaningful phrase combinations</p>
+                            </div>
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 16px;">
+                            <div
+                                style="min-width: 40px; height: 40px; background: var(--accent-primary); color: var(--bg-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem;">
+                                2</div>
+                            <div>
+                                <strong style="color: var(--text-main); font-size: 1.05rem;">Focus on Context</strong>
+                                <p style="color: var(--text-secondary); margin-top: 4px;">Use example sentences to
+                                    understand how phrases are used naturally</p>
+                            </div>
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 16px;">
+                            <div
+                                style="min-width: 40px; height: 40px; background: var(--accent-primary); color: var(--bg-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem;">
+                                3</div>
+                            <div>
+                                <strong style="color: var(--text-main); font-size: 1.05rem;">Build Natural
+                                    Fluency</strong>
+                                <p style="color: var(--text-secondary); margin-top: 4px;">Memorize common word
+                                    combinations for more natural speech</p>
+                            </div>
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 16px;">
+                            <div
+                                style="min-width: 40px; height: 40px; background: var(--accent-secondary); color: var(--bg-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem;">
+                                4</div>
+                            <div>
+                                <strong style="color: var(--text-main); font-size: 1.05rem;">Track Progress</strong>
+                                <p style="color: var(--text-secondary); margin-top: 4px;">Use spaced repetition to
+                                    reinforce learning over time</p>
+                            </div>
+                        </li>
+                    </ol>
+                    <blockquote
+                        style="border-left: 4px solid var(--accent-primary); padding-left: 24px; margin: 24px 0; font-style: italic; font-size: 1.1rem; color: var(--text-main);">
+                        Example: "Break a leg" - A theatrical phrase meaning "good luck"
+                    </blockquote>
+                </section>
+
+                <!-- Vibe-Coding -->
+                <section class="bento-item">
+                    <h2
+                        style="font-size: 1.75rem; margin-bottom: 24px; color: var(--text-main); font-weight: 600; display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-rocket" style="color: var(--accent-secondary); font-size: 1.5rem;"></i>
+                        Built with Vibe-Coding
+                    </h2>
+                    <p style="font-size: 1.05rem; line-height: 1.9; color: var(--text-secondary);">
+                        This project was developed using <strong>Vibe-Coding</strong>, an AI-assisted development
+                        methodology that leverages artificial intelligence for rapid prototyping, modern UI/UX
+                        implementation, code quality assurance, and real-time problem solving. This approach enabled
+                        faster iteration cycles and helped maintain modern design patterns throughout the development
+                        process.
+                    </p>
+                </section>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="border-top: 1px solid var(--border-subtle); padding: 40px 0; margin-top: 60px;">
+        <div class="container" style="text-align: center;">
+            <p style="color: var(--text-muted); font-size: 0.9rem;">© 2025 Enes Efe Tokta. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../../../assets/js/main.js"></script>
+</body>
+
+</html>
