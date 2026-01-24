@@ -157,6 +157,13 @@
     </url>
     
     <url>
+        <loc>https://enesefetokta.github.io/portfolio/blog/posts/ai-game-development-2023.html</loc>
+        <lastmod>2023-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
         <loc>https://enesefetokta.github.io/portfolio/blog/posts/unity-vs-unreal-engine.html</loc>
         <lastmod>2023-11-30</lastmod>
         <changefreq>monthly</changefreq>

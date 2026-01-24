@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>AI in Game Development: A 2023 Perspective | Enes Efe Tokta</title>
+    <meta name="title" content="AI in Game Development: A 2023 Perspective">
+    <meta name="description"
+        content="Exploring AI's role in game development from a 2023 viewpoint. Learn about ChatGPT, DALL-E 3, DLSS, NPC behaviors, and how AI tools transformed game creation in 2023, with updates for 2026.">
+    <meta name="keywords"
+        content="AI Game Development, ChatGPT, DALL-E 3, DLSS, FSR, Bard, Gemini, Game AI, NPC Behavior, Unity AI, 2023 Technology">
+    <meta name="author" content="Enes Efe Tokta">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://enesefetokta.github.io/portfolio/blog/posts/ai-game-development-2023.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://enesefetokta.github.io/portfolio/blog/posts/ai-game-development-2023.html">
+    <meta property="og:title" content="AI in Game Development: A 2023 Perspective">
+    <meta property="og:description"
+        content="A retrospective look at how AI transformed game development in 2023, with updates for 2026.">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/154990402?v=4">
+    <meta property="article:published_time" content="2023-12-09T00:00:00Z">
+    <meta property="article:author" content="Enes Efe Tokta">
+    <meta property="article:section" content="Game Development">
+    <meta property="article:tag" content="AI">
+    <meta property="article:tag" content="Game Development">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url"
+        content="https://enesefetokta.github.io/portfolio/blog/posts/ai-game-development-2023.html">
+    <meta name="twitter:title" content="AI in Game Development: A 2023 Perspective">
+    <meta name="twitter:description" content="Exploring AI's impact on game development in 2023">
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/154990402?v=4">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "AI in Game Development: A 2023 Perspective",
+      "image": "https://avatars.githubusercontent.com/u/154990402?v=4",
+      "author": {
+        "@type": "Person",
+        "name": "Enes Efe Tokta",
+        "url": "https://enesefetokta.github.io/portfolio/"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Enes Efe Tokta",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://avatars.githubusercontent.com/u/154990402?v=4"
+        }
+      },
+      "datePublished": "2023-12-09",
+      "dateModified": "2023-12-09",
+      "description": "Exploring AI's role in game development from a 2023 viewpoint, with updates for 2026.",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://enesefetokta.github.io/portfolio/blog/posts/ai-game-development-2023.html"
+      },
+      "keywords": "AI, Game Development, ChatGPT, DALL-E, Unity"
+    }
+    </script>
+
+    <style>
+        /* Blog Post Specific Styles */
+        .blog-post {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .blog-header {
+            margin-bottom: 48px;
+        }
+
+        .blog-title {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--text-main);
+        }
+
+        .blog-meta-info {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            padding: 20px 0;
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px solid var(--border-subtle);
+        }
+
+        .author-details h4 {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .author-details p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .blog-content {
+            line-height: 1.8;
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+        }
+
+        .blog-content h2 {
+            font-size: 1.8rem;
+            margin-top: 48px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .blog-content h3 {
+            font-size: 1.4rem;
+            margin-top: 36px;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .blog-content p {
+            margin-bottom: 20px;
+        }
+
+        .blog-content ul,
+        .blog-content ol {
+            margin-bottom: 20px;
+            padding-left: 28px;
+        }
+
+        .blog-content li {
+            margin-bottom: 12px;
+        }
+
+        .blog-content blockquote {
+            border-left: 4px solid var(--accent-primary);
+            padding-left: 24px;
+            margin: 32px 0;
+            font-style: italic;
+            color: var(--text-main);
+        }
+
+        .time-capsule-warning {
+            background: linear-gradient(135deg, rgba(255, 159, 67, 0.1), rgba(255, 107, 107, 0.1));
+            border: 2px solid #ff9f43;
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin: 32px 0;
+        }
+
+        .time-capsule-warning h3 {
+            margin-top: 0;
+            color: #ff9f43;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.3rem;
+        }
+
+        .update-2026 {
+            background: linear-gradient(135deg, rgba(46, 213, 115, 0.05), rgba(0, 184, 148, 0.05));
+            border-left: 4px solid #2ed573;
+            padding: 16px 20px;
+            margin: 24px 0;
+            border-radius: var(--radius-md);
+        }
+
+        .update-2026 h4 {
+            margin: 0 0 8px 0;
+            color: #2ed573;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1rem;
+        }
+
+        .update-2026 p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05));
+            border: 1px solid var(--accent-primary);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin: 32px 0;
+        }
+
+        .highlight-box h4 {
+            margin-top: 0;
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .blog-tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 32px 0;
+        }
+
+        .blog-tag {
+            padding: 6px 16px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--accent-primary);
+        }
+
+        .back-to-blog {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-primary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            font-weight: 500;
+            transition: gap 0.3s ease;
+        }
+
+        .back-to-blog:hover {
+            gap: 12px;
+        }
+
+        .share-section {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .share-twitter {
+            background: #1DA1F2;
+            color: white;
+        }
+
+        .share-linkedin {
+            background: #0077B5;
+            color: white;
+        }
+
+        .share-facebook {
+            background: #1877F2;
+            color: white;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../../index.html" class="logo">Enes Efe Tokta</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#about">About</a></li>
+                <li><a href="../../index.html#work">Work</a></li>
+                <li><a href="../../index.html#skills">Skills</a></li>
+                <li><a href="../../pages/education.html">Education</a></li>
+                <li><a href="../../pages/cv.html">Resume</a></li>
+                <li><a href="../../pages/biography.html">Biography</a></li>
+                <li><a href="../index.html" style="color: var(--text-main);">Blog</a></li>
+                <li><a href="../../index.html#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Blog Post -->
+    <section class="section-padding" style="padding-top: 120px;">
+        <div class="container">
+            <div class="blog-post">
+
+                <!-- Back Button -->
+                <a href="../index.html" class="back-to-blog">
+                    <i class="fas fa-arrow-left"></i> Back to Blog
+                </a>
+
+                <!-- Blog Header -->
+                <header class="blog-header">
+                    <h1 class="blog-title">The Perfect Dance of Intelligence and Code: AI in Game Development</h1>
+
+                    <div class="blog-meta-info">
+                        <div class="author-info">
+                            <img src="https://avatars.githubusercontent.com/u/154990402?v=4" alt="Enes Efe Tokta"
+                                class="author-avatar">
+                            <div class="author-details">
+                                <h4>Enes Efe Tokta</h4>
+                                <p>Dec 9, 2023 • 10 min read</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-tags-container">
+                        <span class="blog-tag">AI</span>
+                        <span class="blog-tag">Game Development</span>
+                        <span class="blog-tag">2023 Retrospective</span>
+                        <span class="blog-tag">Unity</span>
+                    </div>
+                </header>
+
+                <!-- Blog Content -->
+                <article class="blog-content">
+
+                    <!-- Time Capsule Warning -->
+                    <div class="time-capsule-warning">
+                        <h3><i class="fas fa-clock"></i> 2023 Technology Snapshot</h3>
+                        <p>
+                            <strong>Important Note:</strong> This article reflects the state of AI technology and tools
+                            available in December 2023. The AI landscape has evolved significantly since then.
+                            Throughout
+                            this article, you'll find <strong style="color: #2ed573;">[2026 Update]</strong> boxes
+                            highlighting major changes and current alternatives.
+                        </p>
+                        <p style="margin-bottom: 0;">
+                            This retrospective captures a pivotal moment in AI-assisted game development and serves as a
+                            historical reference for how quickly the field progresses.
+                        </p>
+                    </div>
+
+                    <h2>Introduction</h2>
+
+                    <p>
+                        Today, artificial intelligence plays a pioneering role among rapidly evolving technological
+                        trends.
+                        This dynamic and innovative technology is also increasing its impact in the gaming sector,
+                        manifesting itself in various fields both directly and indirectly.
+                    </p>
+
+                    <p>
+                        This article focuses on the wide range of applications of artificial intelligence in the game
+                        industry, emphasizing how game developers and industry professionals can benefit from this
+                        technology.
+                    </p>
+
+                    <p>
+                        We'll also explore various AI-powered platforms that game developers could use in 2023: ChatGPT,
+                        Bing, Bard, Inworld AI, and DALL-E 3. These platforms assisted developers with code suggestions,
+                        image generation, character creation, and much more.
+                    </p>
+
+                    <h2>Enemy Behaviors and NPC Intelligence</h2>
+
+                    <p>
+                        Programming enemy behaviors plays a crucial role in the game development process and is achieved
+                        using artificial intelligence techniques. AI can be used to make enemy characters behave more
+                        realistically and intelligently, enabling them to respond better to player strategies and
+                        actions.
+                    </p>
+
+                    <p>
+                        We call these <strong>NPCs (Non-Player Characters)</strong>. Here are some AI techniques and
+                        examples used to make enemy characters behave more intelligently:
+                    </p>
+
+                    <h3>Core AI Techniques for NPCs:</h3>
+
+                    <ul>
+                        <li><strong>Pathfinding</strong> - Pathfinding algorithms enable enemies to find the shortest or
+                            most suitable route</li>
+                        <li><strong>Speed and Acceleration Control</strong> - Adjusting enemy speeds and acceleration to
+                            make movements more natural</li>
+                        <li><strong>Salvo Attacks</strong> - Enemies can attack in salvos according to specific
+                            strategies, then calm down</li>
+                        <li><strong>Group Attacks</strong> - Enemies can cooperate as a group to attack the player</li>
+                        <li><strong>Field of View</strong> - Enemies have a specific viewing area to detect players</li>
+                        <li><strong>Sound Perception</strong> - Adding sensitivity to sounds made by players to
+                            determine enemy location</li>
+                        <li><strong>Escape Strategies</strong> - Enemies can use escape or hiding strategies when below
+                            certain health levels</li>
+                        <li><strong>Cover Usage</strong> - Enemies can use their surroundings to avoid attacks or defend
+                            themselves</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-robot"></i> The Common Goal</h4>
+                        <p>
+                            All these techniques share one common goal: <strong>to mimic real player behavior</strong>.
+                            The more convincingly NPCs act like human players, the more engaging and challenging the
+                            game becomes.
+                        </p>
+                    </div>
+
+                    <h2>DLSS and FSR: Machine Learning for Graphics</h2>
+
+                    <p>
+                        Compared to other technologies, DLSS (Deep Learning Super Sampling) and FSR (FidelityFX Super
+                        Resolution) attract more player attention and both leverage artificial intelligence.
+                    </p>
+
+                    <p>
+                        These technologies fundamentally use advanced machine learning to significantly reduce the load
+                        on
+                        graphics cards. They generate additional frames between existing frames through a series of
+                        predictions, filling the gaps.
+                    </p>
+
+                    <h3>Technology Comparison:</h3>
+
+                    <ul>
+                        <li><strong>DLSS</strong> - Released by NVIDIA, utilizes deep learning neural networks trained
+                            on supercomputers</li>
+                        <li><strong>FSR</strong> - Released by AMD, uses spatial upscaling algorithms without requiring
+                            ML hardware</li>
+                    </ul>
+
+                    <p>
+                        Especially with RTX 4000 series graphics cards, DLSS 3.0 provides incredible performance gains,
+                        sometimes doubling or tripling frame rates while maintaining visual quality.
+                    </p>
+
+                    <div class="update-2026">
+                        <h4><i class="fas fa-arrow-up"></i> 2026 Update: Graphics Upscaling Evolution</h4>
+                        <p>
+                            DLSS has evolved to version 3.5+ with even better image quality and frame generation. Intel
+                            has entered the market with XeSS (Xe Super Sampling), providing another hardware-agnostic
+                            alternative. FSR 3.0+ now includes frame generation comparable to DLSS. These technologies
+                            have become standard in modern AAA games, with most engines offering built-in support.
+                        </p>
+                    </div>
+
+                    <h2>Narrative and Storytelling</h2>
+
+                    <p>
+                        Artificial intelligence plays an important role in game development processes, enabling the
+                        automatic
+                        creation of game worlds, stories, and character interactions.
+                    </p>
+
+                    <h3>Procedural Content Generation (PCG):</h3>
+
+                    <p>
+                        Using PCG, large and dynamic game worlds can be created. AI supports dynamic storytelling by
+                        adapting to player decisions and events. Interactions between characters can be made more
+                        realistic
+                        with decision trees and dialogue systems.
+                    </p>
+
+                    <h3>Personalization and Emotion:</h3>
+
+                    <p>
+                        Game dynamics can be analyzed by AI to make the player experience more personal. Additionally,
+                        sentiment analysis can understand player reactions and increase emotional richness in
+                        storytelling.
+                    </p>
+
+                    <p>
+                        AI can improve the game's replayability by adding random events and quests, allowing the game
+                        world to be richer and more diverse. These features provide game developers with the opportunity
+                        to offer creative and interactive gaming experiences.
+                    </p>
+
+                    <h2>AI Tools in 2023</h2>
+
+                    <p>
+                        In 2023, several AI platforms emerged as essential tools for game developers. Let's explore the
+                        major players and their capabilities at that time:
+                    </p>
+
+                    <h3>1. ChatGPT</h3>
+
+                    <p>
+                        No need to even mention it—when OpenAI released ChatGPT, it stuck in everyone's vocabulary, from
+                        A to Z, even those who didn't fully understand what AI was. Within a week, hundreds of pieces of
+                        content were produced on platforms like YouTube about it.
+                    </p>
+
+                    <p>
+                        While serving many purposes, ChatGPT was particularly useful for game developers in providing
+                        code
+                        suggestions and determining game stories. Additionally, ChatGPT 3.5 provided advice during and
+                        after
+                        your game development and notified you if there were errors.
+                    </p>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Important Caveat (2023)</h4>
+                        <p>
+                            It's worth noting that it doesn't always provide 100% accurate information. Also, if you
+                            intended to use ChatGPT 3.5 for free, unfortunately it was only current up to January 2022.
+                            However, in my personal opinion, this didn't pose a major problem.
+                        </p>
+                    </div>
+
+                    <div class="update-2026">
+                        <h4><i class="fas fa-arrow-up"></i> 2026 Update: ChatGPT Evolution</h4>
+                        <p>
+                            ChatGPT has evolved to GPT-4 Turbo and GPT-4o with significantly improved accuracy,
+                            real-time
+                            information access, multimodal capabilities (text, images, audio), and much larger context
+                            windows. Specialized models like ChatGPT Code Interpreter and GPT-4 Vision are now standard.
+                            Many game studios have integrated GPT APIs directly into their development pipelines.
+                        </p>
+                    </div>
+
+                    <h3>2. Bing AI</h3>
+
+                    <p>
+                        Bing, a Microsoft product, uses ChatGPT 4.0 infrastructure. It's free and helps with many tasks.
+                        Because it's backed by ChatGPT 4.0, it naturally does many things that ChatGPT 4.0 can do.
+                        Additionally, since it also uses Bard and DALL-E 3, it can generate images for you.
+                    </p>
+
+                    <div class="update-2026">
+                        <h4><i class="fas fa-arrow-up"></i> 2026 Update: Microsoft Copilot</h4>
+                        <p>
+                            Bing AI has been rebranded as Microsoft Copilot and is now deeply integrated into Windows
+                            11,
+                            Microsoft 365, and various development tools. It uses GPT-4 and DALL-E 3 with enhanced
+                            capabilities. Copilot is now a major player in coding assistance and game development
+                            workflows.
+                        </p>
+                    </div>
+
+                    <h3>3. Bard</h3>
+
+                    <p>
+                        Google's AI was at least as powerful as ChatGPT in 2023. However, possibly because it was still
+                        experimental, unlike Bing's use of DALL-E 3, Bard didn't draw images but instead found images
+                        from
+                        the internet that matched your criteria. So I don't know how suitable Bard was for your needs in
+                        this regard.
+                    </p>
+
+                    <div class="update-2026">
+                        <h4><i class="fas fa-arrow-up"></i> 2026 Update: Bard → Gemini</h4>
+                        <p>
+                            <strong>Major Change:</strong> Bard no longer exists! It has been replaced by <strong>Google
+                                Gemini</strong>, which is significantly more powerful. Gemini now offers:
+                        </p>
+                        <ul>
+                            <li>Multimodal understanding (text, images, video, audio, code)</li>
+                            <li>Native image generation capabilities</li>
+                            <li>Better coding assistance with Gemini Code Assist</li>
+                            <li>Integration with Google Workspace and Android Studio</li>
+                            <li>Gemini Ultra, Pro, and Nano models for different use cases</li>
+                        </ul>
+                    </div>
+
+                    <h3>4. Inworld AI</h3>
+
+                    <p>
+                        Inworld AI was a platform used to create AI-powered characters. It allowed developers to create,
+                        customize, and manage their own virtual characters.
+                    </p>
+
+                    <p>
+                        Inworld AI used large language models (LLMs) to create character personalities, thoughts,
+                        memories,
+                        and behaviors. LLMs were trained on large datasets of text and code, ensuring characters were
+                        realistic and engaging.
+                    </p>
+
+                    <p>
+                        Inworld AI used game engines like Unity or Unreal Engine to create character animations and
+                        interactions, ensuring characters offered an interactive and immersive experience.
+                    </p>
+
+                    <div class="update-2026">
+                        <h4><i class="fas fa-arrow-up"></i> 2026 Update: Advanced NPC Systems</h4>
+                        <p>
+                            Inworld AI has matured significantly and now powers AAA game NPCs with real-time
+                            conversation,
+                            emotional intelligence, and persistent memories. Competitors like Convai and Character.AI
+                            have
+                            also emerged. Many game engines now offer native LLM-powered NPC systems. NVIDIA's ACE
+                            (Avatar Cloud Engine) provides similar capabilities with on-device inference.
+                        </p>
+                    </div>
+
+                    <h3>5. DALL-E 3</h3>
+
+                    <p>
+                        DALL-E 3, released by OpenAI (creator of ChatGPT), was sometimes more successful than other
+                        image-generating AIs on the market. Of course, there were very powerful alternatives to DALL-E
+                        3,
+                        including: Midjourney, Stable Diffusion, Starryai, and NightCafe.
+                    </p>
+
+                    <div class="update-2026">
+                        <h4><i class="fas fa-arrow-up"></i> 2026 Update: Image Generation Revolution</h4>
+                        <p>
+                            The image generation landscape has transformed dramatically:
+                        </p>
+                        <ul>
+                            <li><strong>Midjourney V6+</strong> - Industry-leading quality with photorealistic
+                                capabilities</li>
+                            <li><strong>Stable Diffusion 3+</strong> - Open-source with incredible customization</li>
+                            <li><strong>Adobe Firefly</strong> - Commercial-safe AI integrated into Creative Cloud</li>
+                            <li><strong>DALL-E 3</strong> - Still competitive, integrated into ChatGPT Plus</li>
+                            <li><strong>Runway, Pika Labs</strong> - Now generating videos, not just images</li>
+                        </ul>
+                        <p>
+                            Real-time AI art generation is now possible on consumer GPUs. Many game engines offer native
+                            AI asset generation tools.
+                        </p>
+                    </div>
+
+                    <h2>Conclusion: The AI Revolution in Game Development</h2>
+
+                    <p>
+                        While AI has become important in every field, it holds even greater significance for us game
+                        developers. We developers must take full advantage of this ever-evolving AI technology.
+                    </p>
+
+                    <p>
+                        In addition to popular platforms like ChatGPT, Bard, and Bing, we should leverage other
+                        successful
+                        AI tools to push the boundaries of creativity and make future gaming experiences even more
+                        exciting.
+                    </p>
+
+                    <div class="time-capsule-warning">
+                        <h3><i class="fas fa-history"></i> Reflections from 2026</h3>
+                        <p>
+                            Reading this article from a 2026 perspective highlights how rapidly AI has evolved in just
+                            three years. What seemed cutting-edge in 2023—ChatGPT 3.5 with 2022 data—now feels almost
+                            quaint.
+                        </p>
+                        <p>
+                            Key changes since 2023:
+                        </p>
+                        <ul>
+                            <li>Multimodal AI (text + images + audio + video) is now standard</li>
+                            <li>Real-time AI in game engines is commonplace</li>
+                            <li>AI-generated game assets have become production-ready</li>
+                            <li>LLM-powered NPCs offer truly dynamic conversations</li>
+                            <li>Procedural generation has reached new levels of sophistication</li>
+                        </ul>
+                        <p style="margin-bottom: 0;">
+                            The principles discussed in this article remain relevant, but the tools and capabilities
+                            have advanced exponentially. This retrospective serves as a reminder of how quickly
+                            technology
+                            evolves in the AI age.
+                        </p>
+                    </div>
+
+                    <h2>References</h2>
+
+                    <ul>
+                        <li><a href="https://www.atarita.com/oyun-yapiminda-yapay-zeka-teknolojileri/" target="_blank"
+                                style="color: var(--accent-primary);">Atarita - AI Technologies in Game Development</a>
+                        </li>
+                        <li><a href="https://webrazzi.com/2023/03/06/uretimsel-yapay-zeka-teknolojileri-oyun-gelistirme-sureclerini-nasil-sekillendirecek/"
+                                target="_blank" style="color: var(--accent-primary);">Webrazzi - How Generative AI Will
+                                Shape Game Development</a></li>
+                        <li><a href="https://www.analyticsvidhya.com/blog/2023/03/ml-and-ai-in-game-development/"
+                                target="_blank" style="color: var(--accent-primary);">Analytics Vidhya - ML and AI in
+                                Game Development</a></li>
+                        <li><a href="https://pixelplex.io/blog/how-ai-enhances-game-development/" target="_blank"
+                                style="color: var(--accent-primary);">PixelPlex - How AI Enhances Game Development</a>
+                        </li>
+                        <li><a href="https://www.incredibuild.com/blog/artificial-intelligence-in-game-development-the-top-6-ai-tools-you-need-now"
+                                target="_blank" style="color: var(--accent-primary);">Incredibuild - Top 6 AI Tools for
+                                Game Development</a></li>
+                    </ul>
+
+                </article>
+
+                <!-- Share Section -->
+                <div class="share-section">
+                    <h3 style="margin-bottom: 16px;">Share this article</h3>
+                    <div class="share-buttons">
+                        <a href="https://twitter.com/intent/tweet?text=AI%20in%20Game%20Development%3A%20A%202023%20Perspective&url=https://enesefetokta.github.io/portfolio/blog/posts/ai-game-development-2023.html"
+                            target="_blank" class="share-btn share-twitter">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://enesefetokta.github.io/portfolio/blog/posts/ai-game-development-2023.html"
+                            target="_blank" class="share-btn share-linkedin">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://enesefetokta.github.io/portfolio/blog/posts/ai-game-development-2023.html"
+                            target="_blank" class="share-btn share-facebook">
+                            <i class="fab fa-facebook"></i> Facebook
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="border-top: 1px solid var(--border-subtle); padding: 40px 0; margin-top: 60px;">
+        <div class="container" style="text-align: center;">
+            <p style="color: var(--text-muted);">© 2025 Enes Efe Tokta. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>
