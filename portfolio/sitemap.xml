@@ -108,42 +108,15 @@
     <!-- Blog Pages -->
     <url>
         <loc>https://enesefetokta.github.io/portfolio/blog/index.html</loc>
-        <lastmod>2026-01-16</lastmod>
+        <lastmod>2026-01-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     
+    <!-- Blog Posts (Chronological Order: Newest → Oldest) -->
     <url>
-        <loc>https://enesefetokta.github.io/portfolio/blog/posts/building-microservices-dotnet.html</loc>
-        <lastmod>2026-01-15</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://enesefetokta.github.io/portfolio/blog/posts/unity-vs-unreal-engine.html</loc>
-        <lastmod>2023-11-30</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://enesefetokta.github.io/portfolio/blog/posts/unity-performance-optimization.html</loc>
-        <lastmod>2023-12-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://enesefetokta.github.io/portfolio/blog/posts/unity-offscreen-indicator.html</loc>
-        <lastmod>2024-02-19</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://enesefetokta.github.io/portfolio/blog/posts/unity-helicopter-control.html</loc>
-        <lastmod>2024-05-01</lastmod>
+        <loc>https://enesefetokta.github.io/portfolio/blog/posts/fintrack-lessons-learned.html</loc>
+        <lastmod>2026-01-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -156,8 +129,36 @@
     </url>
     
     <url>
-        <loc>https://enesefetokta.github.io/portfolio/blog/posts/fintrack-lessons-learned.html</loc>
-        <lastmod>2026-01-21</lastmod>
+        <loc>https://enesefetokta.github.io/portfolio/blog/posts/unity-helicopter-control.html</loc>
+        <lastmod>2024-05-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://enesefetokta.github.io/portfolio/blog/posts/unity-offscreen-indicator.html</loc>
+        <lastmod>2024-02-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://enesefetokta.github.io/portfolio/blog/posts/unity-csharp-attributes.html</loc>
+        <lastmod>2024-02-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://enesefetokta.github.io/portfolio/blog/posts/unity-performance-optimization.html</loc>
+        <lastmod>2023-12-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://enesefetokta.github.io/portfolio/blog/posts/unity-vs-unreal-engine.html</loc>
+        <lastmod>2023-11-30</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>

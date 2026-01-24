@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>15 Essential C# Attributes in Unity | Enes Efe Tokta</title>
+    <meta name="title" content="15 Essential C# Attributes in Unity">
+    <meta name="description"
+        content="Complete guide to Unity C# Attributes. Master SerializeField, Range, Header, Tooltip, RequireComponent, and 10+ more attributes to write cleaner, more maintainable Unity code.">
+    <meta name="keywords"
+        content="Unity Attributes, C# Attributes, Unity Tutorial, SerializeField, Unity Inspector, Unity Development, C# Unity, Unity Best Practices">
+    <meta name="author" content="Enes Efe Tokta">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://enesefetokta.github.io/portfolio/blog/posts/unity-csharp-attributes.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://enesefetokta.github.io/portfolio/blog/posts/unity-csharp-attributes.html">
+    <meta property="og:title" content="15 Essential C# Attributes in Unity">
+    <meta property="og:description"
+        content="Master Unity C# Attributes for cleaner Inspector and better code organization.">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/154990402?v=4">
+    <meta property="article:published_time" content="2024-02-12T00:00:00Z">
+    <meta property="article:author" content="Enes Efe Tokta">
+    <meta property="article:section" content="Game Development">
+    <meta property="article:tag" content="Unity">
+    <meta property="article:tag" content="C#">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://enesefetokta.github.io/portfolio/blog/posts/unity-csharp-attributes.html">
+    <meta name="twitter:title" content="15 Essential C# Attributes in Unity">
+    <meta name="twitter:description" content="Complete reference guide to Unity C# Attributes">
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/154990402?v=4">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "15 Essential C# Attributes in Unity",
+      "image": "https://avatars.githubusercontent.com/u/154990402?v=4",
+      "author": {
+        "@type": "Person",
+        "name": "Enes Efe Tokta",
+        "url": "https://enesefetokta.github.io/portfolio/"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Enes Efe Tokta",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://avatars.githubusercontent.com/u/154990402?v=4"
+        }
+      },
+      "datePublished": "2024-02-12",
+      "dateModified": "2024-02-12",
+      "description": "Complete guide to Unity C# Attributes including SerializeField, Range, Header, Tooltip and more.",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://enesefetokta.github.io/portfolio/blog/posts/unity-csharp-attributes.html"
+      },
+      "keywords": "Unity, C#, Attributes, Tutorial"
+    }
+    </script>
+
+    <style>
+        /* Blog Post Specific Styles */
+        .blog-post {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .blog-header {
+            margin-bottom: 48px;
+        }
+
+        .blog-title {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--text-main);
+        }
+
+        .blog-meta-info {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            padding: 20px 0;
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px solid var(--border-subtle);
+        }
+
+        .author-details h4 {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .author-details p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .blog-content {
+            line-height: 1.8;
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+        }
+
+        .blog-content h2 {
+            font-size: 1.8rem;
+            margin-top: 48px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .blog-content h3 {
+            font-size: 1.4rem;
+            margin-top: 36px;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .blog-content p {
+            margin-bottom: 20px;
+        }
+
+        .blog-content ul,
+        .blog-content ol {
+            margin-bottom: 20px;
+            padding-left: 28px;
+        }
+
+        .blog-content li {
+            margin-bottom: 12px;
+        }
+
+        .blog-content pre {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            overflow-x: auto;
+            margin: 24px 0;
+            font-size: 0.9rem;
+        }
+
+        .blog-content code {
+            background: rgba(99, 102, 241, 0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: var(--accent-primary);
+        }
+
+        .blog-content pre code {
+            background: none;
+            padding: 0;
+            color: var(--text-secondary);
+        }
+
+        .attribute-card {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05));
+            border: 1px solid var(--border-subtle);
+            border-left: 4px solid var(--accent-primary);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin: 32px 0;
+        }
+
+        .attribute-card h3 {
+            margin-top: 0;
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.3rem;
+        }
+
+        .attribute-card .attribute-number {
+            background: var(--accent-primary);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .use-case {
+            background: rgba(46, 213, 115, 0.1);
+            border-left: 3px solid #2ed573;
+            padding: 12px 16px;
+            margin: 16px 0;
+            border-radius: 4px;
+        }
+
+        .use-case h4 {
+            margin: 0 0 8px 0;
+            color: #2ed573;
+            font-size: 0.95rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05));
+            border: 1px solid var(--accent-primary);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin: 32px 0;
+        }
+
+        .highlight-box h4 {
+            margin-top: 0;
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .blog-tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 32px 0;
+        }
+
+        .blog-tag {
+            padding: 6px 16px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--accent-primary);
+        }
+
+        .back-to-blog {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-primary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            font-weight: 500;
+            transition: gap 0.3s ease;
+        }
+
+        .back-to-blog:hover {
+            gap: 12px;
+        }
+
+        .share-section {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .share-twitter {
+            background: #1DA1F2;
+            color: white;
+        }
+
+        .share-linkedin {
+            background: #0077B5;
+            color: white;
+        }
+
+        .share-facebook {
+            background: #1877F2;
+            color: white;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../../index.html" class="logo">Enes Efe Tokta</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#about">About</a></li>
+                <li><a href="../../index.html#work">Work</a></li>
+                <li><a href="../../index.html#skills">Skills</a></li>
+                <li><a href="../../pages/education.html">Education</a></li>
+                <li><a href="../../pages/cv.html">Resume</a></li>
+                <li><a href="../../pages/biography.html">Biography</a></li>
+                <li><a href="../index.html" style="color: var(--text-main);">Blog</a></li>
+                <li><a href="../../index.html#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Blog Post -->
+    <section class="section-padding" style="padding-top: 120px;">
+        <div class="container">
+            <div class="blog-post">
+
+                <!-- Back Button -->
+                <a href="../index.html" class="back-to-blog">
+                    <i class="fas fa-arrow-left"></i> Back to Blog
+                </a>
+
+                <!-- Blog Header -->
+                <header class="blog-header">
+                    <h1 class="blog-title">15 Essential C# Attributes in Unity</h1>
+
+                    <div class="blog-meta-info">
+                        <div class="author-info">
+                            <img src="https://avatars.githubusercontent.com/u/154990402?v=4" alt="Enes Efe Tokta"
+                                class="author-avatar">
+                            <div class="author-details">
+                                <h4>Enes Efe Tokta</h4>
+                                <p>Feb 12, 2024 • 8 min read</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-tags-container">
+                        <span class="blog-tag">Unity</span>
+                        <span class="blog-tag">C#</span>
+                        <span class="blog-tag">Attributes</span>
+                        <span class="blog-tag">Tutorial</span>
+                    </div>
+                </header>
+
+                <!-- Blog Content -->
+                <article class="blog-content">
+
+                    <p>
+                        When programming Unity games with C#, we sometimes notice that the variables we define can make
+                        the Inspector screen cluttered and disorganized. C# Attributes—one of the language's powerful
+                        features—help make our variables more readable and keep our Inspector clean.
+                    </p>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-info-circle"></i> What Are Attributes?</h4>
+                        <p>
+                            While Attributes are commonly used to keep the Inspector clean, that's not their only
+                            purpose.
+                            They can control how your code runs under specific conditions and serve several other
+                            important
+                            functions in Unity development.
+                        </p>
+                    </div>
+
+                    <p>
+                        Let's explore 15 essential C# Attributes that every Unity developer should know.
+                    </p>
+
+                    <!-- Attribute 1 -->
+                    <div class="attribute-card">
+                        <h3>
+                            <span class="attribute-number">1</span>
+                            [SerializeField]
+                        </h3>
+                        <p>
+                            Perhaps the most popular attribute. It allows you to control private or protected variables
+                            from the Unity Inspector without making them public.
+                        </p>
+                        <pre><code>public class Player : MonoBehaviour 
+{
+    [SerializeField]
+    private float health = 100f;
+    
+    [SerializeField]
+    private int maxAmmo = 30;
+}</code></pre>
+                        <div class="use-case">
+                            <h4><i class="fas fa-lightbulb"></i> Use Case</h4>
+                            <p>
+                                Use this for variables you want to adjust in the Inspector but don't want other scripts
+                                to access directly. This maintains encapsulation while allowing designer-friendly
+                                tweaking.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Attribute 2 -->
+                    <div class="attribute-card">
+                        <h3>
+                            <span class="attribute-number">2</span>
+                            [Range(min, max)]
+                        </h3>
+                        <p>
+                            Controls the minimum and maximum values a variable can take, creating a slider in the
+                            Inspector.
+                        </p>
+                        <pre><code>public class PlayerController : MonoBehaviour 
+{
+    [Range(1f, 10f)]
+    public float moveSpeed = 5f;
+    
+    [Range(0f, 1f)]
+    public float damageMultiplier = 0.5f;
+}</code></pre>
+                        <div class="use-case">
+                            <h4><i class="fas fa-lightbulb"></i> Use Case</h4>
+                            <p>
+                                Perfect for values that should stay within specific bounds, like percentages (0-1),
+                                speeds, or difficulty multipliers. The slider makes it easy to fine-tune values
+                                visually.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Attribute 3 -->
+                    <div class="attribute-card">
+                        <h3>
+                            <span class="attribute-number">3</span>
+                            [Header("Title")]
+                        </h3>
+                        <p>
+                            Adds section headers to organize variables in the Inspector, making it easier to find and
+                            group related fields.
+                        </p>
+                        <pre><code>public class UIManager : MonoBehaviour 
+{
+    [Header("Text Components")]
+    public Text scoreText;
+    public Text healthText;
+    
+    [Header("Image Components")]
+    public Image playerAvatar;
+    public Image enemyIcon;
+}</code></pre>
+                        <div class="use-case">
+                            <h4><i class="fas fa-lightbulb"></i> Use Case</h4>
+                            <p>
+                                Essential for scripts with many fields. Group related variables under descriptive
+                                headers
+                                to create a cleaner, more organized Inspector.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Attribute 4 -->
+                    <div class="attribute-card">
+                        <h3>
+                            <span class="attribute-number">4</span>
+                            [Tooltip("Description")]
+                        </h3>
+                        <p>
+                            Displays a helpful message when you hover over a variable in the Inspector, explaining its
+                            purpose.
+                        </p>
+                        <pre><code>public class GameSettings : MonoBehaviour 
+{
+    [Tooltip("Maximum number of enemies that can spawn simultaneously")]
+    public int maxEnemies = 10;
+    
+    [Tooltip("Time in seconds between enemy spawn waves")]
+    public float spawnInterval = 5f;
+}</code></pre>
+                        <div class="use-case">
+                            <h4><i class="fas fa-lightbulb"></i> Use Case</h4>
+                            <p>
+                                Invaluable for team collaboration. Document what each variable does directly in the
+                                Inspector,
+                                helping other developers (or future you) understand the purpose at a glance.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Attribute 5 -->
+                    <div class="attribute-card">
+                        <h3>
+                            <span class="attribute-number">5</span>
+                            [RequireComponent(typeof(Component))]
+                        </h3>
+                        <p>
+                            Automatically adds required components to a GameObject, ensuring dependencies are always
+                            present.
+                        </p>
+                        <pre><code>[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Collider))]
+public class PlayerMovement : MonoBehaviour 
+{
+    private Rigidbody rb;
+    
+    void Start() 
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+}</code></pre>
+                        <div class="use-case">
+                            <h4><i class="fas fa-lightbulb"></i> Use Case</h4>
+                            <p>
+                                Prevents runtime errors by guaranteeing required components exist. Unity will
+                                automatically
+                                add them when you attach your script to a GameObject.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Attribute 6 -->
+                    <div class="attribute-card">
+                        <h3>
+                            <span class="attribute-number">6</span>
+                            [ExecuteInEditMode]
+                        </h3>
+                        <p>
+                            Runs a MonoBehaviour script in Edit Mode, allowing code execution without pressing Play.
+                        </p>
+                        <pre><code>[ExecuteInEditMode]
+public class ProceduralMeshGenerator : MonoBehaviour 
+{
+    void Update() 
+    {
+        // This runs even in Edit Mode
+        GenerateMesh();
+    }
+}</code></pre>
+                        <div class="use-case">
+                            <h4><i class="fas fa-lightbulb"></i> Use Case</h4>
+                            <p>
+                                Useful for editor tools, procedural generation previews, or real-time position gizmos.
+                                Be careful—this runs constantly in the editor, so optimize accordingly.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Attribute 7 -->
+                    <div class="attribute-card">
+                        <h3>
+                            <span class="attribute-number">7</span>
+                            [HideInInspector]
+                        </h3>
+                        <p>
+                            The opposite of [SerializeField]. Hides public variables from the Inspector while keeping
+                            them accessible to other scripts.
+                        </p>
+                        <pre><code>public class DataManager : MonoBehaviour 
+{
+    [HideInInspector]
+    public int internalCounter = 0;
+    
+    public string visibleData = "Hello";
+}</code></pre>
+                        <div class="use-case">
+                            <h4><i class="fas fa-lightbulb"></i> Use Case</h4>
+                            <p>
+                                Hide variables that need to be public for script communication but shouldn't be modified
+                                in the Inspector (like runtime counters or internal state).
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Attribute 8 -->
+                    <div class="attribute-card">
+                        <h3>
+                            <span class="attribute-number">8</span>
+                            [Obsolete("Message")]
+                        </h3>
+                        <p>
+                            Marks methods or variables as deprecated, warning developers when they use outdated code.
+                        </p>
+                        <pre><code>public class LegacySystem : MonoBehaviour 
+{
+    [Obsolete("Use NewAttackMethod() instead")]
+    public void OldAttackMethod() 
+    {
+        // Old implementation
+    }
+    
+    public void NewAttackMethod() 
+    {
+        // New implementation
+    }
+}</code></pre>
+                        <div class="use-case">
+                            <h4><i class="fas fa-lightbulb"></i> Use Case</h4>
+                            <p>
+                                Essential for code maintenance. Guide developers to updated methods while keeping legacy
+                                code functional during refactoring. IDEs will show a warning when using obsolete code.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Attribute 9 -->
+                    <div class="attribute-card">
+                        <h3>
+                            <span class="attribute-number">9</span>
+                            [ExecuteAlways]
+                        </h3>
+                        <p>
+                            Similar to [ExecuteInEditMode], but also runs when you press Play. More versatile for tools
+                            that need to work in both modes.
+                        </p>
+                        <pre><code>[ExecuteAlways]
+public class DebugGizmo : MonoBehaviour 
+{
+    void Update() 
+    {
+        // Runs in both Edit Mode and Play Mode
+        DrawDebugInfo();
+    }
+}</code></pre>
+                        <div class="use-case">
+                            <h4><i class="fas fa-lightbulb"></i> Use Case</h4>
+                            <p>
+                                Perfect for debug visualization tools, editor extensions, or systems that need to update
+                                continuously regardless of play state.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Attribute 10 -->
+                    <div class="attribute-card">
+                        <h3>
+                            <span class="attribute-number">10</span>
+                            [ContextMenu("Menu Name")]
+                        </h3>
+                        <p>
+                            Adds a custom menu item to the Inspector's context menu, allowing you to execute methods
+                            with
+                            a right-click.
+                        </p>
+                        <pre><code>public class HealthSystem : MonoBehaviour 
+{
+    public float health = 100f;
+    
+    [ContextMenu("Reset Health")]
+    private void ResetHealth() 
+    {
+        health = 100f;
+        Debug.Log("Health reset to 100");
+    }
+    
+    [ContextMenu("Take Damage")]
+    private void DebugDamage() 
+    {
+        health -= 25f;
+    }
+}</code></pre>
+                        <div class="use-case">
+                            <h4><i class="fas fa-lightbulb"></i> Use Case</h4>
+                            <p>
+                                Extremely useful for testing and prototyping. Quickly trigger methods without writing
+                                temporary test code or custom editor buttons.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Attribute 11 -->
+                    <div class="attribute-card">
+                        <h3>
+                            <span class="attribute-number">11</span>
+                            [AddComponentMenu("Path")]
+                        </h3>
+                        <p>
+                            Customizes where your script appears in the Component menu, making it easier to find.
+                        </p>
+                        <pre><code>[AddComponentMenu("Custom/Player/Movement System")]
+public class PlayerMovement : MonoBehaviour 
+{
+    // Component will appear under:
+    // Component → Custom → Player → Movement System
+}</code></pre>
+                        <div class="use-case">
+                            <h4><i class="fas fa-lightbulb"></i> Use Case</h4>
+                            <p>
+                                Organize your custom components into logical categories. Especially helpful in large
+                                projects
+                                with many custom scripts.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Attribute 12 -->
+                    <div class="attribute-card">
+                        <h3>
+                            <span class="attribute-number">12</span>
+                            [Space(pixels)]
+                        </h3>
+                        <p>
+                            Adds vertical spacing in the Inspector, helping visually separate groups of variables.
+                        </p>
+                        <pre><code>public class WeaponStats : MonoBehaviour 
+{
+    public int damage = 10;
+    public float fireRate = 0.5f;
+    
+    [Space(20)]
+    public int ammo = 30;
+    public int maxAmmo = 120;
+}</code></pre>
+                        <div class="use-case">
+                            <h4><i class="fas fa-lightbulb"></i> Use Case</h4>
+                            <p>
+                                Simple but effective for improving Inspector readability. Use alongside [Header] for
+                                maximum organization.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Attribute 13 -->
+                    <div class="attribute-card">
+                        <h3>
+                            <span class="attribute-number">13</span>
+                            [TextArea(minLines, maxLines)]
+                        </h3>
+                        <p>
+                            Expands the text input field in the Inspector, perfect for longer text content.
+                        </p>
+                        <pre><code>public class DialogueSystem : MonoBehaviour 
+{
+    [TextArea(3, 10)]
+    public string dialogueText = "Enter your dialogue here...";
+    
+    public string normalText = "Short text";
+}</code></pre>
+                        <div class="use-case">
+                            <h4><i class="fas fa-lightbulb"></i> Use Case</h4>
+                            <p>
+                                Essential for dialogue systems, item descriptions, or any text that spans multiple
+                                lines.
+                                Makes editing much easier than a tiny single-line field.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Attribute 14 -->
+                    <div class="attribute-card">
+                        <h3>
+                            <span class="attribute-number">14</span>
+                            [Multiline(lines)]
+                        </h3>
+                        <p>
+                            Similar to [TextArea], but takes only one parameter specifying the number of lines.
+                        </p>
+                        <pre><code>public class QuestSystem : MonoBehaviour 
+{
+    [Multiline(5)]
+    public string questDescription;
+    
+    [Multiline(3)]
+    public string questObjective;
+}</code></pre>
+                        <div class="use-case">
+                            <h4><i class="fas fa-lightbulb"></i> Use Case</h4>
+                            <p>
+                                Use when you know exactly how many lines you need. Slightly simpler than [TextArea] for
+                                fixed-size text fields.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Attribute 15 -->
+                    <div class="attribute-card">
+                        <h3>
+                            <span class="attribute-number">15</span>
+                            [DisallowMultipleComponent]
+                        </h3>
+                        <p>
+                            Prevents the same component from being added multiple times to a GameObject.
+                        </p>
+                        <pre><code>[DisallowMultipleComponent]
+public class PlayerController : MonoBehaviour 
+{
+    // Only one PlayerController can exist per GameObject
+    // Unity will prevent adding a second instance
+}</code></pre>
+                        <div class="use-case">
+                            <h4><i class="fas fa-lightbulb"></i> Use Case</h4>
+                            <p>
+                                Prevents errors from duplicate singleton components, managers, or controllers. Useful
+                                for
+                                any component where multiple instances would cause conflicts.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h2>Combining Attributes</h2>
+
+                    <p>
+                        The real power of attributes comes from combining them. Here's a practical example:
+                    </p>
+
+                    <pre><code>[RequireComponent(typeof(Rigidbody))]
+[DisallowMultipleComponent]
+public class AdvancedMovement : MonoBehaviour 
+{
+    [Header("Movement Settings")]
+    [Tooltip("Maximum speed the player can achieve")]
+    [Range(1f, 20f)]
+    public float maxSpeed = 10f;
+    
+    [Space(10)]
+    
+    [Header("Jump Settings")]
+    [Tooltip("Upward force applied when jumping")]
+    [Range(1f, 30f)]
+    public float jumpForce = 15f;
+    
+    [SerializeField]
+    [Tooltip("Can the player jump multiple times in the air?")]
+    private bool allowDoubleJump = false;
+    
+    [HideInInspector]
+    public bool isGrounded = true;
+    
+    [ContextMenu("Reset to Default")]
+    private void ResetToDefault() 
+    {
+        maxSpeed = 10f;
+        jumpForce = 15f;
+        allowDoubleJump = false;
+    }
+}</code></pre>
+
+                    <h2>Best Practices</h2>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-check-circle"></i> Tips for Using Attributes Effectively</h4>
+                        <ul>
+                            <li><strong>Always use [Tooltip]</strong> for non-obvious variables</li>
+                            <li><strong>Organize with [Header]</strong> in scripts with 5+ public variables</li>
+                            <li><strong>Validate with [Range]</strong> for numerical constraints</li>
+                            <li><strong>Protect with [SerializeField]</strong> instead of making everything public</li>
+                            <li><strong>Document with [Obsolete]</strong> when refactoring old code</li>
+                            <li><strong>Test with [ContextMenu]</strong> for quick debugging</li>
+                            <li><strong>Enforce with [RequireComponent]</strong> to prevent missing dependencies</li>
+                        </ul>
+                    </div>
+
+                    <h2>Additional Resources</h2>
+
+                    <p>
+                        To learn more about Unity Attributes, check out these resources:
+                    </p>
+
+                    <ul>
+                        <li>
+                            <a href="https://docs.unity3d.com/Manual/Attributes.html" target="_blank"
+                                style="color: var(--accent-primary);">Unity Official Documentation - Attributes</a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/watch?v=pVCLfAkaBCc&list=PL_eGgISVYZkdeYj10fsn7gqzyEez-lnf-"
+                                target="_blank" style="color: var(--accent-primary);">Unity Attributes Video
+                                Tutorial</a>
+                        </li>
+                    </ul>
+
+                    <h2>Conclusion</h2>
+
+                    <p>
+                        C# Attributes are essential tools for professional Unity development. They help you:
+                    </p>
+
+                    <ul>
+                        <li>Keep your Inspector organized and readable</li>
+                        <li>Enforce code constraints automatically</li>
+                        <li>Improve team collaboration with better documentation</li>
+                        <li>Speed up prototyping and debugging</li>
+                        <li>Maintain cleaner, more maintainable code</li>
+                    </ul>
+
+                    <p>
+                        Master these 15 attributes, and you'll write cleaner, more professional Unity code. Start
+                        incorporating them into your projects today!
+                    </p>
+
+                </article>
+
+                <!-- Share Section -->
+                <div class="share-section">
+                    <h3 style="margin-bottom: 16px;">Share this article</h3>
+                    <div class="share-buttons">
+                        <a href="https://twitter.com/intent/tweet?text=15%20Essential%20C%23%20Attributes%20in%20Unity&url=https://enesefetokta.github.io/portfolio/blog/posts/unity-csharp-attributes.html"
+                            target="_blank" class="share-btn share-twitter">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://enesefetokta.github.io/portfolio/blog/posts/unity-csharp-attributes.html"
+                            target="_blank" class="share-btn share-linkedin">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://enesefetokta.github.io/portfolio/blog/posts/unity-csharp-attributes.html"
+                            target="_blank" class="share-btn share-facebook">
+                            <i class="fab fa-facebook"></i> Facebook
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="border-top: 1px solid var(--border-subtle); padding: 40px 0; margin-top: 60px;">
+        <div class="container" style="text-align: center;">
+            <p style="color: var(--text-muted);">© 2025 Enes Efe Tokta. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>
