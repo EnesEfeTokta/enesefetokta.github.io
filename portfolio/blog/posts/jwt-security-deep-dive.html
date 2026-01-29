@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>JWT: Is Security Really That Simple? | Enes Efe Tokta</title>
+    <meta name="title" content="JWT: Is Security Really That Simple?">
+    <meta name="description"
+        content="A deep dive into JWT security. Exploring the history, common vulnerabilities (alg=none attack), stateless risks, and why JWT is not a silver bullet for authentication security.">
+    <meta name="keywords"
+        content="JWT, JSON Web Token, Security, Authentication, Backend Security, alg none vulnerability, JWT risks, JOSE, JWS, JWE">
+    <meta name="author" content="Enes Efe Tokta">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://enesefetokta.github.io/portfolio/blog/posts/jwt-security-deep-dive.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://enesefetokta.github.io/portfolio/blog/posts/jwt-security-deep-dive.html">
+    <meta property="og:title" content="JWT: Is Security Really That Simple?">
+    <meta property="og:description"
+        content="Deep dive into JWT security, vulnerabilities, and best practices for backend developers.">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/154990402?v=4">
+    <meta property="article:published_time" content="2026-01-29T00:00:00Z">
+    <meta property="article:author" content="Enes Efe Tokta">
+    <meta property="article:section" content="Backend">
+    <meta property="article:tag" content="Security">
+    <meta property="article:tag" content="Backend">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://enesefetokta.github.io/portfolio/blog/posts/jwt-security-deep-dive.html">
+    <meta name="twitter:title" content="JWT: Is Security Really That Simple?">
+    <meta name="twitter:description" content="Understanding JWT security beyond the basics">
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/154990402?v=4">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "JWT: Is Security Really That Simple?",
+      "image": "https://avatars.githubusercontent.com/u/154990402?v=4",
+      "author": {
+        "@type": "Person",
+        "name": "Enes Efe Tokta",
+        "url": "https://enesefetokta.github.io/portfolio/"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Enes Efe Tokta",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://avatars.githubusercontent.com/u/154990402?v=4"
+        }
+      },
+      "datePublished": "2026-01-29",
+      "dateModified": "2026-01-29",
+      "description": "Deep dive into JWT security, vulnerabilities, and best practices",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://enesefetokta.github.io/portfolio/blog/posts/jwt-security-deep-dive.html"
+      },
+      "keywords": "JWT, Security, Backend, Authentication"
+    }
+    </script>
+
+    <style>
+        /* Blog Post Specific Styles */
+        .blog-post {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .blog-header {
+            margin-bottom: 48px;
+        }
+
+        .blog-title {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--text-main);
+        }
+
+        .blog-meta-info {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            padding: 20px 0;
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px solid var(--border-subtle);
+        }
+
+        .author-details h4 {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .author-details p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .blog-content {
+            line-height: 1.8;
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+        }
+
+        .blog-content h2 {
+            font-size: 1.8rem;
+            margin-top: 48px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .blog-content h3 {
+            font-size: 1.4rem;
+            margin-top: 36px;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .blog-content p {
+            margin-bottom: 20px;
+        }
+
+        .blog-content ul,
+        .blog-content ol {
+            margin-bottom: 20px;
+            padding-left: 28px;
+        }
+
+        .blog-content li {
+            margin-bottom: 12px;
+        }
+
+        .blog-content blockquote {
+            border-left: 4px solid var(--accent-primary);
+            padding-left: 24px;
+            margin: 32px 0;
+            font-style: italic;
+            color: var(--text-main);
+            font-size: 1.1rem;
+        }
+
+        .security-warning {
+            background: linear-gradient(135deg, rgba(255, 71, 87, 0.1), rgba(255, 107, 107, 0.1));
+            border: 2px solid #ff4757;
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin: 32px 0;
+        }
+
+        .security-warning h4 {
+            margin-top: 0;
+            color: #ff4757;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.2rem;
+        }
+
+        .timeline-box {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05));
+            border-left: 4px solid var(--accent-primary);
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: var(--radius-md);
+        }
+
+        .timeline-box h4 {
+            margin-top: 0;
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .jwt-anatomy {
+            background: #1e1e1e;
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin: 32px 0;
+            font-family: 'Fira Code', monospace;
+            overflow-x: auto;
+        }
+
+        .jwt-part {
+            margin: 16px 0;
+            padding: 12px;
+            border-radius: var(--radius-md);
+        }
+
+        .jwt-header {
+            background: rgba(255, 107, 107, 0.2);
+            border-left: 3px solid #ff6b6b;
+        }
+
+        .jwt-payload {
+            background: rgba(78, 205, 196, 0.2);
+            border-left: 3px solid #4ecdc4;
+        }
+
+        .jwt-signature {
+            background: rgba(255, 159, 67, 0.2);
+            border-left: 3px solid #ff9f43;
+        }
+
+        .jwt-part-label {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .jwt-part-content {
+            color: #e0e0e0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .jose-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin: 32px 0;
+        }
+
+        .jose-item {
+            background: linear-gradient(135deg, rgba(46, 213, 115, 0.05), rgba(0, 184, 148, 0.05));
+            border: 1px solid #2ed573;
+            border-radius: var(--radius-md);
+            padding: 20px;
+        }
+
+        .jose-item h4 {
+            margin-top: 0;
+            color: #2ed573;
+            font-size: 1.1rem;
+        }
+
+        .jose-item p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .key-takeaway {
+            background: linear-gradient(135deg, rgba(255, 159, 67, 0.05), rgba(255, 107, 107, 0.05));
+            border: 2px solid #ff9f43;
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin: 32px 0;
+        }
+
+        .key-takeaway h4 {
+            margin-top: 0;
+            color: #ff9f43;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .vulnerability-box {
+            background: linear-gradient(135deg, rgba(255, 71, 87, 0.05), rgba(255, 107, 107, 0.05));
+            border-left: 4px solid #ff4757;
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: var(--radius-md);
+        }
+
+        .vulnerability-box h4 {
+            margin: 0 0 12px 0;
+            color: #ff4757;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .blog-tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 32px 0;
+        }
+
+        .blog-tag {
+            padding: 6px 16px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--accent-primary);
+        }
+
+        .back-to-blog {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-primary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            font-weight: 500;
+            transition: gap 0.3s ease;
+        }
+
+        .back-to-blog:hover {
+            gap: 12px;
+        }
+
+        .share-section {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .share-twitter {
+            background: #1DA1F2;
+            color: white;
+        }
+
+        .share-linkedin {
+            background: #0077B5;
+            color: white;
+        }
+
+        .share-facebook {
+            background: #1877F2;
+            color: white;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        code {
+            background: rgba(99, 102, 241, 0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9em;
+            color: var(--accent-primary);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../../index.html" class="logo">Enes Efe Tokta</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#about">About</a></li>
+                <li><a href="../../index.html#work">Work</a></li>
+                <li><a href="../../index.html#skills">Skills</a></li>
+                <li><a href="../../pages/education.html">Education</a></li>
+                <li><a href="../../pages/cv.html">Resume</a></li>
+                <li><a href="../../pages/biography.html">Biography</a></li>
+                <li><a href="../index.html" style="color: var(--text-main);">Blog</a></li>
+                <li><a href="../../index.html#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Blog Post -->
+    <section class="section-padding" style="padding-top: 120px;">
+        <div class="container">
+            <div class="blog-post">
+
+                <!-- Back Button -->
+                <a href="../index.html" class="back-to-blog">
+                    <i class="fas fa-arrow-left"></i> Back to Blog
+                </a>
+
+                <!-- Blog Header -->
+                <header class="blog-header">
+                    <h1 class="blog-title">JWT: Is Security Really That Simple?</h1>
+
+                    <div class="blog-meta-info">
+                        <div class="author-info">
+                            <img src="https://avatars.githubusercontent.com/u/154990402?v=4" alt="Enes Efe Tokta"
+                                class="author-avatar">
+                            <div class="author-details">
+                                <h4>Enes Efe Tokta</h4>
+                                <p>Jan 29, 2026 • 9 min read</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-tags-container">
+                        <span class="blog-tag">Backend</span>
+                        <span class="blog-tag">Security</span>
+                        <span class="blog-tag">JWT</span>
+                        <span class="blog-tag">Authentication</span>
+                    </div>
+                </header>
+
+                <!-- Blog Content -->
+                <article class="blog-content">
+
+                    <p>
+                        JWT (JSON Web Token) is a technology we encounter in almost every backend project. Most of us
+                        have used it, most of us have taken it to production.
+                    </p>
+
+                    <p>
+                        But how many of us can truly say we understand it at a deep level?
+                    </p>
+
+                    <p>
+                        To be honest, I think I truly grasped JWT only after my last two projects. JWT is a suitable
+                        solution for most projects—but when used unconsciously, what you think provides security can
+                        actually become a shortcut for attackers.
+                    </p>
+
+                    <blockquote>
+                        This needs to be stated clearly: JWT does not possess divine power. It is only one piece of
+                        security. When used correctly, it becomes a solid door; when used incorrectly, it becomes an
+                        open invitation.
+                    </blockquote>
+
+                    <p>
+                        In this article, I want to focus on where JWT came from, why it became so widespread, and its
+                        most critical risk points.
+                    </p>
+
+                    <h2>Before JWT: The XML and SAML Era</h2>
+
+                    <p>
+                        Before JWT, the software world was dominated by an XML-centric ecosystem. Systems communicated
+                        with XML, and on the authentication side, XML-based structures like SAML were predominantly
+                        used.
+                    </p>
+
+                    <div class="timeline-box">
+                        <h4><i class="fas fa-history"></i> The XML Problem</h4>
+                        <p>
+                            However, with the rise of JavaScript, two fundamental problems emerged:
+                        </p>
+                        <ul style="margin: 12px 0 0 0;">
+                            <li><strong>JavaScript's clumsiness in XML processing</strong></li>
+                            <li><strong>XML's inherent verbosity and performance costs</strong></li>
+                        </ul>
+                    </div>
+
+                    <p>
+                        This situation pushed developers to seek lighter and more flexible alternatives.
+                    </p>
+
+                    <p>
+                        In 2010, when JSON began to shake XML's throne, the search for alternatives to XML-based
+                        solutions like SAML accelerated. This is exactly where JWT's birth lies. <strong>In fact, JWT
+                            owes its existence largely to JSON's rise.</strong>
+                    </p>
+
+                    <p>
+                        Although JWT emerged around 2010, its standardization as RFC 7519 in 2015 was made possible
+                        by engineers from major players like Microsoft, Google, and Cisco.
+                    </p>
+
+                    <h2>Why Did JWT Become So Popular?</h2>
+
+                    <p>
+                        Two important factors stand out in JWT's widespread adoption:
+                    </p>
+
+                    <h3>1. Microservice Architectures</h3>
+
+                    <p>
+                        Microservices, by their nature, work independently from each other. This means constantly
+                        querying the database even to get the most basic user information (e.g., user ID).
+                    </p>
+
+                    <p>
+                        This situation creates:
+                    </p>
+
+                    <ul>
+                        <li><strong>Performance costs</strong></li>
+                        <li><strong>Multiplied load on the database</strong></li>
+                    </ul>
+
+                    <p>
+                        Thanks to JWT, services can use the information in the token to recognize users without going
+                        to the database every time. This provides a significant advantage, especially in scalable
+                        systems.
+                    </p>
+
+                    <h3>2. The Rise of Mobile Applications</h3>
+
+                    <p>
+                        Cookie-based session management worked well in the browser world for a long time. However, for
+                        mobile applications, it had:
+                    </p>
+
+                    <ul>
+                        <li>Less comfort</li>
+                        <li>Less portability</li>
+                        <li>Limited structure in terms of security</li>
+                    </ul>
+
+                    <p>
+                        JWT adapted more naturally to the mobile and API-first world.
+                    </p>
+
+                    <h2>JWT and the JOSE Family</h2>
+
+                    <p>
+                        JWT is not actually a standalone technology; it's a member of the JOSE (JSON Object Signing
+                        and Encryption) family—and the most popular one.
+                    </p>
+
+                    <div class="jose-grid">
+                        <div class="jose-item">
+                            <h4><i class="fas fa-shield-alt"></i> JWS</h4>
+                            <p>
+                                Signed data (most JWTs are actually JWS)
+                            </p>
+                        </div>
+                        <div class="jose-item">
+                            <h4><i class="fas fa-lock"></i> JWE</h4>
+                            <p>
+                                Fully encrypted content
+                            </p>
+                        </div>
+                        <div class="jose-item">
+                            <h4><i class="fas fa-key"></i> JWA</h4>
+                            <p>
+                                Definition of cryptographic algorithms used
+                            </p>
+                        </div>
+                    </div>
+
+                    <h2>JWT's First Major Test: The alg=none Vulnerability</h2>
+
+                    <p>
+                        One of the most instructive events in JWT history was a security vulnerability that was both
+                        funny and frightening.
+                    </p>
+
+                    <div class="vulnerability-box">
+                        <h4><i class="fas fa-bug"></i> The Attack Vector</h4>
+                        <p>
+                            The JWT Header specifies which algorithm will be used. Some old libraries, when sent an
+                            algorithm of <code>"none"</code>, would completely skip signature verification.
+                        </p>
+                        <p style="margin: 12px 0 0 0;">
+                            Attackers could log into the system as any user they wanted by simply changing the Header
+                            and deleting the Signature part.
+                        </p>
+                    </div>
+
+                    <div class="key-takeaway">
+                        <h4><i class="fas fa-lightbulb"></i> The Lesson Learned</h4>
+                        <p style="margin: 0;">
+                            <strong>Never blindly trust any information coming from the client—not even the
+                                Header.</strong>
+                            Always validate the algorithm server-side and never accept <code>alg=none</code> in
+                            production.
+                        </p>
+                    </div>
+
+                    <h2>JWT's Role Today</h2>
+
+                    <p>
+                        Today, when you click on buttons like "Sign in with Google" or "Connect with GitHub," you're
+                        typically handed a JWT at the end of the complex flow running in the background.
+                    </p>
+
+                    <p>
+                        <strong>OpenID Connect (OIDC)</strong> adopts JWT as the standard identity representation. This
+                        places JWT at the center of modern authentication systems.
+                    </p>
+
+                    <h2>JWT's Weak Point: Being Stateless</h2>
+
+                    <p>
+                        JWT is designed for a stateless architecture. This brings an important risk with it:
+                    </p>
+
+                    <div class="security-warning">
+                        <h4><i class="fas fa-exclamation-triangle"></i> The Stateless Risk</h4>
+                        <p>
+                            <strong>If a token is stolen, it can be used by the attacker until it expires.</strong>
+                            Tokens have a time-based lifespan, and they carry potential risk throughout this period.
+                        </p>
+                    </div>
+
+                    <p>
+                        Against this situation, developers generally produce indirect solutions such as:
+                    </p>
+
+                    <ul>
+                        <li><strong>Short-lived access tokens</strong> (e.g., 15 minutes)</li>
+                        <li><strong>Refresh tokens</strong> for obtaining new access tokens</li>
+                        <li><strong>Token blacklists</strong> (which defeats the stateless purpose)</li>
+                    </ul>
+
+                    <p>
+                        But here's a clear truth:
+                    </p>
+
+                    <blockquote>
+                        There is no perfect and universal revocation solution for JWT. Every approach brings new
+                        complexities with it.
+                    </blockquote>
+
+                    <h2>The Anatomy of JWT</h2>
+
+                    <p>
+                        JWT is not as complex as it seems. It consists of three parts:
+                    </p>
+
+                    <div class="jwt-anatomy">
+                        <div style="text-align: center; color: #888; margin-bottom: 20px; font-size: 1.1rem;">
+                            HEADER . PAYLOAD . SIGNATURE
+                        </div>
+
+                        <div class="jwt-part jwt-header">
+                            <div class="jwt-part-label">Header</div>
+                            <div class="jwt-part-content">
+                                Token type and algorithm used<br>
+                                (HS256, RS256, ES256, etc.)
+                            </div>
+                        </div>
+
+                        <div class="jwt-part jwt-payload">
+                            <div class="jwt-part-label">Payload</div>
+                            <div class="jwt-part-content">
+                                User information, roles, exp, iat, etc.<br>
+                                <strong>⚠️ Not encrypted, only Base64 encoded</strong><br>
+                                Never include passwords or sensitive data
+                            </div>
+                        </div>
+
+                        <div class="jwt-part jwt-signature">
+                            <div class="jwt-part-label">Signature</div>
+                            <div class="jwt-part-content">
+                                The part that provides security<br>
+                                Even the slightest change to the payload<br>
+                                invalidates the signature
+                            </div>
+                        </div>
+                    </div>
+
+                    <p>
+                        If you're curious about the content of a JWT you have, you can easily examine it at
+                        <a href="https://jwt.io" target="_blank" style="color: var(--accent-primary);">jwt.io</a>.
+                    </p>
+
+                    <h2>Best Practices for JWT Security</h2>
+
+                    <ul>
+                        <li><strong>Use short expiration times</strong> - 15-30 minutes for access tokens</li>
+                        <li><strong>Implement refresh tokens</strong> - With longer lifespans and stricter validation
+                        </li>
+                        <li><strong>Use strong algorithms</strong> - RS256 or ES256 for asymmetric signing</li>
+                        <li><strong>Never trust the Header</strong> - Validate the algorithm server-side</li>
+                        <li><strong>Store tokens securely</strong> - HttpOnly cookies for web, secure storage for mobile
+                        </li>
+                        <li><strong>Implement proper key management</strong> - Rotate signing keys periodically</li>
+                        <li><strong>Add additional claims</strong> - Like <code>aud</code> (audience) and
+                            <code>iss</code> (issuer)</li>
+                        <li><strong>Monitor for anomalies</strong> - Track unusual token usage patterns</li>
+                    </ul>
+
+                    <h2>Conclusion</h2>
+
+                    <p>
+                        JWT is a powerful tool—but it is not a security solution on its own. Without the right
+                        architecture, short-lived tokens, refresh mechanisms, and additional security layers, its
+                        advantages can quickly turn into risks.
+                    </p>
+
+                    <blockquote>
+                        JWT should not be seen as a lock, but as just one part of a secure door.
+                    </blockquote>
+
+                    <p>
+                        Understanding JWT's history, its vulnerabilities (like the <code>alg=none</code> attack), and
+                        its inherent stateless limitations is crucial for building secure authentication systems.
+                    </p>
+
+                    <p>
+                        Security is not about using the right tools—it's about using them correctly, with full
+                        awareness of their strengths and weaknesses.
+                    </p>
+
+                </article>
+
+                <!-- Share Section -->
+                <div class="share-section">
+                    <h3 style="margin-bottom: 16px;">Share this article</h3>
+                    <div class="share-buttons">
+                        <a href="https://twitter.com/intent/tweet?text=JWT%3A%20Is%20Security%20Really%20That%20Simple%3F&url=https://enesefetokta.github.io/portfolio/blog/posts/jwt-security-deep-dive.html"
+                            target="_blank" class="share-btn share-twitter">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://enesefetokta.github.io/portfolio/blog/posts/jwt-security-deep-dive.html"
+                            target="_blank" class="share-btn share-linkedin">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://enesefetokta.github.io/portfolio/blog/posts/jwt-security-deep-dive.html"
+                            target="_blank" class="share-btn share-facebook">
+                            <i class="fab fa-facebook"></i> Facebook
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="border-top: 1px solid var(--border-subtle); padding: 40px 0; margin-top: 60px;">
+        <div class="container" style="text-align: center;">
+            <p style="color: var(--text-muted);">© 2025 Enes Efe Tokta. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>
