@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Unity AR & VR World: A 2023 Introduction | Enes Efe Tokta</title>
+    <meta name="title" content="Unity AR & VR World: A 2023 Introduction">
+    <meta name="description"
+        content="Exploring the world of AR and VR development in Unity. Learn the differences between AR and VR, market dynamics, required equipment, and step-by-step guide to building VR experiences in Unity.">
+    <meta name="keywords"
+        content="Unity AR, Unity VR, Virtual Reality, Augmented Reality, Unity Development, VR Game Development, AR Development, HTC Vive, Oculus Rift">
+    <meta name="author" content="Enes Efe Tokta">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://enesefetokta.github.io/portfolio/blog/posts/unity-ar-vr-intro.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://enesefetokta.github.io/portfolio/blog/posts/unity-ar-vr-intro.html">
+    <meta property="og:title" content="Unity AR & VR World: A 2023 Introduction">
+    <meta property="og:description"
+        content="Getting started with AR and VR development in Unity. A comprehensive introduction to immersive technologies.">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/154990402?v=4">
+    <meta property="article:published_time" content="2023-12-06T00:00:00Z">
+    <meta property="article:author" content="Enes Efe Tokta">
+    <meta property="article:section" content="Unity">
+    <meta property="article:tag" content="Unity">
+    <meta property="article:tag" content="AR">
+    <meta property="article:tag" content="VR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://enesefetokta.github.io/portfolio/blog/posts/unity-ar-vr-intro.html">
+    <meta name="twitter:title" content="Unity AR & VR World: A 2023 Introduction">
+    <meta name="twitter:description" content="Introduction to AR and VR development in Unity">
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/154990402?v=4">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Unity AR & VR World: A 2023 Introduction",
+      "image": "https://avatars.githubusercontent.com/u/154990402?v=4",
+      "author": {
+        "@type": "Person",
+        "name": "Enes Efe Tokta",
+        "url": "https://enesefetokta.github.io/portfolio/"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Enes Efe Tokta",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://avatars.githubusercontent.com/u/154990402?v=4"
+        }
+      },
+      "datePublished": "2023-12-06",
+      "dateModified": "2023-12-06",
+      "description": "Introduction to AR and VR development in Unity",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://enesefetokta.github.io/portfolio/blog/posts/unity-ar-vr-intro.html"
+      },
+      "keywords": "Unity, AR, VR, Game Development"
+    }
+    </script>
+
+    <style>
+        /* Blog Post Specific Styles */
+        .blog-post {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .blog-header {
+            margin-bottom: 48px;
+        }
+
+        .blog-title {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--text-main);
+        }
+
+        .blog-meta-info {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            padding: 20px 0;
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px solid var(--border-subtle);
+        }
+
+        .author-details h4 {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .author-details p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .blog-content {
+            line-height: 1.8;
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+        }
+
+        .blog-content h2 {
+            font-size: 1.8rem;
+            margin-top: 48px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .blog-content h3 {
+            font-size: 1.4rem;
+            margin-top: 36px;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .blog-content p {
+            margin-bottom: 20px;
+        }
+
+        .blog-content ul,
+        .blog-content ol {
+            margin-bottom: 20px;
+            padding-left: 28px;
+        }
+
+        .blog-content li {
+            margin-bottom: 12px;
+        }
+
+        .blog-content blockquote {
+            border-left: 4px solid var(--accent-primary);
+            padding-left: 24px;
+            margin: 32px 0;
+            font-style: italic;
+            color: var(--text-main);
+        }
+
+        .comparison-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .comparison-item {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05));
+            border: 1px solid var(--accent-primary);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+        }
+
+        .comparison-item h4 {
+            margin-top: 0;
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.2rem;
+        }
+
+        .comparison-item p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .step-box {
+            background: linear-gradient(135deg, rgba(46, 213, 115, 0.05), rgba(0, 184, 148, 0.05));
+            border-left: 4px solid #2ed573;
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: var(--radius-md);
+        }
+
+        .step-box h4 {
+            margin: 0 0 12px 0;
+            color: #2ed573;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
+        }
+
+        .step-number {
+            background: #2ed573;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05));
+            border: 1px solid var(--accent-primary);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin: 32px 0;
+        }
+
+        .highlight-box h4 {
+            margin-top: 0;
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, rgba(255, 159, 67, 0.05), rgba(255, 107, 107, 0.05));
+            border: 2px solid #ff9f43;
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin: 32px 0;
+            text-align: center;
+        }
+
+        .stat-box h3 {
+            margin-top: 0;
+            color: #ff9f43;
+            font-size: 1.5rem;
+        }
+
+        .blog-tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 32px 0;
+        }
+
+        .blog-tag {
+            padding: 6px 16px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--accent-primary);
+        }
+
+        .back-to-blog {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-primary);
+            text-decoration: none;
+            margin-bottom: 32px;
+            font-weight: 500;
+            transition: gap 0.3s ease;
+        }
+
+        .back-to-blog:hover {
+            gap: 12px;
+        }
+
+        .share-section {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .share-twitter {
+            background: #1DA1F2;
+            color: white;
+        }
+
+        .share-linkedin {
+            background: #0077B5;
+            color: white;
+        }
+
+        .share-facebook {
+            background: #1877F2;
+            color: white;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .comparison-card {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../../index.html" class="logo">Enes Efe Tokta</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#about">About</a></li>
+                <li><a href="../../index.html#work">Work</a></li>
+                <li><a href="../../index.html#skills">Skills</a></li>
+                <li><a href="../../pages/education.html">Education</a></li>
+                <li><a href="../../pages/cv.html">Resume</a></li>
+                <li><a href="../../pages/biography.html">Biography</a></li>
+                <li><a href="../index.html" style="color: var(--text-main);">Blog</a></li>
+                <li><a href="../../index.html#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Blog Post -->
+    <section class="section-padding" style="padding-top: 120px;">
+        <div class="container">
+            <div class="blog-post">
+
+                <!-- Back Button -->
+                <a href="../index.html" class="back-to-blog">
+                    <i class="fas fa-arrow-left"></i> Back to Blog
+                </a>
+
+                <!-- Blog Header -->
+                <header class="blog-header">
+                    <h1 class="blog-title">Unity AR & VR World: A 2023 Introduction</h1>
+
+                    <div class="blog-meta-info">
+                        <div class="author-info">
+                            <img src="https://avatars.githubusercontent.com/u/154990402?v=4" alt="Enes Efe Tokta"
+                                class="author-avatar">
+                            <div class="author-details">
+                                <h4>Enes Efe Tokta</h4>
+                                <p>Dec 6, 2023 • 5 min read</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-tags-container">
+                        <span class="blog-tag">Unity</span>
+                        <span class="blog-tag">AR</span>
+                        <span class="blog-tag">VR</span>
+                        <span class="blog-tag">Tutorial</span>
+                    </div>
+                </header>
+
+                <!-- Blog Content -->
+                <article class="blog-content">
+
+                    <h2>The Dawn of Immersive Technologies</h2>
+
+                    <p>
+                        When the first image-reflecting devices emerged, people looked at them as revolutionary.
+                        At history's first cinema screening, viewers panicked and ran away from a scene showing
+                        a train coming toward them. That's when the boundaries of virtual reality and augmented
+                        reality began to be questioned.
+                    </p>
+
+                    <p>
+                        Now, in an age where even 4K seems insufficient, AR/VR technologies are entering our
+                        lives slowly but decisively, approaching their dizzying era day by day. This represents
+                        a massive opportunity—a very large pie to share.
+                    </p>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-industry"></i> Market Giants Enter the Arena</h4>
+                        <p>
+                            Companies like Apple and Meta have begun investing heavily in AR/VR technologies.
+                            While currently limited mainly to gaming, it's certain that in the future, these
+                            technologies will establish themselves in many sectors—from healthcare to tourism.
+                        </p>
+                    </div>
+
+                    <p>
+                        The earlier we learn these technologies that will change the trajectory of many sectors,
+                        including gaming, the better positioned we'll be.
+                    </p>
+
+                    <h2>AR vs VR: Understanding the Difference</h2>
+
+                    <p>
+                        Although we often group virtual reality and augmented reality together, these are actually
+                        different concepts. Let's break down the fundamental differences:
+                    </p>
+
+                    <div class="comparison-card">
+                        <div class="comparison-item">
+                            <h4><i class="fas fa-vr-cardboard"></i> Virtual Reality (VR)</h4>
+                            <p>
+                                <strong>VR</strong> isolates you from the real world and places you inside a virtual
+                                world. It's a completely immersive experience where you're surrounded by a digital
+                                environment.
+                            </p>
+                        </div>
+                        <div class="comparison-item">
+                            <h4><i class="fas fa-glasses"></i> Augmented Reality (AR)</h4>
+                            <p>
+                                <strong>AR</strong> doesn't isolate you from your world; instead, it overlays the
+                                virtual world onto the real one. AR is the merged state of the virtual and real worlds.
+                            </p>
+                        </div>
+                    </div>
+
+                    <blockquote>
+                        VR is purely a virtual world. AR is the real world enhanced with virtual elements.
+                    </blockquote>
+
+                    <h2>The Current State of AR/VR</h2>
+
+                    <p>
+                        Since AR/VR is still in its infancy—or more accurately, its childhood—the number of users
+                        is relatively small, as with all new technologies. The reasons for this include:
+                    </p>
+
+                    <ul>
+                        <li><strong>Additional Equipment Required</strong> - Specialized headsets and controllers needed
+                        </li>
+                        <li><strong>Limited Content</strong> - The number and quality of supported experiences is still
+                            growing</li>
+                        <li><strong>Cost Barrier</strong> - High-end VR equipment remains expensive</li>
+                    </ul>
+
+                    <p>
+                        When we factor in the financial aspect, it's normal that the number of users is small.
+                        However, it's worth noting that the user base is growing every day.
+                    </p>
+
+                    <h3>Required Hardware</h3>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-headset"></i> VR Equipment (2023)</h4>
+                        <p>
+                            VR experiences require special technology-equipped VR headsets produced by companies
+                            like <strong>HTC Vive</strong>, <strong>Oculus Rift</strong> (Meta Quest), or
+                            <strong>Google Cardboard</strong>.
+                        </p>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-mobile-alt"></i> AR Equipment</h4>
+                        <p>
+                            For AR experiences, options include <strong>Microsoft HoloLens</strong> or other
+                            solutions from major companies. Unlike VR, AR doesn't require specialized glasses—a
+                            mobile device with a decent camera is sufficient, as long as the background software
+                            running is powerful.
+                        </p>
+                    </div>
+
+                    <h2>Why Unity for AR/VR?</h2>
+
+                    <p>
+                        Is it meaningful to use such powerful technology in Unity? Absolutely yes. And it's not
+                        just my opinion—statistical data confirms this.
+                    </p>
+
+                    <div class="stat-box">
+                        <h3><i class="fas fa-chart-line"></i> Unity's Market Dominance</h3>
+                        <p style="margin: 0;">
+                            Unity holds an <strong>overwhelming majority</strong> in the AR/VR sector. The vast
+                            majority of AR/VR experiences are built with Unity, making it the industry-standard
+                            choice for immersive development.
+                        </p>
+                    </div>
+
+                    <h2>Building VR Experiences in Unity: Step-by-Step</h2>
+
+                    <p>
+                        Before creating your Unity project, you need to configure Unity for VR. This is necessary
+                        because it uses a different set of technologies. Here's how to do it:
+                    </p>
+
+                    <div class="step-box">
+                        <h4>
+                            <span class="step-number">1</span>
+                            Configure XR Settings
+                        </h4>
+                        <p>
+                            In the Unity Editor, navigate to <strong>Edit > Project Settings > Player</strong>.
+                            In the Inspector window, under the <strong>XR Settings</strong> section, check the
+                            <strong>Virtual Reality Supported</strong> checkbox. From the <strong>Virtual Reality
+                                SDKs</strong> list, select your target VR platform.
+                        </p>
+                    </div>
+
+                    <div class="step-box">
+                        <h4>
+                            <span class="step-number">2</span>
+                            Create Your 3D Environment
+                        </h4>
+                        <p>
+                            Use Unity's 3D modeling and level design tools to create a 3D environment for your VR
+                            experience. Add interactive elements like sound and animation to the environment.
+                        </p>
+                    </div>
+
+                    <div class="step-box">
+                        <h4>
+                            <span class="step-number">3</span>
+                            Script Object Behaviors
+                        </h4>
+                        <p>
+                            Create scripts to control the behavior of objects in the VR environment. Use Unity's
+                            built-in VR components and scripts to enable users to move and interact with objects
+                            in the environment.
+                        </p>
+                    </div>
+
+                    <div class="step-box">
+                        <h4>
+                            <span class="step-number">4</span>
+                            Test in Play Mode
+                        </h4>
+                        <p>
+                            Use Unity's <strong>Play Mode</strong> to test your VR experience in the editor.
+                            Utilize Unity's debugging tools to identify and fix any issues with your VR experience.
+                        </p>
+                    </div>
+
+                    <div class="step-box">
+                        <h4>
+                            <span class="step-number">5</span>
+                            Build and Deploy
+                        </h4>
+                        <p>
+                            Use Unity's build tools to create a build of your VR experience for the target VR
+                            platform. Deploy the build to the VR device and test to ensure it works correctly.
+                        </p>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-exclamation-circle"></i> Important Note</h4>
+                        <p>
+                            The steps I've outlined above are applicable for a <strong>basic-level VR
+                                experience</strong>.
+                            More advanced features, optimization techniques, and platform-specific considerations
+                            require deeper exploration of Unity's XR documentation.
+                        </p>
+                    </div>
+
+                    <h2>Welcome to the VR World</h2>
+
+                    <p>
+                        Now that we've covered the fundamentals, it's time to say hello to the VR world and start
+                        building immersive experiences.
+                    </p>
+
+                    <p>
+                        I hope this article has provided you with some insight into AR/VR technology, even if just
+                        a little. The AR/VR world is vast and represents an enormous opportunity. New players are
+                        joining every day, trying to get their share of this pie.
+                    </p>
+
+                    <blockquote>
+                        So let's get started right away. The future of immersive experiences is being built today.
+                    </blockquote>
+
+                    <h2>References</h2>
+
+                    <ul>
+                        <li><a href="https://www.queppelin.com/virtual-reality-in-unity/" target="_blank"
+                                style="color: var(--accent-primary);">Queppelin - Virtual Reality in Unity</a></li>
+                        <li><a href="https://www.arena.com.tr/kesfet/makaleler/sanal-gerceklik-ve-artirilmis-gerceklik-farklari"
+                                target="_blank" style="color: var(--accent-primary);">Arena - VR and AR Differences</a>
+                        </li>
+                        <li><a href="https://blog.unity.com/news/learn-to-create-ar-and-vr-apps-with-unity"
+                                target="_blank" style="color: var(--accent-primary);">Unity Blog - Learn to Create AR
+                                and VR Apps</a></li>
+                    </ul>
+
+                </article>
+
+                <!-- Share Section -->
+                <div class="share-section">
+                    <h3 style="margin-bottom: 16px;">Share this article</h3>
+                    <div class="share-buttons">
+                        <a href="https://twitter.com/intent/tweet?text=Unity%20AR%20%26%20VR%20World%3A%20A%202023%20Introduction&url=https://enesefetokta.github.io/portfolio/blog/posts/unity-ar-vr-intro.html"
+                            target="_blank" class="share-btn share-twitter">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://enesefetokta.github.io/portfolio/blog/posts/unity-ar-vr-intro.html"
+                            target="_blank" class="share-btn share-linkedin">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://enesefetokta.github.io/portfolio/blog/posts/unity-ar-vr-intro.html"
+                            target="_blank" class="share-btn share-facebook">
+                            <i class="fab fa-facebook"></i> Facebook
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="border-top: 1px solid var(--border-subtle); padding: 40px 0; margin-top: 60px;">
+        <div class="container" style="text-align: center;">
+            <p style="color: var(--text-muted);">© 2025 Enes Efe Tokta. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>
