@@ -48,6 +48,13 @@
     
     <!-- .NET Project Detail Pages -->
     <url>
+        <loc>https://enesefetokta.github.io/portfolio/pages/projects/details/fertile-notify.html</loc>
+        <lastmod>2026-02-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
         <loc>https://enesefetokta.github.io/portfolio/pages/projects/details/vidsync.html</loc>
         <lastmod>2026-01-16</lastmod>
         <changefreq>monthly</changefreq>
