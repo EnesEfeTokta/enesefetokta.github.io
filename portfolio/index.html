@@ -156,7 +156,7 @@
             <a href="#" class="logo">Enes Efe Tokta</a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#work">Work</a></li>
+                <li><a href="pages/projects.html">Work</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="pages/education.html">Education</a></li>
                 <li><a href="pages/cv.html">Resume</a></li>
@@ -408,47 +408,46 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="work" class="section-padding" style="padding-top: 0;">
-        <div class="container">
-            <h2 style="margin-bottom: 40px; font-size: 2rem;">Featured Projects</h2>
-            <div class="bento-grid">
+    <!-- Projects Section -->
+    <section id="work" class="section-padding" style="padding-top: 0; position: relative;">
+        <!-- Background decorative elements -->
+        <div
+            style="position: absolute; top: 20%; left: -10%; width: 40%; height: 60%; background: radial-gradient(circle, rgba(59,130,246,0.05) 0%, transparent 70%); filter: blur(60px); pointer-events: none;">
+        </div>
 
-                <!-- Project 1 -->
-                <div class="bento-item span-2">
-                    <i class="fab fa-microsoft bento-icon"></i>
-                    <h3 class="bento-title">.NET Projects Collection</h3>
-                    <p class="bento-text" style="margin-bottom: 20px;">
-                        A collection of desktop applications and Web APIs built with robust architecture patterns.
+        <div class="container" style="margin-bottom: 40px;">
+            <div style="display: flex; justify-content: space-between; align-items: end;">
+                <div>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 8px;">Featured Projects</h2>
+                    <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                        A curated selection of my latest work
                     </p>
-                    <a href="pages/projects/dotnet.html" class="btn btn-secondary" style="width: fit-content;">View
-                        Projects</a>
                 </div>
-
-                <!-- Project 2 -->
-                <div class="bento-item span-2">
-                    <i class="fab fa-unity bento-icon"></i>
-                    <h3 class="bento-title">Unity Game Projects</h3>
-                    <p class="bento-text" style="margin-bottom: 20px;">
-                        Various game prototypes and finished projects demonstrating physics, AI, and graphics
-                        programming.
-                    </p>
-                    <a href="pages/projects/unity.html" class="btn btn-secondary" style="width: fit-content;">View
-                        Games</a>
-                </div>
-
-                <!-- Project 3 - TypeScript & JavaScript -->
-                <div class="bento-item span-2">
-                    <i class="fab fa-react bento-icon"></i>
-                    <h3 class="bento-title">TypeScript & JavaScript Projects</h3>
-                    <p class="bento-text" style="margin-bottom: 20px;">
-                        Modern web applications built with React, TypeScript, and cutting-edge development methodologies
-                        like Vibe-Coding.
-                    </p>
-                    <a href="pages/projects/ts-js.html" class="btn btn-secondary" style="width: fit-content;">View
-                        Projects</a>
-                </div>
-
+                <a href="pages/projects.html" class="btn btn-secondary" style="display: none;">View All</a>
             </div>
+        </div>
+
+        <!-- Infinite Scroll Containers -->
+        <div style="display: flex; flex-direction: column; gap: 32px;">
+            <!-- Row 1: Left Scroll -->
+            <div class="marquee-container">
+                <div class="marquee-track scroll-left" id="marquee-row-1">
+                    <!-- Content injected by JS -->
+                </div>
+            </div>
+
+            <!-- Row 2: Right Scroll -->
+            <div class="marquee-container">
+                <div class="marquee-track scroll-right" id="marquee-row-2">
+                    <!-- Content injected by JS -->
+                </div>
+            </div>
+        </div>
+
+        <div class="container" style="text-align: center; margin-top: 48px;">
+            <a href="pages/projects.html" class="btn">
+                View Full Portfolio <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+            </a>
         </div>
     </section>
 
@@ -632,6 +631,7 @@
         </div>
     </footer>
 
+    <script src="assets/js/projects-data.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 

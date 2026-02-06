@@ -98,4 +98,46 @@ document.addEventListener('DOMContentLoaded', function () {
             navbar.style.borderBottom = '1px solid var(--border-subtle)';
         }
     });
+
+    // Infinite Scroll Marquee Population
+    const marqueeRow1 = document.getElementById('marquee-row-1');
+    const marqueeRow2 = document.getElementById('marquee-row-2');
+
+    if (marqueeRow1 && marqueeRow2 && typeof projectsData !== 'undefined') {
+        const populateMarquee = (container, data) => {
+            // Create cards
+            const cards = data.map(project => {
+                const linkPath = `pages/${project.link}`;
+                return `
+                    <a href="${linkPath}" class="marquee-card">
+                        <div class="marquee-card-header">
+                            <i class="${project.icon} marquee-icon"></i>
+                            <span class="skill-tag" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-subtle); color: var(--text-secondary); text-transform: uppercase; font-size: 0.75rem; padding: 4px 10px;">${project.category}</span>
+                        </div>
+                        <h4 class="marquee-title">${project.title}</h4>
+                        <p class="marquee-desc">${project.description}</p>
+                        <div class="skill-tags">
+                            ${project.tags.slice(0, 3).map(tag => `<span class="skill-tag">${tag}</span>`).join('')}
+                        </div>
+                    </a>
+                `;
+            }).join('');
+
+            // Inject content - Duplicate for loop effect
+            // We need enough copies to fill the screen width + buffer for smooth loop
+            // For now, tripling the content is a safe bet for most screen sizes given the fixed card width
+            container.innerHTML = cards + cards + cards + cards;
+        };
+
+        // Split data into two groups or just shuffle/reverse for variety
+        // For row 1: Use first half or filtered list
+        // For row 2: Use second half or reversed list
+
+        // Let's just use all projects for both but in different order for visual variety
+        const row1Data = [...projectsData];
+        const row2Data = [...projectsData].reverse();
+
+        populateMarquee(marqueeRow1, row1Data);
+        populateMarquee(marqueeRow2, row2Data);
+    }
 });
