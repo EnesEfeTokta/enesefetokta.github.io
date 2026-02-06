@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>All Projects - Enes Efe Tokta | Portfolio</title>
+    <meta name="title" content="All Projects - Enes Efe Tokta | Portfolio">
+    <meta name="description"
+        content="Explore all software development projects by Enes Efe Tokta. Filter by technologies including .NET, Unity, React, TypeScript, and more.">
+    <meta name="keywords"
+        content="Enes Efe Tokta Projects, Software Portfolio, Unity Projects, .NET Projects, Web Development, C#, JavaScript, TypeScript">
+    <meta name="author" content="Enes Efe Tokta">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://enesefetokta.github.io/portfolio/pages/projects.html">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Custom styling for filters -->
+    <style>
+        #filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.95rem;
+            font-family: inherit;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--accent-primary);
+            color: var(--text-main);
+        }
+
+        .filter-btn.active {
+            background: var(--accent-primary);
+            color: white;
+            border-color: var(--accent-primary);
+        }
+
+        .no-results {
+            grid-column: span 2;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            padding: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">Enes Efe Tokta</a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="projects.html" class="active" style="color: var(--accent-primary);">Work</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="cv.html">Resume</a></li>
+                <li><a href="biography.html">Biography</a></li>
+                <li><a href="../blog/index.html">Blog</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="section-padding" style="padding-top: 120px;">
+        <div class="container">
+            <h1 style="font-size: 3rem; margin-bottom: 20px;">Projects</h1>
+            <p style="color: var(--text-secondary); margin-bottom: 40px; max-width: 600px;">
+                A curated list of my work in software engineering, game development, and web technologies.
+            </p>
+
+            <!-- Filter Section -->
+            <div style="margin-bottom: 20px;">
+                <h3
+                    style="font-size: 1.2rem; margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between;">
+                    Filter by Technology
+                    <span id="project-count"
+                        style="font-size: 0.9rem; color: var(--text-muted); font-weight: normal;"></span>
+                </h3>
+                <div id="filter-container">
+                    <!-- Buttons will be injected here by JS -->
+                </div>
+            </div>
+
+            <!-- Projects Grid -->
+            <div id="projects-grid" class="bento-grid">
+                <!-- Projects will be injected here by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="border-top: 1px solid var(--border-subtle); padding: 40px 0; margin-top: 40px;">
+        <div class="container" style="text-align: center;">
+            <p style="color: var(--text-muted);">© 2025 Enes Efe Tokta.</p>
+            <div style="margin-top: 20px; display: flex; justify-content: center; gap: 20px;">
+                <a href="https://github.com/EnesEfeTokta" target="_blank"
+                    style="font-size: 1.5rem; color: var(--text-secondary);"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank"
+                    style="font-size: 1.5rem; color: var(--text-secondary);"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/projects-data.js"></script>
+    <script src="../assets/js/project-loader.js"></script>
+</body>
+
+</html>
