@@ -66,6 +66,15 @@ const projectsData = [
         icon: "fas fa-language",
         link: "projects/details/chunk-radar.html",
         category: "web"
+    },
+    {
+        id: "habit-tracker-mcp",
+        title: "Habit Tracker MCP",
+        description: "An MCP server enabling AI assistants like Claude to track and analyze daily habits through natural conversation with local data storage.",
+        tags: ["Node.js", "MCP", "AI", "LowDB"],
+        icon: "fas fa-server",
+        link: "projects/details/habit-tracker-mcp.html",
+        category: "web"
     }
 ];
 
