@@ -75,6 +75,15 @@ const projectsData = [
         icon: "fas fa-server",
         link: "projects/details/habit-tracker-mcp.html",
         category: "web"
+    },
+    {
+        id: "fertile-notify",
+        title: "Fertile Notify",
+        description: "An event-driven notification platform for centralized multi-channel notification management built with .NET 9 and Clean Architecture.",
+        tags: [".NET 9", "Clean Architecture", "PostgreSQL", "Docker"],
+        icon: "fas fa-bell",
+        link: "projects/details/fertile-notify.html",
+        category: "dotnet"
     }
 ];
 

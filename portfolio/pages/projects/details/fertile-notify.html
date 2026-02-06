@@ -4,13 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FinTrack Web API - Microservices | Enes Efe Tokta</title>
+    <title>Fertile Notify - Multi-Channel Notification Platform | Enes Efe Tokta</title>
     <link rel="stylesheet" href="../../../assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Fertile Notify is a robust, scalable notification platform built with ASP.NET Core 9.0, supporting multi-channel delivery (Email, SMS) and event-driven architecture.">
+    <meta name="keywords"
+        content=".NET 9, ASP.NET Core, Notification Platform, Event-Driven Architecture, Clean Architecture, PostgreSQL, Docker">
 </head>
 
 <body>
@@ -44,26 +50,23 @@
                         <i class="fas fa-arrow-left"></i> Back to Projects
                     </a>
                 </div>
-                <h1 style="font-size: 3rem; margin-bottom: 24px; line-height: 1.1; font-weight: 700;">FinTrack Web API
+                <h1 style="font-size: 3rem; margin-bottom: 24px; line-height: 1.1; font-weight: 700;">Fertile Notify
                 </h1>
                 <p
                     style="font-size: 1.2rem; color: var(--text-secondary); max-width: 800px; margin-bottom: 32px; line-height: 1.7;">
-                    A Next-Generation Financial Management Platform with Microservices Architecture
+                    An event-driven notification platform for centralized multi-channel notification management
+                    capabilities.
                 </p>
                 <div class="skill-tags" style="margin-bottom: 24px;">
-                    <span class="skill-tag">.NET 8</span>
-                    <span class="skill-tag">Python (FastAPI)</span>
-                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">.NET 9</span>
+                    <span class="skill-tag">ASP.NET Core</span>
                     <span class="skill-tag">PostgreSQL</span>
-                    <span class="skill-tag">Stripe</span>
-                    <span class="skill-tag">Prometheus</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Clean Architecture</span>
                 </div>
                 <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                    <a href="https://github.com/EnesEfeTokta/FinTrackWebApi" target="_blank" class="btn">
+                    <a href="https://github.com/EnesEfeTokta/Fertile-Notify" target="_blank" class="btn">
                         <i class="fab fa-github"></i> View Repository
-                    </a>
-                    <a href="fintrack-desktop.html" class="btn btn-secondary">
-                        <i class="fas fa-desktop"></i> Desktop Client
                     </a>
                 </div>
             </div>
@@ -79,17 +82,19 @@
                         Platform Overview
                     </h2>
                     <p style="font-size: 1.05rem; line-height: 1.9; margin-bottom: 20px; color: var(--text-secondary);">
-                        FinTrack isn't just an API—it's a complete SaaS backend infrastructure. Built on a modern
-                        <strong>microservices architecture</strong>, it splits responsibilities between a robust .NET 8
-                        core for business logic and a specialized Python service for AI-powered insights.
+                        **Fertile Notify** is a robust, scalable notification platform designed to handle event-driven
+                        notifications across multiple communication channels. Built with modern software architecture
+                        principles, it provides a centralized solution for managing and delivering notifications to
+                        users.
                     </p>
                     <p style="font-size: 1.05rem; line-height: 1.9; color: var(--text-secondary);">
-                        The platform powers secure debt management, real-time budgeting, and automated financial advice
-                        via the integrated <strong>FinBot AI assistant</strong>.
+                        The system receives events from external applications, processes notification rules based on
+                        user subscriptions and templates, and delivers messages asynchronously using background workers
+                        with built-in retry mechanisms and failure handling.
                     </p>
                 </section>
 
-                <!-- Features -->
+                <!-- Key Features -->
                 <section class="bento-item">
                     <h2
                         style="font-size: 1.75rem; margin-bottom: 32px; color: var(--text-main); font-weight: 600; display: flex; align-items: center; gap: 12px;">
@@ -98,77 +103,115 @@
                     </h2>
                     <ul class="feature-grid">
                         <li class="feature-item">
-                            <i class="fas fa-shield-alt feature-icon"></i>
+                            <i class="fas fa-bolt feature-icon"></i>
                             <div>
-                                <strong>Secure Authentication</strong>
-                                <p>JWT-based auth with OTP 2-factor verification.</p>
+                                <strong>Event-Driven Ingestion</strong>
+                                <p>RESTful API for receiving events with validation and processing.</p>
                             </div>
                         </li>
                         <li class="feature-item">
-                            <i class="fas fa-lock feature-icon"></i>
+                            <i class="fas fa-sync-alt feature-icon"></i>
                             <div>
-                                <strong>GBS Debt System</strong>
-                                <p>AES-encrypted video evidence for debt verification.</p>
+                                <strong>Async Processing</strong>
+                                <p>Non-blocking notification delivery via background workers.</p>
                             </div>
                         </li>
                         <li class="feature-item">
-                            <i class="fas fa-brain feature-icon"></i>
+                            <i class="fas fa-share-alt feature-icon"></i>
                             <div>
-                                <strong>AI FinBot</strong>
-                                <p>Local LLM integration for intelligent financial advice.</p>
+                                <strong>Multi-Channel</strong>
+                                <p>Support for Email (SMTP), SMS, and In-App notifications.</p>
                             </div>
                         </li>
                         <li class="feature-item">
-                            <i class="fab fa-stripe feature-icon"></i>
+                            <i class="fas fa-undo feature-icon"></i>
                             <div>
-                                <strong>Payment Processing</strong>
-                                <p>Stripe integration for subscription and billing management.</p>
+                                <strong>Retry Mechanism</strong>
+                                <p>Automatic retries with exponential backoff for failed deliveries.</p>
                             </div>
                         </li>
                         <li class="feature-item">
-                            <i class="fas fa-chart-line feature-icon"></i>
+                            <i class="fas fa-file-code feature-icon"></i>
                             <div>
-                                <strong>Budget Analytics</strong>
-                                <p>Real-time tracking with dynamic budget recommendations.</p>
+                                <strong>Template Engine</strong>
+                                <p>Dynamic templates with placeholder substitution per event type.</p>
                             </div>
                         </li>
                         <li class="feature-item">
-                            <i class="fas fa-cloud-upload feature-icon"></i>
+                            <i class="fas fa-users-cog feature-icon"></i>
                             <div>
-                                <strong>Multi-Account Sync</strong>
-                                <p>Cross-platform data synchronization via REST API.</p>
+                                <strong>Subscription Plans</strong>
+                                <p>Flexible plans (Free, Basic, Premium) with usage limits.</p>
                             </div>
                         </li>
                     </ul>
                 </section>
 
-                <!-- Technical Stack -->
+                <!-- Architecture -->
                 <section class="bento-item">
                     <h2
                         style="font-size: 1.75rem; margin-bottom: 32px; color: var(--text-main); font-weight: 600; display: flex; align-items: center; gap: 12px;">
-                        <i class="fas fa-code-branch" style="color: var(--accent-primary); font-size: 1.5rem;"></i>
-                        Architecture & Technology
+                        <i class="fas fa-layer-group" style="color: var(--accent-primary); font-size: 1.5rem;"></i>
+                        Clean Architecture
                     </h2>
+                    <p style="font-size: 1.05rem; line-height: 1.9; margin-bottom: 24px; color: var(--text-secondary);">
+                        The project follows Clean Architecture principles with a strict separation of concerns, ensuring
+                        maintainability and testability.
+                    </p>
 
+                    <div
+                        style="background: rgba(255,255,255,0.03); padding: 24px; border-radius: 12px; border: 1px solid var(--border-subtle); margin-bottom: 24px;">
+                        <pre
+                            style="color: var(--text-secondary); font-family: monospace; font-size: 0.9rem; overflow-x: auto;">
+┌─────────────────────────────────────────────┐
+│           API Layer (Presentation)          │
+│  - Controllers (Event Ingestion)            │
+│  - Request/Response Models                  │
+└─────────────────┬───────────────────────────┘
+                  │
+┌─────────────────▼───────────────────────────┐
+│        Application Layer (Use Cases)        │
+│  - Business Logic & Orchestration           │
+│  - Service Interfaces                       │
+└─────────────────┬───────────────────────────┘
+                  │
+┌─────────────────▼───────────────────────────┐
+│          Domain Layer (Core Business)       │
+│  - Entities (User, Notification)            │
+│  - Domain Rules & Enums                     │
+└─────────────────┬───────────────────────────┘
+                  │
+┌─────────────────▼───────────────────────────┐
+│    Infrastructure Layer (Implementation)    │
+│  - Data Persistence (EF Core)               │
+│  - Notification Senders (Email, SMS)        │
+└─────────────────────────────────────────────┘</pre>
+                    </div>
+                </section>
+
+                <!-- Tech Stack -->
+                <section class="bento-item">
+                    <h2
+                        style="font-size: 1.75rem; margin-bottom: 32px; color: var(--text-main); font-weight: 600; display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-code" style="color: var(--accent-secondary); font-size: 1.5rem;"></i>
+                        Technology Stack
+                    </h2>
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px;">
                         <div>
                             <h3
                                 style="color: var(--accent-secondary); margin-bottom: 16px; font-size: 1.2rem; font-weight: 600;">
-                                Core Services</h3>
+                                Core</h3>
                             <ul
                                 style="list-style: none; padding: 0; color: var(--text-secondary); line-height: 2; font-size: 0.95rem;">
                                 <li><i class="fas fa-check"
-                                        style="color: var(--accent-secondary); margin-right: 8px;"></i> ASP.NET Core 8
-                                    Web API</li>
+                                        style="color: var(--accent-secondary); margin-right: 8px;"></i> .NET 9 (C# 13)
+                                </li>
                                 <li><i class="fas fa-check"
-                                        style="color: var(--accent-secondary); margin-right: 8px;"></i> Python (FastAPI)
-                                    AI Service</li>
+                                        style="color: var(--accent-secondary); margin-right: 8px;"></i> ASP.NET Core Web
+                                    API</li>
                                 <li><i class="fas fa-check"
-                                        style="color: var(--accent-secondary); margin-right: 8px;"></i> PostgreSQL (Dual
-                                    Database)</li>
-                                <li><i class="fas fa-check"
-                                        style="color: var(--accent-secondary); margin-right: 8px;"></i> Docker Compose
-                                    Orchestration</li>
+                                        style="color: var(--accent-secondary); margin-right: 8px;"></i> Entity Framework
+                                    Core 9.0</li>
                             </ul>
                         </div>
                         <div>
@@ -178,50 +221,46 @@
                             <ul
                                 style="list-style: none; padding: 0; color: var(--text-secondary); line-height: 2; font-size: 0.95rem;">
                                 <li><i class="fas fa-check"
-                                        style="color: var(--accent-secondary); margin-right: 8px;"></i> Entity Framework
-                                    Core</li>
-                                <li><i class="fas fa-check"
-                                        style="color: var(--accent-secondary); margin-right: 8px;"></i> FluentValidation
+                                        style="color: var(--accent-secondary); margin-right: 8px;"></i> PostgreSQL 15
                                 </li>
                                 <li><i class="fas fa-check"
-                                        style="color: var(--accent-secondary); margin-right: 8px;"></i> Swagger /
-                                    OpenAPI Docs</li>
+                                        style="color: var(--accent-secondary); margin-right: 8px;"></i> Docker & Compose
+                                </li>
                                 <li><i class="fas fa-check"
-                                        style="color: var(--accent-secondary); margin-right: 8px;"></i> Prometheus +
-                                    Grafana</li>
+                                        style="color: var(--accent-secondary); margin-right: 8px;"></i> .NET Hosted
+                                    Services</li>
                             </ul>
                         </div>
                     </div>
                 </section>
 
-                <!-- API Design -->
+                <!-- API Usage -->
                 <section class="bento-item">
                     <h2
                         style="font-size: 1.75rem; margin-bottom: 24px; color: var(--text-main); font-weight: 600; display: flex; align-items: center; gap: 12px;">
-                        <i class="fas fa-network-wired" style="color: var(--accent-secondary); font-size: 1.5rem;"></i>
-                        RESTful API Design
+                        <i class="fas fa-terminal" style="color: var(--accent-primary); font-size: 1.5rem;"></i>
+                        API Usage Example
                     </h2>
                     <p style="font-size: 1.05rem; line-height: 1.9; margin-bottom: 20px; color: var(--text-secondary);">
-                        Clean, type-safe endpoints designed for consumption by web and desktop clients.
+                        Sending a notification is as simple as POSTing an event payload.
                     </p>
                     <pre
-                        style="background: var(--bg-body); padding: 24px; border-radius: 12px; overflow-x: auto; border: 1px solid var(--border-subtle);"><code class="language-http" style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.8;"># Identity & Authentication
-POST /UserAuth/initiate-registration
-POST /UserAuth/verify-otp
-POST /UserAuth/login
+                        style="background: var(--bg-body); padding: 24px; border-radius: 12px; overflow-x: auto; border: 1px solid var(--border-subtle);"><code class="language-json" style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.8;">POST /api/notifications
+{
+  "userId": "user-123",
+  "eventType": "user_registered",
+  "payload": {
+    "userName": "John Doe",
+    "email": "john@example.com",
+    "registrationDate": "2024-01-15"
+  }
+}
 
-# Core Financial Operations
-GET  /Accounts
-POST /Transactions/batch
-GET  /Budgets/{budgetId}/analysis
-
-# Secure Debt System (GBS)
-POST /Debt/create-offer
-POST /Videos/upload-evidence    # AES Encrypted
-GET  /Videos/stream/{id}
-
-# AI Financial Assistant
-POST /Chat/ask-finbot</code></pre>
+// Response
+{
+  "message": "Event received and queued for processing",
+  "eventId": "evt-456"
+}</code></pre>
                 </section>
 
             </div>
