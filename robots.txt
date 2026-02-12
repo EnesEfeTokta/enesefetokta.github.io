@@ -5,7 +5,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://enesefetokta.github.io/portfolio/sitemap.xml
+Sitemap: https://enesefetokta.shop/sitemap.xml
 
 # Crawl-delay (optional, usually not needed for GitHub Pages)
 # Crawl-delay: 1
