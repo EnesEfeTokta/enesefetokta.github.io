@@ -3,7 +3,7 @@
     
     <!-- Homepage -->
     <url>
-        <loc>https://enesefetokta.github.io/portfolio/</loc>
+        <loc>https://enesefetokta.shop/</loc>
         <lastmod>2026-01-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
@@ -11,21 +11,21 @@
     
     <!-- Main Pages -->
     <url>
-        <loc>https://enesefetokta.github.io/portfolio/pages/biography.html</loc>
+        <loc>https://enesefetokta.shop/pages/biography.html</loc>
         <lastmod>2026-01-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://enesefetokta.github.io/portfolio/pages/cv.html</loc>
+        <loc>https://enesefetokta.shop/pages/cv.html</loc>
         <lastmod>2026-01-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://enesefetokta.github.io/portfolio/pages/education.html</loc>
+        <loc>https://enesefetokta.shop/pages/education.html</loc>
         <lastmod>2026-01-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
@@ -33,14 +33,14 @@
     
     <!-- Project Overview Pages -->
     <url>
-        <loc>https://enesefetokta.github.io/portfolio/pages/projects/dotnet.html</loc>
+        <loc>https://enesefetokta.shop/pages/projects/dotnet.html</loc>
         <lastmod>2026-01-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     
     <url>
-        <loc>https://enesefetokta.github.io/portfolio/pages/projects/unity.html</loc>
+        <loc>https://enesefetokta.shop/pages/projects/unity.html</loc>
         <lastmod>2026-01-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
@@ -48,35 +48,35 @@
     
     <!-- .NET Project Detail Pages -->
     <url>
-        <loc>https://enesefetokta.github.io/portfolio/pages/projects/details/fertile-notify.html</loc>
+        <loc>https://enesefetokta.shop/pages/projects/details/fertile-notify.html</loc>
         <lastmod>2026-02-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
-        <loc>https://enesefetokta.github.io/portfolio/pages/projects/details/vidsync.html</loc>
+        <loc>https://enesefetokta.shop/pages/projects/details/vidsync.html</loc>
         <lastmod>2026-01-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
-        <loc>https://enesefetokta.github.io/portfolio/pages/projects/details/fintrack-webapi.html</loc>
+        <loc>https://enesefetokta.shop/pages/projects/details/fintrack-webapi.html</loc>
         <lastmod>2026-01-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
-        <loc>https://enesefetokta.github.io/portfolio/pages/projects/details/fintrack-desktop.html</loc>
+        <loc>https://enesefetokta.shop/pages/projects/details/fintrack-desktop.html</loc>
         <lastmod>2026-01-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
-        <loc>https://enesefetokta.github.io/portfolio/pages/projects/details/weather-zero-plus.html</loc>
+        <loc>https://enesefetokta.shop/pages/projects/details/weather-zero-plus.html</loc>
         <lastmod>2026-01-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
@@ -84,14 +84,14 @@
     
     <!-- Unity Project Detail Pages -->
     <url>
-        <loc>https://enesefetokta.github.io/portfolio/pages/projects/details/atlas-game.html</loc>
+        <loc>https://enesefetokta.shop/pages/projects/details/atlas-game.html</loc>
         <lastmod>2026-01-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
-        <loc>https://enesefetokta.github.io/portfolio/pages/projects/details/fishing-game.html</loc>
+        <loc>https://enesefetokta.shop/pages/projects/details/fishing-game.html</loc>
         <lastmod>2026-01-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
@@ -99,21 +99,21 @@
     
     <!-- TypeScript & JavaScript Projects -->\r
     <url>
-        <loc>https://enesefetokta.github.io/portfolio/ts-projects.html</loc>
+        <loc>https://enesefetokta.shop/ts-projects.html</loc>
         <lastmod>2026-01-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     
     <url>
-        <loc>https://enesefetokta.github.io/portfolio/chunk-radar-ts-project.html</loc>
+        <loc>https://enesefetokta.shop/chunk-radar-ts-project.html</loc>
         <lastmod>2026-01-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>https://enesefetokta.github.io/portfolio/pages/projects/details/habit-tracker-mcp.html</loc>
+        <loc>https://enesefetokta.shop/pages/projects/details/habit-tracker-mcp.html</loc>
         <lastmod>2026-02-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
@@ -121,7 +121,7 @@
     
     <!-- Blog Pages -->
     <url>
-        <loc>https://enesefetokta.github.io/portfolio/blog/index.html</loc>
+        <loc>https://enesefetokta.shop/blog/index.html</loc>
         <lastmod>2026-01-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -129,84 +129,84 @@
     
     <!-- Blog Posts (Chronological Order: Newest → Oldest) -->
     <url>
-        <loc>https://enesefetokta.github.io/portfolio/blog/posts/software-architecture-advantage.html</loc>
+        <loc>https://enesefetokta.shop/blog/posts/software-architecture-advantage.html</loc>
         <lastmod>2026-02-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://enesefetokta.github.io/portfolio/blog/posts/jwt-security-deep-dive.html</loc>
+        <loc>https://enesefetokta.shop/blog/posts/jwt-security-deep-dive.html</loc>
         <lastmod>2026-01-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://enesefetokta.github.io/portfolio/blog/posts/who-to-listen-ai.html</loc>
+        <loc>https://enesefetokta.shop/blog/posts/who-to-listen-ai.html</loc>
         <lastmod>2026-01-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://enesefetokta.github.io/portfolio/blog/posts/fintrack-lessons-learned.html</loc>
+        <loc>https://enesefetokta.shop/blog/posts/fintrack-lessons-learned.html</loc>
         <lastmod>2026-01-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://enesefetokta.github.io/portfolio/blog/posts/ai-fear-perspective.html</loc>
+        <loc>https://enesefetokta.shop/blog/posts/ai-fear-perspective.html</loc>
         <lastmod>2026-01-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://enesefetokta.github.io/portfolio/blog/posts/unity-helicopter-control.html</loc>
+        <loc>https://enesefetokta.shop/blog/posts/unity-helicopter-control.html</loc>
         <lastmod>2024-05-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://enesefetokta.github.io/portfolio/blog/posts/unity-offscreen-indicator.html</loc>
+        <loc>https://enesefetokta.shop/blog/posts/unity-offscreen-indicator.html</loc>
         <lastmod>2024-02-19</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://enesefetokta.github.io/portfolio/blog/posts/unity-csharp-attributes.html</loc>
+        <loc>https://enesefetokta.shop/blog/posts/unity-csharp-attributes.html</loc>
         <lastmod>2024-02-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://enesefetokta.github.io/portfolio/blog/posts/unity-performance-optimization.html</loc>
+        <loc>https://enesefetokta.shop/blog/posts/unity-performance-optimization.html</loc>
         <lastmod>2023-12-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://enesefetokta.github.io/portfolio/blog/posts/unity-ar-vr-intro.html</loc>
+        <loc>https://enesefetokta.shop/blog/posts/unity-ar-vr-intro.html</loc>
         <lastmod>2023-12-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://enesefetokta.github.io/portfolio/blog/posts/ai-game-development-2023.html</loc>
+        <loc>https://enesefetokta.shop/blog/posts/ai-game-development-2023.html</loc>
         <lastmod>2023-12-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://enesefetokta.github.io/portfolio/blog/posts/unity-vs-unreal-engine.html</loc>
+        <loc>https://enesefetokta.shop/blog/posts/unity-vs-unreal-engine.html</loc>
         <lastmod>2023-11-30</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
