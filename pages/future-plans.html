@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/154990402?v=4">
+    <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/154990402?v=4">
+
+    <!-- Primary Meta Tags -->
+    <title>Future Plans - Enes Efe Tokta | Learning Roadmap</title>
+    <meta name="title" content="Future Plans - Enes Efe Tokta | Learning Roadmap">
+    <meta name="description"
+        content="Explore my current learning roadmap in VectorDB/RAG Engineering, Computer Fundamentals, Cybersecurity, and Backend Architecture.">
+    <meta name="author" content="Enes Efe Tokta">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://enesefetokta.shop/pages/future-plans.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://enesefetokta.shop/pages/future-plans.html">
+    <meta property="og:title" content="Future Plans - Enes Efe Tokta">
+    <meta property="og:description" content="My current learning roadmap and skill development goals.">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/154990402?v=4">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://enesefetokta.shop/pages/future-plans.html">
+    <meta name="twitter:title" content="Future Plans - Enes Efe Tokta">
+    <meta name="twitter:description" content="Learning roadmap and career goals.">
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/154990402?v=4">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        .learning-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+            margin-top: 48px;
+        }
+
+        .learning-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            transition: all 0.3s var(--ease-out);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .learning-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(59, 130, 246, 0.15);
+        }
+
+        .learning-card.active {
+            border-color: var(--accent-primary);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(139, 92, 246, 0.05));
+        }
+
+        .learning-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: white;
+            padding: 6px 14px;
+            border-radius: 99px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+
+        .learning-icon {
+            font-size: 2.5rem;
+            color: var(--accent-primary);
+            margin-bottom: 20px;
+        }
+
+        .learning-title {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .learning-duration {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+        }
+
+        .learning-desc {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .learning-topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .topic-tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-subtle);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .progress-section {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .progress-bar-container {
+            background: var(--bg-body);
+            border-radius: 99px;
+            height: 6px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            border-radius: 99px;
+            transition: width 0.8s ease;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">Enes Efe Tokta</a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../pages/projects.html">Work</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../pages/education.html">Education</a></li>
+                <li><a href="../pages/cv.html">Resume</a></li>
+                <li><a href="../pages/biography.html">Biography</a></li>
+                <li><a href="../pages/future-plans.html">Future Plans</a></li>
+                <li><a href="../blog/index.html">Blog</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 50vh;">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <h1 style="font-size: 3rem; margin-bottom: 20px;">
+                    Learning <span style="color: var(--accent-primary);">Roadmap</span>
+                </h1>
+                <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.8;">
+                    Continuous skill development through structured learning programs. Currently focused on <strong>AI
+                        engineering</strong>, <strong>system fundamentals</strong>, <strong>security</strong>, and
+                    <strong>architecture</strong>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Active Learning Programs -->
+    <section class="section-padding" style="padding-top: 0;">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.2rem; margin-bottom: 16px;">Current Learning Programs</h2>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 48px;">
+                Structured 4-week intensive curriculums
+            </p>
+
+            <div class="learning-grid">
+
+                <!-- Program 1: VectorDB & RAG Engineering -->
+                <div class="learning-card active">
+                    <span class="learning-badge">
+                        <i class="fas fa-circle" style="font-size: 6px;"></i> In Progress
+                    </span>
+                    <i class="fas fa-database learning-icon"></i>
+                    <h3 class="learning-title">VectorDB & RAG Engineering</h3>
+                    <div class="learning-duration">
+                        <i class="far fa-clock"></i>
+                        <span>4 Weeks • JS/TS Stack</span>
+                    </div>
+                    <p class="learning-desc">
+                        Building production-ready AI knowledge systems using vector databases, embeddings, and RAG
+                        architecture.
+                    </p>
+                    <div class="learning-topics">
+                        <span class="topic-tag">Embeddings</span>
+                        <span class="topic-tag">ChromaDB</span>
+                        <span class="topic-tag">Pinecone</span>
+                        <span class="topic-tag">LangChain</span>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-label">
+                            <span>Module 1 Complete</span>
+                            <span>25%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 25%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program 2: Computer Fundamentals -->
+                <div class="learning-card">
+                    <span class="learning-badge">
+                        <i class="fas fa-circle" style="font-size: 6px;"></i> In Progress
+                    </span>
+                    <i class="fas fa-microchip learning-icon"></i>
+                    <h3 class="learning-title">Computer Fundamentals</h3>
+                    <div class="learning-duration">
+                        <i class="far fa-clock"></i>
+                        <span>4 Weeks • .NET/C# Focused</span>
+                    </div>
+                    <p class="learning-desc">
+                        Deep dive into CPU, memory, GC, threading, and I/O. Understanding system-level performance and
+                        low-level optimization.
+                    </p>
+                    <div class="learning-topics">
+                        <span class="topic-tag">CPU Cache</span>
+                        <span class="topic-tag">GC Tuning</span>
+                        <span class="topic-tag">Threading</span>
+                        <span class="topic-tag">Profiling</span>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-label">
+                            <span>Module 1 Continue</span>
+                            <span>0%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program 3: Backend Security -->
+                <div class="learning-card">
+                    <span class="learning-badge">
+                        <i class="fas fa-circle" style="font-size: 6px;"></i> In Progress
+                    </span>
+                    <i class="fas fa-shield-alt learning-icon"></i>
+                    <h3 class="learning-title">Backend Security</h3>
+                    <div class="learning-duration">
+                        <i class="far fa-clock"></i>
+                        <span>4 Weeks • OWASP & DevSecOps</span>
+                    </div>
+                    <p class="learning-desc">
+                        Practical cybersecurity for backend developers. OWASP Top 10, secure coding, authentication,
+                        and DevSecOps practices.
+                    </p>
+                    <div class="learning-topics">
+                        <span class="topic-tag">OWASP Top 10</span>
+                        <span class="topic-tag">JWT Security</span>
+                        <span class="topic-tag">Encryption</span>
+                        <span class="topic-tag">Container Security</span>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-label">
+                            <span>Module 1 Continue</span>
+                            <span>0%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program 4: Backend Architecture -->
+                <div class="learning-card">
+                    <span class="learning-badge">
+                        <i class="fas fa-circle" style="font-size: 6px;"></i> In Progress
+                    </span>
+                    <i class="fas fa-project-diagram learning-icon"></i>
+                    <h3 class="learning-title">Backend Architecture</h3>
+                    <div class="learning-duration">
+                        <i class="far fa-clock"></i>
+                        <span>4 Weeks • Clean Arch & Patterns</span>
+                    </div>
+                    <p class="learning-desc">
+                        SOLID principles, clean architecture, DDD, CQRS, event sourcing, and scalable system design
+                        patterns.
+                    </p>
+                    <div class="learning-topics">
+                        <span class="topic-tag">SOLID</span>
+                        <span class="topic-tag">Clean Arch</span>
+                        <span class="topic-tag">DDD</span>
+                        <span class="topic-tag">CQRS</span>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-label">
+                            <span>Module 1 Continue</span>
+                            <span>0%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Approach -->
+    <section class="section-padding" style="padding-top: 0;">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div class="bento-item span-2"
+                    style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(59, 130, 246, 0.08)); border: 1px solid var(--accent-secondary);">
+                    <i class="fas fa-lightbulb bento-icon" style="font-size: 2.5rem;"></i>
+                    <h3 class="bento-title" style="font-size: 1.8rem;">Learning Philosophy</h3>
+
+                    <p class="bento-text" style="font-size: 1.05rem; line-height: 1.8; margin-top: 20px;">
+                        Each program follows a <strong>4-week intensive structure</strong> with hands-on projects,
+                        benchmarks, and real-world scenarios. The goal isn't just to learn—it's to
+                        <strong>build</strong>, <strong>measure</strong>, and <strong>document</strong> production-ready
+                        systems.
+                    </p>
+
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 32px;">
+                        <div>
+                            <h4 style="color: var(--accent-primary); margin-bottom: 8px;">
+                                <i class="fas fa-hammer"></i> Hands-On
+                            </h4>
+                            <p style="color: var(--text-secondary); font-size: 0.95rem;">
+                                Build actual projects, not just tutorials
+                            </p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--accent-primary); margin-bottom: 8px;">
+                                <i class="fas fa-tachometer-alt"></i> Performance
+                            </h4>
+                            <p style="color: var(--text-secondary); font-size: 0.95rem;">
+                                Benchmark everything, measure impact
+                            </p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--accent-primary); margin-bottom: 8px;">
+                                <i class="fas fa-book"></i> Documentation
+                            </h4>
+                            <p style="color: var(--text-secondary); font-size: 0.95rem;">
+                                Technical write-ups and architecture diagrams
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="border-top: 1px solid var(--border-subtle); padding: 40px 0; margin-top: 40px;">
+        <div class="container" style="text-align: center;">
+            <p style="color: var(--text-muted);">© 2026 Enes Efe Tokta. Continuous learning, continuous growth.</p>
+            <div style="margin-top: 20px; display: flex; justify-content: center; gap: 20px;">
+                <a href="https://github.com/EnesEfeTokta" target="_blank" aria-label="GitHub"
+                    style="font-size: 1.5rem; color: var(--text-secondary); transition: color 0.2s;"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank" aria-label="LinkedIn"
+                    style="font-size: 1.5rem; color: var(--text-secondary); transition: color 0.2s;"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="https://medium.com/@enesefetokta009" target="_blank" aria-label="Medium"
+                    style="font-size: 1.5rem; color: var(--text-secondary); transition: color 0.2s;"><i
+                        class="fab fa-medium"></i></a>
+                <a href="https://x.com/EnesEfeTokta" target="_blank" aria-label="X (Twitter)"
+                    style="font-size: 1.5rem; color: var(--text-secondary); transition: color 0.2s;"><i
+                        class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
