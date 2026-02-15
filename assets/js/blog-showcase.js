@@ -1,6 +1,15 @@
 // Blog Showcase Data and Rendering
 const blogPosts = [
     {
+        title: "A .NET Developer’s Perspective on Node.js — And Why One Hand Should Be There Too",
+        excerpt: "Why learning Node.js doesn't mean abandoning .NET, but expanding your perspective as an engineer. Exploring the bridge between .NET structure and Node.js velocity.",
+        date: "Feb 15, 2026",
+        readTime: "3 min",
+        icon: "fa-node-js",
+        link: "blog/posts/dotnet-perspective-on-nodejs.html",
+        tags: [".NET", "Node.js", "TypeScript"]
+    },
+    {
         title: "Did Software Architectures Really Give Us an Advantage?",
         excerpt: "Exploring the balance between strict software architecture and customer satisfaction. Is 'Clean Code' slowing us down?",
         date: "Feb 2, 2026",

@@ -129,6 +129,13 @@
     
     <!-- Blog Posts (Chronological Order: Newest → Oldest) -->
     <url>
+        <loc>https://enesefetokta.shop/blog/posts/dotnet-perspective-on-nodejs.html</loc>
+        <lastmod>2026-02-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
         <loc>https://enesefetokta.shop/blog/posts/software-architecture-advantage.html</loc>
         <lastmod>2026-02-02</lastmod>
         <changefreq>monthly</changefreq>
