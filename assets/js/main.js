@@ -81,11 +81,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const handleNavScroll = () => {
         if (!navbar) return;
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(8, 8, 16, 0.96)';
-            navbar.style.borderBottomColor = 'rgba(255,255,255,0.1)';
+            navbar.style.background = 'rgba(244, 241, 236, 0.97)';
+            navbar.style.borderBottomColor = 'rgba(160, 148, 130, 0.38)';
+            navbar.style.boxShadow = '0 2px 16px rgba(28, 21, 16, 0.07)';
         } else {
-            navbar.style.background = 'rgba(8, 8, 16, 0.82)';
-            navbar.style.borderBottomColor = 'rgba(255,255,255,0.06)';
+            navbar.style.background = 'rgba(246, 244, 240, 0.90)';
+            navbar.style.borderBottomColor = 'rgba(160, 148, 130, 0.22)';
+            navbar.style.boxShadow = 'none';
         }
     };
     window.addEventListener('scroll', handleNavScroll, { passive: true });
@@ -104,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    // Legacy: also animate .bento-item if they don't have .reveal class
+    // Animate .info-card and .skill-group on scroll
     const legacyObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -115,13 +117,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }, { rootMargin: '0px 0px -40px 0px', threshold: 0.08 });
 
-    document.querySelectorAll('.bento-item:not(.no-animate)').forEach((el, i) => {
-        if (!el.classList.contains('reveal')) {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(22px)';
-            el.style.transition = `opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1) ${(i % 6) * 0.08}s, transform 0.65s cubic-bezier(0.16, 1, 0.3, 1) ${(i % 6) * 0.08}s`;
-            legacyObserver.observe(el);
-        }
+    document.querySelectorAll('.info-card, .skill-group').forEach((el, i) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = `opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${(i % 4) * 0.07}s, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${(i % 4) * 0.07}s`;
+        legacyObserver.observe(el);
     });
 
     // ==============================
@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const buildCard = (project) => {
             const linkPath = `pages/${project.link}`;
             const tags = project.tags.slice(0, 3)
-                .map(tag => `<span class="skill-tag">${tag}</span>`).join('');
+                .map(tag => `<span class="tag tag-orange">${tag}</span>`).join('');
             return `
                 <a href="${linkPath}" class="marquee-card">
                     <div class="marquee-card-header">
@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     </div>
                     <h4 class="marquee-title">${project.title}</h4>
                     <p class="marquee-desc">${project.description}</p>
-                    <div class="skill-tags">${tags}</div>
+                    <div class="tag-row">${tags}</div>
                 </a>
             `;
         };

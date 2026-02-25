@@ -4,145 +4,308 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/154990402?v=4">
-    <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/154990402?v=4">
-
-    <!-- Primary Meta Tags -->
-    <title>All Projects - Enes Efe Tokta | Portfolio</title>
-    <meta name="title" content="All Projects - Enes Efe Tokta | Portfolio">
-    <meta name="description"
-        content="Explore all software development projects by Enes Efe Tokta. Filter by technologies including .NET, Unity, React, TypeScript, and more.">
-    <meta name="keywords"
-        content="Enes Efe Tokta Projects, Software Portfolio, Unity Projects, .NET Projects, Web Development, C#, JavaScript, TypeScript">
-    <meta name="author" content="Enes Efe Tokta">
-    <meta name="robots" content="index, follow">
-
-    <!-- Canonical URL -->
+    <title>Projects – Enes Efe Tokta | Portfolio</title>
+    <meta name="description" content="Full project portfolio by Enes Efe Tokta — .NET, Unity, React, and more.">
     <link rel="canonical" href="https://enesefetokta.shop/pages/projects.html">
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <!-- Custom styling for filters -->
     <style>
-        #filter-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 40px;
+        /* ── Page Header ── */
+        .page-header {
+            padding-top: calc(var(--nav-h) + 72px);
+            padding-bottom: 56px;
+            background: var(--grad-hero);
+            border-bottom: 1px solid var(--border);
         }
 
-        .filter-btn {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
+        .page-header h1 {
+            font-size: clamp(2.2rem, 4vw, 3.4rem);
+            letter-spacing: -0.04em;
+            margin-bottom: 14px;
+        }
+
+        .page-header p {
             color: var(--text-secondary);
-            padding: 8px 16px;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-size: 0.95rem;
-            font-family: inherit;
+            font-size: 1.05rem;
+            max-width: 520px;
         }
 
-        .filter-btn:hover {
+        /* ── Filter Bar ── */
+        .filter-bar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            padding: 28px 0 8px;
+        }
+
+        .filter-pill {
+            background: var(--bg-surface);
+            border: 1.5px solid var(--border);
+            color: var(--text-secondary);
+            padding: 7px 18px;
+            border-radius: var(--r-pill);
+            cursor: pointer;
+            transition: all 0.18s ease;
+            font-size: 0.875rem;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .filter-pill:hover {
             border-color: var(--accent-primary);
             color: var(--text-main);
         }
 
-        .filter-btn.active {
+        .filter-pill.active {
             background: var(--accent-primary);
             color: white;
             border-color: var(--accent-primary);
         }
 
-        .no-results {
-            grid-column: span 2;
-            text-align: center;
-            color: var(--text-secondary);
+        .filter-count {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-left: auto;
+            font-weight: 500;
+        }
+
+        /* ── Projects Card Grid ── */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+            padding-bottom: 80px;
+        }
+
+        .project-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--r-lg);
+            padding: 28px;
+            box-shadow: var(--shadow-xs);
+            transition: all 0.25s var(--ease);
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .project-card:hover {
+            border-color: var(--border-accent);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-3px);
+        }
+
+        .project-card-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .project-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: var(--r-md);
+            background: var(--accent-light);
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .project-cat-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 4px 11px;
+            border-radius: var(--r-pill);
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .cat-dotnet {
+            background: rgba(74, 106, 154, 0.1);
+            color: var(--slate);
+        }
+
+        .cat-unity {
+            background: rgba(155, 80, 50, 0.1);
+            color: var(--rust);
+        }
+
+        .cat-web {
+            background: rgba(61, 122, 94, 0.1);
+            color: var(--green);
+        }
+
+        .project-title {
             font-size: 1.1rem;
-            padding: 40px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            font-family: 'Syne', sans-serif;
+            line-height: 1.3;
+        }
+
+        .project-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            flex: 1;
+            margin-bottom: 20px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 20px;
+        }
+
+        .project-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        .project-view-link {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap 0.2s ease;
+        }
+
+        .project-view-link:hover {
+            gap: 10px;
+        }
+
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 640px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 
 <body>
-
-    <!-- Navbar -->
+    <!-- ═══════════ NAVBAR ═══════════ -->
     <nav class="navbar">
         <div class="container">
             <a href="../index.html" class="logo">Enes Efe Tokta</a>
             <ul class="nav-links">
                 <li><a href="../index.html#about">About</a></li>
-                <li><a href="../pages/projects.html">Work</a></li>
                 <li><a href="../index.html#skills">Skills</a></li>
-                <li><a href="../pages/education.html">Education</a></li>
-                <li><a href="../pages/cv.html">Resume</a></li>
-                <li><a href="../pages/biography.html">Biography</a></li>
-                <li><a href="../pages/future-plans.html">Future Plans</a></li>
+                <li><a href="projects.html" style="color:var(--accent-primary);">Work</a></li>
                 <li><a href="../blog/index.html">Blog</a></li>
-                <li><a href="../index.html#contact">Contact</a></li>
+                <li class="nav-dropdown">
+                    <button class="nav-dropdown-btn">More <i class="fas fa-chevron-down"></i></button>
+                    <div class="nav-dropdown-menu">
+                        <a href="biography.html"><i class="fas fa-user"
+                                style="color:var(--accent-primary); width:16px;"></i> Biography</a>
+                        <a href="education.html"><i class="fas fa-graduation-cap"
+                                style="color:var(--amber); width:16px;"></i> Education</a>
+                        <a href="cv.html"><i class="fas fa-file-alt" style="color:var(--green); width:16px;"></i>
+                            Resume</a>
+                        <a href="future-plans.html"><i class="fas fa-rocket"
+                                style="color:var(--slate); width:16px;"></i> Future Plans</a>
+                    </div>
+                </li>
+                <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
             </ul>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
+            <button class="mobile-menu-btn" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
         </div>
     </nav>
 
-    <section class="section-padding" style="padding-top: 120px;">
+    <!-- ═══════════ PAGE HEADER ═══════════ -->
+    <header class="page-header">
         <div class="container">
-            <h1 style="font-size: 3rem; margin-bottom: 20px;">Projects</h1>
-            <p style="color: var(--text-secondary); margin-bottom: 40px; max-width: 600px;">
-                A curated list of my work in software engineering, game development, and web technologies.
-            </p>
+            <span class="eyebrow">Portfolio</span>
+            <h1>All Projects</h1>
+            <p>A complete overview of my work across .NET enterprise solutions, Unity game development, and modern web
+                applications.</p>
+        </div>
+    </header>
 
-            <!-- Filter Section -->
-            <div style="margin-bottom: 20px;">
-                <h3
-                    style="font-size: 1.2rem; margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between;">
-                    Filter by Technology
-                    <span id="project-count"
-                        style="font-size: 0.9rem; color: var(--text-muted); font-weight: normal;"></span>
-                </h3>
-                <div id="filter-container">
-                    <!-- Buttons will be injected here by JS -->
-                </div>
+    <!-- ═══════════ FILTER + GRID ═══════════ -->
+    <section class="section-sm">
+        <div class="container">
+
+            <!-- Filter bar -->
+            <div class="filter-bar">
+                <button class="filter-pill active" data-filter="all">All</button>
+                <button class="filter-pill" data-filter="dotnet">.NET</button>
+                <button class="filter-pill" data-filter="unity">Unity</button>
+                <button class="filter-pill" data-filter="web">Web</button>
+                <span class="filter-count" id="project-count"></span>
             </div>
 
-            <!-- Projects Grid -->
-            <div id="projects-grid" class="bento-grid">
-                <!-- Projects will be injected here by JS -->
+            <!-- Grid -->
+            <div class="projects-grid" id="projects-grid">
+                <!-- Injected by project-loader.js -->
             </div>
+
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer style="border-top: 1px solid var(--border-subtle); padding: 40px 0; margin-top: 40px;">
-        <div class="container" style="text-align: center;">
-            <p style="color: var(--text-muted);">© 2025 Enes Efe Tokta. Built with modern web technologies.</p>
-            <div style="margin-top: 20px; display: flex; justify-content: center; gap: 20px;">
-                <a href="https://github.com/EnesEfeTokta" target="_blank" aria-label="GitHub"
-                    style="font-size: 1.5rem; color: var(--text-secondary); transition: color 0.2s;"><i
-                        class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank" aria-label="LinkedIn"
-                    style="font-size: 1.5rem; color: var(--text-secondary); transition: color 0.2s;"><i
-                        class="fab fa-linkedin"></i></a>
-                <a href="https://medium.com/@EnesEfeTokta" target="_blank" aria-label="Medium"
-                    style="font-size: 1.5rem; color: var(--text-secondary); transition: color 0.2s;"><i
-                        class="fab fa-medium"></i></a>
-                <a href="https://x.com/EnesEfeTokta" target="_blank" aria-label="X (Twitter)"
-                    style="font-size: 1.5rem; color: var(--text-secondary); transition: color 0.2s;"><i
-                        class="fab fa-twitter"></i></a>
+    <!-- ═══════════ FOOTER ═══════════ -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div>
+                    <span class="footer-logo">Enes Efe Tokta</span>
+                    <p class="footer-tagline">Software Developer · .NET &amp; Unity · Based in Turkey.</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/EnesEfeTokta" target="_blank" aria-label="GitHub"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank"
+                        aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://medium.com/@EnesEfeTokta" target="_blank" aria-label="Medium"><i
+                            class="fab fa-medium"></i></a>
+                    <a href="https://x.com/EnesEfeTokta" target="_blank" aria-label="X"><i
+                            class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Enes Efe Tokta. Built with modern web technologies.</p>
+                <div class="footer-links">
+                    <a href="biography.html">Biography</a>
+                    <a href="../blog/index.html">Blog</a>
+                    <a href="cv.html">Resume</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/projects-data.js"></script>
     <script src="../assets/js/project-loader.js"></script>
