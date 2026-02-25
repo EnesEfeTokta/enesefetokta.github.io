@@ -38,7 +38,9 @@
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
@@ -167,16 +169,23 @@
                 <li><a href="../index.html#about">About</a></li>
                 <li><a href="../pages/projects.html">Work</a></li>
                 <li><a href="../index.html#skills">Skills</a></li>
-                <li><a href="../pages/education.html">Education</a></li>
-                <li><a href="../pages/cv.html">Resume</a></li>
-                <li><a href="../pages/biography.html">Biography</a></li>
-                <li><a href="../pages/future-plans.html">Future Plans</a></li>
                 <li><a href="../blog/index.html">Blog</a></li>
-                <li><a href="../index.html#contact">Contact</a></li>
+                <li class="nav-dropdown">
+                    <button class="nav-dropdown-btn">More <i class="fas fa-chevron-down"></i></button>
+                    <div class="nav-dropdown-menu">
+                        <a href="../pages/biography.html"><i class="fas fa-user"
+                                style="width:16px; margin-right:8px; color:var(--accent-primary);"></i>Biography</a>
+                        <a href="../pages/education.html"><i class="fas fa-graduation-cap"
+                                style="width:16px; margin-right:8px; color:var(--accent-secondary);"></i>Education</a>
+                        <a href="../pages/cv.html"><i class="fas fa-file-alt"
+                                style="width:16px; margin-right:8px; color:var(--accent-green);"></i>Resume</a>
+                        <a href="../pages/future-plans.html"><i class="fas fa-rocket"
+                                style="width:16px; margin-right:8px; color:var(--accent-amber);"></i>Future Plans</a>
+                    </div>
+                </li>
+                <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
             </ul>
-            <button class="mobile-menu-btn" id="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
+            <button class="mobile-menu-btn" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
         </div>
     </nav>
 
@@ -387,22 +396,33 @@
     </section>
 
     <!-- Footer -->
-    <footer style="border-top: 1px solid var(--border-subtle); padding: 40px 0; margin-top: 40px;">
-        <div class="container" style="text-align: center;">
-            <p style="color: var(--text-muted);">© 2026 Enes Efe Tokta. Continuous learning, continuous growth.</p>
-            <div style="margin-top: 20px; display: flex; justify-content: center; gap: 20px;">
-                <a href="https://github.com/EnesEfeTokta" target="_blank" aria-label="GitHub"
-                    style="font-size: 1.5rem; color: var(--text-secondary); transition: color 0.2s;"><i
-                        class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank" aria-label="LinkedIn"
-                    style="font-size: 1.5rem; color: var(--text-secondary); transition: color 0.2s;"><i
-                        class="fab fa-linkedin"></i></a>
-                <a href="https://medium.com/@EnesEfeTokta" target="_blank" aria-label="Medium"
-                    style="font-size: 1.5rem; color: var(--text-secondary); transition: color 0.2s;"><i
-                        class="fab fa-medium"></i></a>
-                <a href="https://x.com/EnesEfeTokta" target="_blank" aria-label="X (Twitter)"
-                    style="font-size: 1.5rem; color: var(--text-secondary); transition: color 0.2s;"><i
-                        class="fab fa-twitter"></i></a>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="logo" style="-webkit-text-fill-color: transparent;">Enes Efe
+                        Tokta</a>
+                    <p class="footer-tagline">Software Developer · .NET &amp; Unity · Based in Turkey.<br>Continuous
+                        learning, continuous growth.</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/EnesEfeTokta" target="_blank" aria-label="GitHub"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank"
+                        aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://medium.com/@EnesEfeTokta" target="_blank" aria-label="Medium"><i
+                            class="fab fa-medium"></i></a>
+                    <a href="https://x.com/EnesEfeTokta" target="_blank" aria-label="X"><i
+                            class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Enes Efe Tokta. Built with modern web technologies.</p>
+                <div class="footer-links">
+                    <a href="../pages/biography.html">Biography</a>
+                    <a href="../blog/index.html">Blog</a>
+                    <a href="../pages/cv.html">Resume</a>
+                </div>
             </div>
         </div>
     </footer>

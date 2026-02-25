@@ -41,7 +41,9 @@
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
@@ -171,6 +173,87 @@
             border-color: var(--accent-primary);
         }
 
+        /* Blog card accent bar color variants */
+        .blog-card.cat-unity {
+            --card-accent: #a855f7;
+        }
+
+        .blog-card.cat-dotnet {
+            --card-accent: #6366f1;
+        }
+
+        .blog-card.cat-security {
+            --card-accent: #22d3a0;
+        }
+
+        .blog-card.cat-ai {
+            --card-accent: #f59e0b;
+        }
+
+        .blog-card.cat-arch {
+            --card-accent: #3b82f6;
+        }
+
+        .blog-card.cat-default {
+            --card-accent: #6366f1;
+        }
+
+        .blog-card-image {
+            width: 100%;
+            height: 8px;
+            background: var(--card-accent, var(--accent-primary));
+            display: block;
+        }
+
+        .blog-card-icon-area {
+            padding: 24px 24px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .blog-card-icon-area .icon-bg {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--card-accent, var(--accent-primary));
+        }
+
+        .blog-card h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+            line-height: 1.35;
+        }
+
+        .filter-btn {
+            padding: 8px 18px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 99px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.25s ease;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 500;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--accent-primary);
+            color: white;
+            border-color: var(--accent-primary);
+            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+        }
+
         @media (max-width: 768px) {
             .blog-grid {
                 grid-template-columns: 1fr;
@@ -189,16 +272,23 @@
                 <li><a href="../index.html#about">About</a></li>
                 <li><a href="../pages/projects.html">Work</a></li>
                 <li><a href="../index.html#skills">Skills</a></li>
-                <li><a href="../pages/education.html">Education</a></li>
-                <li><a href="../pages/cv.html">Resume</a></li>
-                <li><a href="../pages/biography.html">Biography</a></li>
-                <li><a href="../pages/future-plans.html">Future Plans</a></li>
                 <li><a href="../blog/index.html">Blog</a></li>
-                <li><a href="../index.html#contact">Contact</a></li>
+                <li class="nav-dropdown">
+                    <button class="nav-dropdown-btn">More <i class="fas fa-chevron-down"></i></button>
+                    <div class="nav-dropdown-menu">
+                        <a href="../pages/biography.html"><i class="fas fa-user"
+                                style="width:16px; margin-right:8px; color:var(--accent-primary);"></i>Biography</a>
+                        <a href="../pages/education.html"><i class="fas fa-graduation-cap"
+                                style="width:16px; margin-right:8px; color:var(--accent-secondary);"></i>Education</a>
+                        <a href="../pages/cv.html"><i class="fas fa-file-alt"
+                                style="width:16px; margin-right:8px; color:var(--accent-green);"></i>Resume</a>
+                        <a href="../pages/future-plans.html"><i class="fas fa-rocket"
+                                style="width:16px; margin-right:8px; color:var(--accent-amber);"></i>Future Plans</a>
+                    </div>
+                </li>
+                <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
             </ul>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
+            <button class="mobile-menu-btn" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
         </div>
     </nav>
 
@@ -226,17 +316,20 @@
             <!-- Blog Grid -->
             <div class="blog-grid">
 
-                <!-- 1. .NET Perspective on Node.js (Latest - Feb 15, 2026) -->
-                <article class="blog-card" data-category="dotnet tech opinion">
-                    <div class="blog-card-image">
-                        <i class="fab fa-node-js"></i>
+                <!-- 1. .NET Perspective on Node.js (Featured - Feb 15, 2026) -->
+                <article class="blog-card cat-dotnet" data-category="dotnet tech opinion">
+                    <div class="blog-card-image"></div>
+                    <div class="blog-card-icon-area">
+                        <div class="icon-bg"><i class="fab fa-node-js"></i></div>
+                        <span class="badge badge-featured"><i class="fas fa-star" style="font-size:0.65rem;"></i>
+                            Featured</span>
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-meta">
                             <span><i class="far fa-calendar"></i> Feb 15, 2026</span>
                             <span><i class="far fa-clock"></i> 3 min read</span>
                         </div>
-                        <h3>A .NET Developer’s Perspective on Node.js — And Why One Hand Should Be There Too</h3>
+                        <h3>A .NET Developer's Perspective on Node.js — And Why One Hand Should Be There Too</h3>
                         <p class="blog-excerpt">
                             Why learning Node.js doesn't mean abandoning .NET, but expanding your perspective as an
                             engineer. Exploring the bridge between .NET structure and Node.js velocity.
@@ -252,10 +345,13 @@
                     </div>
                 </article>
 
-                <!-- 1. Did Software Architectures Give Advantage (Latest - Feb 2, 2026) -->
-                <article class="blog-card" data-category="architecture opinion">
-                    <div class="blog-card-image">
-                        <i class="fas fa-project-diagram"></i>
+                <!-- 2. Did Software Architectures Give Advantage (Featured - Feb 2, 2026) -->
+                <article class="blog-card cat-arch" data-category="architecture opinion">
+                    <div class="blog-card-image"></div>
+                    <div class="blog-card-icon-area">
+                        <div class="icon-bg"><i class="fas fa-project-diagram"></i></div>
+                        <span class="badge badge-featured"><i class="fas fa-star" style="font-size:0.65rem;"></i>
+                            Featured</span>
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-meta">
@@ -279,10 +375,12 @@
                     </div>
                 </article>
 
-                <!-- 2. JWT Security Deep Dive (Jan 29, 2026) -->
-                <article class="blog-card" data-category="backend security">
-                    <div class="blog-card-image">
-                        <i class="fas fa-shield-alt"></i>
+                <!-- 3. JWT Security Deep Dive (Jan 29, 2026) -->
+                <article class="blog-card cat-security" data-category="backend security">
+                    <div class="blog-card-image"></div>
+                    <div class="blog-card-icon-area">
+                        <div class="icon-bg" style="background:rgba(34,211,160,0.1); color:var(--accent-green);"><i
+                                class="fas fa-shield-alt"></i></div>
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-meta">
@@ -306,10 +404,12 @@
                     </div>
                 </article>
 
-                <!-- 3. Who Should We Listen to About AI (Jan 27, 2026) -->
-                <article class="blog-card" data-category="opinion ai">
-                    <div class="blog-card-image">
-                        <i class="fas fa-brain"></i>
+                <!-- 4. Who Should We Listen to About AI (Jan 27, 2026) -->
+                <article class="blog-card cat-ai" data-category="opinion ai">
+                    <div class="blog-card-image"></div>
+                    <div class="blog-card-icon-area">
+                        <div class="icon-bg" style="background:rgba(245,158,11,0.1); color:var(--accent-amber);"><i
+                                class="fas fa-brain"></i></div>
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-meta">
@@ -573,22 +673,33 @@
     </section>
 
     <!-- Footer -->
-    <footer style="border-top: 1px solid var(--border-subtle); padding: 40px 0; margin-top: 40px;">
-        <div class="container" style="text-align: center;">
-            <p style="color: var(--text-muted);">© 2025 Enes Efe Tokta. Built with modern web technologies.</p>
-            <div style="margin-top: 20px; display: flex; justify-content: center; gap: 20px;">
-                <a href="https://github.com/EnesEfeTokta" target="_blank" aria-label="GitHub"
-                    style="font-size: 1.5rem; color: var(--text-secondary); transition: color 0.2s;"><i
-                        class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank" aria-label="LinkedIn"
-                    style="font-size: 1.5rem; color: var(--text-secondary); transition: color 0.2s;"><i
-                        class="fab fa-linkedin"></i></a>
-                <a href="https://medium.com/@EnesEfeTokta" target="_blank" aria-label="Medium"
-                    style="font-size: 1.5rem; color: var(--text-secondary); transition: color 0.2s;"><i
-                        class="fab fa-medium"></i></a>
-                <a href="https://x.com/EnesEfeTokta" target="_blank" aria-label="X (Twitter)"
-                    style="font-size: 1.5rem; color: var(--text-secondary); transition: color 0.2s;"><i
-                        class="fab fa-twitter"></i></a>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="logo" style="-webkit-text-fill-color: transparent;">Enes Efe
+                        Tokta</a>
+                    <p class="footer-tagline">Software Developer · .NET &amp; Unity · Based in Turkey.<br>Open to remote
+                        opportunities worldwide.</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/EnesEfeTokta" target="_blank" aria-label="GitHub"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank"
+                        aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://medium.com/@EnesEfeTokta" target="_blank" aria-label="Medium"><i
+                            class="fab fa-medium"></i></a>
+                    <a href="https://x.com/EnesEfeTokta" target="_blank" aria-label="X"><i
+                            class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Enes Efe Tokta. Built with modern web technologies.</p>
+                <div class="footer-links">
+                    <a href="../pages/biography.html">Biography</a>
+                    <a href="../index.html">Home</a>
+                    <a href="../pages/cv.html">Resume</a>
+                </div>
             </div>
         </div>
     </footer>
