@@ -39,246 +39,617 @@
         </div>
     </nav>
 
-    <section class="section-padding" style="padding-top: 120px;">
-        <div class="container" style="max-width: 1100px;">
+    <!-- Custom Styles for Product Landing Look -->
+    <style>
+        :root {
+            --vidsync-accent: #C96442;
+            --vidsync-accent-dark: #A04E32;
+            --vidsync-bg-dark: #121212;
+            --vidsync-text-dim: #A0A0A0;
+            --vidsync-glass: rgba(255, 255, 255, 0.03);
+            --vidsync-border: rgba(255, 255, 255, 0.1);
+        }
 
-            <!-- Header -->
-            <div style="margin-bottom: 60px;">
-                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
-                    <a href="../../projects.html"
-                        style="color: var(--text-secondary); font-size: 0.9rem; display: flex; align-items: center; gap: 8px; transition: color 0.2s;">
-                        <i class="fas fa-arrow-left"></i> Back to Projects
-                    </a>
-                </div>
-                <h1 style="font-size: 3rem; margin-bottom: 24px; line-height: 1.1; font-weight: 700;">VidSync</h1>
-                <p
-                    style="font-size: 1.2rem; color: var(--text-secondary); max-width: 800px; margin-bottom: 32px; line-height: 1.7;">
-                    AI-Powered Video Meeting Platform with Real-Time Collaboration
-                </p>
-                <div class="skill-tags" style="margin-bottom: 24px;">
-                    <span class="skill-tag">ASP.NET Core 8</span>
-                    <span class="skill-tag">React 18</span>
-                    <span class="skill-tag">WebRTC</span>
-                    <span class="skill-tag">Mistral 7B AI</span>
-                    <span class="skill-tag">Docker</span>
-                    <span class="skill-tag">SignalR</span>
-                </div>
-                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                    <a href="https://github.com/EnesEfeTokta/VidSync-Backend" target="_blank" class="btn">
-                        <i class="fab fa-github"></i> Backend Repo
-                    </a>
-                    <a href="https://github.com/EnesEfeTokta/VidSync-Frontend" target="_blank"
-                        class="btn btn-secondary">
-                        <i class="fab fa-github"></i> Frontend Repo
-                    </a>
-                    <a href="https://github.com/EnesEfeTokta/VidSync-ai" target="_blank" class="btn btn-secondary">
-                        <i class="fab fa-github"></i> AI Repo
-                    </a>
-                </div>
+        .hero-vidsync {
+            position: relative;
+            padding: 160px 0 100px;
+            background: radial-gradient(circle at 70% 30%, rgba(201, 100, 66, 0.15), transparent 40%),
+                radial-gradient(circle at 10% 80%, rgba(201, 100, 66, 0.08), transparent 30%);
+            overflow: hidden;
+        }
+
+        .hero-vidsync::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: url('../../../assets/css/grid.svg');
+            /* If exists, else CSS grid */
+            opacity: 0.03;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            line-height: 1;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, var(--text-main) 30%, var(--vidsync-accent) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-mockup {
+            position: relative;
+            z-index: 2;
+        }
+
+        .mockup-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.3), 0 18px 36px -18px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-medium);
+            background: var(--bg-surface);
+            transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
+            transition: transform 0.5s var(--ease);
+        }
+
+        .mockup-wrapper:hover {
+            transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+        }
+
+        .mockup-img {
+            width: 100%;
+            display: block;
+        }
+
+        .feature-card-new {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            padding: 40px;
+            border-radius: 24px;
+            transition: all 0.4s var(--ease);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card-new:hover {
+            border-color: var(--vidsync-accent);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-card-new i {
+            font-size: 2.5rem;
+            margin-bottom: 24px;
+            color: var(--vidsync-accent);
+            display: block;
+        }
+
+        .ai-section {
+            background: var(--vidsync-bg-dark);
+            color: white;
+            padding: 120px 0;
+            border-radius: 40px;
+            margin: 80px 0;
+            position: relative;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.2);
+        }
+
+        .ai-section h2 {
+            color: white;
+        }
+
+        .ai-section p {
+            color: #A0A0A0;
+        }
+
+        .ai-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(201, 100, 66, 0.2);
+            border: 1px solid rgba(201, 100, 66, 0.4);
+            color: #FF9E7D;
+            padding: 6px 16px;
+            border-radius: 99px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .tech-pill {
+            background: var(--bg-muted);
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .tech-pill:hover {
+            border-color: var(--vidsync-accent);
+            color: var(--vidsync-accent);
+            background: var(--accent-light);
+        }
+
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+
+            .mockup-wrapper {
+                transform: none;
+            }
+
+            .hero-text {
+                order: 1;
+            }
+
+            .hero-mockup {
+                order: 2;
+            }
+        }
+    </style>
+
+    <header class="hero-vidsync">
+        <div class="container">
+            <div style="margin-bottom: 40px;">
+                <a href="../../projects.html" class="btn-outline"
+                    style="border-radius: 99px; padding: 8px 16px; font-size: 0.85rem;">
+                    <i class="fas fa-arrow-left"></i> Back to Projects
+                </a>
             </div>
-
-            <!-- Main Content -->
-            <div style="display: flex; flex-direction: column; gap: 48px;">
-
-                <!-- Overview -->
-                <section class="bento-item">
-                    <h2
-                        style="font-size: 1.75rem; margin-bottom: 24px; color: var(--text-main); font-weight: 600; display: flex; align-items: center; gap: 12px;">
-                        <i class="fas fa-info-circle" style="color: var(--accent-primary); font-size: 1.5rem;"></i>
-                        Project Overview
-                    </h2>
-                    <p style="font-size: 1.05rem; line-height: 1.9; margin-bottom: 20px; color: var(--text-secondary);">
-                        VidSync is a cutting-edge video meeting platform that combines robust real-time collaboration
-                        with intelligent AI assistance. Built with modern web technologies, it delivers seamless video
-                        conferencing, instant messaging, and automated meeting insights.
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>VidSync</h1>
+                    <p
+                        style="font-size: 1.4rem; color: var(--text-secondary); margin-bottom: 32px; line-height: 1.6; max-width: 600px;">
+                        The future of remote collaboration. High-definition video meetings augmented by real-time AI
+                        intelligence.
                     </p>
-                    <p style="font-size: 1.05rem; line-height: 1.9; color: var(--text-secondary);">
-                        The platform uses <strong style="color: var(--accent-primary);">Mistral 7B</strong>, a powerful
-                        local LLM, to automatically generate meeting summaries and extract action items—ensuring no
-                        important detail is lost.
-                    </p>
-                </section>
-
-                <!-- Key Features -->
-                <section class="bento-item">
-                    <h2
-                        style="font-size: 1.75rem; margin-bottom: 32px; color: var(--text-main); font-weight: 600; display: flex; align-items: center; gap: 12px;">
-                        <i class="fas fa-star" style="color: var(--accent-secondary); font-size: 1.5rem;"></i>
-                        Key Features
-                    </h2>
-                    <ul class="feature-grid">
-                        <li class="feature-item">
-                            <i class="fas fa-robot feature-icon"></i>
-                            <div>
-                                <strong>AI Meeting Assistant</strong>
-                                <p>Automated conversation capture and summarization using Mistral 7B LLM.</p>
-                            </div>
-                        </li>
-                        <li class="feature-item">
-                            <i class="fas fa-video feature-icon"></i>
-                            <div>
-                                <strong>HD Video Conferencing</strong>
-                                <p>Crystal-clear P2P video streaming powered by WebRTC technology.</p>
-                            </div>
-                        </li>
-                        <li class="feature-item">
-                            <i class="fas fa-shield-alt feature-icon"></i>
-                            <div>
-                                <strong>Enterprise Security</strong>
-                                <p>End-to-end encryption with JWT-based authentication.</p>
-                            </div>
-                        </li>
-                        <li class="feature-item">
-                            <i class="fas fa-comments feature-icon"></i>
-                            <div>
-                                <strong>Real-time Messaging</strong>
-                                <p>Instant sync using SignalR websocket connections.</p>
-                            </div>
-                        </li>
-                        <li class="feature-item">
-                            <i class="fas fa-server feature-icon"></i>
-                            <div>
-                                <strong>Redis Caching</strong>
-                                <p>High-performance session and state management.</p>
-                            </div>
-                        </li>
-                        <li class="feature-item">
-                            <i class="fab fa-docker feature-icon"></i>
-                            <div>
-                                <strong>Containerized</strong>
-                                <p>Full Docker support for seamless deployment.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </section>
-
-                <!-- Technical Architecture -->
-                <section class="bento-item">
-                    <h2
-                        style="font-size: 1.75rem; margin-bottom: 32px; color: var(--text-main); font-weight: 600; display: flex; align-items: center; gap: 12px;">
-                        <i class="fas fa-code-branch" style="color: var(--accent-primary); font-size: 1.5rem;"></i>
-                        Technical Architecture
-                    </h2>
-
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px;">
-                        <div>
-                            <h3
-                                style="color: var(--accent-secondary); margin-bottom: 16px; font-size: 1.2rem; font-weight: 600;">
-                                Backend Stack</h3>
-                            <ul
-                                style="list-style: none; padding: 0; color: var(--text-secondary); line-height: 2; font-size: 0.95rem;">
-                                <li><i class="fas fa-check"
-                                        style="color: var(--accent-secondary); margin-right: 8px;"></i> ASP.NET Core 8
-                                    Web API</li>
-                                <li><i class="fas fa-check"
-                                        style="color: var(--accent-secondary); margin-right: 8px;"></i> Entity Framework
-                                    Core</li>
-                                <li><i class="fas fa-check"
-                                        style="color: var(--accent-secondary); margin-right: 8px;"></i> PostgreSQL
-                                    Database</li>
-                                <li><i class="fas fa-check"
-                                        style="color: var(--accent-secondary); margin-right: 8px;"></i> Redis Cache</li>
-                                <li><i class="fas fa-check"
-                                        style="color: var(--accent-secondary); margin-right: 8px;"></i> SignalR
-                                    (WebSockets)</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3
-                                style="color: var(--accent-secondary); margin-bottom: 16px; font-size: 1.2rem; font-weight: 600;">
-                                Frontend Stack</h3>
-                            <ul
-                                style="list-style: none; padding: 0; color: var(--text-secondary); line-height: 2; font-size: 0.95rem;">
-                                <li><i class="fas fa-check"
-                                        style="color: var(--accent-secondary); margin-right: 8px;"></i> React 18 +
-                                    TypeScript</li>
-                                <li><i class="fas fa-check"
-                                        style="color: var(--accent-secondary); margin-right: 8px;"></i> WebRTC
-                                    (SimplePeer)</li>
-                                <li><i class="fas fa-check"
-                                        style="color: var(--accent-secondary); margin-right: 8px;"></i> Tailwind CSS
-                                </li>
-                                <li><i class="fas fa-check"
-                                        style="color: var(--accent-secondary); margin-right: 8px;"></i> React Query</li>
-                                <li><i class="fas fa-check"
-                                        style="color: var(--accent-secondary); margin-right: 8px;"></i> Context API</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3
-                                style="color: var(--accent-secondary); margin-bottom: 16px; font-size: 1.2rem; font-weight: 600;">
-                                DevOps & AI</h3>
-                            <ul
-                                style="list-style: none; padding: 0; color: var(--text-secondary); line-height: 2; font-size: 0.95rem;">
-                                <li><i class="fas fa-check"
-                                        style="color: var(--accent-secondary); margin-right: 8px;"></i> Docker & Compose
-                                </li>
-                                <li><i class="fas fa-check"
-                                        style="color: var(--accent-secondary); margin-right: 8px;"></i> Nginx Reverse
-                                    Proxy</li>
-                                <li><i class="fas fa-check"
-                                        style="color: var(--accent-secondary); margin-right: 8px;"></i> Ollama (Mistral
-                                    7B)</li>
-                                <li><i class="fas fa-check"
-                                        style="color: var(--accent-secondary); margin-right: 8px;"></i> Python AI
-                                    Service</li>
-                            </ul>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; align-items: center;">
+                        <a href="https://github.com/EnesEfeTokta/VidSync-Backend" target="_blank"
+                            class="btn btn-primary" style="font-size: 0.85rem; padding: 10px 20px;">
+                            <i class="fab fa-github"></i> Backend
+                        </a>
+                        <a href="https://github.com/EnesEfeTokta/VidSync-Frontend" target="_blank"
+                            class="btn btn-primary"
+                            style="font-size: 0.85rem; padding: 10px 20px; background: #4A6A9A; border-color: #4A6A9A;">
+                            <i class="fab fa-github"></i> Frontend
+                        </a>
+                        <a href="https://github.com/EnesEfeTokta/VidSync-AI" target="_blank" class="btn btn-primary"
+                            style="font-size: 0.85rem; padding: 10px 20px; background: var(--green); border-color: var(--green);">
+                            <i class="fab fa-github"></i> AI Core
+                        </a>
+                        <div style="display: flex; gap: 8px; margin-left: 8px;">
+                            <span class="badge badge-green">Live Production</span>
+                            <span class="badge badge-featured">v1.2.0</span>
                         </div>
                     </div>
-                </section>
-
-                <!-- Technical Challenge -->
-                <section class="bento-item">
-                    <h2
-                        style="font-size: 1.75rem; margin-bottom: 24px; color: var(--text-main); font-weight: 600; display: flex; align-items: center; gap: 12px;">
-                        <i class="fas fa-lightbulb" style="color: var(--accent-secondary); font-size: 1.5rem;"></i>
-                        Technical Highlight: Async AI Integration
-                    </h2>
-                    <p style="font-size: 1.05rem; line-height: 1.9; margin-bottom: 20px; color: var(--text-secondary);">
-                        One of the biggest challenges was integrating <strong>Mistral 7B</strong> without degrading
-                        video performance. Running an LLM requires significant resources, which could block the main
-                        application thread.
-                    </p>
-                    <h3 style="font-size: 1.2rem; color: var(--text-main); margin-bottom: 12px; margin-top: 24px;">
-                        Solution: Microservices Architecture</h3>
-                    <p style="font-size: 1.05rem; line-height: 1.9; margin-bottom: 16px; color: var(--text-secondary);">
-                        I implemented an asynchronous queue-based system where AI processing happens in a separate
-                        Python service:
-                    </p>
-                    <ul
-                        style="list-style: disc; padding-left: 24px; color: var(--text-secondary); line-height: 1.9; font-size: 1rem; margin-bottom: 20px;">
-                        <li>Meeting audio is transcribed in 30-second windows</li>
-                        <li>Transcripts are pushed to a message queue</li>
-                        <li>The Python AI service consumes and processes with Ollama</li>
-                        <li>Results are pushed back via SignalR in real-time</li>
-                    </ul>
-                    <p style="font-size: 1.05rem; line-height: 1.9; color: var(--text-secondary);">
-                        This ensures the main thread stays free for video/audio streams, maintaining a smooth user
-                        experience.
-                    </p>
-                </section>
-
+                </div>
+                <div class="hero-mockup">
+                    <div class="mockup-wrapper">
+                        <img src="../../../assets/images/vidsync/mockup.png" alt="VidSync Interface" class="mockup-img">
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+    </header>
+
+    <main class="container" style="max-width: 1100px;">
+
+        <!-- Quick Stats -->
+        <section
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-bottom: 100px;">
+            <div class="bento-item" style="text-align: center; padding: 32px;">
+                <span
+                    style="font-size: 2.5rem; font-weight: 800; color: var(--vidsync-accent); display: block;">99%</span>
+                <span
+                    style="color: var(--text-muted); font-size: 0.9rem; font-weight: 600; text-transform: uppercase;">Uptime
+                    Guaranteed</span>
+            </div>
+            <div class="bento-item" style="text-align: center; padding: 32px;">
+                <span
+                    style="font-size: 2.5rem; font-weight: 800; color: var(--vidsync-accent); display: block;">&lt;50ms</span>
+                <span
+                    style="color: var(--text-muted); font-size: 0.9rem; font-weight: 600; text-transform: uppercase;">P2P
+                    Latency</span>
+            </div>
+            <div class="bento-item" style="text-align: center; padding: 32px;">
+                <span
+                    style="font-size: 2.5rem; font-weight: 800; color: var(--vidsync-accent); display: block;">7B</span>
+                <span
+                    style="color: var(--text-muted); font-size: 0.9rem; font-weight: 600; text-transform: uppercase;">Mistral
+                    AI Parameters</span>
+            </div>
+        </section>
+
+        <!-- Features Grid -->
+        <section style="margin-bottom: 120px;">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <span class="eyebrow">Experience Excellence</span>
+                <h2 style="font-size: 2.5rem; margin-top: 10px;">Built for the Modern Workflow</h2>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
+                <div class="feature-card-new">
+                    <i class="fas fa-bolt"></i>
+                    <h3 style="margin-bottom: 16px;">WebRTC Engine</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.7;">True peer-to-peer architecture ensures
+                        the lowest possible latency for video and audio sync.</p>
+                </div>
+                <div class="feature-card-new">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3 style="margin-bottom: 16px;">Secure by Design <i class="fas fa-arrow-right"
+                            style="font-size: 1rem; display: inline; margin-left: 8px; opacity: 0.5;"></i></h3>
+                    <p style="color: var(--text-secondary); line-height: 1.7;">End-to-end encrypted signals and
+                        JWT-based authentication keep your conversations private.</p>
+                </div>
+                <div class="feature-card-new">
+                    <i class="fas fa-layer-group"></i>
+                    <h3 style="margin-bottom: 16px;">Real-time Sync</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.7;">Powered by SignalR, providing instant
+                        messaging and state synchronization across all clients.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Deep Dive -->
+        <section class="ai-section">
+            <div class="container" style="max-width: 900px; text-align: center;">
+                <div class="ai-badge">
+                    <i class="fas fa-brain"></i> Powered by Local AI
+                </div>
+                <h2 style="font-size: 3rem; margin-bottom: 32px;">Mistral 7B Integration</h2>
+                <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 48px;">
+                    Unlike other platforms, VidSync processes your data locally using a containerized Mistral 7B LLM.
+                    Get automated transcriptions, sentiment analysis, and action items without your data ever leaving
+                    your infrastructure.
+                </p>
+
+                <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+                    <div class="tech-pill"
+                        style="background: rgba(255,255,255,0.05); color: white; border-color: rgba(255,255,255,0.1);">
+                        <i class="fas fa-cogs"></i> Ollama Backend
+                    </div>
+                    <div class="tech-pill"
+                        style="background: rgba(255,255,255,0.05); color: white; border-color: rgba(255,255,255,0.1);">
+                        <i class="fas fa-microchip"></i> 4-bit Quantization
+                    </div>
+                    <div class="tech-pill"
+                        style="background: rgba(255,255,255,0.05); color: white; border-color: rgba(255,255,255,0.1);">
+                        <i class="fas fa-terminal"></i> Custom Python Service
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Ecosystem -->
+        <section style="margin-bottom: 120px;">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <span class="eyebrow">The Ecosystem</span>
+                <h2 style="font-size: 2.5rem; margin-top: 10px;">A Modular & Scalable Architecture</h2>
+                <p style="color: var(--text-secondary); max-width: 700px; margin: 20px auto 0;">
+                    VidSync is composed of three specialized repositories that work in harmony to deliver a seamless
+                    real-time experience.
+                </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div class="bento-item" style="position: relative; overflow: hidden; padding-top: 50px;">
+                    <div
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: var(--vidsync-accent);">
+                    </div>
+                    <h4 style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-server"></i> VidSync-Backend
+                    </h4>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+                        The core API and signaling server. Built with <strong>.NET 9</strong> and
+                        <strong>SignalR</strong>, managing authentication, room logic, and WebRTC handshakes.
+                    </p>
+                </div>
+                <div class="bento-item" style="position: relative; overflow: hidden; padding-top: 50px;">
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: #4A6A9A;">
+                    </div>
+                    <h4 style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+                        <i class="fab fa-react"></i> VidSync-Frontend
+                    </h4>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+                        The client-side experience. Powered by <strong>React 19</strong> and <strong>Vite</strong>,
+                        featuring a responsive UI with dark/light mode support.
+                    </p>
+                </div>
+                <div class="bento-item" style="position: relative; overflow: hidden; padding-top: 50px;">
+                    <div
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: var(--green);">
+                    </div>
+                    <h4 style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-brain"></i> VidSync-AI
+                    </h4>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+                        The intelligence layer. A dedicated <strong>Python API</strong> utilizing <strong>Mistral
+                            7B</strong> for real-time transcription and meeting summaries.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clean Architecture Deep Dive -->
+        <section class="bento-item" style="margin-bottom: 120px; background: var(--bg-surface); padding: 60px;">
+            <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center;">
+                <div>
+                    <span class="eyebrow" style="margin-bottom: 24px;">Backend Engineering</span>
+                    <h3 style="font-size: 2.2rem; margin-bottom: 24px;">Clean Architecture Principles</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 32px;">
+                        The backend follows <strong>Clean Architecture</strong> to ensure absolute separation of
+                        concerns. This approach makes the system highly testable and independent of UI, databases, and
+                        external frameworks.
+                    </p>
+                    <div style="display: flex; flex-direction: column; gap: 16px;">
+                        <div style="display: flex; gap: 16px;">
+                            <div style="width: 4px; background: var(--vidsync-accent); border-radius: 2px;"></div>
+                            <div>
+                                <h5 style="margin-bottom: 4px;">Domain Layer</h5>
+                                <p style="font-size: 0.85rem; color: var(--text-muted);">Core business logic, entities,
+                                    and interfaces. Zero dependencies.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 16px;">
+                            <div
+                                style="width: 4px; background: var(--vidsync-accent); opacity: 0.6; border-radius: 2px;">
+                            </div>
+                            <div>
+                                <h5 style="margin-bottom: 4px;">Infrastructure Layer</h5>
+                                <p style="font-size: 0.85rem; color: var(--text-muted);">EF Core, PostgreSQL, Redis, and
+                                    external service implementations.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 16px;">
+                            <div
+                                style="width: 4px; background: var(--vidsync-accent); opacity: 0.3; border-radius: 2px;">
+                            </div>
+                            <div>
+                                <h5 style="margin-bottom: 4px;">Core (API & Signaling)</h5>
+                                <p style="font-size: 0.85rem; color: var(--text-muted);">ASP.NET Core entry points,
+                                    SignalR Hubs for WebRTC signaling.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Visual Architecture Representation -->
+                <div
+                    style="position: relative; height: 400px; display: flex; align-items: center; justify-content: center;">
+                    <div
+                        style="width: 100%; height: 100%; border: 1px dashed var(--border-medium); border-radius: 50%; opacity: 0.2; position: absolute;">
+                    </div>
+                    <div
+                        style="width: 80%; height: 80%; border: 1px dashed var(--border-medium); border-radius: 50%; opacity: 0.4; position: absolute;">
+                    </div>
+                    <div
+                        style="width: 60%; height: 60%; border: 1px dashed var(--border-medium); border-radius: 50%; opacity: 0.6; position: absolute;">
+                    </div>
+                    <div
+                        style="width: 120px; height: 120px; background: var(--vidsync-accent); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem; box-shadow: 0 0 40px rgba(201, 100, 66, 0.4); z-index: 5;">
+                        Domain</div>
+                    <div
+                        style="position: absolute; top: 15%; right: 15%; padding: 12px 20px; background: var(--bg-surface); border: 1px solid var(--border-accent); border-radius: 12px; font-weight: 600; font-size: 0.9rem; box-shadow: var(--shadow-md);">
+                        Infrastructure</div>
+                    <div
+                        style="position: absolute; bottom: 15%; left: 15%; padding: 12px 20px; background: var(--bg-surface); border: 1px solid var(--border-accent); border-radius: 12px; font-weight: 600; font-size: 0.9rem; box-shadow: var(--shadow-md);">
+                        Core API</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Architecture Recap (Updated) -->
+        <section style="margin-bottom: 120px;">
+            <div style="margin-bottom: 60px;">
+                <span class="eyebrow">The Stack</span>
+                <h2 style="font-size: 2.5rem; margin-top: 10px;">Built with Cutting-Edge Tech</h2>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 48px;">
+                <div>
+                    <h4 style="margin-bottom: 24px; color: var(--text-main); font-size: 1.2rem;">Frontend</h4>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <span class="tech-pill"><i class="fab fa-react"></i> React 19 & TypeScript 5.8</span>
+                        <span class="tech-pill"><i class="fas fa-bolt"></i> Vite 7.1 Build System</span>
+                        <span class="tech-pill"><i class="fas fa-shield-alt"></i> JWT & Secure Session Mgmt</span>
+                        <span class="tech-pill"><i class="fas fa-satellite-dish"></i> WebRTC (Custom Peer Logic)</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 24px; color: var(--text-main); font-size: 1.2rem;">Backend</h4>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <span class="tech-pill"><i class="fas fa-code"></i> .NET 9 & ASP.NET Core</span>
+                        <span class="tech-pill"><i class="fas fa-broadcast-tower"></i> SignalR 9.0 (WebSockets)</span>
+                        <span class="tech-pill"><i class="fas fa-database"></i> PostgreSQL & EFC Core</span>
+                        <span class="tech-pill"><i class="fas fa-bolt"></i> Redis Backplane & Cache</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 24px; color: var(--text-main); font-size: 1.2rem;">Infrastructure</h4>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <span class="tech-pill"><i class="fab fa-docker"></i> Docker & Docker Compose</span>
+                        <span class="tech-pill"><i class="fas fa-cloud"></i> Cloudflare Tunnel</span>
+                        <span class="tech-pill"><i class="fas fa-lock"></i> SSL Certificate Management</span>
+                        <span class="tech-pill"><i class="fab fa-python"></i> FastAPI AI Worker</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Roadmap -->
+        <section style="margin-bottom: 120px;">
+            <div style="text-align: center; margin-bottom: 80px;">
+                <span class="eyebrow">Project Status</span>
+                <h2 style="font-size: 2.5rem; margin-top: 10px;">Feature Matrix & Roadmap</h2>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+                <!-- Completed -->
+                <div class="bento-item">
+                    <h4
+                        style="margin-bottom: 24px; color: var(--green); display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-check-circle"></i> Production Ready
+                    </h4>
+                    <ul style="display: flex; flex-direction: column; gap: 16px;">
+                        <li
+                            style="display: flex; align-items: center; gap: 12px; font-size: 0.95rem; color: var(--text-secondary);">
+                            <i class="fas fa-check" style="color: var(--green); font-size: 0.8rem;"></i> JWT Auth & Room
+                            Mgmt
+                        </li>
+                        <li
+                            style="display: flex; align-items: center; gap: 12px; font-size: 0.95rem; color: var(--text-secondary);">
+                            <i class="fas fa-check" style="color: var(--green); font-size: 0.8rem;"></i> WebRTC
+                            Signaling Server
+                        </li>
+                        <li
+                            style="display: flex; align-items: center; gap: 12px; font-size: 0.95rem; color: var(--text-secondary);">
+                            <i class="fas fa-check" style="color: var(--green); font-size: 0.8rem;"></i> HD 1-on-1
+                            Video/Audio
+                        </li>
+                        <li
+                            style="display: flex; align-items: center; gap: 12px; font-size: 0.95rem; color: var(--text-secondary);">
+                            <i class="fas fa-check" style="color: var(--green); font-size: 0.8rem;"></i> Real-time
+                            In-Room Chat
+                        </li>
+                    </ul>
+                </div>
+                <!-- In Progress -->
+                <div class="bento-item">
+                    <h4
+                        style="margin-bottom: 24px; color: var(--accent-primary); display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-sync" class="fa-spin"></i> Active Development
+                    </h4>
+                    <ul style="display: flex; flex-direction: column; gap: 16px;">
+                        <li
+                            style="display: flex; align-items: center; gap: 12px; font-size: 0.95rem; color: var(--text-secondary);">
+                            <i class="fas fa-spinner" style="color: var(--accent-primary); font-size: 0.8rem;"></i>
+                            Advanced Screen Sharing
+                        </li>
+                        <li
+                            style="display: flex; align-items: center; gap: 12px; font-size: 0.95rem; color: var(--text-secondary);">
+                            <i class="fas fa-spinner" style="color: var(--accent-primary); font-size: 0.8rem;"></i> AI
+                            Summarization Tuning
+                        </li>
+                        <li
+                            style="display: flex; align-items: center; gap: 12px; font-size: 0.95rem; color: var(--text-secondary);">
+                            <i class="fas fa-spinner" style="color: var(--accent-primary); font-size: 0.8rem;"></i>
+                            Email Verification System
+                        </li>
+                    </ul>
+                </div>
+                <!-- Future -->
+                <div class="bento-item">
+                    <h4
+                        style="margin-bottom: 24px; color: var(--text-muted); display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-forward"></i> Upcoming Vision
+                    </h4>
+                    <ul style="display: flex; flex-direction: column; gap: 16px;">
+                        <li
+                            style="display: flex; align-items: center; gap: 12px; font-size: 0.95rem; color: var(--text-muted);">
+                            <i class="far fa-circle" style="font-size: 0.8rem;"></i> Virtual Whiteboard Sync
+                        </li>
+                        <li
+                            style="display: flex; align-items: center; gap: 12px; font-size: 0.95rem; color: var(--text-muted);">
+                            <i class="far fa-circle" style="font-size: 0.8rem;"></i> Group Video Conferences
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Developer Experience: Setup & SSL -->
+        <section class="bento-item" style="padding: 60px; background: #0A0A0A; color: white;">
+            <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; align-items: center;">
+                <div>
+                    <span class="ai-badge"
+                        style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: #FFF;">
+                        Engineering Depth
+                    </span>
+                    <h3 style="font-size: 2.2rem; color: white; margin-bottom: 24px;">Rigorous Local Environment</h3>
+                    <p style="color: #AAA; line-height: 1.8; margin-bottom: 32px;">
+                        To provide a production-grade experience even in development, VidSync utilizes a complex
+                        automated setup including <strong>Self-Signed SSL Certificates</strong> (.pfx/.pem),
+                        <strong>Docker Compose</strong> for 5+ services, and <strong>Cloudflare Tunnels</strong> for
+                        secure exposure.
+                    </p>
+                    <div
+                        style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; padding: 20px; font-family: monospace; font-size: 0.85rem; color: #888;">
+                        $ dotnet dev-certs https -ep ./localhost.pfx -p PASSWORD<br>
+                        $ docker-compose up --build
+                    </div>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 24px;">
+                    <div style="padding: 24px; border-radius: 16px; background: rgba(255,255,255,0.05);">
+                        <h5 style="color: white; margin-bottom: 8px;">WebRTC Requirements</h5>
+                        <p style="font-size: 0.85rem; color: #888;">WebRTC requires an HTTPS context. VidSync automates
+                            cert generation and synchronization between Backend and Frontend containers.</p>
+                    </div>
+                    <div style="padding: 24px; border-radius: 16px; background: rgba(255,255,255,0.05);">
+                        <h5 style="color: white; margin-bottom: 8px;">Multi-Stage Docker</h5>
+                        <p style="font-size: 0.85rem; color: #888;">Optimized production images using multi-stage builds
+                            for minimal footprint and maximum security.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <!-- Footer -->
-    <footer style="border-top: 1px solid var(--border-subtle); padding: 40px 0; margin-top: 40px;">
-        <div class="container" style="text-align: center;">
-            <p style="color: var(--text-muted);">© 2025 Enes Efe Tokta. Built with modern web technologies.</p>
-            <div style="margin-top: 20px; display: flex; justify-content: center; gap: 20px;">
-                <a href="https://github.com/EnesEfeTokta" target="_blank" aria-label="GitHub"
-                    style="font-size: 1.5rem; color: var(--text-secondary); transition: color 0.2s;"><i
-                        class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank" aria-label="LinkedIn"
-                    style="font-size: 1.5rem; color: var(--text-secondary); transition: color 0.2s;"><i
-                        class="fab fa-linkedin"></i></a>
-                <a href="https://medium.com/@EnesEfeTokta" target="_blank" aria-label="Medium"
-                    style="font-size: 1.5rem; color: var(--text-secondary); transition: color 0.2s;"><i
-                        class="fab fa-medium"></i></a>
-                <a href="https://x.com/EnesEfeTokta" target="_blank" aria-label="X (Twitter)"
-                    style="font-size: 1.5rem; color: var(--text-secondary); transition: color 0.2s;"><i
-                        class="fab fa-twitter"></i></a>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div>
+                    <span class="footer-logo">Enes Efe Tokta</span>
+                    <p class="footer-tagline">
+                        Software Developer · .NET &amp; Unity · Based in Turkey.<br>
+                        Open to remote opportunities worldwide.
+                    </p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/EnesEfeTokta" target="_blank" aria-label="GitHub"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank"
+                        aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://medium.com/@EnesEfeTokta" target="_blank" aria-label="Medium"><i
+                            class="fab fa-medium"></i></a>
+                    <a href="https://x.com/EnesEfeTokta" target="_blank" aria-label="X / Twitter"><i
+                            class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Enes Efe Tokta. Built with modern web technologies.</p>
+                <div class="footer-links">
+                    <a href="../../../pages/biography.html">Biography</a>
+                    <a href="../../../blog/index.html">Blog</a>
+                    <a href="../../../pages/cv.html">Resume</a>
+                    <a href="../../../index.html#contact">Contact</a>
+                </div>
             </div>
         </div>
     </footer>

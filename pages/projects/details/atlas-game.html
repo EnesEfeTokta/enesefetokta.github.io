@@ -12,7 +12,9 @@
     <link rel="stylesheet" href="../../../assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@700;900&family=JetBrains+Mono:wght@400;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
@@ -39,446 +41,287 @@
         </div>
     </nav>
 
-    <section class="section-padding" style="padding-top: 120px;">
-        <div class="container" style="max-width: 1100px;">
+    <style>
+        .atlas-hero {
+            position: relative;
+            padding: 160px 0 100px;
+            background: linear-gradient(rgba(10, 11, 14, 0.8), rgba(10, 11, 14, 0.95)), url('../../../assets/images/AtlasGameImages/atlas_game_banner.png');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 1px solid var(--border-subtle);
+        }
 
-            <!-- Header -->
-            <div style="margin-bottom: 60px;">
+        .faction-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .faction-item {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            padding: 32px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .faction-item:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-5px);
+        }
+
+        .faction-icon {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 24px;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
+        }
+
+        .mission-box {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(139, 92, 246, 0.05));
+            border: 1px solid var(--border-subtle);
+            padding: 40px;
+            border-radius: 24px;
+            margin-bottom: 60px;
+        }
+
+        .tech-log {
+            font-family: 'JetBrains Mono', monospace;
+            background: #0D1117;
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid var(--border-subtle);
+            color: #88a0b0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .game-header {
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .tactical-label {
+            display: inline-block;
+            padding: 6px 14px;
+            background: rgba(0, 242, 255, 0.1);
+            color: #00f2ff;
+            border: 1px solid rgba(0, 242, 255, 0.2);
+            border-radius: 6px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            margin-bottom: 16px;
+        }
+    </style>
+
+    <!-- Hero -->
+    <header class="atlas-hero">
+        <div class="container">
+            <div style="max-width: 800px;">
                 <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
                     <a href="../../projects.html"
-                        style="color: var(--text-secondary); font-size: 0.9rem; display: flex; align-items: center; gap: 8px; transition: color 0.2s;">
+                        style="color: var(--text-inverse); opacity: 0.8; font-size: 0.9rem; display: flex; align-items: center; gap: 8px;">
                         <i class="fas fa-arrow-left"></i> Back to Projects
                     </a>
                 </div>
-                <h1 style="font-size: 3rem; margin-bottom: 24px; line-height: 1.1; font-weight: 700;">Atlas</h1>
+                <h1 class="game-header"
+                    style="font-size: clamp(3rem, 8vw, 5rem); margin-bottom: 24px; line-height: 1.1; color: var(--text-inverse);">
+                    ATLAS</h1>
                 <p
-                    style="font-size: 1.2rem; color: var(--text-secondary); max-width: 800px; margin-bottom: 32px; line-height: 1.7;">
-                    A multiplayer sci-fi strategy game where two players compete to dominate a planet through strategic
-                    base building and tactical warfare
+                    style="font-size: 1.25rem; color: var(--text-inverse); opacity: 0.9; margin-bottom: 40px; line-height: 1.7;">
+                    A high-stakes multiplayer strategy game set on Mars. Built with Unity and Photon Fusion for
+                    real-time competitive warfare.
                 </p>
-                <div class="skill-tags" style="margin-bottom: 24px;">
-                    <span class="skill-tag">Unity 3D</span>
-                    <span class="skill-tag">C#</span>
-                    <span class="skill-tag">Photon Fusion</span>
-                    <span class="skill-tag">Multiplayer</span>
-                    <span class="skill-tag">Low Poly</span>
-                    <span class="skill-tag">Strategy</span>
+                <div class="skill-tags">
+                    <span class="skill-tag"
+                        style="background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2);">Unity
+                        3D</span>
+                    <span class="skill-tag"
+                        style="background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2);">C#</span>
+                    <span class="skill-tag"
+                        style="background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2);">Photon
+                        Fusion</span>
+                    <span class="skill-tag"
+                        style="background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2);">Multiplayer</span>
                 </div>
-                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                    <a href="https://github.com/EnesEfeTokta/Atlas" target="_blank" class="btn">
-                        <i class="fab fa-github"></i> View Repository
-                    </a>
-                </div>
-            </div>
-
-            <!-- Content -->
-            <div style="display: flex; flex-direction: column; gap: 48px;">
-
-                <!-- Hero Image -->
-                <section class="bento-item" style="padding: 0; overflow: hidden;">
-                    <img src="../../../assets/images/AtlasGameImages/atlas_game_banner.png" alt="Atlas Game Banner"
-                        style="width: 100%; display: block; border-radius: 12px;">
-                </section>
-
-                <!-- Overview -->
-                <section class="bento-item">
-                    <h2
-                        style="font-size: 1.75rem; margin-bottom: 24px; color: var(--text-main); font-weight: 600; display: flex; align-items: center; gap: 12px;">
-                        <i class="fas fa-globe" style="color: var(--accent-primary); font-size: 1.5rem;"></i>
-                        Game Overview
-                    </h2>
-                    <p style="font-size: 1.05rem; line-height: 1.9; margin-bottom: 20px; color: var(--text-secondary);">
-                        Atlas is an <strong>online multiplayer strategy game</strong> built with <strong>Photon
-                            Fusion</strong> where two players land on a planet and compete for dominance. Players
-                        construct towers, produce military units, and engage in strategic combat to destroy their
-                        opponent's main base.
-                    </p>
-                    <p style="font-size: 1.05rem; line-height: 1.9; color: var(--text-secondary);">
-                        The game features a <strong>sci-fi theme with low poly aesthetics</strong>, creating an
-                        immersive yet performance-friendly multiplayer experience. With real-time networking and
-                        strategic depth, Atlas delivers intense competitive gameplay.
-                    </p>
-                </section>
-
-                <!-- Faction System -->
-                <section class="bento-item">
-                    <h2
-                        style="font-size: 1.75rem; margin-bottom: 32px; color: var(--text-main); font-weight: 600; display: flex; align-items: center; gap: 12px;">
-                        <i class="fas fa-users" style="color: var(--accent-secondary); font-size: 1.5rem;"></i>
-                        Four Unique Factions
-                    </h2>
-                    <p style="font-size: 1.05rem; line-height: 1.9; margin-bottom: 32px; color: var(--text-secondary);">
-                        Each faction has distinctive characteristics, units, and playstyles that offer different
-                        strategic approaches:
-                    </p>
-
-                    <!-- Factions Grid -->
-                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-
-                        <!-- SOLGUARD -->
-                        <div
-                            style="background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 24px; transition: transform 0.2s, border-color 0.2s;">
-                            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
-                                <div
-                                    style="width: 60px; height: 60px; background: rgba(59, 130, 246, 0.1); border: 2px dashed #3b82f6; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-                                    <img src="../../../assets/images/AtlasGameImages/SolguardIcon.png" alt="Solguard"
-                                        style="width: 60px; height: 60px;">
-                                </div>
-                                <h3 style="font-size: 1.3rem; font-weight: 700; color: #3b82f6; margin: 0;">SOLGUARD
-                                </h3>
-                            </div>
-                            <p style="color: var(--text-secondary); line-height: 1.7; margin: 0;">
-                                Defensive specialists with enhanced energy towers and superior base fortifications.
-                            </p>
-                        </div>
-
-                        <!-- SILASYS -->
-                        <div
-                            style="background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 24px; transition: transform 0.2s, border-color 0.2s;">
-                            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
-                                <div
-                                    style="width: 60px; height: 60px; background: rgba(139, 92, 246, 0.1); border: 2px dashed #10b981; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-                                    <img src="../../../assets/images/AtlasGameImages/SilasysIcon.png" alt="Silasys"
-                                        style="width: 60px; height: 60px;">
-                                </div>
-                                <h3 style="font-size: 1.3rem; font-weight: 700; color: #10b981; margin: 0;">SILASYS</h3>
-                            </div>
-                            <p style="color: var(--text-secondary); line-height: 1.7; margin: 0;">
-                                Technology-focused faction with advanced air units and precision weaponry.
-                            </p>
-                        </div>
-
-                        <!-- FLORIA -->
-                        <div
-                            style="background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 24px; transition: transform 0.2s, border-color 0.2s;">
-                            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
-                                <div
-                                    style="width: 60px; height: 60px; background: rgba(16, 185, 129, 0.1); border: 2px dashed #8b5cf6; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-                                    <img src="../../../assets/images/AtlasGameImages/FloriaIcon.png" alt="Floria"
-                                        style="width: 60px; height: 60px;">
-                                </div>
-                                <h3 style="font-size: 1.3rem; font-weight: 700; color: #8b5cf6; margin: 0;">FLORIA</h3>
-                            </div>
-                            <p style="color: var(--text-secondary); line-height: 1.7; margin: 0;">
-                                Nature-aligned faction with unique regenerative abilities and organic unit production.
-                            </p>
-                        </div>
-
-                        <!-- PYROCLAST -->
-                        <div
-                            style="background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 24px; transition: transform 0.2s, border-color 0.2s;">
-                            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
-                                <div
-                                    style="width: 60px; height: 60px; background: rgba(245, 158, 11, 0.1); border: 2px dashed #f59e0b; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-                                    <img src="../../../assets/images/AtlasGameImages/PyroclastIcon.png" alt="Pyroclast"
-                                        style="width: 60px; height: 60px;">
-                                </div>
-                                <h3 style="font-size: 1.3rem; font-weight: 700; color: #f59e0b; margin: 0;">PYROCLAST
-                                </h3>
-                            </div>
-                            <p style="color: var(--text-secondary); line-height: 1.7; margin: 0;">
-                                Aggressive faction specializing in heavy ground vehicles and explosive firepower.
-                            </p>
-                        </div>
-
-                    </div>
-                </section>
-
-                <!-- Buildings & Units -->
-                <section class="bento-item">
-                    <h2
-                        style="font-size: 1.75rem; margin-bottom: 32px; color: var(--text-main); font-weight: 600; display: flex; align-items: center; gap: 12px;">
-                        <i class="fas fa-building" style="color: var(--accent-primary); font-size: 1.5rem;"></i>
-                        Strategic Buildings & Military Units
-                    </h2>
-
-                    <h3 style="font-size: 1.3rem; margin-bottom: 20px; color: var(--text-main); font-weight: 600;">
-                        Buildings
-                    </h3>
-                    <ul class="feature-grid" style="margin-bottom: 32px;">
-                        <li class="feature-item">
-                            <i class="fas fa-bolt feature-icon"></i>
-                            <div>
-                                <strong>Energy Towers</strong>
-                                <p>Generate resources needed for unit production and base operations.</p>
-                            </div>
-                        </li>
-                        <li class="feature-item">
-                            <i class="fas fa-warehouse feature-icon"></i>
-                            <div>
-                                <strong>Hangars</strong>
-                                <p>Production facilities for both air and ground military units.</p>
-                            </div>
-                        </li>
-                        <li class="feature-item">
-                            <i class="fas fa-home feature-icon"></i>
-                            <div>
-                                <strong>Main Base</strong>
-                                <p>The core structure - destroy the enemy's main base to win the match.</p>
-                            </div>
-                        </li>
-                    </ul>
-
-                    <h3 style="font-size: 1.3rem; margin-bottom: 20px; color: var(--text-main); font-weight: 600;">
-                        Military Units
-                    </h3>
-                    <ul class="feature-grid">
-                        <li class="feature-item">
-                            <i class="fas fa-fighter-jet feature-icon"></i>
-                            <div>
-                                <strong>Air Units</strong>
-                                <p>Fast-moving aircraft for quick strikes and reconnaissance missions.</p>
-                            </div>
-                        </li>
-                        <li class="feature-item">
-                            <i class="fas fa-tank feature-icon"></i>
-                            <div>
-                                <strong>Ground Units</strong>
-                                <p>Heavy armored vehicles with powerful weapons for direct assaults.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </section>
-
-                <!-- Technical Features -->
-                <section class="bento-item">
-                    <h2
-                        style="font-size: 1.75rem; margin-bottom: 32px; color: var(--text-main); font-weight: 600; display: flex; align-items: center; gap: 12px;">
-                        <i class="fas fa-cogs" style="color: var(--accent-secondary); font-size: 1.5rem;"></i>
-                        Technical Features
-                    </h2>
-                    <ul class="feature-grid">
-                        <li class="feature-item">
-                            <i class="fas fa-network-wired feature-icon"></i>
-                            <div>
-                                <strong>Photon Fusion Networking</strong>
-                                <p>Server-authoritative multiplayer with smooth prediction and lag compensation.</p>
-                            </div>
-                        </li>
-                        <li class="feature-item">
-                            <i class="fas fa-cubes feature-icon"></i>
-                            <div>
-                                <strong>Low Poly Optimization</strong>
-                                <p>Stylized graphics that maintain high performance in multiplayer scenarios.</p>
-                            </div>
-                        </li>
-                        <li class="feature-item">
-                            <i class="fas fa-chess feature-icon"></i>
-                            <div>
-                                <strong>Strategic Depth</strong>
-                                <p>Resource management, base building, and tactical unit control systems.</p>
-                            </div>
-                        </li>
-                        <li class="feature-item">
-                            <i class="fas fa-sync feature-icon"></i>
-                            <div>
-                                <strong>Real-time Synchronization</strong>
-                                <p>Seamless state synchronization for buildings, units, and combat actions.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </section>
-
-                <!-- Gameplay Loop -->
-                <section class="bento-item">
-                    <h2
-                        style="font-size: 1.75rem; margin-bottom: 24px; color: var(--text-main); font-weight: 600; display: flex; align-items: center; gap: 12px;">
-                        <i class="fas fa-gamepad" style="color: var(--accent-primary); font-size: 1.5rem;"></i>
-                        Core Gameplay Loop
-                    </h2>
-                    <div style="overflow-x: auto;">
-                        <ol style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 16px;">
-                            <li style="display: flex; align-items: flex-start; gap: 16px;">
-                                <div
-                                    style="min-width: 40px; height: 40px; background: var(--accent-primary); color: var(--bg-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem;">
-                                    1</div>
-                                <div>
-                                    <strong style="color: var(--text-main); font-size: 1.05rem;">Land on Planet</strong>
-                                    <p style="color: var(--text-secondary); margin-top: 4px;">Both players arrive on an
-                                        unexplored planet and choose their faction.</p>
-                                </div>
-                            </li>
-                            <li style="display: flex; align-items: flex-start; gap: 16px;">
-                                <div
-                                    style="min-width: 40px; height: 40px; background: var(--accent-primary); color: var(--bg-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem;">
-                                    2</div>
-                                <div>
-                                    <strong style="color: var(--text-main); font-size: 1.05rem;">Build
-                                        Infrastructure</strong>
-                                    <p style="color: var(--text-secondary); margin-top: 4px;">Construct energy towers to
-                                        generate resources for expansion.</p>
-                                </div>
-                            </li>
-                            <li style="display: flex; align-items: flex-start; gap: 16px;">
-                                <div
-                                    style="min-width: 40px; height: 40px; background: var(--accent-primary); color: var(--bg-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem;">
-                                    3</div>
-                                <div>
-                                    <strong style="color: var(--text-main); font-size: 1.05rem;">Produce Military
-                                        Units</strong>
-                                    <p style="color: var(--text-secondary); margin-top: 4px;">Build hangars and train
-                                        air and ground forces for attack and defense.</p>
-                                </div>
-                            </li>
-                            <li style="display: flex; align-items: flex-start; gap: 16px;">
-                                <div
-                                    style="min-width: 40px; height: 40px; background: var(--accent-primary); color: var(--bg-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem;">
-                                    4</div>
-                                <div>
-                                    <strong style="color: var(--text-main); font-size: 1.05rem;">Strategic
-                                        Warfare</strong>
-                                    <p style="color: var(--text-secondary); margin-top: 4px;">Execute coordinated
-                                        attacks while defending your base from enemy assaults.</p>
-                                </div>
-                            </li>
-                            <li style="display: flex; align-items: flex-start; gap: 16px;">
-                                <div
-                                    style="min-width: 40px; height: 40px; background: var(--accent-secondary); color: var(--bg-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem;">
-                                    5</div>
-                                <div>
-                                    <strong style="color: var(--text-main); font-size: 1.05rem;">Victory</strong>
-                                    <p style="color: var(--text-secondary); margin-top: 4px;">Destroy the enemy's main
-                                        base to claim the planet and win the match!</p>
-                                </div>
-                            </li>
-                        </ol>
-                    </div>
-                </section>
-
-                <!-- Game Screenshots -->
-                <section class="bento-item">
-                    <h2
-                        style="font-size: 1.75rem; margin-bottom: 32px; color: var(--text-main); font-weight: 600; display: flex; align-items: center; gap: 12px;">
-                        <i class="fas fa-images" style="color: var(--accent-primary); font-size: 1.5rem;"></i>
-                        Game Screenshots
-                    </h2>
-                    <p style="font-size: 1.05rem; line-height: 1.9; margin-bottom: 32px; color: var(--text-secondary);">
-                        Explore Atlas through in-game screenshots showcasing the sci-fi environments, faction
-                        aesthetics, and strategic gameplay.
-                    </p>
-
-                    <!-- Screenshot Grid -->
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-
-                        <!-- Screenshot 1 -->
-                        <div
-                            style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-subtle); background: var(--bg-card); transition: transform 0.3s ease, border-color 0.3s ease;">
-                            <img src="https://raw.githubusercontent.com/EnesEfeTokta/Atlas/main/Screenshots/MainMenu.png"
-                                alt="Atlas Screenshot 1"
-                                style="width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover;">
-                        </div>
-
-                        <!-- Screenshot 2 -->
-                        <div
-                            style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-subtle); background: var(--bg-card); transition: transform 0.3s ease, border-color 0.3s ease;">
-                            <img src="https://raw.githubusercontent.com/EnesEfeTokta/Atlas/main/Screenshots/Area.png"
-                                alt="Atlas Screenshot 2"
-                                style="width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover;">
-                        </div>
-
-                        <!-- Screenshot 3 -->
-                        <div
-                            style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-subtle); background: var(--bg-card); transition: transform 0.3s ease, border-color 0.3s ease;">
-                            <img src="https://raw.githubusercontent.com/EnesEfeTokta/Atlas/main/Screenshots/MainMenuSettings1.png"
-                                alt="Atlas Screenshot 3"
-                                style="width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover;">
-                        </div>
-
-                        <!-- Screenshot 4 -->
-                        <div
-                            style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-subtle); background: var(--bg-card); transition: transform 0.3s ease, border-color 0.3s ease;">
-                            <img src="https://raw.githubusercontent.com/EnesEfeTokta/Atlas/main/Screenshots/MainMenuSettings2.png"
-                                alt="Atlas Screenshot 4"
-                                style="width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover;">
-                        </div>
-
-                        <!-- Screenshot 5 -->
-                        <div
-                            style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-subtle); background: var(--bg-card); transition: transform 0.3s ease, border-color 0.3s ease;">
-                            <img src="https://raw.githubusercontent.com/EnesEfeTokta/Atlas/main/Screenshots/Planet.png"
-                                alt="Atlas Screenshot 5"
-                                style="width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover;">
-                        </div>
-
-                        <!-- Screenshot 6 -->
-                        <div
-                            style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-subtle); background: var(--bg-card); transition: transform 0.3s ease, border-color 0.3s ease;">
-                            <img src="https://raw.githubusercontent.com/EnesEfeTokta/Atlas/main/Screenshots/GameScene1.png"
-                                alt="Atlas Screenshot 6"
-                                style="width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover;">
-                        </div>
-
-                        <!-- Screenshot 7 -->
-                        <div
-                            style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-subtle); background: var(--bg-card); transition: transform 0.3s ease, border-color 0.3s ease;">
-                            <img src="https://raw.githubusercontent.com/EnesEfeTokta/Atlas/main/Screenshots/GameScene2.png"
-                                alt="Atlas Screenshot 7"
-                                style="width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover;">
-                        </div>
-
-                        <!-- Screenshot 8 -->
-                        <div
-                            style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-subtle); background: var(--bg-card); transition: transform 0.3s ease, border-color 0.3s ease;">
-                            <img src="https://raw.githubusercontent.com/EnesEfeTokta/Atlas/main/Screenshots/GameScene3.png"
-                                alt="Atlas Screenshot 8"
-                                style="width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover;">
-                        </div>
-
-                        <!-- Screenshot 9 -->
-                        <div
-                            style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-subtle); background: var(--bg-card); transition: transform 0.3s ease, border-color 0.3s ease;">
-                            <img src="https://raw.githubusercontent.com/EnesEfeTokta/Atlas/main/Screenshots/GameScene4.png"
-                                alt="Atlas Screenshot 8"
-                                style="width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover;">
-                        </div>
-
-                        <!-- Screenshot 10 -->
-                        <div
-                            style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-subtle); background: var(--bg-card); transition: transform 0.3s ease, border-color 0.3s ease;">
-                            <img src="https://raw.githubusercontent.com/EnesEfeTokta/Atlas/main/Screenshots/GameScene5.png"
-                                alt="Atlas Screenshot 8"
-                                style="width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover;">
-                        </div>
-
-                        <!-- Screenshot 11 -->
-                        <div
-                            style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-subtle); background: var(--bg-card); transition: transform 0.3s ease, border-color 0.3s ease;">
-                            <img src="https://raw.githubusercontent.com/EnesEfeTokta/Atlas/main/Screenshots/GameScene6.png"
-                                alt="Atlas Screenshot 8"
-                                style="width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover;">
-                        </div>
-
-                        <!-- Screenshot 12 -->
-                        <div
-                            style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-subtle); background: var(--bg-card); transition: transform 0.3s ease, border-color 0.3s ease;">
-                            <img src="https://raw.githubusercontent.com/EnesEfeTokta/Atlas/main/Screenshots/GameScene7.png"
-                                alt="Atlas Screenshot 8"
-                                style="width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover;">
-                        </div>
-                    </div>
-                </section>
-
             </div>
         </div>
-    </section>
+    </header>
+
+    <main class="container" style="max-width: 1100px; padding-top: 80px;">
+
+        <!-- The Mission -->
+        <section style="margin-bottom: 100px;">
+            <div class="mission-box">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+                    <div>
+                        <span class="tactical-label">PRIORITY ALPHA: MISSION_LOG</span>
+                        <h2 style="font-size: 2.5rem; margin-bottom: 24px;">Conquer the Martian Crust</h2>
+                        <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 24px;">
+                            Atlas challenges two commanders to land, build, and destroy. Unlike traditional RTS games,
+                            Atlas focuses on a streamlined, high-speed economic loop and intense unit-to-unit
+                            synchronization.
+                        </p>
+                        <div style="display: flex; gap: 24px;">
+                            <div>
+                                <span
+                                    style="display: block; font-size: 1.5rem; font-weight: 800; color: var(--accent-primary);">1vs1</span>
+                                <label
+                                    style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Matchmaking</label>
+                            </div>
+                            <div style="width: 1px; background: var(--border-subtle);"></div>
+                            <div>
+                                <span
+                                    style="display: block; font-size: 1.5rem; font-weight: 800; color: var(--accent-primary);">60
+                                    FPS</span>
+                                <label
+                                    style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Sync
+                                    Rate</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="border-radius: 20px; overflow: hidden; border: 1px solid var(--border-subtle);">
+                        <img src="../../../assets/images/AtlasGameImages/atlas_game_banner.png" alt="Mission Scene"
+                            style="width: 100%;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Factions -->
+        <section style="margin-bottom: 120px;">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <span class="eyebrow">Intel Report</span>
+                <h2 style="font-size: 2.5rem; margin-top: 10px;">The Four Factions</h2>
+            </div>
+            <div class="faction-grid">
+                <div class="faction-item">
+                    <img src="../../../assets/images/AtlasGameImages/SolguardIcon.png" alt="Solguard"
+                        class="faction-icon">
+                    <h3 style="color: #3b82f6; font-family: 'Orbitron';">SOLGUARD</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">Defensive
+                        specialists. Features enhanced energy towers and superior base fortifications for long-term
+                        endurance.</p>
+                </div>
+                <div class="faction-item">
+                    <img src="../../../assets/images/AtlasGameImages/SilasysIcon.png" alt="Silasys"
+                        class="faction-icon">
+                    <h3 style="color: #10b981; font-family: 'Orbitron';">SILASYS</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">Technology-focused.
+                        Advanced aviation units and precision electromagnetic weaponry for surgical strikes.</p>
+                </div>
+                <div class="faction-item">
+                    <img src="../../../assets/images/AtlasGameImages/FloriaIcon.png" alt="Floria" class="faction-icon">
+                    <h3 style="color: #8b5cf6; font-family: 'Orbitron';">FLORIA</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">Nature-aligned.
+                        Utilizes regenerative hull technologies and organic unit production cycles.</p>
+                </div>
+                <div class="faction-item">
+                    <img src="../../../assets/images/AtlasGameImages/PyroclastIcon.png" alt="Pyroclast"
+                        class="faction-icon">
+                    <h3 style="color: #f59e0b; font-family: 'Orbitron';">PYROCLAST</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">Aggressive ground
+                        forces. Specializes in heavy armored vehicles and high-heat combustible weaponry.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mechanics -->
+        <section style="margin-bottom: 120px;">
+            <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <img src="https://raw.githubusercontent.com/EnesEfeTokta/Atlas/main/Screenshots/Area.png" alt="Area"
+                        style="width: 100%; border-radius: 12px; border: 1px solid var(--border-subtle);">
+                    <img src="https://raw.githubusercontent.com/EnesEfeTokta/Atlas/main/Screenshots/Planet.png"
+                        alt="Planet" style="width: 100%; border-radius: 12px; border: 1px solid var(--border-subtle);">
+                    <img src="https://raw.githubusercontent.com/EnesEfeTokta/Atlas/main/Screenshots/GameScene1.png"
+                        alt="Scene 1"
+                        style="width: 100%; border-radius: 12px; border: 1px solid var(--border-subtle); grid-column: span 2;">
+                </div>
+                <div>
+                    <span class="eyebrow">Tactical Ops</span>
+                    <h2 style="font-size: 2.2rem; margin-top: 10px; margin-bottom: 24px;">Core Mechanics</h2>
+                    <div style="display: flex; flex-direction: column; gap: 30px;">
+                        <div style="display: flex; gap: 20px;">
+                            <div
+                                style="width: 50px; height: 50px; background: var(--bg-muted); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--accent-primary);">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 8px;">Energy Economy</h4>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem;">Buildings and units require
+                                    constant energy. Destroying energy towers is as vital as destroying the base.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 20px;">
+                            <div
+                                style="width: 50px; height: 50px; background: var(--bg-muted); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--accent-secondary);">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 8px;">Fusion Synchronization</h4>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem;">Server-authoritative
+                                    movement with client-side prediction ensures lag-free combat across different
+                                    regions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical -->
+        <section style="margin-bottom: 120px;">
+            <div class="bento-item">
+                <h2 style="font-size: 1.75rem; margin-bottom: 32px; display: flex; align-items: center; gap: 12px;">
+                    <i class="fas fa-terminal" style="color: var(--accent-primary);"></i>
+                    Engineering Log
+                </h2>
+                <div class="tech-log">
+                    <p>> initializing_atlas_protocol.exe...</p>
+                    <p>> connection_to_photon_cloud: STABLE</p>
+                    <p>> tick_rate: 60Hz (Interpolated)</p>
+                    <p>> physics: Client-Predicted, Server-Validated</p>
+                    <p>> [LOG] Atlas represents a leap in state synchronization for RTS mobile-responsive desktop games.
+                        Built on a modular C# foundation with scriptable-object driven faction designs.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <!-- Footer -->
-    <footer style="border-top: 1px solid var(--border-subtle); padding: 40px 0; margin-top: 40px;">
-        <div class="container" style="text-align: center;">
-            <p style="color: var(--text-muted);">© 2025 Enes Efe Tokta. Built with modern web technologies.</p>
-            <div style="margin-top: 20px; display: flex; justify-content: center; gap: 20px;">
-                <a href="https://github.com/EnesEfeTokta" target="_blank" aria-label="GitHub"
-                    style="font-size: 1.5rem; color: var(--text-secondary); transition: color 0.2s;"><i
-                        class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank" aria-label="LinkedIn"
-                    style="font-size: 1.5rem; color: var(--text-secondary); transition: color 0.2s;"><i
-                        class="fab fa-linkedin"></i></a>
-                <a href="https://medium.com/@EnesEfeTokta" target="_blank" aria-label="Medium"
-                    style="font-size: 1.5rem; color: var(--text-secondary); transition: color 0.2s;"><i
-                        class="fab fa-medium"></i></a>
-                <a href="https://x.com/EnesEfeTokta" target="_blank" aria-label="X (Twitter)"
-                    style="font-size: 1.5rem; color: var(--text-secondary); transition: color 0.2s;"><i
-                        class="fab fa-twitter"></i></a>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div>
+                    <span class="footer-logo">Enes Efe Tokta</span>
+                    <p class="footer-tagline">
+                        Software Developer · .NET &amp; Unity · Based in Turkey.<br>
+                        Open to remote opportunities worldwide.
+                    </p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/EnesEfeTokta" target="_blank" aria-label="GitHub"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank"
+                        aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://medium.com/@EnesEfeTokta" target="_blank" aria-label="Medium"><i
+                            class="fab fa-medium"></i></a>
+                    <a href="https://x.com/EnesEfeTokta" target="_blank" aria-label="X / Twitter"><i
+                            class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Enes Efe Tokta. Built with modern web technologies.</p>
+                <div class="footer-links">
+                    <a href="../../../pages/biography.html">Biography</a>
+                    <a href="../../../blog/index.html">Blog</a>
+                    <a href="../../../pages/cv.html">Resume</a>
+                    <a href="../../../index.html#contact">Contact</a>
+                </div>
             </div>
         </div>
     </footer>
