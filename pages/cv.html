@@ -10,32 +10,10 @@
     <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/154990402?v=4">
 
     <!-- Primary Meta Tags -->
-    <title>Enes Efe Tokta Resume - Unity & .NET Developer CV</title>
-    <meta name="title" content="Enes Efe Tokta Resume - Unity & .NET Developer CV">
+    <title>Enes Efe Tokta Resume - Backend Developer CV</title>
+    <meta name="title" content="Enes Efe Tokta Resume - Backend Developer CV">
     <meta name="description"
-        content="Professional resume of Enes Efe Tokta - Software Developer with expertise in Unity Game Development, .NET Enterprise Solutions, C#, ASP.NET Core, and modern web technologies. View work experience, projects, and skills.">
-    <meta name="keywords"
-        content="Enes Efe Tokta CV, Enes Efe Tokta Resume, Software Developer Resume, Unity Developer CV, .NET Developer Resume, C# Developer CV">
-    <meta name="author" content="Enes Efe Tokta">
-    <meta name="robots" content="index, follow">
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://enesefetokta.shop/pages/cv.html">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="profile">
-    <meta property="og:url" content="https://enesefetokta.shop/pages/cv.html">
-    <meta property="og:title" content="Enes Efe Tokta - Professional Resume">
-    <meta property="og:description"
-        content="Professional resume of Enes Efe Tokta - Software Developer with expertise in Unity and .NET.">
-    <meta property="og:image" content="https://avatars.githubusercontent.com/u/154990402?v=4">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:url" content="https://enesefetokta.shop/pages/cv.html">
-    <meta name="twitter:title" content="Enes Efe Tokta - Resume">
-    <meta name="twitter:description" content="Professional resume - Unity & .NET Developer">
-    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/154990402?v=4">
+        content="Professional resume of Enes Efe Tokta - Backend-Oriented Software Developer specializing in .NET Core, Cloud Technologies, and distributed systems.">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../assets/css/styles.css">
@@ -45,63 +23,126 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        /* Specific CV Styles */
-        .cv-header {
+        /* Modern CV Split Layout */
+        .cv-grid {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 48px;
+            margin-top: 40px;
+        }
+
+        .cv-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .cv-main {
+            display: flex;
+            flex-direction: column;
+            gap: 56px;
+        }
+
+        .cv-section-title {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-primary);
+            margin-bottom: 24px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
             display: flex;
             align-items: center;
-            gap: 40px;
-            margin-bottom: 60px;
+            gap: 12px;
         }
 
-        .cv-avatar {
-            width: 150px;
-            height: 150px;
-            border-radius: var(--radius-lg);
-            border: 2px solid var(--border-subtle);
+        .cv-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.25s var(--ease);
         }
 
-        .cv-section {
-            margin-bottom: 60px;
+        .cv-card:hover {
+            border-color: var(--border-accent);
+            box-shadow: var(--shadow-md);
         }
 
-        .cv-section h2 {
-            font-size: 1.5rem;
-            border-bottom: 1px solid var(--border-subtle);
-            padding-bottom: 16px;
-            margin-bottom: 32px;
-            color: var(--accent-primary);
-        }
-
-        .cv-item {
-            margin-bottom: 32px;
-        }
-
-        .cv-item-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 8px;
-            flex-wrap: wrap;
-        }
-
-        .cv-item h3 {
-            font-size: 1.25rem;
+        .cv-item-title {
+            font-size: 1.2rem;
+            margin-bottom: 6px;
             color: var(--text-main);
         }
 
-        .cv-item-meta {
+        .cv-item-subtitle {
+            font-size: 0.95rem;
+            color: var(--accent-primary);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .cv-item-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .cv-item-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .cv-item-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
             color: var(--text-secondary);
             font-size: 0.95rem;
+            line-height: 1.6;
         }
 
-        .cv-item ul {
-            list-style: disc;
-            padding-left: 20px;
-            color: var(--text-muted);
-            margin-top: 12px;
+        .cv-item-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+            font-weight: 700;
         }
 
-        .cv-item ul li {
-            margin-bottom: 8px;
+        /* Sidebar Specifics */
+        .sidebar-group {
+            margin-bottom: 32px;
+        }
+
+        .sidebar-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-main);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .sidebar-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .sidebar-skill {
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            background: var(--bg-muted);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 900px) {
+            .cv-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -111,163 +152,262 @@
     <nav class="navbar">
         <div class="container">
             <a href="../index.html" class="logo">Enes Efe Tokta</a>
-            <ul class="nav-links">
-                <li><a href="../index.html#about">About</a></li>
-                <li><a href="../pages/projects.html">Work</a></li>
-                <li><a href="../index.html#skills">Skills</a></li>
-                <li><a href="../pages/education.html">Education</a></li>
-                <li><a href="../pages/cv.html">Resume</a></li>
-                <li><a href="../pages/biography.html">Biography</a></li>
-                <li><a href="../pages/future-plans.html">Future Plans</a></li>
-                <li><a href="../blog/index.html">Blog</a></li>
-                <li><a href="../index.html#contact">Contact</a></li>
-            </ul>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
+            <nav class="nav-links">
+                <a href="../index.html#about">About</a>
+                <a href="projects.html">Work</a>
+                <a href="../index.html#skills">Skills</a>
+                <a href="education.html">Education</a>
+                <a href="cv.html">Resume</a>
+                <a href="biography.html">Biography</a>
+            </nav>
         </div>
     </nav>
 
-    <section class="section-padding" style="padding-top: 120px;">
-        <div class="container" style="max-width: 900px;">
-
-            <!-- CV Header -->
-            <div class="cv-header">
-                <img src="https://avatars.githubusercontent.com/u/154990402?v=4"
-                    alt="Enes Efe Tokta - Software Developer Professional Photo" class="cv-avatar">
+    <main class="container" style="padding-top: 120px; padding-bottom: 100px;">
+        <!-- CV Header -->
+        <header style="margin-bottom: 64px;">
+            <div style="display: flex; align-items: center; gap: 32px; flex-wrap: wrap;">
+                <img src="https://avatars.githubusercontent.com/u/154990402?v=4" alt="Enes Efe Tokta"
+                    style="width: 120px; height: 120px; border-radius: 24px; border: 2px solid var(--accent-primary); box-shadow: 0 10px 30px var(--accent-ring);">
                 <div>
-                    <h1 style="margin-bottom: 12px;">Enes Efe Tokta</h1>
-                    <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 16px;">Junior Software
-                        Developer</p>
-                    <div style="display: flex; gap: 24px; color: var(--text-muted); font-size: 0.9rem;">
-                        <span><i class="fas fa-map-marker-alt"></i> Ankara, Turkey</span>
-                        <span><i class="fas fa-envelope"></i> enesefetokta009@gmail.com</span>
-                        <span><i class="fab fa-github"></i> github.com/EnesEfeTokta</span>
+                    <h1 style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 8px;">ENES EFE TOKTA</h1>
+                    <p style="font-size: 1.2rem; color: var(--accent-primary); font-weight: 600; margin-bottom: 16px;">
+                        Backend-Oriented Software Developer</p>
+                    <div
+                        style="display: flex; flex-wrap: wrap; gap: 20px; font-size: 0.9rem; color: var(--text-secondary);">
+                        <span><i class="fas fa-envelope"
+                                style="color: var(--accent-primary); margin-right: 8px;"></i>enesefetokta009@gmail.com</span>
+                        <span><i class="fas fa-phone" style="color: var(--accent-primary); margin-right: 8px;"></i>+90
+                            541 586 9564</span>
+                        <span><i class="fas fa-map-marker-alt"
+                                style="color: var(--accent-primary); margin-right: 8px;"></i>Turkey, Open to
+                            Relocation</span>
                     </div>
                 </div>
             </div>
-
-            <!-- Profile -->
-            <div class="cv-section">
-                <h2>Profile</h2>
-                <p style="color: var(--text-secondary); line-height: 1.7;">
-                    Innovative and detail-oriented Software Developer with broad experience in .NET ecosystem and Unity
-                    game development. Strong background in building scalable SaaS solutions and immersive interactive
-                    applications. Passionate about clean architecture, solving complex problems, and continuous
-                    professional growth.
-                </p>
+            <div style="margin-top: 24px; display: flex; gap: 12px;">
+                <a href="https://github.com/EnesEfeTokta" target="_blank" class="btn-outline"
+                    style="padding: 8px 16px; font-size: 0.85rem;"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank" class="btn-outline"
+                    style="padding: 8px 16px; font-size: 0.85rem;"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://medium.com/@EnesEfeTokta" target="_blank" class="btn-outline"
+                    style="padding: 8px 16px; font-size: 0.85rem;"><i class="fab fa-medium"></i> Medium</a>
             </div>
+        </header>
 
-            <!-- Experience -->
-            <div class="cv-section">
-                <h2>Experience</h2>
+        <div class="cv-grid">
+            <!-- Sidebar -->
+            <aside class="cv-sidebar">
+                <div class="sidebar-group">
+                    <h3 class="cv-section-title"><i class="fas fa-tools"></i> Skills</h3>
 
-                <div class="cv-item">
-                    <div class="cv-item-header">
-                        <h3>Software Intern</h3>
-                        <div class="cv-item-meta">Private Software Company | Aug 2025</div>
-                    </div>
-                    <ul>
-                        <li>Developed and tested internal API modules for a .NET-based ERP system alongside senior
-                            developers.</li>
-                        <li>Participated in code review sessions and implemented unit tests.</li>
-                    </ul>
-                </div>
-
-                <div class="cv-item">
-                    <div class="cv-item-header">
-                        <h3>Software Intern</h3>
-                        <div class="cv-item-meta">Ministry of Environment, Urbanization and Climate Change | July 2025
+                    <div class="sidebar-group">
+                        <p class="sidebar-title">Languages & Frameworks</p>
+                        <div class="sidebar-skills">
+                            <span class="sidebar-skill">C#</span>
+                            <span class="sidebar-skill">ASP.NET Core</span>
+                            <span class="sidebar-skill">EF Core</span>
+                            <span class="sidebar-skill">Python</span>
+                            <span class="sidebar-skill">WPF</span>
+                            <span class="sidebar-skill">React</span>
                         </div>
                     </div>
-                    <ul>
-                        <li>Contributed to internal automation tools using ASP.NET Core and PostgreSQL.</li>
-                        <li>Enhanced data security protocols and optimized database queries.</li>
-                    </ul>
-                </div>
-            </div>
 
-            <!-- Projects -->
-            <div class="cv-section">
-                <h2>Key Projects</h2>
-
-                <div class="cv-item">
-                    <div class="cv-item-header">
-                        <h3>VidSync</h3>
-                        <div class="cv-item-meta">ASP.NET Core, React, AI Integration</div>
+                    <div class="sidebar-group">
+                        <p class="sidebar-title">Databases</p>
+                        <div class="sidebar-skills">
+                            <span class="sidebar-skill">PostgreSQL</span>
+                            <span class="sidebar-skill">Redis</span>
+                            <span class="sidebar-skill">SQLite</span>
+                            <span class="sidebar-skill">Supabase</span>
+                        </div>
                     </div>
-                    <ul>
-                        <li>Built an AI-powered video meeting platform with real-time collaboration.</li>
-                        <li>Integrated Mistral 7B AI for intelligent meeting notes and transcription.</li>
-                        <li>Used Redis for caching and Docker for containerized deployment.</li>
-                    </ul>
-                </div>
 
-                <div class="cv-item">
-                    <div class="cv-item-header">
-                        <h3>FinTrack SaaS</h3>
-                        <div class="cv-item-meta">ASP.NET Core, WPF, PostgreSQL</div>
+                    <div class="sidebar-group">
+                        <p class="sidebar-title">DevOps & Tools</p>
+                        <div class="sidebar-skills">
+                            <span class="sidebar-skill">Docker</span>
+                            <span class="sidebar-skill">CI/CD</span>
+                            <span class="sidebar-skill">Prometheus</span>
+                            <span class="sidebar-skill">Grafana</span>
+                        </div>
                     </div>
-                    <ul>
-                        <li>Full-stack financial management platform with desktop and web clients.</li>
-                        <li>Implemented Stripe payments, JWT auth, and AI financial chatbot (Gemini).</li>
-                    </ul>
-                </div>
-            </div>
 
-            <!-- Skills -->
-            <div class="cv-section">
-                <h2>Skills</h2>
-                <div class="skill-tags">
-                    <span class="skill-tag">C#</span>
-                    <span class="skill-tag">.NET Core</span>
-                    <span class="skill-tag">Unity 3D</span>
-                    <span class="skill-tag">React</span>
-                    <span class="skill-tag">PostgreSQL</span>
-                    <span class="skill-tag">Docker</span>
-                    <span class="skill-tag">Azure</span>
-                    <span class="skill-tag">Git</span>
-                    <span class="skill-tag">Agile/Scrum</span>
-                </div>
-            </div>
-
-            <!-- Education -->
-            <div class="cv-section">
-                <h2>Education</h2>
-                <div class="cv-item">
-                    <div class="cv-item-header">
-                        <h3>BSc, Information Systems and Technologies</h3>
-                        <div class="cv-item-meta">Atatürk University | 2023 - 2027 (Expected)</div>
+                    <div class="sidebar-group">
+                        <p class="sidebar-title">Cloud & APIs</p>
+                        <div class="sidebar-skills">
+                            <span class="sidebar-skill">AWS</span>
+                            <span class="sidebar-skill">Azure</span>
+                            <span class="sidebar-skill">JWT</span>
+                            <span class="sidebar-skill">Stripe</span>
+                        </div>
                     </div>
-                    <p style="color: var(--text-muted);">GPA: 3.2/4.0</p>
                 </div>
-            </div>
 
+                <div class="sidebar-group">
+                    <h3 class="cv-section-title"><i class="fas fa-graduation-cap"></i> Education</h3>
+                    <p style="font-weight: 700; color: var(--text-main); font-size: 0.95rem; margin-bottom: 4px;">
+                        Atatürk University</p>
+                    <p style="font-size: 0.85rem; color: var(--accent-primary); font-weight: 600; margin-bottom: 8px;">
+                        BSc, Inf. Systems & Tech.</p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">GPA: 3.2 / 4.0</p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Expected: June 2027</p>
+                </div>
+
+                <div class="sidebar-group">
+                    <h3 class="cv-section-title"><i class="fas fa-language"></i> Languages</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 4px;">
+                        <strong>Turkish:</strong> Native
+                    </p>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);"><strong>English:</strong> Professional
+                    </p>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="cv-main">
+                <section>
+                    <h3 class="cv-section-title"><i class="fas fa-user"></i> Profile</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1.05rem;">
+                        Backend-oriented Information Systems student with hands-on experience in developing ASP.NET
+                        Core–based RESTful APIs and data-driven applications. Skilled in building clean, maintainable
+                        systems using PostgreSQL, Docker, and Entity Framework Core. Seeking a backend-focused software
+                        developer internship to contribute to real-world projects and strengthen practical development
+                        skills.
+                    </p>
+                </section>
+
+                <section>
+                    <h3 class="cv-section-title"><i class="fas fa-briefcase"></i> Experience</h3>
+                    <div class="cv-card">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
+                            <div>
+                                <h4 class="cv-item-title">Software Intern</h4>
+                                <p class="cv-item-subtitle">T.C. Ministry of Environment, Urbanization and Climate
+                                    Change</p>
+                            </div>
+                            <span class="cv-item-date">July 2025</span>
+                        </div>
+                        <ul class="cv-item-list">
+                            <li>Developed a backend training project using ASP.NET Core and PostgreSQL simulating real
+                                public sector workflows.</li>
+                            <li>Applied layered architecture principles with focus on data security and maintainability.
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h3 class="cv-section-title"><i class="fas fa-project-diagram"></i> Key Projects</h3>
+                    <div style="display: flex; flex-direction: column; gap: 24px;">
+                        <div class="cv-card">
+                            <div
+                                style="display: flex; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap;">
+                                <h4 class="cv-item-title">VidSync - AI Meeting Platform</h4>
+                                <p
+                                    style="font-size: 0.8rem; background: var(--accent-light); color: var(--accent-primary); padding: 4px 10px; border-radius: 4px;">
+                                    Featured Project</p>
+                            </div>
+                            <p class="cv-item-subtitle" style="font-size: 0.85rem; margin-bottom: 12px;">ASP.NET Core,
+                                React, PostgreSQL, Redis, Docker, Mistral 7B</p>
+                            <ul class="cv-item-list">
+                                <li>Built a scalable backend supporting 50 concurrent users across 25 rooms.</li>
+                                <li>Integrated AI-based meeting summarization and Redis session management.</li>
+                            </ul>
+                        </div>
+
+                        <div class="cv-card">
+                            <h4 class="cv-item-title">FinTrack - Financial SaaS</h4>
+                            <p class="cv-item-subtitle" style="font-size: 0.85rem; margin-bottom: 12px;">ASP.NET Core,
+                                WPF, PostgreSQL, Stripe, Prometheus, Grafana</p>
+                            <ul class="cv-item-list">
+                                <li>Developed a multi-user finance tracking system with secure authentication.</li>
+                                <li>Achieved 80% positive feedback in a 100-user beta test.</li>
+                            </ul>
+                        </div>
+
+                        <div class="cv-card">
+                            <h4 class="cv-item-title">WeatherZeroPlus - Desktop App</h4>
+                            <p class="cv-item-subtitle" style="font-size: 0.85rem; margin-bottom: 12px;">WPF, Supabase,
+                                Twilio SendGrid</p>
+                            <ul class="cv-item-list">
+                                <li>Implemented real-time weather alerts with cloud sync for 100+ users.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3 class="cv-section-title"><i class="fas fa-certificate"></i> Certificates & Recognition</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                        <div class="cv-card" style="padding: 16px;">
+                            <p style="font-weight: 700; color: var(--text-main); font-size: 0.9rem;">AWS Cloud
+                                Practitioner</p>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">2025</p>
+                        </div>
+                        <div class="cv-card" style="padding: 16px;">
+                            <p style="font-weight: 700; color: var(--text-main); font-size: 0.9rem;">Microsoft Full
+                                Stack Dev</p>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">2025</p>
+                        </div>
+                        <div class="cv-card" style="padding: 16px;">
+                            <p style="font-weight: 700; color: var(--text-main); font-size: 0.9rem;">Meta Frontend
+                                Developer</p>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">2025</p>
+                        </div>
+                        <div class="cv-card" style="padding: 16px;">
+                            <p style="font-weight: 700; color: var(--text-main); font-size: 0.9rem;">Google PM
+                                Professional</p>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">2024</p>
+                        </div>
+                    </div>
+                    <div class="cv-card" style="margin-top: 16px;">
+                        <h4 style="font-size: 1rem; color: var(--text-main); margin-bottom: 8px;">Google Game and App
+                            Academy Finalist</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Selected as a Top 7 Team among 200+
+                            participating groups. Represented Türkiye in KODLAĞRI Estonian Tech Visit.</p>
+                    </div>
+                </section>
+            </div>
         </div>
-    </section>
+    </main>
 
     <!-- Footer -->
-    <footer style="border-top: 1px solid var(--border-subtle); padding: 40px 0; margin-top: 40px;">
-        <div class="container" style="text-align: center;">
-            <a href="pdf/EnesEfeTokta_CV.pdf" class="btn btn-secondary">Download PDF Version</a>
-            <p style="color: var(--text-muted); margin-top: 20px;">© 2025 Enes Efe Tokta. Built with modern web
-                technologies.</p>
-            <div style="margin-top: 20px; display: flex; justify-content: center; gap: 20px;">
-                <a href="https://github.com/EnesEfeTokta" target="_blank" aria-label="GitHub"
-                    style="font-size: 1.5rem; color: var(--text-secondary); transition: color 0.2s;"><i
-                        class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank" aria-label="LinkedIn"
-                    style="font-size: 1.5rem; color: var(--text-secondary); transition: color 0.2s;"><i
-                        class="fab fa-linkedin"></i></a>
-                <a href="https://medium.com/@EnesEfeTokta" target="_blank" aria-label="Medium"
-                    style="font-size: 1.5rem; color: var(--text-secondary); transition: color 0.2s;"><i
-                        class="fab fa-medium"></i></a>
-                <a href="https://x.com/EnesEfeTokta" target="_blank" aria-label="X (Twitter)"
-                    style="font-size: 1.5rem; color: var(--text-secondary); transition: color 0.2s;"><i
-                        class="fab fa-twitter"></i></a>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div>
+                    <span class="footer-logo">Enes Efe Tokta</span>
+                    <p class="footer-tagline">
+                        Software Developer · .NET &amp; Unity · Based in Turkey.<br>
+                        Open to remote opportunities worldwide.
+                    </p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/EnesEfeTokta" target="_blank" aria-label="GitHub"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank"
+                        aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://medium.com/@EnesEfeTokta" target="_blank" aria-label="Medium"><i
+                            class="fab fa-medium"></i></a>
+                    <a href="https://x.com/EnesEfeTokta" target="_blank" aria-label="X / Twitter"><i
+                            class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Enes Efe Tokta. Built with modern web technologies.</p>
+                <div class="footer-links">
+                    <a href="biography.html">Biography</a>
+                    <a href="../blog/index.html">Blog</a>
+                    <a href="cv.html">Resume</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
             </div>
         </div>
     </footer>
+
+    <script src="../assets/js/main.js"></script>
 </body>
 
 </html>
