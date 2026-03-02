@@ -1,740 +1,707 @@
 <!DOCTYPE html>
+
 <html lang="en">
-
+<body class="nfx-body">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/154990402?v=4">
-    <title>Future Plans – Enes Efe Tokta | Learning Roadmap</title>
-    <meta name="description"
-        content="My current learning roadmap — AI Engineering, Computer Fundamentals, Backend Security, and Architecture patterns.">
-    <link rel="canonical" href="https://enesefetokta.shop/pages/future-plans.html">
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Future Plans – Enes Efe Tokta">
-    <meta property="og:image" content="https://avatars.githubusercontent.com/u/154990402?v=4">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <style>
-        /* ── Page Header ── */
-        .page-header {
-            padding-top: calc(var(--nav-h) + 72px);
-            padding-bottom: 56px;
-            background: var(--grad-hero);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .page-header h1 {
-            font-size: clamp(2.2rem, 4vw, 3.4rem);
-            letter-spacing: -0.04em;
-            margin-bottom: 14px;
-        }
-
-        .page-header p {
-            color: var(--text-secondary);
-            font-size: 1.05rem;
-            max-width: 560px;
-            line-height: 1.75;
-        }
-
-        .page-header-meta {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-top: 24px;
-            flex-wrap: wrap;
-        }
-
-        .meta-chip {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            font-size: 0.82rem;
-            font-weight: 500;
-            color: var(--text-secondary);
-        }
-
-        .meta-chip i {
-            color: var(--accent-primary);
-        }
-
-        /* ── Status legend ── */
-        .status-legend {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
-        }
-
-        .status-chip {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            padding: 5px 14px;
-            border-radius: var(--r-pill);
-            border: 1.5px solid;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .status-chip .dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-        }
-
-        .chip-active {
-            border-color: var(--accent-primary);
-            color: var(--accent-primary);
-            background: var(--accent-light);
-        }
-
-        .chip-active .dot {
-            background: var(--accent-primary);
-            animation: pulseDot 2s ease infinite;
-        }
-
-        .chip-upcoming {
-            border-color: var(--amber);
-            color: var(--amber);
-            background: rgba(169, 112, 48, 0.08);
-        }
-
-        .chip-upcoming .dot {
-            background: var(--amber);
-        }
-
-        .chip-planned {
-            border-color: var(--border-medium);
-            color: var(--text-muted);
-            background: var(--bg-muted);
-        }
-
-        .chip-planned .dot {
-            background: var(--text-muted);
-        }
-
-        .chip-done {
-            border-color: var(--green);
-            color: var(--green);
-            background: rgba(61, 122, 94, 0.08);
-        }
-
-        .chip-done .dot {
-            background: var(--green);
-        }
-
-        /* ── Roadmap Grid ── */
-        .roadmap-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 24px;
-            margin-bottom: 64px;
-        }
-
-        .roadmap-card {
-            background: var(--bg-surface);
-            border: 1.5px solid var(--border);
-            border-radius: var(--r-lg);
-            padding: 28px;
-            box-shadow: var(--shadow-xs);
-            transition: box-shadow 0.25s ease, border-color 0.25s ease;
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-        }
-
-        .roadmap-card.is-active {
-            border-color: var(--accent-primary);
-            box-shadow: 0 0 0 1px var(--accent-primary), var(--shadow-sm);
-        }
-
-        .roadmap-card:hover {
-            box-shadow: var(--shadow-md);
-        }
-
-        .card-top {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            margin-bottom: 18px;
-        }
-
-        .card-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: var(--r-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            background: var(--accent-light);
-            color: var(--accent-primary);
-            flex-shrink: 0;
-        }
-
-        .card-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 6px;
-            font-family: 'Syne', sans-serif;
-        }
-
-        .card-meta {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            margin-bottom: 14px;
-        }
-
-        .card-meta i {
-            color: var(--accent-primary);
-        }
-
-        .card-desc {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-            margin-bottom: 18px;
-            flex: 1;
-        }
-
-        .card-topics {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 20px;
-        }
-
-        /* ── Progress bar ── */
-        .prog-wrap {
-            margin-top: auto;
-            padding-top: 18px;
-            border-top: 1px solid var(--border);
-        }
-
-        .prog-label {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-bottom: 8px;
-        }
-
-        .prog-track {
-            height: 5px;
-            background: var(--bg-muted);
-            border-radius: 99px;
-            overflow: hidden;
-        }
-
-        .prog-fill {
-            height: 100%;
-            border-radius: 99px;
-            background: linear-gradient(90deg, var(--accent-primary), var(--rust));
-            transition: width 1s var(--ease);
-        }
-
-        /* ── Philosophy block ── */
-        .philosophy-block {
-            background: var(--bg-surface);
-            border: 1px solid var(--border);
-            border-radius: var(--r-lg);
-            padding: 48px;
-            box-shadow: var(--shadow-xs);
-            margin-bottom: 64px;
-        }
-
-        .philosophy-block h2 {
-            font-size: 1.9rem;
-            margin-bottom: 16px;
-            letter-spacing: -0.03em;
-        }
-
-        .philosophy-block>p {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            line-height: 1.8;
-            max-width: 640px;
-            margin-bottom: 36px;
-        }
-
-        .pillars {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 20px;
-        }
-
-        .pillar {
-            padding: 20px;
-            background: var(--bg-body);
-            border: 1px solid var(--border);
-            border-radius: var(--r-md);
-        }
-
-        .pillar-icon {
-            font-size: 1.4rem;
-            color: var(--accent-primary);
-            margin-bottom: 10px;
-        }
-
-        .pillar-title {
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 6px;
-            font-family: 'Syne', sans-serif;
-        }
-
-        .pillar-desc {
-            font-size: 0.82rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        /* ── Vision timeline ── */
-        .vision-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-            margin-bottom: 64px;
-            position: relative;
-        }
-
-        .vision-list::before {
-            content: '';
-            position: absolute;
-            left: 19px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--border);
-        }
-
-        .vision-item {
-            display: flex;
-            gap: 20px;
-            padding-bottom: 28px;
-            position: relative;
-        }
-
-        .vision-dot {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 2px solid var(--border);
-            background: var(--bg-surface);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            flex-shrink: 0;
-            position: relative;
-            z-index: 1;
-        }
-
-        .vision-dot.done {
-            border-color: var(--green);
-            color: var(--green);
-            background: rgba(61, 122, 94, 0.08);
-        }
-
-        .vision-dot.active {
-            border-color: var(--accent-primary);
-            color: var(--accent-primary);
-            background: var(--accent-light);
-        }
-
-        .vision-body {
-            padding-top: 8px;
-        }
-
-        .vision-time {
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            margin-bottom: 4px;
-        }
-
-        .vision-title {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 4px;
-            font-family: 'Syne', sans-serif;
-        }
-
-        .vision-desc {
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            line-height: 1.65;
-        }
-
-        @media (max-width: 640px) {
-            .philosophy-block {
-                padding: 28px 20px;
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../assets/images/profile/my_profile.png" rel="icon" type="image/png"/>
+<title>Future Plans – Enes Efe Tokta | Learning Roadmap</title>
+<meta content="My current learning roadmap — AI Engineering, Computer Fundamentals, Backend Security, and Architecture patterns." name="description"/>
+<link href="https://enesefetokta.shop/pages/future-plans.html" rel="canonical"/>
+<!-- Open Graph -->
+<meta content="website" property="og:type"/>
+<meta content="Future Plans – Enes Efe Tokta | Learning Roadmap" property="og:title"/>
+<meta content="https://enesefetokta.shop/assets/images/profile/my_profile.png" property="og:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/css/styles.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+<style>
+            /* ── Page Header ── */
+            .page-header {
+                padding-top: calc(var(--nav-h) + 72px);
+                padding-bottom: 56px;
+                background: var(--grad-hero);
+                border-bottom: 1px solid var(--border);
             }
 
+            .page-header h1 {
+                font-size: clamp(2.2rem, 4vw, 3.4rem);
+                letter-spacing: -0.04em;
+                margin-bottom: 14px;
+            }
+
+            .page-header p {
+                color: var(--text-secondary);
+                font-size: 1.05rem;
+                max-width: 560px;
+                line-height: 1.75;
+            }
+
+            .page-header-meta {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                margin-top: 24px;
+                flex-wrap: wrap;
+            }
+
+            .meta-chip {
+                display: inline-flex;
+                align-items: center;
+                gap: 7px;
+                font-size: 0.82rem;
+                font-weight: 500;
+                color: var(--text-secondary);
+            }
+
+            .meta-chip i {
+                color: var(--accent-primary);
+            }
+
+            /* ── Status legend ── */
+            .status-legend {
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+                margin-bottom: 40px;
+            }
+
+            .status-chip {
+                display: inline-flex;
+                align-items: center;
+                gap: 7px;
+                font-size: 0.8rem;
+                font-weight: 600;
+                padding: 5px 14px;
+                border-radius: var(--r-pill);
+                border: 1.5px solid;
+                font-family: 'Inter', sans-serif;
+            }
+
+            .status-chip .dot {
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+            }
+
+            .chip-active {
+                border-color: var(--accent-primary);
+                color: var(--accent-primary);
+                background: var(--accent-light);
+            }
+
+            .chip-active .dot {
+                background: var(--accent-primary);
+                animation: pulseDot 2s ease infinite;
+            }
+
+            .chip-upcoming {
+                border-color: var(--amber);
+                color: var(--amber);
+                background: rgba(169, 112, 48, 0.08);
+            }
+
+            .chip-upcoming .dot {
+                background: var(--amber);
+            }
+
+            .chip-planned {
+                border-color: var(--border-medium);
+                color: var(--text-muted);
+                background: var(--bg-muted);
+            }
+
+            .chip-planned .dot {
+                background: var(--text-muted);
+            }
+
+            .chip-done {
+                border-color: var(--green);
+                color: var(--green);
+                background: rgba(61, 122, 94, 0.08);
+            }
+
+            .chip-done .dot {
+                background: var(--green);
+            }
+
+            /* ── Roadmap Grid ── */
             .roadmap-grid {
-                grid-template-columns: 1fr;
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 24px;
+                margin-bottom: 64px;
             }
-        }
-    </style>
-</head>
 
+            .roadmap-card {
+                background: var(--bg-surface);
+                border: 1.5px solid var(--border);
+                border-radius: var(--r-lg);
+                padding: 28px;
+                box-shadow: var(--shadow-xs);
+                transition: box-shadow 0.25s ease, border-color 0.25s ease;
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .roadmap-card.is-active {
+                border-color: var(--accent-primary);
+                box-shadow: 0 0 0 1px var(--accent-primary), var(--shadow-sm);
+            }
+
+            .roadmap-card:hover {
+                box-shadow: var(--shadow-md);
+            }
+
+            .card-top {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                margin-bottom: 18px;
+            }
+
+            .card-icon {
+                width: 48px;
+                height: 48px;
+                border-radius: var(--r-md);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.3rem;
+                background: var(--accent-light);
+                color: var(--accent-primary);
+                flex-shrink: 0;
+            }
+
+            .card-title {
+                font-size: 1.1rem;
+                font-weight: 700;
+                color: var(--text-main);
+                margin-bottom: 6px;
+                font-family: 'Syne', sans-serif;
+            }
+
+            .card-meta {
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                font-size: 0.82rem;
+                color: var(--text-muted);
+                margin-bottom: 14px;
+            }
+
+            .card-meta i {
+                color: var(--accent-primary);
+            }
+
+            .card-desc {
+                font-size: 0.9rem;
+                color: var(--text-secondary);
+                line-height: 1.7;
+                margin-bottom: 18px;
+                flex: 1;
+            }
+
+            .card-topics {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 6px;
+                margin-bottom: 20px;
+            }
+
+            /* ── Progress bar ── */
+            .prog-wrap {
+                margin-top: auto;
+                padding-top: 18px;
+                border-top: 1px solid var(--border);
+            }
+
+            .prog-label {
+                display: flex;
+                justify-content: space-between;
+                font-size: 0.8rem;
+                color: var(--text-muted);
+                margin-bottom: 8px;
+            }
+
+            .prog-track {
+                height: 5px;
+                background: var(--bg-muted);
+                border-radius: 99px;
+                overflow: hidden;
+            }
+
+            .prog-fill {
+                height: 100%;
+                border-radius: 99px;
+                background: linear-gradient(90deg, var(--accent-primary), var(--rust));
+                transition: width 1s var(--ease);
+            }
+
+            /* ── Philosophy block ── */
+            .philosophy-block {
+                background: var(--bg-surface);
+                border: 1px solid var(--border);
+                border-radius: var(--r-lg);
+                padding: 48px;
+                box-shadow: var(--shadow-xs);
+                margin-bottom: 64px;
+            }
+
+            .philosophy-block h2 {
+                font-size: 1.9rem;
+                margin-bottom: 16px;
+                letter-spacing: -0.03em;
+            }
+
+            .philosophy-block>p {
+                color: var(--text-secondary);
+                font-size: 1rem;
+                line-height: 1.8;
+                max-width: 640px;
+                margin-bottom: 36px;
+            }
+
+            .pillars {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 20px;
+            }
+
+            .pillar {
+                padding: 20px;
+                background: var(--bg-body);
+                border: 1px solid var(--border);
+                border-radius: var(--r-md);
+            }
+
+            .pillar-icon {
+                font-size: 1.4rem;
+                color: var(--accent-primary);
+                margin-bottom: 10px;
+            }
+
+            .pillar-title {
+                font-size: 0.95rem;
+                font-weight: 700;
+                color: var(--text-main);
+                margin-bottom: 6px;
+                font-family: 'Syne', sans-serif;
+            }
+
+            .pillar-desc {
+                font-size: 0.82rem;
+                color: var(--text-secondary);
+                line-height: 1.6;
+            }
+
+            /* ── Vision timeline ── */
+            .vision-list {
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+                margin-bottom: 64px;
+                position: relative;
+            }
+
+            .vision-list::before {
+                content: '';
+                position: absolute;
+                left: 19px;
+                top: 0;
+                bottom: 0;
+                width: 2px;
+                background: var(--border);
+            }
+
+            .vision-item {
+                display: flex;
+                gap: 20px;
+                padding-bottom: 28px;
+                position: relative;
+            }
+
+            .vision-dot {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: 2px solid var(--border);
+                background: var(--bg-surface);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.9rem;
+                color: var(--text-muted);
+                flex-shrink: 0;
+                position: relative;
+                z-index: 1;
+            }
+
+            .vision-dot.done {
+                border-color: var(--green);
+                color: var(--green);
+                background: rgba(61, 122, 94, 0.08);
+            }
+
+            .vision-dot.active {
+                border-color: var(--accent-primary);
+                color: var(--accent-primary);
+                background: var(--accent-light);
+            }
+
+            .vision-body {
+                padding-top: 8px;
+            }
+
+            .vision-time {
+                font-size: 0.75rem;
+                font-weight: 600;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+                color: var(--text-muted);
+                margin-bottom: 4px;
+            }
+
+            .vision-title {
+                font-size: 1rem;
+                font-weight: 700;
+                color: var(--text-main);
+                margin-bottom: 4px;
+                font-family: 'Syne', sans-serif;
+            }
+
+            .vision-desc {
+                font-size: 0.875rem;
+                color: var(--text-secondary);
+                line-height: 1.65;
+            }
+
+            @media (max-width: 640px) {
+                .philosophy-block {
+                    padding: 28px 20px;
+                }
+
+                .roadmap-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+<meta content="Future Plans, Learning Roadmap, AI Engineering, Enes Efe Tokta" name="keywords"/><meta content="Enes Efe Tokta" name="author"/><meta content="https://enesefetokta.shop/pages/future-plans.html" property="og:url"/><meta content="My current learning roadmap — AI Engineering, Computer Fundamentals, Backend Security, and Architecture patterns." property="og:description"/><meta content="en_US" property="og:locale"/><meta content="summary_large_image" name="twitter:card"/><meta content="Future Plans – Enes Efe Tokta | Learning Roadmap" name="twitter:title"/><meta content="My current learning roadmap — AI Engineering, Computer Fundamentals, Backend Security, and Architecture patterns." name="twitter:description"/><meta content="@EnesEfeTokta" name="twitter:creator"/><meta content="https://enesefetokta.shop/assets/images/profile/my_profile.png" name="twitter:image"/><script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Future Plans – Enes Efe Tokta | Learning Roadmap",
+      "description": "My current learning roadmap — AI Engineering, Computer Fundamentals, Backend Security, and Architecture patterns.",
+      "url": "https://enesefetokta.shop/pages/future-plans.html",
+      "author": {
+        "@type": "Person",
+        "name": "Enes Efe Tokta"
+      }
+    }
+    </script></head>
 <body>
-    <!-- ═══════════ NAVBAR ═══════════ -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="../index.html" class="logo">Enes Efe Tokta</a>
-            <ul class="nav-links">
-                <li><a href="../index.html#about">About</a></li>
-                <li><a href="../index.html#skills">Skills</a></li>
-                <li><a href="projects.html">Work</a></li>
-                <li><a href="../blog/index.html">Blog</a></li>
-                <li class="nav-dropdown">
-                    <button class="nav-dropdown-btn">More <i class="fas fa-chevron-down"></i></button>
-                    <div class="nav-dropdown-menu">
-                        <a href="biography.html"><i class="fas fa-user"
-                                style="color:var(--accent-primary); width:16px;"></i> Biography</a>
-                        <a href="education.html"><i class="fas fa-graduation-cap"
-                                style="color:var(--amber); width:16px;"></i> Education</a>
-                        <a href="cv.html"><i class="fas fa-file-alt" style="color:var(--green); width:16px;"></i>
-                            Resume</a>
-                        <a href="future-plans.html" style="color:var(--accent-primary);"><i class="fas fa-rocket"
-                                style="color:var(--slate); width:16px;"></i> Future Plans</a>
-                    </div>
-                </li>
-                <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
-            </ul>
-            <button class="mobile-menu-btn" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
-        </div>
-    </nav>
-
-    <!-- ═══════════ PAGE HEADER ═══════════ -->
-    <header class="page-header">
-        <div class="container">
-            <span class="eyebrow">Growth Roadmap</span>
-            <h1>Learning &amp; Future Plans</h1>
-            <p>
-                I approach skill development as a series of intensive programs — each with a clear goal,
-                hands-on projects, and measurable outcomes. Here's what I'm building toward.
-            </p>
-            <div class="page-header-meta">
-                <span class="meta-chip"><i class="fas fa-calendar-alt"></i> Updated February 2026</span>
-                <span class="meta-chip"><i class="fas fa-map-marker-alt"></i> Turkey · Remote</span>
-                <span class="meta-chip"><i class="fas fa-book-open"></i> 4 Active Programs</span>
-            </div>
-        </div>
-    </header>
-
-    <!-- ═══════════ ACTIVE PROGRAMS ═══════════ -->
-    <section class="section">
-        <div class="container">
-
-            <div class="section-header">
-                <span class="eyebrow">Now</span>
-                <h2>Active Learning Programs</h2>
-                <p>Structured 4-week intensive curriculums I am working through right now.</p>
-            </div>
-
-            <!-- Status Legend -->
-            <div class="status-legend">
-                <span class="status-chip chip-active"><span class="dot"></span>In Progress</span>
-                <span class="status-chip chip-upcoming"><span class="dot"></span>Starting Soon</span>
-                <span class="status-chip chip-planned"><span class="dot"></span>Planned</span>
-                <span class="status-chip chip-done"><span class="dot"></span>Completed</span>
-            </div>
-
-            <div class="roadmap-grid">
-
-                <!-- Program 1 -->
-                <div class="roadmap-card is-active reveal">
-                    <div class="card-top">
-                        <div class="card-icon"><i class="fas fa-database"></i></div>
-                        <span class="status-chip chip-active" style="border:none; padding:4px 10px; font-size:0.72rem;">
-                            <span class="dot"></span>In Progress
-                        </span>
-                    </div>
-                    <div class="card-title">VectorDB &amp; RAG Engineering</div>
-                    <div class="card-meta">
-                        <span><i class="far fa-clock"></i> 4 Weeks</span>
-                        <span><i class="fas fa-code"></i> JS / TS Stack</span>
-                    </div>
-                    <p class="card-desc">
-                        Building production-ready AI knowledge systems using vector databases, embeddings, and RAG
-                        architecture for intelligent Q&amp;A and retrieval.
-                    </p>
-                    <div class="card-topics">
-                        <span class="tag tag-orange">Embeddings</span>
-                        <span class="tag tag-orange">ChromaDB</span>
-                        <span class="tag tag-orange">Pinecone</span>
-                        <span class="tag tag-orange">LangChain</span>
-                    </div>
-                    <div class="prog-wrap">
-                        <div class="prog-label">
-                            <span>Module 1 complete</span>
-                            <span>25%</span>
-                        </div>
-                        <div class="prog-track">
-                            <div class="prog-fill" style="width:25%;"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Program 2 -->
-                <div class="roadmap-card reveal reveal-delay-1">
-                    <div class="card-top">
-                        <div class="card-icon" style="background:rgba(74,106,154,0.1); color:var(--slate);"><i
-                                class="fas fa-microchip"></i></div>
-                        <span class="status-chip chip-active" style="border:none; padding:4px 10px; font-size:0.72rem;">
-                            <span class="dot"></span>In Progress
-                        </span>
-                    </div>
-                    <div class="card-title">Computer Fundamentals</div>
-                    <div class="card-meta">
-                        <span><i class="far fa-clock"></i> 4 Weeks</span>
-                        <span><i class="fas fa-code"></i> .NET / C# Focused</span>
-                    </div>
-                    <p class="card-desc">
-                        Deep dive into CPU, memory, GC, threading, and I/O. Understanding system-level performance and
-                        low-level optimization for real production impact.
-                    </p>
-                    <div class="card-topics">
-                        <span class="tag tag-slate">CPU Cache</span>
-                        <span class="tag tag-slate">GC Tuning</span>
-                        <span class="tag tag-slate">Threading</span>
-                        <span class="tag tag-slate">Profiling</span>
-                    </div>
-                    <div class="prog-wrap">
-                        <div class="prog-label">
-                            <span>Module 1 starting</span>
-                            <span>0%</span>
-                        </div>
-                        <div class="prog-track">
-                            <div class="prog-fill" style="width:0%;"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Program 3 -->
-                <div class="roadmap-card reveal reveal-delay-2">
-                    <div class="card-top">
-                        <div class="card-icon" style="background:rgba(61,122,94,0.1); color:var(--green);"><i
-                                class="fas fa-shield-alt"></i></div>
-                        <span class="status-chip chip-upcoming"
-                            style="border:none; padding:4px 10px; font-size:0.72rem;">
-                            <span class="dot"></span>Starting Soon
-                        </span>
-                    </div>
-                    <div class="card-title">Backend Security</div>
-                    <div class="card-meta">
-                        <span><i class="far fa-clock"></i> 4 Weeks</span>
-                        <span><i class="fas fa-code"></i> OWASP &amp; DevSecOps</span>
-                    </div>
-                    <p class="card-desc">
-                        Practical cybersecurity for backend developers — OWASP Top 10, secure coding, authentication
-                        hardening, and DevSecOps practices in containerized environments.
-                    </p>
-                    <div class="card-topics">
-                        <span class="tag tag-green">OWASP Top 10</span>
-                        <span class="tag tag-green">JWT Security</span>
-                        <span class="tag tag-green">Encryption</span>
-                        <span class="tag tag-green">Container Sec</span>
-                    </div>
-                    <div class="prog-wrap">
-                        <div class="prog-label">
-                            <span>Not started</span>
-                            <span>0%</span>
-                        </div>
-                        <div class="prog-track">
-                            <div class="prog-fill" style="width:0%;"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Program 4 -->
-                <div class="roadmap-card reveal reveal-delay-3">
-                    <div class="card-top">
-                        <div class="card-icon" style="background:rgba(169,112,48,0.1); color:var(--amber);"><i
-                                class="fas fa-project-diagram"></i></div>
-                        <span class="status-chip chip-upcoming"
-                            style="border:none; padding:4px 10px; font-size:0.72rem;">
-                            <span class="dot"></span>Starting Soon
-                        </span>
-                    </div>
-                    <div class="card-title">Backend Architecture</div>
-                    <div class="card-meta">
-                        <span><i class="far fa-clock"></i> 4 Weeks</span>
-                        <span><i class="fas fa-code"></i> Clean Arch &amp; Patterns</span>
-                    </div>
-                    <p class="card-desc">
-                        SOLID principles, clean architecture, DDD, CQRS, event sourcing, and scalable system design
-                        patterns — applied to real .NET projects.
-                    </p>
-                    <div class="card-topics">
-                        <span class="tag tag-amber">SOLID</span>
-                        <span class="tag tag-amber">Clean Arch</span>
-                        <span class="tag tag-amber">DDD</span>
-                        <span class="tag tag-amber">CQRS</span>
-                        <span class="tag tag-amber">Event Sourcing</span>
-                    </div>
-                    <div class="prog-wrap">
-                        <div class="prog-label">
-                            <span>Not started</span>
-                            <span>0%</span>
-                        </div>
-                        <div class="prog-track">
-                            <div class="prog-fill" style="width:0%;"></div>
-                        </div>
-                    </div>
-                </div>
-
-            </div><!-- .roadmap-grid -->
-
-        </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- ═══════════ LONGER VISION TIMELINE ═══════════ -->
-    <section class="section">
-        <div class="container">
-
-            <div class="section-header reveal">
-                <span class="eyebrow">Bigger Picture</span>
-                <h2>Career Vision</h2>
-                <p>Where these programs fit into the larger arc of my career.</p>
-            </div>
-
-            <div class="vision-list reveal">
-
-                <div class="vision-item">
-                    <div class="vision-dot done"><i class="fas fa-check"></i></div>
-                    <div class="vision-body">
-                        <div class="vision-time">2022 – 2024</div>
-                        <div class="vision-title">Foundation — .NET &amp; Unity Core Skills</div>
-                        <p class="vision-desc">Built enterprise APIs, desktop apps, and Unity games. Established a
-                            strong C#, ASP.NET Core, and clean-architecture foundation.</p>
-                    </div>
-                </div>
-
-                <div class="vision-item">
-                    <div class="vision-dot active"><i class="fas fa-circle" style="font-size:0.5em;"></i></div>
-                    <div class="vision-body">
-                        <div class="vision-time">2025 – 2026 (Now)</div>
-                        <div class="vision-title">Systems Depth — AI, Security &amp; Architecture</div>
-                        <p class="vision-desc">Going deep on the fundamentals: system-level performance, AI integration,
-                            security hardening, and advanced architectural patterns.</p>
-                    </div>
-                </div>
-
-                <div class="vision-item">
-                    <div class="vision-dot"><i class="fas fa-arrow-right" style="font-size:0.75em;"></i></div>
-                    <div class="vision-body">
-                        <div class="vision-time">2026 +</div>
-                        <div class="vision-title">Senior / Lead Role — Building at Scale</div>
-                        <p class="vision-desc">Lead engineering initiatives on meaningful products. Mentor juniors,
-                            drive architectural decisions, and contribute to open-source.</p>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- ═══════════ PHILOSOPHY ═══════════ -->
-    <section class="section">
-        <div class="container">
-
-            <div class="philosophy-block reveal">
-                <span class="eyebrow">How I Learn</span>
-                <h2>Learning Philosophy</h2>
-                <p>
-                    Each program follows a <strong>4-week intensive structure</strong> with hands-on projects,
-                    benchmarks, and real-world scenarios. The goal isn't just to learn — it's to
-                    <strong>build</strong>, <strong>measure</strong>, and <strong>document</strong> production-ready
-                    systems.
+<nav class="navbar nfx-navbar" id="navbar">
+<div class="container">
+<a class="logo" href="../index.html">Enes Efe Tokta</a>
+<ul class="nav-links" id="nav-links">
+<li><a href="../index.html#about">About</a></li>
+<li><a href="work.html">Work</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="../blog/index.html">Blog</a></li>
+<li><a href="biography.html">Biography</a></li>
+<li><a href="education.html">Education</a></li>
+<li><a href="cv.html">Resume</a></li>
+<li><a href="future-plans.html">Future Plans</a></li>
+<li><a class="nav-cta nfx-nav-cta" href="../index.html#contact">Contact</a></li>
+</ul>
+<button aria-label="Toggle menu" class="mobile-menu-btn" id="mobile-btn">
+<i class="fas fa-bars"></i>
+</button>
+</div>
+</nav>
+<!-- ═══════════ PAGE HEADER ═══════════ -->
+<header class="page-header">
+<div class="container">
+<span class="eyebrow">Growth Roadmap</span>
+<h1>Learning &amp; Future Plans</h1>
+<p>
+                    I approach skill development as a series of intensive programs — each with a clear goal,
+                    hands-on projects, and measurable outcomes. Here's what I'm building toward.
                 </p>
-
-                <div class="pillars">
-                    <div class="pillar">
-                        <div class="pillar-icon"><i class="fas fa-hammer"></i></div>
-                        <div class="pillar-title">Hands-On First</div>
-                        <p class="pillar-desc">Build actual projects, not just tutorial exercises.</p>
-                    </div>
-                    <div class="pillar">
-                        <div class="pillar-icon"><i class="fas fa-tachometer-alt" style="color:var(--amber);"></i></div>
-                        <div class="pillar-title">Measure Everything</div>
-                        <p class="pillar-desc">Benchmark before and after — know the impact of changes.</p>
-                    </div>
-                    <div class="pillar">
-                        <div class="pillar-icon"><i class="fas fa-book" style="color:var(--slate);"></i></div>
-                        <div class="pillar-title">Document &amp; Share</div>
-                        <p class="pillar-desc">Write technical posts, architecture diagrams, and open-source code.</p>
-                    </div>
-                    <div class="pillar">
-                        <div class="pillar-icon"><i class="fas fa-redo" style="color:var(--green);"></i></div>
-                        <div class="pillar-title">Iterate Fast</div>
-                        <p class="pillar-desc">Ship something, get feedback, improve — continuous learning cycles.</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ═══════════ FOOTER ═══════════ -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-top">
-                <div>
-                    <span class="footer-logo">Enes Efe Tokta</span>
-                    <p class="footer-tagline">Software Developer · .NET &amp; Unity · Based in Turkey.<br>Continuous
-                        learning, continuous growth.</p>
-                </div>
-                <div class="footer-social">
-                    <a href="https://github.com/EnesEfeTokta" target="_blank" aria-label="GitHub"><i
-                            class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank"
-                        aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://medium.com/@EnesEfeTokta" target="_blank" aria-label="Medium"><i
-                            class="fab fa-medium"></i></a>
-                    <a href="https://x.com/EnesEfeTokta" target="_blank" aria-label="X"><i
-                            class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p class="footer-copyright">© 2026 Enes Efe Tokta. Built with modern web technologies.</p>
-                <div class="footer-links">
-                    <a href="biography.html">Biography</a>
-                    <a href="../blog/index.html">Blog</a>
-                    <a href="cv.html">Resume</a>
-                    <a href="../index.html#contact">Contact</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="../assets/js/main.js"></script>
+<div class="page-header-meta">
+<span class="meta-chip"><i class="fas fa-calendar-alt"></i> Updated February 2026</span>
+<span class="meta-chip"><i class="fas fa-map-marker-alt"></i> Turkey · Remote</span>
+<span class="meta-chip"><i class="fas fa-book-open"></i> 4 Active Programs</span>
+</div>
+</div>
+</header>
+<!-- ═══════════ ACTIVE PROGRAMS ═══════════ -->
+<section class="section">
+<div class="container">
+<div class="section-header">
+<span class="eyebrow">Now</span>
+<h2>Active Learning Programs</h2>
+<p>Structured 4-week intensive curriculums I am working through right now.</p>
+</div>
+<!-- Status Legend -->
+<div class="status-legend">
+<span class="status-chip chip-active"><span class="dot"></span>In Progress</span>
+<span class="status-chip chip-upcoming"><span class="dot"></span>Starting Soon</span>
+<span class="status-chip chip-planned"><span class="dot"></span>Planned</span>
+<span class="status-chip chip-done"><span class="dot"></span>Completed</span>
+</div>
+<div class="roadmap-grid">
+<!-- Program 1 -->
+<div class="roadmap-card is-active reveal">
+<div class="card-top">
+<div class="card-icon"><i class="fas fa-database"></i></div>
+<span class="status-chip chip-active" style="border:none; padding:4px 10px; font-size:0.72rem;">
+<span class="dot"></span>In Progress
+                            </span>
+</div>
+<div class="card-title">VectorDB &amp; RAG Engineering</div>
+<div class="card-meta">
+<span><i class="far fa-clock"></i> 4 Weeks</span>
+<span><i class="fas fa-code"></i> JS / TS Stack</span>
+</div>
+<p class="card-desc">
+                            Building production-ready AI knowledge systems using vector databases, embeddings, and RAG
+                            architecture for intelligent Q&amp;A and retrieval.
+                        </p>
+<div class="card-topics">
+<span class="tag tag-orange">Embeddings</span>
+<span class="tag tag-orange">ChromaDB</span>
+<span class="tag tag-orange">Pinecone</span>
+<span class="tag tag-orange">LangChain</span>
+</div>
+<div class="prog-wrap">
+<div class="prog-label">
+<span>Module 1 complete</span>
+<span>25%</span>
+</div>
+<div class="prog-track">
+<div class="prog-fill" style="width:25%;"></div>
+</div>
+</div>
+</div>
+<!-- Program 2 -->
+<div class="roadmap-card reveal reveal-delay-1">
+<div class="card-top">
+<div class="card-icon" style="background:rgba(74,106,154,0.1); color:var(--slate);"><i class="fas fa-microchip"></i></div>
+<span class="status-chip chip-active" style="border:none; padding:4px 10px; font-size:0.72rem;">
+<span class="dot"></span>In Progress
+                            </span>
+</div>
+<div class="card-title">Computer Fundamentals</div>
+<div class="card-meta">
+<span><i class="far fa-clock"></i> 4 Weeks</span>
+<span><i class="fas fa-code"></i> .NET / C# Focused</span>
+</div>
+<p class="card-desc">
+                            Deep dive into CPU, memory, GC, threading, and I/O. Understanding system-level performance
+                            and
+                            low-level optimization for real production impact.
+                        </p>
+<div class="card-topics">
+<span class="tag tag-slate">CPU Cache</span>
+<span class="tag tag-slate">GC Tuning</span>
+<span class="tag tag-slate">Threading</span>
+<span class="tag tag-slate">Profiling</span>
+</div>
+<div class="prog-wrap">
+<div class="prog-label">
+<span>Module 1 starting</span>
+<span>0%</span>
+</div>
+<div class="prog-track">
+<div class="prog-fill" style="width:0%;"></div>
+</div>
+</div>
+</div>
+<!-- Program 3 -->
+<div class="roadmap-card reveal reveal-delay-2">
+<div class="card-top">
+<div class="card-icon" style="background:rgba(61,122,94,0.1); color:var(--green);"><i class="fas fa-shield-alt"></i></div>
+<span class="status-chip chip-upcoming" style="border:none; padding:4px 10px; font-size:0.72rem;">
+<span class="dot"></span>Starting Soon
+                            </span>
+</div>
+<div class="card-title">Backend Security</div>
+<div class="card-meta">
+<span><i class="far fa-clock"></i> 4 Weeks</span>
+<span><i class="fas fa-code"></i> OWASP &amp; DevSecOps</span>
+</div>
+<p class="card-desc">
+                            Practical cybersecurity for backend developers — OWASP Top 10, secure coding, authentication
+                            hardening, and DevSecOps practices in containerized environments.
+                        </p>
+<div class="card-topics">
+<span class="tag tag-green">OWASP Top 10</span>
+<span class="tag tag-green">JWT Security</span>
+<span class="tag tag-green">Encryption</span>
+<span class="tag tag-green">Container Sec</span>
+</div>
+<div class="prog-wrap">
+<div class="prog-label">
+<span>Not started</span>
+<span>0%</span>
+</div>
+<div class="prog-track">
+<div class="prog-fill" style="width:0%;"></div>
+</div>
+</div>
+</div>
+<!-- Program 4 -->
+<div class="roadmap-card reveal reveal-delay-3">
+<div class="card-top">
+<div class="card-icon" style="background:rgba(169,112,48,0.1); color:var(--amber);"><i class="fas fa-project-diagram"></i></div>
+<span class="status-chip chip-upcoming" style="border:none; padding:4px 10px; font-size:0.72rem;">
+<span class="dot"></span>Starting Soon
+                            </span>
+</div>
+<div class="card-title">Backend Architecture</div>
+<div class="card-meta">
+<span><i class="far fa-clock"></i> 4 Weeks</span>
+<span><i class="fas fa-code"></i> Clean Arch &amp; Patterns</span>
+</div>
+<p class="card-desc">
+                            SOLID principles, clean architecture, DDD, CQRS, event sourcing, and scalable system design
+                            patterns — applied to real .NET projects.
+                        </p>
+<div class="card-topics">
+<span class="tag tag-amber">SOLID</span>
+<span class="tag tag-amber">Clean Arch</span>
+<span class="tag tag-amber">DDD</span>
+<span class="tag tag-amber">CQRS</span>
+<span class="tag tag-amber">Event Sourcing</span>
+</div>
+<div class="prog-wrap">
+<div class="prog-label">
+<span>Not started</span>
+<span>0%</span>
+</div>
+<div class="prog-track">
+<div class="prog-fill" style="width:0%;"></div>
+</div>
+</div>
+</div>
+</div><!-- .roadmap-grid -->
+</div>
+</section>
+<div class="divider"></div>
+<!-- ═══════════ LONGER VISION TIMELINE ═══════════ -->
+<section class="section">
+<div class="container">
+<div class="section-header reveal">
+<span class="eyebrow">Bigger Picture</span>
+<h2>Career Vision</h2>
+<p>Where these programs fit into the larger arc of my career.</p>
+</div>
+<div class="vision-list reveal">
+<div class="vision-item">
+<div class="vision-dot done"><i class="fas fa-check"></i></div>
+<div class="vision-body">
+<div class="vision-time">2022 – 2024</div>
+<div class="vision-title">Foundation — .NET &amp; Unity Core Skills</div>
+<p class="vision-desc">Built enterprise APIs, desktop apps, and Unity games. Established a
+                                strong C#, ASP.NET Core, and clean-architecture foundation.</p>
+</div>
+</div>
+<div class="vision-item">
+<div class="vision-dot active"><i class="fas fa-circle" style="font-size:0.5em;"></i></div>
+<div class="vision-body">
+<div class="vision-time">2025 – 2026 (Now)</div>
+<div class="vision-title">Systems Depth — AI, Security &amp; Architecture</div>
+<p class="vision-desc">Going deep on the fundamentals: system-level performance, AI
+                                integration,
+                                security hardening, and advanced architectural patterns.</p>
+</div>
+</div>
+<div class="vision-item">
+<div class="vision-dot"><i class="fas fa-arrow-right" style="font-size:0.75em;"></i></div>
+<div class="vision-body">
+<div class="vision-time">2026 +</div>
+<div class="vision-title">Senior / Lead Role — Building at Scale</div>
+<p class="vision-desc">Lead engineering initiatives on meaningful products. Mentor juniors,
+                                drive architectural decisions, and contribute to open-source.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="divider"></div>
+<!-- ═══════════ PHILOSOPHY ═══════════ -->
+<section class="section">
+<div class="container">
+<div class="philosophy-block reveal">
+<span class="eyebrow">How I Learn</span>
+<h2>Learning Philosophy</h2>
+<p>
+                        Each program follows a <strong>4-week intensive structure</strong> with hands-on projects,
+                        benchmarks, and real-world scenarios. The goal isn't just to learn — it's to
+                        <strong>build</strong>, <strong>measure</strong>, and <strong>document</strong> production-ready
+                        systems.
+                    </p>
+<div class="pillars">
+<div class="pillar">
+<div class="pillar-icon"><i class="fas fa-hammer"></i></div>
+<div class="pillar-title">Hands-On First</div>
+<p class="pillar-desc">Build actual projects, not just tutorial exercises.</p>
+</div>
+<div class="pillar">
+<div class="pillar-icon"><i class="fas fa-tachometer-alt" style="color:var(--amber);"></i>
+</div>
+<div class="pillar-title">Measure Everything</div>
+<p class="pillar-desc">Benchmark before and after — know the impact of changes.</p>
+</div>
+<div class="pillar">
+<div class="pillar-icon"><i class="fas fa-book" style="color:var(--slate);"></i></div>
+<div class="pillar-title">Document &amp; Share</div>
+<p class="pillar-desc">Write technical posts, architecture diagrams, and open-source code.
+                            </p>
+</div>
+<div class="pillar">
+<div class="pillar-icon"><i class="fas fa-redo" style="color:var(--green);"></i></div>
+<div class="pillar-title">Iterate Fast</div>
+<p class="pillar-desc">Ship something, get feedback, improve — continuous learning cycles.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="site-footer nfx-footer">
+<div class="container">
+<div class="footer-top">
+<div>
+<span class="footer-logo">Enes Efe Tokta</span>
+<p class="footer-tagline">
+                            Software Developer · .NET &amp; Unity · Based in Turkey.<br/>
+                            Open to remote opportunities worldwide.
+                        </p>
+</div>
+<div class="footer-social">
+<a aria-label="GitHub" href="https://github.com/EnesEfeTokta" target="_blank"><i class="fab fa-github"></i></a>
+<a aria-label="LinkedIn" href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank"><i class="fab fa-linkedin"></i></a>
+<a aria-label="Medium" href="https://medium.com/@EnesEfeTokta" target="_blank"><i class="fab fa-medium"></i></a>
+<a aria-label="X / Twitter" href="https://x.com/EnesEfeTokta" target="_blank"><i class="fab fa-twitter"></i></a>
+</div>
+</div>
+<div class="footer-bottom">
+<p class="footer-copyright">© 2026 Enes Efe Tokta. Built with modern web technologies.</p>
+<div class="footer-links">
+<a href="biography.html">Biography</a>
+<a href="../blog/index.html">Blog</a>
+<a href="cv.html">Resume</a>
+<a href="../index.html#contact">Contact</a>
+</div>
+</div>
+</div>
+</footer>
+<script src="../assets/js/main.js"></script>
 </body>
-
-</html>
+</body></html>

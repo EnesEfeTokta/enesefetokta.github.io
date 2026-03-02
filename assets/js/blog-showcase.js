@@ -1,6 +1,15 @@
 // Blog Showcase Data and Rendering
 const blogPosts = [
     {
+        title: ".NET and C# in the AI Race: Not a Defeat, but a Strategic Positioning",
+        excerpt: "Why C# lost ground to Python in AI isn't a story of failure — it's a story of strategic positioning, ecosystem timing, and complementary strengths.",
+        date: "Mar 2, 2026",
+        readTime: "4 min",
+        icon: "fa-brain",
+        link: "blog/posts/dotnet-csharp-ai-race.html",
+        tags: [".NET", "AI", "Opinion"]
+    },
+    {
         title: "A .NET Developer’s Perspective on Node.js — And Why One Hand Should Be There Too",
         excerpt: "Why learning Node.js doesn't mean abandoning .NET, but expanding your perspective as an engineer. Exploring the bridge between .NET structure and Node.js velocity.",
         date: "Feb 15, 2026",
@@ -16,7 +25,7 @@ const blogPosts = [
         readTime: "6 min",
         icon: "fa-project-diagram",
         link: "blog/posts/software-architecture-advantage.html",
-        tags: ["Architecture", "Opinion"]
+        tags: ["Architecture", "Opinion", "Tech"]
     },
     {
         title: "JWT: Is Security Really That Simple?",
@@ -25,7 +34,7 @@ const blogPosts = [
         readTime: "9 min",
         icon: "fa-shield-alt",
         link: "blog/posts/jwt-security-deep-dive.html",
-        tags: ["Security", "Backend"]
+        tags: ["Security", "Backend", "Identity"]
     },
     {
         title: "Who Should We Listen to About AI?",
@@ -34,7 +43,7 @@ const blogPosts = [
         readTime: "7 min",
         icon: "fa-brain",
         link: "blog/posts/who-to-listen-ai.html",
-        tags: ["AI", "Opinion"]
+        tags: ["AI", "Opinion", "Ethics"]
     },
     {
         title: "FinTrack: Lessons Learned While Building a Financial Backend",
@@ -43,7 +52,7 @@ const blogPosts = [
         readTime: "10 min",
         icon: "fa-microsoft",
         link: "blog/posts/fintrack-lessons-learned.html",
-        tags: [".NET", "Architecture"]
+        tags: [".NET", "Finance", "Backend"]
     },
     {
         title: "The Fear of Artificial Intelligence",
@@ -52,7 +61,7 @@ const blogPosts = [
         readTime: "5 min",
         icon: "fa-brain",
         link: "blog/posts/ai-fear-perspective.html",
-        tags: ["AI", "Career"]
+        tags: ["AI", "Career", "Mindset"]
     },
     {
         title: "Basic Helicopter Control System in Unity",
@@ -61,7 +70,7 @@ const blogPosts = [
         readTime: "9 min",
         icon: "fa-unity",
         link: "blog/posts/unity-helicopter-control.html",
-        tags: ["Unity", "Tutorial"]
+        tags: ["Unity", "Tutorial", "Physics"]
     }
 ];
 
@@ -75,12 +84,12 @@ function renderBlogCarousel() {
                 <i class="fas ${post.icon} blog-card-icon"></i>
             </div>
             <div class="blog-card-body">
-                <div style="display: flex; gap: 12px; margin-bottom: 12px; font-size: 0.85rem; color: var(--text-muted);">
+                <div class="blog-card-meta">
                     <span><i class="far fa-calendar"></i> ${post.date}</span>
                     <span><i class="far fa-clock"></i> ${post.readTime}</span>
                 </div>
-                <h3 style="font-size: 1.2rem; margin-bottom: 12px; line-height: 1.3; color: var(--text-main);">${post.title}</h3>
-                <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px; font-size: 0.95rem;">
+                <h3 class="blog-card-title">${post.title}</h3>
+                <p class="blog-card-excerpt">
                     ${post.excerpt}
                 </p>
                 <div class="skill-tags">
