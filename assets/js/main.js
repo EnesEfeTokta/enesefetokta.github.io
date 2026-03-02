@@ -31,26 +31,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // ==============================
-    // NAV DROPDOWN ("More")
-    // ==============================
-    const dropdownBtn = document.querySelector('.nav-dropdown-btn');
-    const dropdownMenu = document.querySelector('.nav-dropdown-menu');
+    // Smooth scrolling remains...
 
-    if (dropdownBtn && dropdownMenu) {
-        dropdownBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            dropdownMenu.classList.toggle('active');
-            dropdownBtn.classList.toggle('open');
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!dropdownBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
-                dropdownMenu.classList.remove('active');
-                dropdownBtn.classList.remove('open');
-            }
-        });
-    }
 
     // ==============================
     // SMOOTH SCROLLING
@@ -81,12 +63,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const handleNavScroll = () => {
         if (!navbar) return;
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(244, 241, 236, 0.97)';
-            navbar.style.borderBottomColor = 'rgba(160, 148, 130, 0.38)';
-            navbar.style.boxShadow = '0 2px 16px rgba(28, 21, 16, 0.07)';
+            navbar.style.background = 'rgba(0, 0, 0, 0.95)';
+            navbar.style.borderBottomColor = 'rgba(255, 255, 255, 0.08)';
+            navbar.style.boxShadow = '0 2px 16px rgba(0, 0, 0, 0.3)';
         } else {
-            navbar.style.background = 'rgba(246, 244, 240, 0.90)';
-            navbar.style.borderBottomColor = 'rgba(160, 148, 130, 0.22)';
+            navbar.style.background = 'rgba(0, 0, 0, 0.85)';
+            navbar.style.borderBottomColor = 'rgba(255, 255, 255, 0.06)';
             navbar.style.boxShadow = 'none';
         }
     };
@@ -178,19 +160,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (marqueeRow1 && marqueeRow2 && typeof projectsData !== 'undefined') {
         const buildCard = (project) => {
-            const linkPath = `pages/${project.link}`;
-            const tags = project.tags.slice(0, 3)
-                .map(tag => `<span class="tag tag-orange">${tag}</span>`).join('');
+            const linkPath = project.link.startsWith('http') ? project.link : `pages/${project.link}`;
+            const githubLink = project.github || `https://github.com/EnesEfeTokta/${project.id}`;
+
             return `
-                <a href="${linkPath}" class="marquee-card">
-                    <div class="marquee-card-header">
-                        <div class="marquee-icon"><i class="${project.icon}"></i></div>
-                        <span class="badge badge-featured" style="font-size:0.7rem;">${project.category}</span>
+                <div class="marquee-card">
+                    <div class="marquee-card-logo">
+                        <i class="${project.icon}"></i>
                     </div>
-                    <h4 class="marquee-title">${project.title}</h4>
-                    <p class="marquee-desc">${project.description}</p>
-                    <div class="tag-row">${tags}</div>
-                </a>
+                    <div class="marquee-card-body">
+                        <h4 class="marquee-title">${project.title}</h4>
+                        <span class="marquee-cat">${project.category}</span>
+                        <p class="marquee-desc">${project.description}</p>
+                        <div class="marquee-card-actions">
+                            <a href="${linkPath}" class="marquee-action-btn primary"><i class="fas fa-external-link-alt"></i> View</a>
+                            <a href="${githubLink}" target="_blank" class="marquee-action-btn secondary"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
             `;
         };
 

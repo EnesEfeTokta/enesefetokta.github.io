@@ -1,334 +1,298 @@
 <!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/154990402?v=4">
-    <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/154990402?v=4">
-    <title>Fishing Game - Unity 3D | Enes Efe Tokta</title>
-    <link rel="stylesheet" href="../../../assets/css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-
-<body>
-
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="../../../index.html" class="logo">Enes Efe Tokta</a>
-            <ul class="nav-links">
-                <li><a href="../../../index.html#about">About</a></li>
-                <li><a href="../../../pages/projects.html">Work</a></li>
-                <li><a href="../../../index.html#skills">Skills</a></li>
-                <li><a href="../../../pages/education.html">Education</a></li>
-                <li><a href="../../../pages/cv.html">Resume</a></li>
-                <li><a href="../../../pages/biography.html">Biography</a></li>
-                <li><a href="../../../pages/future-plans.html">Future Plans</a></li>
-                <li><a href="../../../blog/index.html">Blog</a></li>
-                <li><a href="../../../index.html#contact">Contact</a></li>
-            </ul>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </nav>
-
-    <header class="fishing-hero"
-        style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://raw.githubusercontent.com/EnesEfeTokta/Fishing/main/FishingLogo1.png'); background-size: cover; background-position: center; padding: 120px 0 80px;">
-        <div class="container">
-            <div style="max-width: 800px;">
-                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
-                    <a href="../../projects.html"
-                        style="color: var(--text-inverse); opacity: 0.8; font-size: 0.9rem; display: flex; align-items: center; gap: 8px;">
-                        <i class="fas fa-arrow-left"></i> Back to Projects
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Favicon -->
+<link href="../../../assets/images/profile/my_profile.png" rel="icon" type="image/png"/>
+<link href="../../../assets/images/profile/my_profile.png" rel="apple-touch-icon"/>
+<title>Fishing Game - Unity 3D | Enes Efe Tokta</title>
+<!-- Stylesheets -->
+<link href="../../../assets/css/styles.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+<meta content="A relaxing, casual fishing game developed for mobile platforms using Unity, with relaxing mechanics and progression." name="description"/><meta content="Unity, Mobile Game, Casual Game, C#, 2D Game Development" name="keywords"/><meta content="Enes Efe Tokta" name="author"/><link href="https://enesefetokta.shop/pages/projects/details/fishing-game.html" rel="canonical"/><meta content="website" property="og:type"/><meta content="https://enesefetokta.shop/pages/projects/details/fishing-game.html" property="og:url"/><meta content="Fishing Game - Casual Mobile Game | Enes Efe Tokta" property="og:title"/><meta content="A relaxing, casual fishing game developed for mobile platforms using Unity, with relaxing mechanics and progression." property="og:description"/><meta content="en_US" property="og:locale"/><meta content="https://enesefetokta.shop/assets/images/profile/my_profile.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Fishing Game - Casual Mobile Game | Enes Efe Tokta" name="twitter:title"/><meta content="A relaxing, casual fishing game developed for mobile platforms using Unity, with relaxing mechanics and progression." name="twitter:description"/><meta content="@EnesEfeTokta" name="twitter:creator"/><meta content="https://enesefetokta.shop/assets/images/profile/my_profile.png" name="twitter:image"/><script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Fishing Game - Casual Mobile Game | Enes Efe Tokta",
+          "description": "A relaxing, casual fishing game developed for mobile platforms using Unity, with relaxing mechanics and progression.",
+          "url": "https://enesefetokta.shop/pages/projects/details/fishing-game.html",
+          "author": {
+            "@type": "Person",
+            "name": "Enes Efe Tokta"
+          }
+        }
+        </script></head>
+<body class="nfx-body">
+<nav class="navbar nfx-navbar" id="navbar">
+<div class="container">
+<a class="logo" href="../../../index.html">Enes Efe Tokta</a>
+<ul class="nav-links" id="nav-links">
+<li><a href="../../../index.html#about">About</a></li>
+<li><a href="../../../pages/work.html">Work</a></li>
+<li><a href="../../../pages/projects.html">Projects</a></li>
+<li><a href="../../../blog/index.html">Blog</a></li>
+<li><a href="../../../pages/biography.html">Biography</a></li>
+<li><a href="../../../pages/education.html">Education</a></li>
+<li><a href="../../../pages/cv.html">Resume</a></li>
+<li><a href="../../../pages/future-plans.html">Future Plans</a></li>
+<li><a class="nav-cta nfx-nav-cta" href="../../../index.html#contact">Contact</a></li>
+</ul>
+<button aria-label="Toggle menu" class="mobile-menu-btn" id="mobile-btn">
+<i class="fas fa-bars"></i>
+</button>
+</div>
+</nav>
+<header class="fishing-hero" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://raw.githubusercontent.com/EnesEfeTokta/Fishing/main/FishingLogo1.png'); background-size: cover; background-position: center; padding: 140px 0 80px;">
+<div class="container">
+<div style="max-width: 800px;">
+<div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+<a href="../../projects.html" style="color: var(--text-inverse); opacity: 0.8; font-size: 0.9rem; display: flex; align-items: center; gap: 8px;">
+<i class="fas fa-arrow-left"></i> Back to Projects
                     </a>
-                </div>
-                <h1
-                    style="font-size: clamp(3rem, 8vw, 5rem); margin-bottom: 24px; line-height: 1.1; color: var(--text-inverse); font-weight: 800;">
+</div>
+<h1 style="font-size: clamp(3rem, 8vw, 5rem); margin-bottom: 24px; line-height: 1.1; color: var(--text-inverse); font-weight: 800;">
                     FISHING</h1>
-                <p
-                    style="font-size: 1.25rem; color: var(--text-inverse); opacity: 0.9; margin-bottom: 40px; line-height: 1.7;">
+<p style="font-size: 1.25rem; color: var(--text-inverse); opacity: 0.9; margin-bottom: 40px; line-height: 1.7;">
                     A fun spear-throwing survival game set in a prehistoric lake. Master the physics of hunting to
                     survive and level up.
                 </p>
-                <div class="skill-tags">
-                    <span class="skill-tag"
-                        style="background: rgba(90, 170, 255, 0.2); color: #5aaaff; border: 1px solid rgba(90, 170, 255, 0.3);">Unity
+<div class="skill-tags">
+<span class="skill-tag" style="background: rgba(90, 170, 255, 0.2); color: #5aaaff; border: 1px solid rgba(90, 170, 255, 0.3);">Unity
                         3D</span>
-                    <span class="skill-tag"
-                        style="background: rgba(90, 170, 255, 0.2); color: #5aaaff; border: 1px solid rgba(90, 170, 255, 0.3);">C#</span>
-                    <span class="skill-tag"
-                        style="background: rgba(90, 170, 255, 0.2); color: #5aaaff; border: 1px solid rgba(90, 170, 255, 0.3);">Physics
+<span class="skill-tag" style="background: rgba(90, 170, 255, 0.2); color: #5aaaff; border: 1px solid rgba(90, 170, 255, 0.3);">C#</span>
+<span class="skill-tag" style="background: rgba(90, 170, 255, 0.2); color: #5aaaff; border: 1px solid rgba(90, 170, 255, 0.3);">Physics
                         System</span>
-                    <span class="skill-tag"
-                        style="background: rgba(90, 170, 255, 0.2); color: #5aaaff; border: 1px solid rgba(90, 170, 255, 0.3);">Android/WebGL</span>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <main class="container" style="max-width: 1100px; padding-top: 80px;">
-        <!-- Play / Embed Section -->
-        <section class="bento-item"
-            style="padding: 0; overflow: hidden; margin-bottom: 60px; border: 1px solid var(--accent-primary);">
-            <div style="background: #000; padding: 40px; text-align: center;">
-                <iframe frameborder="0"
-                    src="https://itch.io/embed/2902718?linkback=true&amp;bg_color=0a0a0a&amp;fg_color=ffffff&amp;link_color=5aaaff&amp;border_color=1a1a1a"
-                    width="100%" height="167" style="max-width: 552px; margin: 0 auto; display: block;">
-                    <a href="https://enes-efe-tokta.itch.io/fish">Fishing by EnesEfeTokta</a>
-                </iframe>
-            </div>
-            <div
-                style="padding: 24px; background: var(--bg-surface); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
-                <div>
-                    <h3 style="font-size: 1.1rem; margin-bottom: 4px;">Play Directly</h3>
-                    <p style="margin: 0; color: var(--text-secondary); font-size: 0.9rem;">Available on Itch.io for
+<span class="skill-tag" style="background: rgba(90, 170, 255, 0.2); color: #5aaaff; border: 1px solid rgba(90, 170, 255, 0.3);">Android/WebGL</span>
+</div>
+</div>
+</div>
+</header>
+<main class="container" style="max-width: 1100px; padding-top: 80px;">
+<!-- Play / Embed Section -->
+<section class="bento-item" style="padding: 0; overflow: hidden; margin-bottom: 60px; border: 1px solid var(--accent-primary);">
+<div style="background: #000; padding: 40px; text-align: center;">
+<iframe frameborder="0" height="167" src="https://itch.io/embed/2902718?linkback=true&amp;bg_color=0a0a0a&amp;fg_color=ffffff&amp;link_color=5aaaff&amp;border_color=1a1a1a" style="max-width: 552px; margin: 0 auto; display: block;" width="100%">
+<a href="https://enes-efe-tokta.itch.io/fish">Fishing by EnesEfeTokta</a>
+</iframe>
+</div>
+<div style="padding: 24px; background: var(--bg-surface); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+<div>
+<h3 style="font-size: 1.1rem; margin-bottom: 4px;">Play Directly</h3>
+<p style="margin: 0; color: var(--text-secondary); font-size: 0.9rem;">Available on Itch.io for
                         WebGL, Windows, and Android.</p>
-                </div>
-                <div style="display: flex; gap: 12px;">
-                    <a href="https://github.com/EnesEfeTokta/Fishing" target="_blank" class="btn btn-secondary"
-                        style="padding: 10px 20px; font-size: 0.9rem;">
-                        <i class="fab fa-github"></i> Source Code
+</div>
+<div style="display: flex; gap: 12px;">
+<a class="btn btn-secondary" href="https://github.com/EnesEfeTokta/Fishing" style="padding: 10px 20px; font-size: 0.9rem;" target="_blank">
+<i class="fab fa-github"></i> Source Code
                     </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Gameplay & Mechanics -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 60px;">
-            <section class="bento-item">
-                <h2 style="font-size: 1.5rem; margin-bottom: 24px; display: flex; align-items: center; gap: 12px;">
-                    <i class="fas fa-gamepad" style="color: var(--accent-primary);"></i> Gameplay
+</div>
+</div>
+</section>
+<!-- Gameplay & Mechanics -->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 60px;">
+<section class="bento-item">
+<h2 style="font-size: 1.5rem; margin-bottom: 24px; display: flex; align-items: center; gap: 12px;">
+<i class="fas fa-gamepad" style="color: var(--accent-primary);"></i> Gameplay
                 </h2>
-                <p style="color: var(--text-secondary); line-height: 1.8;">
+<p style="color: var(--text-secondary); line-height: 1.8;">
                     The core experience revolves around precision and timing. Players must click or tap to throw spears
                     at fish spawning in the lake. Each hit contributes to your XP, which visually tracks from the catch
                     directly to your progress bar.
                 </p>
-                <ul style="margin-top: 20px; color: var(--text-secondary); list-style: none; padding: 0;">
-                    <li style="margin-bottom: 12px;"><i class="fas fa-check"
-                            style="color: var(--accent-primary); margin-right: 12px;"></i> Intuitive point-and-throw
+<ul style="margin-top: 20px; color: var(--text-secondary); list-style: none; padding: 0;">
+<li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: var(--accent-primary); margin-right: 12px;"></i> Intuitive point-and-throw
                         controls</li>
-                    <li style="margin-bottom: 12px;"><i class="fas fa-check"
-                            style="color: var(--accent-primary); margin-right: 12px;"></i> Visual damage feedback (Red
+<li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: var(--accent-primary); margin-right: 12px;"></i> Visual damage feedback (Red
                         flash)</li>
-                    <li style="margin-bottom: 12px;"><i class="fas fa-check"
-                            style="color: var(--accent-primary); margin-right: 12px;"></i> Smooth XP animation system
+<li style="margin-bottom: 12px;"><i class="fas fa-check" style="color: var(--accent-primary); margin-right: 12px;"></i> Smooth XP animation system
                     </li>
-                </ul>
-            </section>
-
-            <section class="bento-item">
-                <h2 style="font-size: 1.5rem; margin-bottom: 24px; display: flex; align-items: center; gap: 12px;">
-                    <i class="fas fa-cog" style="color: var(--accent-primary);"></i> Dynamics
+</ul>
+</section>
+<section class="bento-item">
+<h2 style="font-size: 1.5rem; margin-bottom: 24px; display: flex; align-items: center; gap: 12px;">
+<i class="fas fa-cog" style="color: var(--accent-primary);"></i> Dynamics
                 </h2>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-                    <div
-                        style="background: var(--bg-body); padding: 16px; border-radius: 8px; border: 1px solid var(--border);">
-                        <h4 style="font-size: 0.9rem; margin-bottom: 8px; color: var(--accent-primary);">Physics</h4>
-                        <p style="font-size: 0.85rem; color: var(--text-muted);">Realistic spear arc and hit detection.
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+<div style="background: var(--bg-body); padding: 16px; border-radius: 8px; border: 1px solid var(--border);">
+<h4 style="font-size: 0.9rem; margin-bottom: 8px; color: var(--accent-primary);">Physics</h4>
+<p style="font-size: 0.85rem; color: var(--text-muted);">Realistic spear arc and hit detection.
                         </p>
-                    </div>
-                    <div
-                        style="background: var(--bg-body); padding: 16px; border-radius: 8px; border: 1px solid var(--border);">
-                        <h4 style="font-size: 0.9rem; margin-bottom: 8px; color: var(--accent-primary);">Scaling</h4>
-                        <p style="font-size: 0.85rem; color: var(--text-muted);">20 levels of increasing difficulty.</p>
-                    </div>
-                    <div
-                        style="background: var(--bg-body); padding: 16px; border-radius: 8px; border: 1px solid var(--border);">
-                        <h4 style="font-size: 0.9rem; margin-bottom: 8px; color: var(--accent-primary);">Spawning</h4>
-                        <p style="font-size: 0.85rem; color: var(--text-muted);">Dynamic lake population engine.</p>
-                    </div>
-                    <div
-                        style="background: var(--bg-body); padding: 16px; border-radius: 8px; border: 1px solid var(--border);">
-                        <h4 style="font-size: 0.9rem; margin-bottom: 8px; color: var(--accent-primary);">Audio</h4>
-                        <p style="font-size: 0.85rem; color: var(--text-muted);">Casual thematic music & SFX.</p>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- Fish Species Table -->
-        <section class="bento-item" style="margin-bottom: 60px;">
-            <h2 style="font-size: 1.5rem; margin-bottom: 32px; display: flex; align-items: center; gap: 12px;">
-                <i class="fas fa-fish" style="color: var(--accent-primary);"></i> Species & Characteristics
+</div>
+<div style="background: var(--bg-body); padding: 16px; border-radius: 8px; border: 1px solid var(--border);">
+<h4 style="font-size: 0.9rem; margin-bottom: 8px; color: var(--accent-primary);">Scaling</h4>
+<p style="font-size: 0.85rem; color: var(--text-muted);">20 levels of increasing difficulty.</p>
+</div>
+<div style="background: var(--bg-body); padding: 16px; border-radius: 8px; border: 1px solid var(--border);">
+<h4 style="font-size: 0.9rem; margin-bottom: 8px; color: var(--accent-primary);">Spawning</h4>
+<p style="font-size: 0.85rem; color: var(--text-muted);">Dynamic lake population engine.</p>
+</div>
+<div style="background: var(--bg-body); padding: 16px; border-radius: 8px; border: 1px solid var(--border);">
+<h4 style="font-size: 0.9rem; margin-bottom: 8px; color: var(--accent-primary);">Audio</h4>
+<p style="font-size: 0.85rem; color: var(--text-muted);">Casual thematic music &amp; SFX.</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Fish Species Table -->
+<section class="bento-item" style="margin-bottom: 60px;">
+<h2 style="font-size: 1.5rem; margin-bottom: 32px; display: flex; align-items: center; gap: 12px;">
+<i class="fas fa-fish" style="color: var(--accent-primary);"></i> Species &amp; Characteristics
             </h2>
-            <div style="overflow-x: auto;">
-                <table style="width: 100%; border-collapse: collapse; min-width: 600px;">
-                    <thead>
-                        <tr style="border-bottom: 2px solid var(--border); text-align: left;">
-                            <th style="padding: 16px; color: var(--text-main); font-weight: 700;">Name</th>
-                            <th style="padding: 16px; color: var(--text-main); font-weight: 700;">Level</th>
-                            <th style="padding: 16px; color: var(--text-main); font-weight: 700;">Health</th>
-                            <th style="padding: 16px; color: var(--text-main); font-weight: 700;">Points</th>
-                            <th style="padding: 16px; color: var(--text-main); font-weight: 700;">Speed</th>
-                        </tr>
-                    </thead>
-                    <tbody style="color: var(--text-secondary);">
-                        <tr style="border-bottom: 1px solid var(--border);">
-                            <td style="padding: 16px; color: var(--text-main); font-weight: 600;">Basic Fish (1-2)</td>
-                            <td style="padding: 16px;">Beginner</td>
-                            <td style="padding: 16px;">80-100</td>
-                            <td style="padding: 16px;">40-50</td>
-                            <td style="padding: 16px;"><span style="color: var(--green);">Slow</span></td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid var(--border);">
-                            <td style="padding: 16px; color: var(--text-main); font-weight: 600;">Advanced Fish (3-6)
+<div style="overflow-x: auto;">
+<table style="width: 100%; border-collapse: collapse; min-width: 600px;">
+<thead>
+<tr style="border-bottom: 2px solid var(--border); text-align: left;">
+<th style="padding: 16px; color: var(--text-main); font-weight: 700;">Name</th>
+<th style="padding: 16px; color: var(--text-main); font-weight: 700;">Level</th>
+<th style="padding: 16px; color: var(--text-main); font-weight: 700;">Health</th>
+<th style="padding: 16px; color: var(--text-main); font-weight: 700;">Points</th>
+<th style="padding: 16px; color: var(--text-main); font-weight: 700;">Speed</th>
+</tr>
+</thead>
+<tbody style="color: var(--text-secondary);">
+<tr style="border-bottom: 1px solid var(--border);">
+<td style="padding: 16px; color: var(--text-main); font-weight: 600;">Basic Fish (1-2)</td>
+<td style="padding: 16px;">Beginner</td>
+<td style="padding: 16px;">80-100</td>
+<td style="padding: 16px;">40-50</td>
+<td style="padding: 16px;"><span style="color: var(--green);">Slow</span></td>
+</tr>
+<tr style="border-bottom: 1px solid var(--border);">
+<td style="padding: 16px; color: var(--text-main); font-weight: 600;">Advanced Fish (3-6)
                             </td>
-                            <td style="padding: 16px;">Middle</td>
-                            <td style="padding: 16px;">120-180</td>
-                            <td style="padding: 16px;">60-90</td>
-                            <td style="padding: 16px;"><span style="color: var(--amber);">Medium</span></td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid var(--border);">
-                            <td style="padding: 16px; color: var(--text-main); font-weight: 600;">Hunter Fish (7)</td>
-                            <td style="padding: 16px;">Hard</td>
-                            <td style="padding: 16px;">200</td>
-                            <td style="padding: 16px;">100</td>
-                            <td style="padding: 16px;"><span style="color: var(--accent-primary);">Fast</span></td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 16px; color: var(--text-main); font-weight: 600;">Boss Fish (8)</td>
-                            <td style="padding: 16px;">Extreme</td>
-                            <td style="padding: 16px;">250</td>
-                            <td style="padding: 16px;">125</td>
-                            <td style="padding: 16px;"><span style="color: var(--rust);">Fast</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <!-- Success Calculations -->
-        <section class="bento-item"
-            style="margin-bottom: 60px; background: var(--bg-body); border: 1px solid var(--border-accent);">
-            <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 48px; align-items: center;">
-                <div>
-                    <h2 style="font-size: 1.5rem; margin-bottom: 20px;">Success Algorithm</h2>
-                    <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">
+<td style="padding: 16px;">Middle</td>
+<td style="padding: 16px;">120-180</td>
+<td style="padding: 16px;">60-90</td>
+<td style="padding: 16px;"><span style="color: var(--amber);">Medium</span></td>
+</tr>
+<tr style="border-bottom: 1px solid var(--border);">
+<td style="padding: 16px; color: var(--text-main); font-weight: 600;">Hunter Fish (7)</td>
+<td style="padding: 16px;">Hard</td>
+<td style="padding: 16px;">200</td>
+<td style="padding: 16px;">100</td>
+<td style="padding: 16px;"><span style="color: var(--accent-primary);">Fast</span></td>
+</tr>
+<tr>
+<td style="padding: 16px; color: var(--text-main); font-weight: 600;">Boss Fish (8)</td>
+<td style="padding: 16px;">Extreme</td>
+<td style="padding: 16px;">250</td>
+<td style="padding: 16px;">125</td>
+<td style="padding: 16px;"><span style="color: var(--rust);">Fast</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Success Calculations -->
+<section class="bento-item" style="margin-bottom: 60px; background: var(--bg-body); border: 1px solid var(--border-accent);">
+<div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 48px; align-items: center;">
+<div>
+<h2 style="font-size: 1.5rem; margin-bottom: 20px;">Success Algorithm</h2>
+<p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">
                         Rewards are dynamically calculated based on your efficiency. The faster you clear a level
                         relative to the target duration (S), the higher your multiplier.
                     </p>
-                </div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-                    <div
-                        style="background: var(--bg-surface); padding: 20px; border-radius: 12px; border: 1px solid var(--border);">
-                        <span style="font-weight: 800; color: var(--green); font-size: 1.4rem;">100%</span>
-                        <p style="margin: 4px 0 0; font-size: 0.8rem; color: var(--text-muted);">T ≤ S/4 (Legendary)</p>
-                    </div>
-                    <div
-                        style="background: var(--bg-surface); padding: 20px; border-radius: 12px; border: 1px solid var(--border);">
-                        <span style="font-weight: 800; color: var(--accent-primary); font-size: 1.4rem;">50%</span>
-                        <p style="margin: 4px 0 0; font-size: 0.8rem; color: var(--text-muted);">S/4 < T ≤ S/2</p>
-                    </div>
-                    <div
-                        style="background: var(--bg-surface); padding: 20px; border-radius: 12px; border: 1px solid var(--border);">
-                        <span style="font-weight: 800; color: var(--amber); font-size: 1.4rem;">25%</span>
-                        <p style="margin: 4px 0 0; font-size: 0.8rem; color: var(--text-muted);">T > S/2</p>
-                    </div>
-                    <div
-                        style="background: var(--bg-surface); padding: 20px; border-radius: 12px; border: 1px solid var(--border);">
-                        <span style="font-weight: 800; color: var(--text-main); font-size: 1.4rem;">Min</span>
-                        <p style="margin: 4px 0 0; font-size: 0.8rem; color: var(--text-muted);">Base Reward</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Screenshots Carousel -->
-        <section class="bento-item" style="margin-bottom: 60px;">
-            <h2 style="font-size: 1.5rem; margin-bottom: 32px; display: flex; align-items: center; gap: 12px;">
-                <i class="fas fa-images" style="color: var(--accent-primary);"></i> Field Reports
+</div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+<div style="background: var(--bg-surface); padding: 20px; border-radius: 12px; border: 1px solid var(--border);">
+<span style="font-weight: 800; color: var(--green); font-size: 1.4rem;">100%</span>
+<p style="margin: 4px 0 0; font-size: 0.8rem; color: var(--text-muted);">T ≤ S/4 (Legendary)</p>
+</div>
+<div style="background: var(--bg-surface); padding: 20px; border-radius: 12px; border: 1px solid var(--border);">
+<span style="font-weight: 800; color: var(--accent-primary); font-size: 1.4rem;">50%</span>
+<p style="margin: 4px 0 0; font-size: 0.8rem; color: var(--text-muted);">S/4 &lt; T ≤ S/2</p>
+</div>
+<div style="background: var(--bg-surface); padding: 20px; border-radius: 12px; border: 1px solid var(--border);">
+<span style="font-weight: 800; color: var(--amber); font-size: 1.4rem;">25%</span>
+<p style="margin: 4px 0 0; font-size: 0.8rem; color: var(--text-muted);">T &gt; S/2</p>
+</div>
+<div style="background: var(--bg-surface); padding: 20px; border-radius: 12px; border: 1px solid var(--border);">
+<span style="font-weight: 800; color: var(--text-main); font-size: 1.4rem;">Min</span>
+<p style="margin: 4px 0 0; font-size: 0.8rem; color: var(--text-muted);">Base Reward</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Screenshots Carousel -->
+<section class="bento-item" style="margin-bottom: 60px;">
+<h2 style="font-size: 1.5rem; margin-bottom: 32px; display: flex; align-items: center; gap: 12px;">
+<i class="fas fa-images" style="color: var(--accent-primary);"></i> Field Reports
             </h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
-                <div style="border-radius: 12px; overflow: hidden; border: 1px solid var(--border);">
-                    <img src="https://raw.githubusercontent.com/EnesEfeTokta/Fishing/main/Screenshots/i1-min.png"
-                        alt="Gameplay" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
-                </div>
-                <div style="border-radius: 12px; overflow: hidden; border: 1px solid var(--border);">
-                    <img src="https://raw.githubusercontent.com/EnesEfeTokta/Fishing/main/Screenshots/i2-min.png"
-                        alt="Menu" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
-                </div>
-                <div style="border-radius: 12px; overflow: hidden; border: 1px solid var(--border);">
-                    <img src="https://raw.githubusercontent.com/EnesEfeTokta/Fishing/main/Screenshots/i3-min.png"
-                        alt="Level Selection" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
-                </div>
-                <div style="border-radius: 12px; overflow: hidden; border: 1px solid var(--border);">
-                    <img src="https://raw.githubusercontent.com/EnesEfeTokta/Fishing/main/Screenshots/i4-min.png"
-                        alt="UI Details" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
-                </div>
-            </div>
-        </section>
-
-        <!-- Assets & Credits -->
-        <section class="bento-item" style="margin-bottom: 100px;">
-            <h2 style="font-size: 1.5rem; margin-bottom: 32px;">Production Credits</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px;">
-                <div>
-                    <h4 style="color: var(--accent-primary); margin-bottom: 12px;">Visuals</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Low Poly Animals, Stone Age Weapons &
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
+<div style="border-radius: 12px; overflow: hidden; border: 1px solid var(--border);">
+<img alt="Gameplay" src="https://raw.githubusercontent.com/EnesEfeTokta/Fishing/main/Screenshots/i1-min.png" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;"/>
+</div>
+<div style="border-radius: 12px; overflow: hidden; border: 1px solid var(--border);">
+<img alt="Menu" src="https://raw.githubusercontent.com/EnesEfeTokta/Fishing/main/Screenshots/i2-min.png" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;"/>
+</div>
+<div style="border-radius: 12px; overflow: hidden; border: 1px solid var(--border);">
+<img alt="Level Selection" src="https://raw.githubusercontent.com/EnesEfeTokta/Fishing/main/Screenshots/i3-min.png" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;"/>
+</div>
+<div style="border-radius: 12px; overflow: hidden; border: 1px solid var(--border);">
+<img alt="UI Details" src="https://raw.githubusercontent.com/EnesEfeTokta/Fishing/main/Screenshots/i4-min.png" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;"/>
+</div>
+</div>
+</section>
+<!-- Assets & Credits -->
+<section class="bento-item" style="margin-bottom: 100px;">
+<h2 style="font-size: 1.5rem; margin-bottom: 32px;">Production Credits</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px;">
+<div>
+<h4 style="color: var(--accent-primary); margin-bottom: 12px;">Visuals</h4>
+<p style="font-size: 0.9rem; color: var(--text-secondary);">Low Poly Animals, Stone Age Weapons &amp;
                         Jungle Cartoon UI.</p>
-                </div>
-                <div>
-                    <h4 style="color: var(--accent-primary); margin-bottom: 12px;">Audio</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Casual Game Music (Happy & Bouncy) +
+</div>
+<div>
+<h4 style="color: var(--accent-primary); margin-bottom: 12px;">Audio</h4>
+<p style="font-size: 0.9rem; color: var(--text-secondary);">Casual Game Music (Happy &amp; Bouncy) +
                         One-Shot FX Pack.</p>
-                </div>
-                <div>
-                    <h4 style="color: var(--accent-primary); margin-bottom: 12px;">VFX</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Cartoon FX Remaster (Free Edition) for
+</div>
+<div>
+<h4 style="color: var(--accent-primary); margin-bottom: 12px;">VFX</h4>
+<p style="font-size: 0.9rem; color: var(--text-secondary);">Cartoon FX Remaster (Free Edition) for
                         all particles.</p>
-                </div>
-                <div>
-                    <h4 style="color: var(--accent-primary); margin-bottom: 12px;">License</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Open Source under GPL-3.0.
+</div>
+<div>
+<h4 style="color: var(--accent-primary); margin-bottom: 12px;">License</h4>
+<p style="font-size: 0.9rem; color: var(--text-secondary);">Open Source under GPL-3.0.
                         Non-commercial/Educational use.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-top">
-                <div>
-                    <span class="footer-logo">Enes Efe Tokta</span>
-                    <p class="footer-tagline">
-                        Software Developer · .NET &amp; Unity · Based in Turkey.<br>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer nfx-footer">
+<div class="container">
+<div class="footer-top">
+<div>
+<span class="footer-logo">Enes Efe Tokta</span>
+<p class="footer-tagline">
+                        Software Developer · .NET &amp; Unity · Based in Turkey.<br/>
                         Open to remote opportunities worldwide.
                     </p>
-                </div>
-                <div class="footer-social">
-                    <a href="https://github.com/EnesEfeTokta" target="_blank" aria-label="GitHub"><i
-                            class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank"
-                        aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://medium.com/@EnesEfeTokta" target="_blank" aria-label="Medium"><i
-                            class="fab fa-medium"></i></a>
-                    <a href="https://x.com/EnesEfeTokta" target="_blank" aria-label="X / Twitter"><i
-                            class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p class="footer-copyright">© 2026 Enes Efe Tokta. Built with modern web technologies.</p>
-                <div class="footer-links">
-                    <a href="../../../pages/biography.html">Biography</a>
-                    <a href="../../../blog/index.html">Blog</a>
-                    <a href="../../../pages/cv.html">Resume</a>
-                    <a href="../../../index.html#contact">Contact</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="../../../assets/js/main.js"></script>
+</div>
+<div class="footer-social">
+<a aria-label="GitHub" href="https://github.com/EnesEfeTokta" target="_blank"><i class="fab fa-github"></i></a>
+<a aria-label="LinkedIn" href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank"><i class="fab fa-linkedin"></i></a>
+<a aria-label="Medium" href="https://medium.com/@EnesEfeTokta" target="_blank"><i class="fab fa-medium"></i></a>
+<a aria-label="X / Twitter" href="https://x.com/EnesEfeTokta" target="_blank"><i class="fab fa-twitter"></i></a>
+</div>
+</div>
+<div class="footer-bottom">
+<p class="footer-copyright">© 2026 Enes Efe Tokta. Built with modern web technologies.</p>
+<div class="footer-links">
+<a href="../../../pages/biography.html">Biography</a>
+<a href="../../../blog/index.html">Blog</a>
+<a href="../../../pages/cv.html">Resume</a>
+<a href="../../../index.html#contact">Contact</a>
+</div>
+</div>
+</div>
+</footer>
+<script src="../../../assets/js/main.js"></script>
 </body>
-
 </html>
