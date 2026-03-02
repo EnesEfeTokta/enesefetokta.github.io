@@ -1471,12 +1471,48 @@ h5 {
         font-size: 1.4rem;
     }
 
+    .nfx-hero-inner {
+        padding-top: 80px;
+    }
+
+    .nfx-hero-lead {
+        font-size: 0.95rem;
+    }
+
+    .nfx-hero-ctas {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .nfx-btn-red,
+    .nfx-btn-ghost {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+    }
+
     .about-carousel-viewport {
-        height: 550px;
+        height: auto;
+        min-height: 480px;
+    }
+
+    .about-dots {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        flex-direction: row;
+        justify-content: center;
+        padding: 20px 0 0;
+    }
+
+    .about-slide-inner {
+        padding: 0 8px;
     }
 
     .about-metrics {
         gap: 24px;
+        justify-content: center;
     }
 
     .counter-num {
@@ -1487,6 +1523,10 @@ h5 {
         font-size: 1.6rem;
     }
 
+    .about-slide p {
+        font-size: 0.95rem;
+    }
+
     .nfx-photo-frame {
         width: 250px;
         height: 250px;
@@ -1494,6 +1534,49 @@ h5 {
 
     .section {
         padding: 68px 0;
+    }
+
+    .nfx-about-section,
+    .nfx-skills-section,
+    .nfx-projects-section,
+    .nfx-blog-section,
+    .nfx-contact-section {
+        padding: 60px 0;
+    }
+
+    .nfx-section-sub {
+        font-size: 0.92rem;
+        padding: 0 12px;
+    }
+
+    .marquee-card {
+        width: 300px;
+    }
+
+    .marquee-card-logo {
+        width: 72px;
+        font-size: 1.5rem;
+    }
+
+    .blog-carousel-card {
+        width: 280px;
+    }
+
+    .blog-card-header-section {
+        padding: 24px 18px;
+    }
+
+    .nfx-contact-form {
+        padding: 24px 20px;
+    }
+
+    /* Page header (used in blog index etc) */
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
+    .page-header p {
+        font-size: 0.92rem;
     }
 }
 
@@ -1509,12 +1592,85 @@ h5 {
 }
 
 @media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .nfx-section-title {
+        font-size: 1.6rem;
+    }
+
+    .nfx-line1 {
+        font-size: 1.6rem;
+    }
+
+    .nfx-line2 {
+        font-size: 2rem;
+    }
+
+    .nfx-line3 {
+        font-size: 1.2rem;
+    }
+
+    .nfx-hero-inner {
+        padding-top: 60px;
+    }
+
+    .nfx-hero-badge {
+        font-size: 0.75rem;
+        padding: 5px 12px;
+    }
+
     .nfx-platforms {
         gap: 10px;
     }
 
     .nfx-platform {
-        min-width: 160px;
+        min-width: 100%;
         padding: 14px 18px;
+    }
+
+    .about-metrics {
+        gap: 16px;
+    }
+
+    .counter-num {
+        font-size: 1.6rem;
+    }
+
+    .marquee-card {
+        width: 260px;
+    }
+
+    .marquee-card-logo {
+        width: 60px;
+        font-size: 1.3rem;
+    }
+
+    .marquee-card-body {
+        padding: 14px 16px;
+    }
+
+    .blog-carousel-card {
+        width: 260px;
+    }
+
+    .nfx-photo-frame {
+        width: 200px;
+        height: 200px;
+    }
+
+    .nfx-skill-card {
+        padding: 20px;
+    }
+
+    .nfx-contact-form {
+        padding: 20px 16px;
+    }
+
+    .footer-social a {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
     }
 }

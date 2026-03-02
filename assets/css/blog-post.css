@@ -656,6 +656,142 @@
     .comparison-grid {
         grid-template-columns: 1fr;
     }
+
+    .blog-title {
+        font-size: 1.6rem;
+        line-height: 1.25;
+        margin-bottom: 16px;
+    }
+
+    .blog-header {
+        margin-bottom: 28px;
+    }
+
+    .blog-content {
+        font-size: 0.95rem;
+        line-height: 1.75;
+    }
+
+    .blog-content h2 {
+        font-size: 1.3rem;
+        margin-top: 32px;
+        margin-bottom: 14px;
+    }
+
+    .blog-content h3 {
+        font-size: 1.15rem;
+        margin-top: 28px;
+    }
+
+    .blog-content blockquote {
+        padding-left: 16px;
+        font-size: 1rem;
+        margin: 24px 0;
+    }
+
+    .blog-content pre {
+        padding: 14px;
+        font-size: 0.82rem;
+    }
+
+    .blog-content ul,
+    .blog-content ol {
+        padding-left: 20px;
+    }
+
+    .highlight-box,
+    .key-takeaway,
+    .security-warning,
+    .approach-box,
+    .attribute-card,
+    .stat-box {
+        padding: 16px;
+        margin: 24px 0;
+    }
+
+    .thought-box,
+    .vulnerability-box,
+    .tip-box,
+    .warning-box,
+    .step-box,
+    .timeline-box {
+        padding: 14px 16px;
+        margin: 24px 0;
+    }
+
+    .jose-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .control-table,
+    .comparison-table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .share-section {
+        margin-top: 32px;
+        padding-top: 24px;
+    }
+
+    .blog-meta-info {
+        padding: 14px 0;
+    }
+
+    .blog-tags-container {
+        margin: 20px 0;
+    }
+
+    .blog-cover-image img {
+        max-height: 260px;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-title {
+        font-size: 1.35rem;
+    }
+
+    .blog-content {
+        font-size: 0.9rem;
+    }
+
+    .blog-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .share-buttons {
+        flex-direction: column;
+    }
+
+    .share-btn {
+        justify-content: center;
+    }
+
+    .author-avatar {
+        width: 40px;
+        height: 40px;
+    }
+
+    .author-details h4 {
+        font-size: 0.88rem;
+    }
+
+    .author-details p {
+        font-size: 0.78rem;
+    }
+
+    .blog-tag {
+        padding: 4px 12px;
+        font-size: 0.78rem;
+    }
+
+    .highlight-box h4,
+    .key-takeaway h4,
+    .security-warning h4 {
+        font-size: 1rem;
+    }
 }
 
 /* From ai-game-development-2023.html */
