@@ -1,330 +1,379 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
-<body class="nfx-body">
-
-    <head>
-        <meta charset="utf-8" />
-        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-        <!-- Favicon -->
-        <link href="../assets/images/profile/my_profile.png" rel="icon" type="image/png" />
-        <link href="../assets/images/profile/my_profile.png" rel="apple-touch-icon" />
-        <!-- Primary Meta Tags -->
-        <title>Blog - Enes Efe Tokta | Software Development Insights</title>
-        <meta content="Blog - Enes Efe Tokta" name="title" />
-        <meta content="Software development insights, tutorials, and experiences from Unity and .NET development."
-            name="description" />
-        <meta content="Enes Efe Tokta Blog, Unity Development Blog, .NET Blog" name="keywords" />
-        <meta content="Enes Efe Tokta" name="author" />
-        <meta content="index, follow" name="robots" />
-        <!-- Canonical URL -->
-        <link href="https://enesefetokta.shop/blog/index.html" rel="canonical" />
-        <!-- Open Graph / Facebook -->
-        <meta content="website" property="og:type" />
-        <meta content="https://enesefetokta.shop/blog/index.html" property="og:url" />
-        <meta content="Blog - Enes Efe Tokta" property="og:title" />
-        <meta content="Software development insights, tutorials, and experiences from Unity and .NET development."
-            property="og:description" />
-        <meta content="https://enesefetokta.shop/assets/images/profile/my_profile.png" property="og:image" />
-        <!-- Twitter Card -->
-        <meta content="summary_large_image" name="twitter:card" />
-        <meta content="https://enesefetokta.shop/blog/index.html" name="twitter:url" />
-        <meta content="Blog - Enes Efe Tokta" name="twitter:title" />
-        <meta content="Software development insights, tutorials, and experiences from Unity and .NET development."
-            name="twitter:description" />
-        <meta content="https://enesefetokta.shop/assets/images/profile/my_profile.png" name="twitter:image" />
-        <!-- Stylesheets -->
-        <link href="../assets/css/styles.css" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com" rel="preconnect" />
-        <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
-            rel="stylesheet" />
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-        <style>
-            /* ── Page Header ── */
-            .page-header {
-                padding-top: calc(var(--nav-h) + 72px);
-                padding-bottom: 56px;
-                background: var(--grad-hero);
-                border-bottom: 1px solid var(--border);
-            }
-
-            .page-header h1 {
-                font-size: clamp(2.2rem, 4vw, 3.4rem);
-                letter-spacing: -0.04em;
-                margin-bottom: 14px;
-            }
-
-            .page-header p {
-                color: var(--text-secondary);
-                font-size: 1.05rem;
-                max-width: 520px;
-            }
-
-            .blog-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-                gap: 32px;
-                margin-top: 40px;
-            }
-
-            .blog-card {
-                background: var(--bg-card);
-                border: 1px solid var(--border-subtle);
-                border-radius: var(--radius-lg);
-                padding: 0;
-                transition: all 0.3s ease;
-                overflow: hidden;
-                display: flex;
-                flex-direction: column;
-            }
-
-            .blog-card:hover {
-                transform: translateY(-4px);
-                border-color: var(--accent-primary);
-                box-shadow: 0 8px 24px rgba(99, 102, 241, 0.15);
-            }
-
-            .blog-card-image {
-                width: 100%;
-                height: 200px;
-                background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 3rem;
-                color: white;
-            }
-
-            .blog-card-content {
-                padding: 24px;
-                flex: 1;
-                display: flex;
-                flex-direction: column;
-            }
-
-            .blog-meta {
-                display: flex;
-                gap: 16px;
-                margin-bottom: 12px;
-                font-size: 0.85rem;
-                color: var(--text-muted);
-            }
-
-            .blog-meta span {
-                display: flex;
-                align-items: center;
-                gap: 6px;
-            }
-
-            .blog-card h3 {
-                font-size: 1.4rem;
-                margin-bottom: 12px;
-                color: var(--text-main);
-                line-height: 1.3;
-            }
-
-            .blog-excerpt {
-                color: var(--text-secondary);
-                line-height: 1.6;
-                margin-bottom: 20px;
-                flex: 1;
-            }
-
-            .blog-tags {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 8px;
-                margin-bottom: 20px;
-            }
-
-            .blog-tag {
-                padding: 4px 12px;
-                background: rgba(99, 102, 241, 0.1);
-                border: 1px solid rgba(99, 102, 241, 0.2);
-                border-radius: 16px;
-                font-size: 0.8rem;
-                color: var(--accent-primary);
-            }
-
-            .read-more {
-                color: var(--accent-primary);
-                font-weight: 500;
-                display: inline-flex;
-                align-items: center;
-                gap: 8px;
-                text-decoration: none;
-                transition: gap 0.3s ease;
-            }
-
-            .read-more:hover {
-                gap: 12px;
-            }
-
-            .blog-filter {
-                display: flex;
-                gap: 12px;
-                flex-wrap: wrap;
-                margin-bottom: 32px;
-            }
-
-            .filter-btn {
-                padding: 10px 20px;
-                background: var(--bg-card);
-                border: 1px solid var(--border-subtle);
-                border-radius: var(--radius-md);
-                color: var(--text-secondary);
-                cursor: pointer;
-                transition: all 0.3s ease;
-                font-family: inherit;
-                font-size: 0.9rem;
-            }
-
-            .filter-btn:hover,
-            .filter-btn.active {
-                background: var(--accent-primary);
-                color: white;
-                border-color: var(--accent-primary);
-            }
-
-            /* Blog card accent bar color variants — Claude warm palette */
-            .blog-card.cat-unity {
-                --card-accent: #9B5E3E;
-            }
-
-            /* terracotta */
-            .blog-card.cat-dotnet {
-                --card-accent: #C96442;
-            }
-
-            /* coral */
-            .blog-card.cat-security {
-                --card-accent: #3D7A5E;
-            }
-
-            /* sage green */
-            .blog-card.cat-ai {
-                --card-accent: #B07D35;
-            }
-
-            /* amber */
-            .blog-card.cat-arch {
-                --card-accent: #4A6FA5;
-            }
-
-            /* slate blue */
-            .blog-card.cat-default {
-                --card-accent: #C96442;
-            }
-
-            /* coral */
-
-            .blog-card-accent {
-                width: 100%;
-                height: 4px;
-                background: var(--card-accent, var(--accent-primary));
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: 2;
-            }
-
-            .blog-card-image {
-                width: 100%;
-                height: 200px;
-                background: #1a1a1a;
-                display: block;
-                position: relative;
-                overflow: hidden;
-            }
-
-            .blog-card-image img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                opacity: 0.8;
-                transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.3s ease;
-            }
-
-            .blog-card:hover .blog-card-image img {
-                transform: scale(1.08);
-                opacity: 1;
-            }
-
-            .blog-card-icon-area {
-                padding: 24px 24px 0;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                margin-bottom: 8px;
-            }
-
-            .blog-card-icon-area .icon-bg {
-                width: 44px;
-                height: 44px;
-                border-radius: 10px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 1.4rem;
-                background: rgba(99, 102, 241, 0.1);
-                color: var(--card-accent, var(--accent-primary));
-            }
-
-            .blog-card h3 {
-                font-family: 'Syne', sans-serif;
-                font-size: 1.2rem;
-                margin-bottom: 10px;
-                color: var(--text-main);
-                line-height: 1.35;
-            }
-
-            .filter-btn {
-                padding: 8px 18px;
-                background: var(--bg-card);
-                border: 1px solid var(--border-subtle);
-                border-radius: 99px;
-                color: var(--text-secondary);
-                cursor: pointer;
-                transition: all 0.25s ease;
-                font-family: 'Inter', sans-serif;
-                font-size: 0.88rem;
-                font-weight: 500;
-            }
-
-            .filter-btn:hover,
-            .filter-btn.active {
-                background: var(--accent-primary);
-                color: white;
-                border-color: var(--accent-primary);
-                box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
-            }
-
-            @media (max-width: 768px) {
-                .blog-grid {
-                    grid-template-columns: 1fr;
-                }
-            }
-        </style>
-        <meta content="en_US" property="og:locale" />
-        <meta content="@EnesEfeTokta" name="twitter:creator" />
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "WebPage",
-          "headline": "Blog - Enes Efe Tokta",
-          "description": "Software development insights, tutorials, and experiences from Unity and .NET development.",
-          "url": "https://enesefetokta.shop/blog/index.html",
-          "author": {
-            "@type": "Person",
-            "name": "Enes Efe Tokta"
-          }
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="../assets/images/profile/my_profile.png" rel="icon" type="image/png" />
+    <link href="../assets/images/profile/my_profile.png" rel="apple-touch-icon" />
+    <title>Blog - Enes Efe Tokta | Software Development Insights</title>
+    <meta name="title" content="Blog - Enes Efe Tokta" />
+    <meta name="description"
+        content="Software development insights, tutorials, and experiences from Unity and .NET development." />
+    <meta name="keywords" content="Enes Efe Tokta Blog, Unity Development Blog, .NET Blog" />
+    <meta name="author" content="Enes Efe Tokta" />
+    <meta name="robots" content="index, follow" />
+    <link href="https://enesefetokta.shop/blog/index.html" rel="canonical" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://enesefetokta.shop/blog/index.html" />
+    <meta property="og:title" content="Blog - Enes Efe Tokta" />
+    <meta property="og:description"
+        content="Software development insights, tutorials, and experiences from Unity and .NET development." />
+    <meta property="og:image" content="https://enesefetokta.shop/assets/images/profile/my_profile.png" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://enesefetokta.shop/blog/index.html" />
+    <meta name="twitter:title" content="Blog - Enes Efe Tokta" />
+    <meta name="twitter:description"
+        content="Software development insights, tutorials, and experiences from Unity and .NET development." />
+    <meta name="twitter:image" content="https://enesefetokta.shop/assets/images/profile/my_profile.png" />
+    <meta name="twitter:creator" content="@EnesEfeTokta" />
+    <link href="../assets/css/styles.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "headline": "Blog - Enes Efe Tokta",
+      "description": "Software development insights, tutorials, and experiences from Unity and .NET development.",
+      "url": "https://enesefetokta.shop/blog/index.html",
+      "author": { "@type": "Person", "name": "Enes Efe Tokta" }
+    }
+    </script>
+    <style>
+        /* ── Hero ── */
+        .blog-hero {
+            padding-top: calc(var(--nav-h) + 80px);
+            padding-bottom: 72px;
+            background: #000;
+            position: relative;
+            overflow: hidden;
         }
-        </script>
-    </head>
+
+        .blog-hero::before {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(229, 9, 20, 0.07) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .blog-hero::after {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(229, 9, 20, 0.05) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .blog-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #e50914;
+            background: rgba(229, 9, 20, 0.1);
+            border: 1px solid rgba(229, 9, 20, 0.25);
+            padding: 5px 14px;
+            border-radius: 999px;
+            margin-bottom: 24px;
+        }
+
+        .blog-hero-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.6rem, 5vw, 4rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 18px;
+        }
+
+        .blog-hero-title em {
+            font-family: 'Playfair Display', serif;
+            color: #e50914;
+            font-style: italic;
+        }
+
+        .blog-hero-lead {
+            font-size: 1.05rem;
+            color: #888;
+            line-height: 1.75;
+            max-width: 540px;
+            margin-bottom: 44px;
+        }
+
+        .blog-stats-bar {
+            display: flex;
+            gap: 0;
+            background: #0d0d0d;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 14px;
+            overflow: hidden;
+            max-width: 580px;
+        }
+
+        .blog-stat {
+            flex: 1;
+            padding: 18px 20px;
+            border-right: 1px solid rgba(255, 255, 255, 0.06);
+            text-align: center;
+        }
+
+        .blog-stat:last-child {
+            border-right: none;
+        }
+
+        .blog-stat-val {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #e50914;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .blog-stat-lbl {
+            font-size: 0.62rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #555;
+        }
+
+        /* ── Filter Bar ── */
+        .blog-section {
+            padding: 48px 0 100px;
+        }
+
+        .blog-filter {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            background: #0d0d0d;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 999px;
+            color: #888;
+            cursor: pointer;
+            transition: all 0.18s ease;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .filter-btn:hover {
+            border-color: rgba(229, 9, 20, 0.4);
+            color: #ddd;
+        }
+
+        .filter-btn.active {
+            background: #e50914;
+            color: #fff;
+            border-color: #e50914;
+            box-shadow: 0 4px 16px rgba(229, 9, 20, 0.25);
+        }
+
+        /* ── Blog Grid ── */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 22px;
+        }
+
+        .blog-card {
+            background: #0a0a0a;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+        }
+
+        .blog-card:hover {
+            border-color: rgba(255, 255, 255, 0.14);
+            transform: translateY(-4px);
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Colored top accent line */
+        .blog-card-accent {
+            width: 100%;
+            height: 3px;
+            background: var(--card-accent, #e50914);
+            display: block;
+            flex-shrink: 0;
+        }
+
+        /* Thumbnail image */
+        .blog-card-image {
+            width: 100%;
+            height: 190px;
+            background: #111;
+            overflow: hidden;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .blog-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.75;
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.3s;
+        }
+
+        .blog-card:hover .blog-card-image img {
+            transform: scale(1.06);
+            opacity: 0.9;
+        }
+
+        /* Card header row (icon + optional badge) */
+        .blog-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 22px 0;
+        }
+
+        .blog-card-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--card-accent, #e50914);
+            flex-shrink: 0;
+        }
+
+        .badge-featured {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: rgba(229, 9, 20, 0.12);
+            color: #e50914;
+            border: 1px solid rgba(229, 9, 20, 0.25);
+        }
+
+        /* Card body */
+        .blog-card-content {
+            padding: 16px 22px 22px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 10px;
+            font-size: 0.78rem;
+            color: #555;
+        }
+
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .blog-card h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #fff;
+            line-height: 1.35;
+        }
+
+        .blog-excerpt {
+            font-size: 0.85rem;
+            color: #777;
+            line-height: 1.65;
+            margin-bottom: 16px;
+            flex: 1;
+        }
+
+        .blog-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+
+        .blog-tag {
+            padding: 3px 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #777;
+        }
+
+        .read-more {
+            color: #e50914;
+            font-weight: 700;
+            font-size: 0.82rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            transition: gap 0.2s;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .read-more:hover {
+            gap: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-stats-bar {
+                flex-wrap: wrap;
+            }
+
+            .blog-stat {
+                flex: 1 1 40%;
+            }
+        }
+    </style>
+</head>
+
+<body class="nfx-body">
     <nav class="navbar nfx-navbar" id="navbar">
         <div class="container">
             <a class="logo" href="../index.html">Enes Efe Tokta</a>
@@ -332,6 +381,7 @@
                 <li><a href="../index.html#about">About</a></li>
                 <li><a href="../pages/work.html">Work</a></li>
                 <li><a href="../pages/projects.html">Projects</a></li>
+                <li><a href="../pages/developer-stats.html">Stats</a></li>
                 <li><a href="index.html">Blog</a></li>
                 <li><a href="../pages/biography.html">Biography</a></li>
                 <li><a href="../pages/education.html">Education</a></li>
@@ -344,19 +394,39 @@
             </button>
         </div>
     </nav>
-    <!-- ═══════════ PAGE HEADER ═══════════ -->
-    <header class="page-header">
+
+    <!-- ═══════ HERO ═══════ -->
+    <header class="blog-hero">
         <div class="container">
-            <span class="eyebrow">Development Journal</span>
-            <h1>Blog</h1>
-            <p>Insights, tutorials, and experiences from my journey in software development, focusing on .NET, Unity,
-                and modern architecture.</p>
+            <span class="blog-eyebrow"><i class="fas fa-pen-nib"></i> Development Journal</span>
+            <h1 class="blog-hero-title">The <em>Blog</em></h1>
+            <p class="blog-hero-lead">Insights, tutorials, and honest reflections from my journey in software
+                development. Covering .NET, Unity, architecture, and the real lessons you only learn by building.</p>
+            <div class="blog-stats-bar">
+                <div class="blog-stat">
+                    <div class="blog-stat-val">14</div>
+                    <div class="blog-stat-lbl">Articles</div>
+                </div>
+                <div class="blog-stat">
+                    <div class="blog-stat-val">982</div>
+                    <div class="blog-stat-lbl">Total Reads</div>
+                </div>
+                <div class="blog-stat">
+                    <div class="blog-stat-val">2023</div>
+                    <div class="blog-stat-lbl">Since</div>
+                </div>
+                <div class="blog-stat">
+                    <div class="blog-stat-val"><i class="fab fa-medium" style="font-size:1.2rem;"></i></div>
+                    <div class="blog-stat-lbl">on Medium</div>
+                </div>
+            </div>
         </div>
     </header>
-    <!-- Blog Section -->
-    <section class="section-padding">
+
+    <!-- ═══════ BLOG SECTION ═══════ -->
+    <section class="blog-section">
         <div class="container">
-            <!-- Filter Buttons -->
+            <!-- Filter -->
             <div class="blog-filter">
                 <button class="filter-btn active" data-category="all">All Posts</button>
                 <button class="filter-btn" data-category="unity">Unity</button>
@@ -364,18 +434,19 @@
                 <button class="filter-btn" data-category="tutorial">Tutorials</button>
                 <button class="filter-btn" data-category="architecture">Architecture</button>
             </div>
-            <!-- Blog Grid -->
+
+            <!-- Grid -->
             <div class="blog-grid">
-                <!-- 1. .NET and C# in the AI Race (Latest - Mar 2, 2026) -->
+
+                <!-- 1. .NET and C# in the AI Race -->
                 <article class="blog-card" data-category="dotnet ai opinion">
-                    <div class="blog-card-accent" style="--card-accent: #7B2FBE;"></div>
+                    <span class="blog-card-accent" style="--card-accent:#7B2FBE;"></span>
                     <div class="blog-card-image">
                         <img alt="Blog Cover"
                             src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*x3dGByRx5bHWtNVA7qkWgg.png" />
                     </div>
-                    <div class="blog-card-icon-area">
-                        <div class="icon-bg" style="background:rgba(123,47,190,0.1); color:#7B2FBE;"><i
-                                class="fab fa-microsoft"></i></div>
+                    <div class="blog-card-header">
+                        <div class="blog-card-icon" style="color:#7B2FBE;"><i class="fab fa-microsoft"></i></div>
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-meta">
@@ -383,29 +454,28 @@
                             <span><i class="far fa-clock"></i> 4 min read</span>
                         </div>
                         <h3>.NET and C# in the AI Race: Not a Defeat, but a Strategic Positioning</h3>
-                        <p class="blog-excerpt">
-                            Why C# lost ground to Python in AI isn't a story of failure — it's a story of strategic
-                            positioning, ecosystem timing, and complementary strengths.
-                        </p>
+                        <p class="blog-excerpt">Why C# lost ground to Python in AI isn't a story of failure — it's a
+                            story of strategic positioning, ecosystem timing, and complementary strengths.</p>
                         <div class="blog-tags">
                             <span class="blog-tag">.NET</span>
                             <span class="blog-tag">AI</span>
                             <span class="blog-tag">Opinion</span>
                         </div>
-                        <a class="read-more" href="posts/dotnet-csharp-ai-race.html">
-                            Read More <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <a class="read-more" href="posts/dotnet-csharp-ai-race.html">Read Article <i
+                                class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
+
+                <!-- 2. .NET Developer's Perspective on Node.js -->
                 <article class="blog-card" data-category="dotnet tech opinion">
-                    <div class="blog-card-accent" style="--card-accent: #C96442;"></div>
+                    <span class="blog-card-accent" style="--card-accent:#C96442;"></span>
                     <div class="blog-card-image">
                         <img alt="Blog Cover"
                             src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*N-5wel_44ZVHJB7eAiHzRg.png" />
                     </div>
-                    <div class="blog-card-icon-area">
-                        <div class="icon-bg"><i class="fab fa-node-js"></i></div>
-                        <span class="badge badge-featured"><i class="fas fa-star" style="font-size:0.65rem;"></i>
+                    <div class="blog-card-header">
+                        <div class="blog-card-icon" style="color:#C96442;"><i class="fab fa-node-js"></i></div>
+                        <span class="badge-featured"><i class="fas fa-star" style="font-size:0.6rem;"></i>
                             Featured</span>
                     </div>
                     <div class="blog-card-content">
@@ -414,30 +484,29 @@
                             <span><i class="far fa-clock"></i> 3 min read</span>
                         </div>
                         <h3>A .NET Developer's Perspective on Node.js — And Why One Hand Should Be There Too</h3>
-                        <p class="blog-excerpt">
-                            Why learning Node.js doesn't mean abandoning .NET, but expanding your perspective as an
-                            engineer. Exploring the bridge between .NET structure and Node.js velocity.
-                        </p>
+                        <p class="blog-excerpt">Why learning Node.js doesn't mean abandoning .NET, but expanding your
+                            perspective as an engineer. Exploring the bridge between .NET structure and Node.js
+                            velocity.</p>
                         <div class="blog-tags">
                             <span class="blog-tag">.NET</span>
                             <span class="blog-tag">Node.js</span>
                             <span class="blog-tag">TypeScript</span>
                         </div>
-                        <a class="read-more" href="posts/dotnet-perspective-on-nodejs.html">
-                            Read More <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <a class="read-more" href="posts/dotnet-perspective-on-nodejs.html">Read Article <i
+                                class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
-                <!-- 2. Did Software Architectures Give Advantage (Featured - Feb 2, 2026) -->
+
+                <!-- 3. Software Architecture Advantage -->
                 <article class="blog-card" data-category="architecture opinion">
-                    <div class="blog-card-accent" style="--card-accent: #4A6FA5;"></div>
+                    <span class="blog-card-accent" style="--card-accent:#4A6FA5;"></span>
                     <div class="blog-card-image">
                         <img alt="Blog Cover"
                             src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*d36KEcG6KHAsUNVV4mHzDg.png" />
                     </div>
-                    <div class="blog-card-icon-area">
-                        <div class="icon-bg"><i class="fas fa-project-diagram"></i></div>
-                        <span class="badge badge-featured"><i class="fas fa-star" style="font-size:0.65rem;"></i>
+                    <div class="blog-card-header">
+                        <div class="blog-card-icon" style="color:#4A6FA5;"><i class="fas fa-project-diagram"></i></div>
+                        <span class="badge-featured"><i class="fas fa-star" style="font-size:0.6rem;"></i>
                             Featured</span>
                     </div>
                     <div class="blog-card-content">
@@ -446,31 +515,28 @@
                             <span><i class="far fa-clock"></i> 6 min read</span>
                         </div>
                         <h3>Did Software Architectures Really Give Us an Advantage?</h3>
-                        <p class="blog-excerpt">
-                            Exploring the balance between strict software architecture and customer satisfaction.
-                            Is "Clean Code" slowing us down? A critical look at developer-centric vs customer-centric
-                            approaches.
-                        </p>
+                        <p class="blog-excerpt">Exploring the balance between strict software architecture and customer
+                            satisfaction. Is "Clean Code" slowing us down? A critical look at developer-centric vs
+                            customer-centric approaches.</p>
                         <div class="blog-tags">
                             <span class="blog-tag">Architecture</span>
                             <span class="blog-tag">Opinion</span>
                             <span class="blog-tag">Clean Code</span>
                         </div>
-                        <a class="read-more" href="posts/software-architecture-advantage.html">
-                            Read More <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <a class="read-more" href="posts/software-architecture-advantage.html">Read Article <i
+                                class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
-                <!-- 3. JWT Security Deep Dive (Jan 29, 2026) -->
+
+                <!-- 4. JWT Security Deep Dive -->
                 <article class="blog-card" data-category="backend security">
-                    <div class="blog-card-accent" style="--card-accent: #3D7A5E;"></div>
+                    <span class="blog-card-accent" style="--card-accent:#3D7A5E;"></span>
                     <div class="blog-card-image">
                         <img alt="Blog Cover"
                             src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*AhZqpBaADAxRAPA6v2iLUw.png" />
                     </div>
-                    <div class="blog-card-icon-area">
-                        <div class="icon-bg" style="background:rgba(34,211,160,0.1); color:var(--accent-green);"><i
-                                class="fas fa-shield-alt"></i></div>
+                    <div class="blog-card-header">
+                        <div class="blog-card-icon" style="color:#3D7A5E;"><i class="fas fa-shield-alt"></i></div>
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-meta">
@@ -478,31 +544,28 @@
                             <span><i class="far fa-clock"></i> 9 min read</span>
                         </div>
                         <h3>JWT: Is Security Really That Simple?</h3>
-                        <p class="blog-excerpt">
-                            Deep dive into JWT security. Exploring vulnerabilities like the alg=none attack, stateless
-                            risks,
-                            and why JWT isn't a silver bullet. Understanding the JOSE family and best practices.
-                        </p>
+                        <p class="blog-excerpt">Deep dive into JWT security. Exploring vulnerabilities like the alg=none
+                            attack, stateless risks, and why JWT isn't a silver bullet. Understanding the JOSE family
+                            and best practices.</p>
                         <div class="blog-tags">
                             <span class="blog-tag">Backend</span>
                             <span class="blog-tag">Security</span>
                             <span class="blog-tag">JWT</span>
                         </div>
-                        <a class="read-more" href="posts/jwt-security-deep-dive.html">
-                            Read More <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <a class="read-more" href="posts/jwt-security-deep-dive.html">Read Article <i
+                                class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
-                <!-- 4. Who Should We Listen to About AI (Jan 27, 2026) -->
+
+                <!-- 5. Who Should We Listen to About AI -->
                 <article class="blog-card" data-category="opinion ai">
-                    <div class="blog-card-accent" style="--card-accent: #B07D35;"></div>
+                    <span class="blog-card-accent" style="--card-accent:#B07D35;"></span>
                     <div class="blog-card-image">
                         <img alt="Blog Cover"
                             src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*br0BuDnHY3a3HLQkKyvZnQ.png" />
                     </div>
-                    <div class="blog-card-icon-area">
-                        <div class="icon-bg" style="background:rgba(245,158,11,0.1); color:var(--accent-amber);"><i
-                                class="fas fa-brain"></i></div>
+                    <div class="blog-card-header">
+                        <div class="blog-card-icon" style="color:#B07D35;"><i class="fas fa-brain"></i></div>
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-meta">
@@ -510,26 +573,27 @@
                             <span><i class="far fa-clock"></i> 7 min read</span>
                         </div>
                         <h3>Who Should We Listen to About AI?</h3>
-                        <p class="blog-excerpt">
-                            A critical examination of AI narratives. Beyond corporate hype—why we should prioritize
-                            researchers, academics, and practitioners over AI company marketing.
-                        </p>
+                        <p class="blog-excerpt">A critical examination of AI narratives. Beyond corporate hype — why we
+                            should prioritize researchers, academics, and practitioners over AI company marketing.</p>
                         <div class="blog-tags">
                             <span class="blog-tag">AI</span>
                             <span class="blog-tag">Opinion</span>
                             <span class="blog-tag">Critical Thinking</span>
                         </div>
-                        <a class="read-more" href="posts/who-to-listen-ai.html">
-                            Read More <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <a class="read-more" href="posts/who-to-listen-ai.html">Read Article <i
+                                class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
-                <!-- 4. FinTrack Lessons Learned (Jan 21, 2026) -->
+
+                <!-- 6. FinTrack Lessons Learned -->
                 <article class="blog-card" data-category="dotnet architecture">
-                    <div class="blog-card-accent" style="--card-accent: #C96442;"></div>
+                    <span class="blog-card-accent" style="--card-accent:#C96442;"></span>
                     <div class="blog-card-image">
                         <img alt="Blog Cover"
                             src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*ZcKscOgmP_faCwBbII8tHg.png" />
+                    </div>
+                    <div class="blog-card-header">
+                        <div class="blog-card-icon" style="color:#C96442;"><i class="fas fa-coins"></i></div>
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-meta">
@@ -537,27 +601,28 @@
                             <span><i class="far fa-clock"></i> 10 min read</span>
                         </div>
                         <h3>FinTrack: Lessons Learned While Building a Financial Backend</h3>
-                        <p class="blog-excerpt">
-                            A reflection on building a financial tracking system with ASP.NET Core. Sharing
-                            architectural decisions, challenges faced, and engineering lessons learned over 5 months of
-                            development.
-                        </p>
+                        <p class="blog-excerpt">A reflection on building a financial tracking system with ASP.NET Core.
+                            Sharing architectural decisions, challenges faced, and engineering lessons learned over 5
+                            months of development.</p>
                         <div class="blog-tags">
                             <span class="blog-tag">.NET</span>
                             <span class="blog-tag">Architecture</span>
                             <span class="blog-tag">Backend</span>
                         </div>
-                        <a class="read-more" href="posts/fintrack-lessons-learned.html">
-                            Read More <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <a class="read-more" href="posts/fintrack-lessons-learned.html">Read Article <i
+                                class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
-                <!-- 5. AI Fear Perspective (Jan 16, 2026) -->
-                <article class="blog-card" data-category="opinion">
-                    <div class="blog-card-accent" style="--card-accent: #C96442;"></div>
+
+                <!-- 7. AI Fear Perspective -->
+                <article class="blog-card" data-category="opinion ai">
+                    <span class="blog-card-accent" style="--card-accent:#C96442;"></span>
                     <div class="blog-card-image">
-                        <img alt="https://blog.openreplay.com/images/ai-vs-software-developers/images/hero.png"
+                        <img alt="Blog Cover"
                             src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*tbdAyGLfcAa8xH5Z155exg.png" />
+                    </div>
+                    <div class="blog-card-header">
+                        <div class="blog-card-icon" style="color:#e50914;"><i class="fas fa-robot"></i></div>
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-meta">
@@ -565,26 +630,27 @@
                             <span><i class="far fa-clock"></i> 5 min read</span>
                         </div>
                         <h3>The Fear of Artificial Intelligence</h3>
-                        <p class="blog-excerpt">
-                            A candid reflection on AI's impact on software careers from a student's perspective.
-                            Exploring fears, challenges, and how we can adapt in an AI-driven world.
-                        </p>
+                        <p class="blog-excerpt">A candid reflection on AI's impact on software careers from a student's
+                            perspective. Exploring fears, challenges, and how we can adapt in an AI-driven world.</p>
                         <div class="blog-tags">
                             <span class="blog-tag">AI</span>
                             <span class="blog-tag">Opinion</span>
                             <span class="blog-tag">Career</span>
                         </div>
-                        <a class="read-more" href="posts/ai-fear-perspective.html">
-                            Read More <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <a class="read-more" href="posts/ai-fear-perspective.html">Read Article <i
+                                class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
-                <!-- 6. Helicopter Control Tutorial (May 1, 2024) -->
+
+                <!-- 8. Helicopter Control Tutorial -->
                 <article class="blog-card" data-category="unity tutorial">
-                    <div class="blog-card-accent" style="--card-accent: #9B5E3E;"></div>
+                    <span class="blog-card-accent" style="--card-accent:#9B5E3E;"></span>
                     <div class="blog-card-image">
                         <img alt="Blog Cover"
                             src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*-csn2aoyY5RdV_TXKSjerQ.png" />
+                    </div>
+                    <div class="blog-card-header">
+                        <div class="blog-card-icon" style="color:#9B5E3E;"><i class="fas fa-helicopter"></i></div>
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-meta">
@@ -592,26 +658,27 @@
                             <span><i class="far fa-clock"></i> 9 min read</span>
                         </div>
                         <h3>Basic Helicopter Control System in Unity</h3>
-                        <p class="blog-excerpt">
-                            Step-by-step guide to creating a physics-based helicopter control system in Unity.
-                            Learn realistic helicopter movements with complete C# code examples.
-                        </p>
+                        <p class="blog-excerpt">Step-by-step guide to creating a physics-based helicopter control system
+                            in Unity. Learn realistic helicopter movements with complete C# code examples.</p>
                         <div class="blog-tags">
                             <span class="blog-tag">Unity</span>
                             <span class="blog-tag">Tutorial</span>
                             <span class="blog-tag">Physics</span>
                         </div>
-                        <a class="read-more" href="posts/unity-helicopter-control.html">
-                            Read More <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <a class="read-more" href="posts/unity-helicopter-control.html">Read Article <i
+                                class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
-                <!-- 7. Off-screen Indicator Tutorial (Feb 19, 2024) -->
+
+                <!-- 9. Off-screen Indicator Tutorial -->
                 <article class="blog-card" data-category="unity tutorial">
-                    <div class="blog-card-accent" style="--card-accent: #9B5E3E;"></div>
+                    <span class="blog-card-accent" style="--card-accent:#9B5E3E;"></span>
                     <div class="blog-card-image">
                         <img alt="Blog Cover"
                             src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*3UUdTJHcDQ9MW7gw4_vPNg.png" />
+                    </div>
+                    <div class="blog-card-header">
+                        <div class="blog-card-icon" style="color:#9B5E3E;"><i class="fas fa-crosshairs"></i></div>
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-meta">
@@ -619,25 +686,27 @@
                             <span><i class="far fa-clock"></i> 7 min read</span>
                         </div>
                         <h3>Off-screen Player Indicator in Unity</h3>
-                        <p class="blog-excerpt">
-                            Learn how to implement an off-screen player indicator system in Unity. Complete guide with
-                            code examples for tracking enemies and targets outside the camera view.
+                        <p class="blog-excerpt">Learn how to implement an off-screen player indicator system in Unity.
+                            Complete guide with code examples for tracking enemies and targets outside the camera view.
                         </p>
                         <div class="blog-tags">
                             <span class="blog-tag">Unity</span>
                             <span class="blog-tag">Tutorial</span>
                             <span class="blog-tag">UI System</span>
                         </div>
-                        <a class="read-more" href="posts/unity-offscreen-indicator.html">
-                            Read More <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <a class="read-more" href="posts/unity-offscreen-indicator.html">Read Article <i
+                                class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
-                <!-- 8. Unity C# Attributes (Feb 12, 2024) -->
+
+                <!-- 10. Unity C# Attributes -->
                 <article class="blog-card" data-category="unity tutorial">
-                    <div class="blog-card-accent" style="--card-accent: #9B5E3E;"></div>
+                    <span class="blog-card-accent" style="--card-accent:#9B5E3E;"></span>
                     <div class="blog-card-image">
                         <img alt="Blog Cover" src="https://i.ytimg.com/vi/fxHOfV3yM9o/maxresdefault.jpg" />
+                    </div>
+                    <div class="blog-card-header">
+                        <div class="blog-card-icon" style="color:#9B5E3E;"><i class="fas fa-code"></i></div>
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-meta">
@@ -645,26 +714,27 @@
                             <span><i class="far fa-clock"></i> 8 min read</span>
                         </div>
                         <h3>15 Essential C# Attributes in Unity</h3>
-                        <p class="blog-excerpt">
-                            Complete guide to Unity C# Attributes. Master SerializeField, Range, Header, Tooltip,
-                            RequireComponent, and 10+ more attributes to write cleaner Unity code.
-                        </p>
+                        <p class="blog-excerpt">Complete guide to Unity C# Attributes. Master SerializeField, Range,
+                            Header, Tooltip, RequireComponent, and 10+ more attributes to write cleaner Unity code.</p>
                         <div class="blog-tags">
                             <span class="blog-tag">Unity</span>
                             <span class="blog-tag">C#</span>
                             <span class="blog-tag">Tutorial</span>
                         </div>
-                        <a class="read-more" href="posts/unity-csharp-attributes.html">
-                            Read More <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <a class="read-more" href="posts/unity-csharp-attributes.html">Read Article <i
+                                class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
-                <!-- 9. Unity Performance Optimization (Dec 1, 2023) -->
+
+                <!-- 11. Unity Performance Optimization -->
                 <article class="blog-card" data-category="unity tutorial">
-                    <div class="blog-card-accent" style="--card-accent: #9B5E3E;"></div>
+                    <span class="blog-card-accent" style="--card-accent:#9B5E3E;"></span>
                     <div class="blog-card-image">
                         <img alt="Blog Cover"
                             src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*pzF3Cg_ymtMoAGRs3aJM7w.jpeg" />
+                    </div>
+                    <div class="blog-card-header">
+                        <div class="blog-card-icon" style="color:#9B5E3E;"><i class="fas fa-tachometer-alt"></i></div>
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-meta">
@@ -672,25 +742,27 @@
                             <span><i class="far fa-clock"></i> 12 min read</span>
                         </div>
                         <h3>Performance Optimization Techniques in Unity</h3>
-                        <p class="blog-excerpt">
-                            Comprehensive guide to Unity performance optimization. Learn proven techniques for improving
-                            FPS: LOD systems, culling, lighting optimization, texture compression, and code efficiency.
-                        </p>
+                        <p class="blog-excerpt">Comprehensive guide to Unity performance optimization. Learn proven
+                            techniques for improving FPS: LOD systems, culling, lighting optimization, texture
+                            compression, and code efficiency.</p>
                         <div class="blog-tags">
                             <span class="blog-tag">Unity</span>
                             <span class="blog-tag">Performance</span>
                             <span class="blog-tag">Optimization</span>
                         </div>
-                        <a class="read-more" href="posts/unity-performance-optimization.html">
-                            Read More <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <a class="read-more" href="posts/unity-performance-optimization.html">Read Article <i
+                                class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
-                <!-- 10. Unity AR & VR World (Dec 6, 2023) -->
-                <article class="blog-card" data-category="unity ar vr">
-                    <div class="blog-card-accent" style="--card-accent: #9B5E3E;"></div>
+
+                <!-- 12. Unity AR & VR World -->
+                <article class="blog-card" data-category="unity ar vr tutorial">
+                    <span class="blog-card-accent" style="--card-accent:#9B5E3E;"></span>
                     <div class="blog-card-image">
                         <img alt="Blog Cover" src="https://i.ytimg.com/vi/9tjYz6Ab0oc/maxresdefault.jpg" />
+                    </div>
+                    <div class="blog-card-header">
+                        <div class="blog-card-icon" style="color:#9B5E3E;"><i class="fas fa-vr-cardboard"></i></div>
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-meta">
@@ -698,30 +770,28 @@
                             <span><i class="far fa-clock"></i> 5 min read</span>
                         </div>
                         <h3>Unity AR &amp; VR World: A 2023 Introduction</h3>
-                        <p class="blog-excerpt">
-                            Introduction to AR and VR development in Unity. Learn the differences, market dynamics,
-                            required equipment, and step-by-step guide to building immersive experiences.
-                        </p>
+                        <p class="blog-excerpt">Introduction to AR and VR development in Unity. Learn the differences,
+                            market dynamics, required equipment, and step-by-step guide to building immersive
+                            experiences.</p>
                         <div class="blog-tags">
                             <span class="blog-tag">Unity</span>
                             <span class="blog-tag">AR/VR</span>
                             <span class="blog-tag">Tutorial</span>
                         </div>
-                        <a class="read-more" href="posts/unity-ar-vr-intro.html">
-                            Read More <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <a class="read-more" href="posts/unity-ar-vr-intro.html">Read Article <i
+                                class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
-                <!-- 11. AI in Game Development 2023 (Dec 9, 2023) -->
+
+                <!-- 13. AI in Game Development 2023 -->
                 <article class="blog-card" data-category="ai game-dev">
-                    <div class="blog-card-accent" style="--card-accent: #C96442;"></div>
+                    <span class="blog-card-accent" style="--card-accent:#C96442;"></span>
                     <div class="blog-card-image">
                         <img alt="Blog Cover"
                             src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*YbWkIkJNripzYlpmCLFnmQ.jpeg" />
                     </div>
-                    <div class="blog-card-icon-area">
-                        <div class="icon-bg" style="background:rgba(245,158,11,0.1); color:var(--accent-amber);"><i
-                                class="fas fa-robot"></i></div>
+                    <div class="blog-card-header">
+                        <div class="blog-card-icon" style="color:#B07D35;"><i class="fas fa-robot"></i></div>
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-meta">
@@ -729,27 +799,28 @@
                             <span><i class="far fa-clock"></i> 10 min read</span>
                         </div>
                         <h3>AI in Game Development: A 2023 Perspective</h3>
-                        <p class="blog-excerpt">
-                            A retrospective look at how AI transformed game development in 2023. Explore ChatGPT, DALL-E
-                            3,
-                            DLSS, and NPC AI with updates showing how the landscape evolved by 2026.
-                        </p>
+                        <p class="blog-excerpt">A retrospective look at how AI transformed game development in 2023.
+                            Explore ChatGPT, DALL-E 3, DLSS, and NPC AI with updates showing how the landscape evolved
+                            by 2026.</p>
                         <div class="blog-tags">
                             <span class="blog-tag">AI</span>
                             <span class="blog-tag">Game Dev</span>
                             <span class="blog-tag">2023 Retrospective</span>
                         </div>
-                        <a class="read-more" href="posts/ai-game-development-2023.html">
-                            Read More <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <a class="read-more" href="posts/ai-game-development-2023.html">Read Article <i
+                                class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
-                <!-- 12. Unity vs Unreal Engine (Nov 30, 2023) -->
+
+                <!-- 14. Unity vs Unreal Engine -->
                 <article class="blog-card" data-category="unity comparison">
-                    <div class="blog-card-accent" style="--card-accent: #9B5E3E;"></div>
+                    <span class="blog-card-accent" style="--card-accent:#9B5E3E;"></span>
                     <div class="blog-card-image">
                         <img alt="Blog Cover"
                             src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20220531215600/Unity-vs-Unreal-Engine-1.jpg" />
+                    </div>
+                    <div class="blog-card-header">
+                        <div class="blog-card-icon" style="color:#9B5E3E;"><i class="fas fa-gamepad"></i></div>
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-meta">
@@ -757,23 +828,23 @@
                             <span><i class="far fa-clock"></i> 6 min read</span>
                         </div>
                         <h3>Unity vs Unreal Engine: Which Should You Choose?</h3>
-                        <p class="blog-excerpt">
-                            Comprehensive comparison of Unity and Unreal Engine game engines. Explore advantages,
-                            disadvantages, use cases, and which engine is right for your game development project.
-                        </p>
+                        <p class="blog-excerpt">Comprehensive comparison of Unity and Unreal Engine. Explore advantages,
+                            disadvantages, use cases, and which engine is right for your game development project.</p>
                         <div class="blog-tags">
                             <span class="blog-tag">Unity</span>
                             <span class="blog-tag">Unreal Engine</span>
                             <span class="blog-tag">Comparison</span>
                         </div>
-                        <a class="read-more" href="posts/unity-vs-unreal-engine.html">
-                            Read More <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <a class="read-more" href="posts/unity-vs-unreal-engine.html">Read Article <i
+                                class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
-            </div>
+
+            </div><!-- /blog-grid -->
         </div>
     </section>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
     <footer class="site-footer nfx-footer">
         <div class="container">
             <div class="footer-top">
@@ -799,28 +870,30 @@
                 <p class="footer-copyright">© 2026 Enes Efe Tokta. Built with modern web technologies.</p>
                 <div class="footer-links">
                     <a href="../pages/biography.html">Biography</a>
+                    <a href="../pages/developer-stats.html">Stats</a>
+                    <a href="../pages/future-plans.html">Future Plans</a>
                     <a href="index.html">Blog</a>
+                    <a href="../pages/projects.html">Projects</a>
+                    <a href="../pages/education.html">Education</a>
                     <a href="../pages/cv.html">Resume</a>
                     <a href="../index.html#contact">Contact</a>
                 </div>
             </div>
         </div>
     </footer>
+
     <script src="../assets/js/main.js"></script>
     <script>
-        // Simple blog filter functionality
         const filterBtns = document.querySelectorAll('.filter-btn');
         const blogCards = document.querySelectorAll('.blog-card');
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Update active button
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
 
                 const category = btn.dataset.category;
 
-                // Filter cards
                 blogCards.forEach(card => {
                     if (category === 'all' || card.dataset.category.includes(category)) {
                         card.style.display = 'flex';

@@ -1,251 +1,840 @@
 <!DOCTYPE html>
-
 <html lang="en">
-<body class="nfx-body">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<!-- Favicon -->
-<link href="../assets/images/profile/my_profile.png" rel="icon" type="image/png"/>
-<link href="../assets/images/profile/my_profile.png" rel="apple-touch-icon"/>
-<!-- Primary Meta Tags -->
-<title>My Story - Enes Efe Tokta | Software Developer Journey</title>
-<meta content="My Story - Enes Efe Tokta | Software Developer Journey" name="title"/>
-<meta content="Learn about Enes Efe Tokta's journey as a Software Developer. From early game development beginnings to building enterprise solutions." name="description"/>
-<!-- Stylesheets -->
-<link href="../assets/css/styles.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
-<style>
-            /* ── Page Header ── */
-            .page-header {
-                padding-top: calc(var(--nav-h) + 72px);
-                padding-bottom: 56px;
-                background: var(--grad-hero);
-                border-bottom: 1px solid var(--border);
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="../assets/images/profile/my_profile.png" rel="icon" type="image/png" />
+    <link href="../assets/images/profile/my_profile.png" rel="apple-touch-icon" />
+    <title>My Story Enes Efe Tokta | From Curiosity to Code</title>
+    <meta name="title" content="My Story Enes Efe Tokta | From Curiosity to Code" />
+    <meta name="description"
+        content="The personal story of Enes Efe Tokta from childhood curiosity and first games in Unity, to building enterprise systems and dreaming of global impact." />
+    <link href="https://enesefetokta.shop/pages/biography.html" rel="canonical" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://enesefetokta.shop/pages/biography.html" />
+    <meta property="og:title" content="My Story Enes Efe Tokta" />
+    <meta property="og:image" content="https://enesefetokta.shop/assets/images/profile/my_profile.png" />
+    <meta name="keywords" content="Biography, Enes Efe Tokta, Developer Story, Journey" />
+    <meta name="author" content="Enes Efe Tokta" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/styles.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <style>
+        /* ── Bio Hero ── */
+        .bio-hero {
+            padding-top: calc(var(--nav-h) + 80px);
+            padding-bottom: 80px;
+            background: #000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bio-hero::before {
+            content: '';
+            position: absolute;
+            top: -150px;
+            right: -200px;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(229, 9, 20, 0.1) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .bio-hero-inner {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .bio-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #e50914;
+            background: rgba(229, 9, 20, 0.1);
+            border: 1px solid rgba(229, 9, 20, 0.25);
+            padding: 5px 14px;
+            border-radius: 999px;
+            margin-bottom: 24px;
+        }
+
+        .bio-hero-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.8rem, 5vw, 4.5rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .bio-hero-title em {
+            font-family: 'Playfair Display', serif;
+            color: #e50914;
+            font-style: italic;
+        }
+
+        .bio-hero-lead {
+            font-size: 1.1rem;
+            color: #999;
+            line-height: 1.75;
+            max-width: 520px;
+            margin-bottom: 36px;
+        }
+
+        .bio-hero-photo-wrap {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .bio-hero-photo {
+            width: 280px;
+            height: 360px;
+            object-fit: cover;
+            border-radius: 20px;
+            filter: saturate(0.85);
+            position: relative;
+            z-index: 1;
+        }
+
+        .bio-hero-photo-glow {
+            position: absolute;
+            inset: -2px;
+            border-radius: 22px;
+            background: linear-gradient(135deg, #e50914 0%, #8b0000 100%);
+            z-index: 0;
+            opacity: 0.5;
+            transform: translate(8px, 8px);
+        }
+
+        .bio-hero-stats {
+            display: flex;
+            gap: 36px;
+        }
+
+        .bio-hero-stat-val {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #e50914;
+            line-height: 1;
+        }
+
+        .bio-hero-stat-lbl {
+            font-size: 0.72rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 4px;
+        }
+
+        /* ── Chapter Timeline ── */
+        .bio-timeline {
+            position: relative;
+            padding: 0 0 80px;
+        }
+
+        .bio-timeline::before {
+            content: '';
+            position: absolute;
+            left: 28px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .bio-chapter {
+            display: flex;
+            gap: 32px;
+            margin-bottom: 56px;
+            position: relative;
+        }
+
+        .bio-chapter-content {
+            flex: 1;
+            padding-top: 6px;
+        }
+
+        .bio-chapter-center {
+            flex-shrink: 0;
+        }
+
+        .bio-chapter-dot {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.12);
+            background: #0d0d0d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: #555;
+            position: relative;
+            z-index: 1;
+            transition: border-color 0.3s, color 0.3s, box-shadow 0.3s;
+        }
+
+        .bio-chapter-dot.red {
+            border-color: #e50914;
+            color: #e50914;
+            background: rgba(229, 9, 20, 0.08);
+            box-shadow: 0 0 20px rgba(229, 9, 20, 0.2);
+        }
+
+        .bio-chapter-dot.green {
+            border-color: #3D7A5E;
+            color: #3D7A5E;
+            background: rgba(61, 122, 94, 0.08);
+        }
+
+        .bio-chapter-dot.amber {
+            border-color: #A97030;
+            color: #A97030;
+            background: rgba(169, 112, 48, 0.08);
+        }
+
+        .bio-chapter-dot.slate {
+            border-color: #4A6A9A;
+            color: #4A6A9A;
+            background: rgba(74, 106, 154, 0.08);
+        }
+
+        .bio-chapter-dot.purple {
+            border-color: #8b5cf6;
+            color: #8b5cf6;
+            background: rgba(139, 92, 246, 0.08);
+        }
+
+        .bio-chapter-year {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #555;
+            margin-top: 8px;
+            text-align: center;
+            width: 58px;
+        }
+
+        .bio-card {
+            background: #0d0d0d;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 20px;
+            padding: 32px;
+            transition: border-color 0.25s, box-shadow 0.25s;
+        }
+
+        .bio-card:hover {
+            border-color: rgba(229, 9, 20, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        .bio-card-label {
+            display: inline-block;
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: #e50914;
+            margin-bottom: 12px;
+        }
+
+        .bio-card h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 14px;
+            line-height: 1.3;
+        }
+
+        .bio-card p {
+            font-size: 0.95rem;
+            color: #999;
+            line-height: 1.75;
+            margin-bottom: 14px;
+        }
+
+        .bio-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .bio-card p strong {
+            color: #ddd;
+        }
+
+        .bio-card-media {
+            width: 100%;
+            border-radius: 12px;
+            margin-top: 18px;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            opacity: 0.85;
+        }
+
+        .bio-quote {
+            border-left: 3px solid #e50914;
+            padding: 16px 20px;
+            margin: 16px 0;
+            background: rgba(229, 9, 20, 0.05);
+            border-radius: 0 10px 10px 0;
+        }
+
+        .bio-quote p {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.05rem;
+            color: #ddd;
+            margin: 0;
+        }
+
+        .bio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 14px;
+        }
+
+        .bio-tag {
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #888;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Right-side content placeholder for alignment */
+        .bio-chapter-empty {
+            padding: 32px;
+        }
+
+        /* ── Personal snapshot ── */
+        .bio-snapshot {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 64px 0;
+        }
+
+        .bio-snap-card {
+            background: #0d0d0d;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 18px;
+            padding: 28px 24px;
+            transition: border-color 0.25s, transform 0.25s;
+        }
+
+        .bio-snap-card:hover {
+            border-color: rgba(229, 9, 20, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .bio-snap-icon {
+            font-size: 1.6rem;
+            margin-bottom: 14px;
+        }
+
+        .bio-snap-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .bio-snap-desc {
+            font-size: 0.85rem;
+            color: #888;
+            line-height: 1.65;
+        }
+
+        /* ── Closing CTA ── */
+        .bio-closing {
+            text-align: center;
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .bio-closing::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(229, 9, 20, 0.07) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        .bio-closing h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.03em;
+            margin-bottom: 16px;
+        }
+
+        .bio-closing p {
+            font-size: 1.05rem;
+            color: #888;
+            max-width: 500px;
+            margin: 0 auto 36px;
+            line-height: 1.75;
+        }
+
+        .bio-cta-row {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 900px) {
+            .bio-timeline::before {
+                left: 26px;
+                transform: none;
             }
 
-            .page-header h1 {
-                font-size: clamp(2.2rem, 4vw, 3.4rem);
-                letter-spacing: -0.04em;
-                margin-bottom: 14px;
+            .bio-chapter {
+                grid-template-columns: 52px 1fr;
+                grid-template-rows: auto;
+                gap: 0;
             }
 
-            .page-header p {
-                color: var(--text-secondary);
-                font-size: 1.05rem;
-                max-width: 520px;
+            .bio-chapter-content {
+                padding: 0 0 0 24px !important;
+                order: 2 !important;
             }
 
-            .story-block {
-                padding: 40px;
-                background: var(--bg-surface);
-                border: 1px solid var(--border);
-                border-radius: 24px;
-                margin-bottom: 40px;
-                position: relative;
-                overflow: hidden;
-                transition: all 0.3s var(--ease);
+            .bio-chapter-center {
+                order: 1 !important;
+                align-items: flex-start;
             }
 
-            .story-block:hover {
-                border-color: var(--accent-primary);
-                box-shadow: var(--shadow-md);
+            .bio-chapter-empty {
+                display: none;
             }
 
-            .story-icon {
-                font-size: 2.5rem;
-                color: var(--accent-primary);
-                margin-bottom: 24px;
-                opacity: 0.8;
+            .bio-chapter-year {
+                text-align: left;
             }
 
-            .story-title {
-                font-family: 'Syne', sans-serif;
-                font-size: 2rem;
-                margin-bottom: 20px;
-                color: var(--text-main);
+            .bio-hero-inner {
+                grid-template-columns: 1fr;
             }
 
-            .story-text {
-                color: var(--text-secondary);
-                font-size: 1.1rem;
-                line-height: 1.8;
+            .bio-hero-photo-wrap {
+                display: none;
             }
 
-            .story-text p {
-                margin-bottom: 20px;
+            .bio-snapshot {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .bio-snapshot {
+                grid-template-columns: 1fr;
             }
 
-            .philosophy-quote {
-                border-left: 4px solid var(--accent-primary);
-                padding-left: 32px;
-                margin: 40px 0;
-                font-family: 'Syne', sans-serif;
-                font-size: 1.5rem;
-                color: var(--text-main);
-                font-style: italic;
+            .bio-hero-stats {
+                gap: 24px;
             }
-        </style>
-<meta content="Biography, About Enes Efe Tokta, Developer Journey" name="keywords"/><meta content="Enes Efe Tokta" name="author"/><link href="https://enesefetokta.shop/pages/biography.html" rel="canonical"/><meta content="website" property="og:type"/><meta content="https://enesefetokta.shop/pages/biography.html" property="og:url"/><meta content="My Story - Enes Efe Tokta | Software Developer Journey" property="og:title"/><meta content="Learn about Enes Efe Tokta's journey as a Software Developer. From early game development beginnings to building enterprise solutions." property="og:description"/><meta content="en_US" property="og:locale"/><meta content="https://enesefetokta.shop/assets/images/profile/my_profile.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="My Story - Enes Efe Tokta | Software Developer Journey" name="twitter:title"/><meta content="Learn about Enes Efe Tokta's journey as a Software Developer. From early game development beginnings to building enterprise solutions." name="twitter:description"/><meta content="@EnesEfeTokta" name="twitter:creator"/><meta content="https://enesefetokta.shop/assets/images/profile/my_profile.png" name="twitter:image"/><script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "My Story - Enes Efe Tokta | Software Developer Journey",
-      "description": "Learn about Enes Efe Tokta's journey as a Software Developer. From early game development beginnings to building enterprise solutions.",
-      "url": "https://enesefetokta.shop/pages/biography.html",
-      "author": {
-        "@type": "Person",
-        "name": "Enes Efe Tokta"
-      }
-    }
-    </script></head>
-<body>
-<nav class="navbar nfx-navbar" id="navbar">
-<div class="container">
-<a class="logo" href="../index.html">Enes Efe Tokta</a>
-<ul class="nav-links" id="nav-links">
-<li><a href="../index.html#about">About</a></li>
-<li><a href="work.html">Work</a></li>
-<li><a href="projects.html">Projects</a></li>
-<li><a href="../blog/index.html">Blog</a></li>
-<li><a href="biography.html">Biography</a></li>
-<li><a href="education.html">Education</a></li>
-<li><a href="cv.html">Resume</a></li>
-<li><a href="future-plans.html">Future Plans</a></li>
-<li><a class="nav-cta nfx-nav-cta" href="../index.html#contact">Contact</a></li>
-</ul>
-<button aria-label="Toggle menu" class="mobile-menu-btn" id="mobile-btn">
-<i class="fas fa-bars"></i>
-</button>
-</div>
-</nav>
-<!-- ═══════════ PAGE HEADER ═══════════ -->
-<header class="page-header">
-<div class="container">
-<span class="eyebrow">My Journey</span>
-<h1>My Story</h1>
-<p>I'm at the Beginning, but My Direction Is Clear</p>
-</div>
-</header>
-<main class="container" style="max-width: 900px; padding-top: 80px; padding-bottom: 100px;">
-<!-- The Beginning -->
-<article class="story-block">
-<i class="fas fa-compass story-icon"></i>
-<h2 class="story-title">The Journey Begins</h2>
-<div class="story-text">
-<p>My introduction to software didn't start as a career choice, but as a need to solve problems.
-                        Over
-                        time, that need evolved into a habit of systematic thinking, building, and continuous learning.
+        }
+    </style>
+</head>
+
+<body class="nfx-body">
+    <nav class="navbar nfx-navbar" id="navbar">
+        <div class="container">
+            <a class="logo" href="../index.html">Enes Efe Tokta</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="developer-stats.html">Stats</a></li>
+                <li><a href="../blog/index.html">Blog</a></li>
+                <li><a href="biography.html">Biography</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="cv.html">Resume</a></li>
+                <li><a href="future-plans.html">Future Plans</a></li>
+                <li><a class="nav-cta nfx-nav-cta" href="../index.html#contact">Contact</a></li>
+            </ul>
+            <button aria-label="Toggle menu" class="mobile-menu-btn" id="mobile-btn"><i
+                    class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- ═══════ HERO ═══════ -->
+    <header class="bio-hero">
+        <div class="container">
+            <div class="bio-hero-inner">
+                <div>
+                    <span class="bio-eyebrow"><i class="fas fa-book-open"></i> My Story</span>
+                    <h1 class="bio-hero-title">From <em>Curiosity</em><br />to Code.</h1>
+                    <p class="bio-hero-lead">I didn't start with a plan to become a developer. I started with a feeling
+                        that I could build something from nothing. This is the unfiltered story of how that feeling
+                        turned into a career, a philosophy, and a life in progress.</p>
+                    <div class="bio-hero-stats">
+                        <div>
+                            <div class="bio-hero-stat-val">2005</div>
+                            <div class="bio-hero-stat-lbl">Born</div>
+                        </div>
+                        <div>
+                            <div class="bio-hero-stat-val">2019</div>
+                            <div class="bio-hero-stat-lbl">First Code</div>
+                        </div>
+                        <div>
+                            <div class="bio-hero-stat-val">10+</div>
+                            <div class="bio-hero-stat-lbl">Projects</div>
+                        </div>
+                        <div>
+                            <div class="bio-hero-stat-val">∞</div>
+                            <div class="bio-hero-stat-lbl">Still Learning</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bio-hero-photo-wrap">
+                    <div class="bio-hero-photo-glow"></div>
+                    <img src="../assets/images/profile/my_profile.png" alt="Enes Efe Tokta" class="bio-hero-photo" />
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ═══════ TIMELINE ═══════ -->
+    <section style="padding: 80px 0 0;">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:64px;" class="reveal">
+                <span
+                    style="display:inline-block;font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#e50914;margin-bottom:12px;">The
+                    Journey</span>
+                <h2
+                    style="font-family:'Syne',sans-serif;font-size:clamp(1.8rem,3vw,2.6rem);color:#fff;letter-spacing:-0.03em;">
+                    Chapter by Chapter</h2>
+            </div>
+
+            <div class="bio-timeline">
+
+                <!-- Chapter 1: Childhood -->
+                <div class="bio-chapter reveal">
+                    <div class="bio-chapter-center">
+                        <div class="bio-chapter-dot amber"><i class="fas fa-child"></i></div>
+                        <div class="bio-chapter-year">~2003 - 2016</div>
+                    </div>
+                    <div class="bio-chapter-content">
+                        <div class="bio-card">
+                            <span class="bio-card-label">Chapter One</span>
+                            <h3>The Curious Kid</h3>
+                            <p>Long before I wrote a single line of code, I was the kid who spent hours at the family
+                                computer, not just playing games, but <strong>wondering how they were made</strong>.
+                                What happened when you pressed a button? How did a character know to move? That question
+                                never left me.</p>
+                            <p>Growing up in Turkey, access to resources was limited, but curiosity was free and
+                                unlimited. I'd tinker, break things, fix them, and ask "why?" more times than anyone
+                                around me could answer.</p>
+                            <div class="bio-tags">
+                                <span class="bio-tag">Turkey</span>
+                                <span class="bio-tag">Early Curiosity</span>
+                                <span class="bio-tag">Problem Solver</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 2: High School & First Game -->
+                <div class="bio-chapter reveal">
+                    <div class="bio-chapter-center">
+                        <div class="bio-chapter-dot red"><i class="fas fa-gamepad"></i></div>
+                        <div class="bio-chapter-year">2019 - 2022</div>
+                    </div>
+                    <div class="bio-chapter-content">
+                        <div class="bio-card">
+                            <span class="bio-card-label">Chapter Two</span>
+                            <h3>Şemsi Türkmen - Where It All Started</h3>
+                            <p>High school at <strong>Şemsi Türkmen Anatolian High School</strong> was where I finally
+                                stopped just wondering and started building. With limited resources and a second-hand
+                                computer, I discovered <strong>Unity</strong>, and my world changed completely.</p>
+                            <p>I taught myself 3D modeling, C# scripting, and game physics. Then I built my first real
+                                game: <strong><em>Witch Land</em></strong>. The moment I handed my phone to a classmate
+                                and watched them actually play something I had made from nothing, I knew this was it.
+                                That feeling of creation was irreversible.</p>
+                            <div class="bio-quote">
+                                <p>"I handed my friend the phone. He played my game. I felt like I could build
+                                    anything."</p>
+                            </div>
+                            <div class="bio-tags">
+                                <span class="bio-tag">Unity Engine</span>
+                                <span class="bio-tag">C# First Steps</span>
+                                <span class="bio-tag">Witch Land (2021)</span>
+                                <span class="bio-tag">Self-Taught</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 3: University -->
+                <div class="bio-chapter reveal">
+                    <div class="bio-chapter-center">
+                        <div class="bio-chapter-dot slate"><i class="fas fa-university"></i></div>
+                        <div class="bio-chapter-year">2022 – NOW</div>
+                    </div>
+                    <div class="bio-chapter-content">
+                        <div class="bio-card">
+                            <span class="bio-card-label">Chapter Three</span>
+                            <h3>Atatürk University — Going Deeper</h3>
+                            <p>University cracked my perspective wide open. At <strong>Atatürk University</strong>
+                                (Computer Engineering), I wasn't just learning to code I was learning to think
+                                architecturally. The shift from "making things work" to "making things right" happened
+                                here.</p>
+                            <p>I dove deep into the <strong>.NET ecosystem</strong>, mastered ASP.NET Core, discovered
+                                Clean Architecture, and started shipping real APIs. For the first time, I was building
+                                systems that other people relied on, not just games, but production software.</p>
+                            <p>My GPA sits at <strong>3.20 / 4.00</strong>, but the real grade is the 29 repositories
+                                and 1,700+ commits I've shipped alongside my studies.</p>
+                            <div class="bio-tags">
+                                <span class="bio-tag">Computer Engineering</span>
+                                <span class="bio-tag">ASP.NET Core</span>
+                                <span class="bio-tag">Clean Architecture</span>
+                                <span class="bio-tag">PostgreSQL</span>
+                                <span class="bio-tag">React &amp; TypeScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 4: Estonia & the Turning Point -->
+                <div class="bio-chapter reveal">
+                    <div class="bio-chapter-center">
+                        <div class="bio-chapter-dot green"><i class="fas fa-plane"></i></div>
+                        <div class="bio-chapter-year">Turning Point</div>
+                    </div>
+                    <div class="bio-chapter-content">
+                        <div class="bio-card">
+                            <span class="bio-card-label">Chapter Four</span>
+                            <h3>Estonia &amp; The Promise</h3>
+                            <p>A trip to <strong>Estonia</strong>, one of the most digitally advanced countries in the
+                                world, hit differently. Walking through a society where software genuinely runs
+                                everything, I saw what technology's full potential looks like when taken seriously at a
+                                national level.</p>
+                            <p>But the biggest thing that happened wasn't what I saw it was what I realized about
+                                myself. Sitting alone one evening, I made a promise that I still carry like a compass:
+                            </p>
+                            <div class="bio-quote">
+                                <p>"Enes, work for yourself. Work for your happiness."</p>
+                            </div>
+                            <p>That sentence reshaped how I make decisions in my career and in my life. It's the
+                                reason I choose depth over shortcuts and genuine understanding over quick wins.</p>
+                            <div class="bio-tags">
+                                <span class="bio-tag">Estonia</span>
+                                <span class="bio-tag">Digital Society</span>
+                                <span class="bio-tag">Life Philosophy</span>
+                                <span class="bio-tag">Clarity</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 5: FertileNotify & Real Work -->
+                <div class="bio-chapter reveal">
+                    <div class="bio-chapter-center">
+                        <div class="bio-chapter-dot red"><i class="fas fa-rocket"></i></div>
+                        <div class="bio-chapter-year">2023 - NOW</div>
+                    </div>
+                    <div class="bio-chapter-content">
+                        <div class="bio-card">
+                            <span class="bio-card-label">Chapter Five</span>
+                            <h3>Building Something Real</h3>
+                            <p>Ideas became systems. I designed and shipped <strong>FertileNotify</strong> a
+                                full-stack notification platform built with ASP.NET Core, PostgreSQL, React, and Docker.
+                                Not a tutorial project, not a toy a real application with authentication,
+                                multi-channel delivery, and an admin dashboard.</p>
+                            <p>It taught me that the gap between "knowing how to code" and "building production-ready
+                                software" is enormous, and deeply exciting. I've since published <strong>29+
+                                    repositories</strong>, closed <strong>225+ issues</strong>, and made over
+                                <strong>1,700 commits</strong>.
+                            </p>
+                            <p>The work is never done. That's the part I love most.</p>
+                            <div class="bio-tags">
+                                <span class="bio-tag">FertileNotify</span>
+                                <span class="bio-tag">Docker</span>
+                                <span class="bio-tag">CI/CD</span>
+                                <span class="bio-tag">29+ Repos</span>
+                                <span class="bio-tag">Production Systems</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 6: Atlas & Beyond Code -->
+                <div class="bio-chapter reveal">
+                    <div class="bio-chapter-center">
+                        <div class="bio-chapter-dot purple"><i class="fas fa-heart"></i></div>
+                        <div class="bio-chapter-year">Life Beyond</div>
+                    </div>
+                    <div class="bio-chapter-content">
+                        <div class="bio-card">
+                            <span class="bio-card-label">Chapter Six</span>
+                            <h3>Atlas &amp; What Code Can't Teach</h3>
+                            <p>Software taught me how to build systems. My cat, <strong>Atlas</strong>, taught me
+                                something software never could: <em>responsibility, patience, and presence.</em></p>
+                            <p>There's a kind of care that comes with looking after another living thing, being fully
+                                there, not half-distracted by a terminal window. Taking care of Atlas reminded me that
+                                the best engineers are fully human first.</p>
+                            <p>I believe staying grounded and emotionally intelligent is just as critical as being
+                                technically sharp. A great engineer who can't empathize is just a complicated machine.
+                            </p>
+                            <div class="bio-tags">
+                                <span class="bio-tag">Atlas 🐱</span>
+                                <span class="bio-tag">Responsibility</span>
+                                <span class="bio-tag">Empathy</span>
+                                <span class="bio-tag">Balance</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ═══════ PERSONAL SNAPSHOT ═══════ -->
+    <section style="padding: 0 0 80px;">
+        <div class="container">
+            <div style="margin-bottom:36px;" class="reveal">
+                <span
+                    style="display:inline-block;font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#e50914;margin-bottom:8px;">Who
+                    I Am</span>
+                <h2 style="font-family:'Syne',sans-serif;font-size:1.8rem;color:#fff;letter-spacing:-0.03em;">Beyond the
+                    Resume</h2>
+            </div>
+            <div class="bio-snapshot">
+                <div class="bio-snap-card reveal">
+                    <div class="bio-snap-icon" style="color:#e50914;"><i class="fas fa-code"></i></div>
+                    <div class="bio-snap-title">10 Hours a Day</div>
+                    <p class="bio-snap-desc">On average, I spend 10 hours daily engaged with software, coding, reading
+                        documentation, designing systems, or thinking through architecture while walking.</p>
+                </div>
+                <div class="bio-snap-card reveal reveal-delay-1">
+                    <div class="bio-snap-icon" style="color:#A97030;"><i class="fas fa-pen-alt"></i></div>
+                    <div class="bio-snap-title">24 Articles on Medium</div>
+                    <p class="bio-snap-desc">I document what I learn, not as an expert, but as someone who believes
+                        transparency accelerates growth. 982 reads and counting.</p>
+                </div>
+                <div class="bio-snap-card reveal reveal-delay-2">
+                    <div class="bio-snap-icon" style="color:#4A6A9A;"><i class="fas fa-language"></i></div>
+                    <div class="bio-snap-title">70 WPM Typing</div>
+                    <p class="bio-snap-desc">Fast enough to keep up with thoughts, careful enough to stay precise. A
+                        small thing that compounds over thousands of hours of work.</p>
+                </div>
+                <div class="bio-snap-card reveal reveal-delay-1">
+                    <div class="bio-snap-icon" style="color:#3D7A5E;"><i class="fas fa-globe"></i></div>
+                    <div class="bio-snap-title">Remote-First Mindset</div>
+                    <p class="bio-snap-desc">Based in Turkey, thinking globally. My goal is to work with world-class
+                        teams on software that matters wherever they are.</p>
+                </div>
+                <div class="bio-snap-card reveal reveal-delay-2">
+                    <div class="bio-snap-icon" style="color:#8b5cf6;"><i class="fas fa-cat"></i></div>
+                    <div class="bio-snap-title">Cat Dad</div>
+                    <p class="bio-snap-desc">Atlas arrived as a small kitten and became the best reminder that the world
+                        doesn't revolve around code. He supervises most of my late-night sessions.</p>
+                </div>
+                <div class="bio-snap-card reveal reveal-delay-3">
+                    <div class="bio-snap-icon" style="color:#e50914;"><i class="fas fa-compass"></i></div>
+                    <div class="bio-snap-title">Direction Over Perfection</div>
+                    <p class="bio-snap-desc">"I'm at the beginning, but my direction is clear." I don't wait for perfect
+                        conditions. I move, learn, and course-correct while in motion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div style="height:1px; background: rgba(255,255,255,0.06); margin: 0 5%;"></div>
+
+    <!-- ═══════ CLOSING ═══════ -->
+    <section class="bio-closing">
+        <div class="container">
+            <div class="reveal">
+                <div style="font-size:3rem; margin-bottom:24px; color:#e50914;"><i class="fas fa-rocket"></i></div>
+                <h2>The Best Chapter<br />Is Still Being Written.</h2>
+                <p>Every commit, every course, every late-night debugging session is a sentence in a book that's still
+                    being written. I don't know how the story ends, but I know I'll keep writing it honestly.</p>
+                <div class="bio-cta-row">
+                    <a href="developer-stats.html" class="nfx-btn-red"
+                        style="display:inline-flex;align-items:center;gap:10px;background:#e50914;color:#fff;padding:14px 28px;border-radius:8px;font-weight:600;font-size:0.95rem;text-decoration:none;transition:all 0.3s;">
+                        <i class="fas fa-chart-bar"></i> My Stats
+                    </a>
+                    <a href="future-plans.html"
+                        style="display:inline-flex;align-items:center;gap:10px;background:transparent;color:#ccc;padding:14px 28px;border-radius:8px;font-weight:600;font-size:0.95rem;text-decoration:none;border:1px solid #333;transition:all 0.3s;">
+                        <i class="fas fa-graduation-cap"></i> Learning Journey
+                    </a>
+                    <a href="../index.html#contact"
+                        style="display:inline-flex;align-items:center;gap:10px;background:transparent;color:#ccc;padding:14px 28px;border-radius:8px;font-weight:600;font-size:0.95rem;text-decoration:none;border:1px solid #333;transition:all 0.3s;">
+                        <i class="fas fa-envelope"></i> Get In Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="site-footer nfx-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div>
+                    <span class="footer-logo">Enes Efe Tokta</span>
+                    <p class="footer-tagline">
+                        Software Developer · .NET &amp; Unity · Based in Turkey.<br />
+                        Open to remote opportunities worldwide.
                     </p>
-<p>Today, my focus is on learning processes, lessons learned from mistakes, and solutions that have
-                        real-world impact. I don't see coding as a purely technical activity; to me, it's the art of
-                        asking
-                        the right questions, designing sustainable systems, and creating meaningful value.</p>
-<p>In the short term, my goal is to build a strong technical foundation. In the long term, I aim to
-                        create impact on an international scale. My direction is clear: <strong>think better, build
-                            cleaner,
-                            and grow by sharing.</strong></p>
-</div>
-</article>
-<!-- Journal -->
-<article class="story-block" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.03), transparent);">
-<i class="fas fa-book-open story-icon" style="color: var(--accent-secondary);"></i>
-<h2 class="story-title">A Transparent Journey</h2>
-<div class="story-text">
-<p>What I build and document here is not an "expert showcase," but a transparent development
-                        journal. If
-                        my experiences can offer even a small contribution to someone reading, then I know I'm on the
-                        right
-                        path.</p>
-</div>
-</article>
-<!-- Roots -->
-<article class="story-block">
-<i class="fas fa-school story-icon"></i>
-<h2 class="story-title">Education &amp; Roots</h2>
-<div class="story-text">
-<p>I completed my high school education at <strong>Şemsi Türkmen Anatolian High School</strong>.
-                        Even
-                        with limited resources, I started developing games with Unity. Testing my first game, <em>Witch
-                            Land</em>, on my classmates' phones was the first time I felt the power of creation.</p>
-<p>I am currently continuing my education at <strong>Atatürk University</strong>. University changed
-                        my
-                        core perspective, leading me deeper into the .NET ecosystem and modern development with
-                        JavaScript
-                        and TypeScript.</p>
-</div>
-</article>
-<!-- Beyond Code -->
-<article class="story-block">
-<i class="fas fa-heart story-icon" style="color: #ff4d4d;"></i>
-<h2 class="story-title">Beyond the Screen</h2>
-<div class="story-text">
-<p>Life is more than just code. While in my third year at university, I share my life with
-                        <strong>Oğlum</strong>, my first pet cat. Software taught me how to build systems; living with
-                        him
-                        taught me responsibility, patience, and empathy. I believe staying human is just as important as
-                        technical growth.
-                    </p>
-</div>
-</article>
-<!-- Philosophy -->
-<article class="story-block" style="border: 2px solid var(--accent-primary); background: rgba(59, 130, 246, 0.02);">
-<i class="fas fa-star story-icon" style="color: var(--accent-amber);"></i>
-<h2 class="story-title">My Philosophy</h2>
-<div class="story-text">
-<p>My life goal is not to become a perfect developer, but to become a <strong>happy and successful
-                            human
-                            being</strong>. During my visit to Estonia, I made a promise to myself:</p>
-<blockquote class="philosophy-quote">
-                        "Enes, work for yourself. Work for your happiness."
-                    </blockquote>
-<p>I still carry that sentence with me like a compass, guiding every decision I make in my career
-                        and
-                        personal life.</p>
-</div>
-</article>
-<!-- Closing -->
-<section style="text-align: center; margin-top: 80px;">
-<i class="fas fa-rocket" style="font-size: 3rem; color: var(--accent-primary); margin-bottom: 24px; display: block;"></i>
-<h2 style="font-family: 'Syne', sans-serif; font-size: 2rem; margin-bottom: 16px;">The Best Is Yet To
-                    Come
-                </h2>
-<p style="color: var(--text-secondary); font-size: 1.1rem;">With the hope that the future Enes will be
-                    more
-                    productive, more successful, and happier.</p>
-</section>
-</main>
-<footer class="site-footer nfx-footer">
-<div class="container">
-<div class="footer-top">
-<div>
-<span class="footer-logo">Enes Efe Tokta</span>
-<p class="footer-tagline">
-                            Software Developer · .NET &amp; Unity · Based in Turkey.<br/>
-                            Open to remote opportunities worldwide.
-                        </p>
-</div>
-<div class="footer-social">
-<a aria-label="GitHub" href="https://github.com/EnesEfeTokta" target="_blank"><i class="fab fa-github"></i></a>
-<a aria-label="LinkedIn" href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank"><i class="fab fa-linkedin"></i></a>
-<a aria-label="Medium" href="https://medium.com/@EnesEfeTokta" target="_blank"><i class="fab fa-medium"></i></a>
-<a aria-label="X / Twitter" href="https://x.com/EnesEfeTokta" target="_blank"><i class="fab fa-twitter"></i></a>
-</div>
-</div>
-<div class="footer-bottom">
-<p class="footer-copyright">© 2026 Enes Efe Tokta. Built with modern web technologies.</p>
-<div class="footer-links">
-<a href="biography.html">Biography</a>
-<a href="../blog/index.html">Blog</a>
-<a href="cv.html">Resume</a>
-<a href="../index.html#contact">Contact</a>
-</div>
-</div>
-</div>
-</footer>
-<script src="../assets/js/main.js"></script>
+                </div>
+                <div class="footer-social">
+                    <a aria-label="GitHub" href="https://github.com/EnesEfeTokta" target="_blank"><i
+                            class="fab fa-github"></i></a>
+                    <a aria-label="LinkedIn" href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/"
+                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a aria-label="Medium" href="https://medium.com/@EnesEfeTokta" target="_blank"><i
+                            class="fab fa-medium"></i></a>
+                    <a aria-label="X / Twitter" href="https://x.com/EnesEfeTokta" target="_blank"><i
+                            class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Enes Efe Tokta. Built with modern web technologies.</p>
+                <div class="footer-links">
+                    <a href="biography.html">Biography</a>
+                    <a href="developer-stats.html">Stats</a>
+                    <a href="future-plans.html">Future Plans</a>
+                    <a href="../blog/index.html">Blog</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="education.html">Education</a>
+                    <a href="cv.html">Resume</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
 </body>
-</body></html>
+
+</html>
