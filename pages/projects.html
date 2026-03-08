@@ -1,305 +1,471 @@
 <!DOCTYPE html>
-
 <html lang="en">
-<body class="nfx-body">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="../assets/images/profile/my_profile.png" rel="icon" type="image/png"/>
-<title>Projects – Enes Efe Tokta | Portfolio</title>
-<meta content="Full project portfolio by Enes Efe Tokta — .NET, Unity, React, and more." name="description"/>
-<link href="https://enesefetokta.shop/pages/projects.html" rel="canonical"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="../assets/css/styles.css" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
-<style>
-            /* ── Page Header ── */
-            .page-header {
-                padding-top: calc(var(--nav-h) + 72px);
-                padding-bottom: 56px;
-                background: var(--grad-hero);
-                border-bottom: 1px solid var(--border);
-            }
-
-            .page-header h1 {
-                font-size: clamp(2.2rem, 4vw, 3.4rem);
-                letter-spacing: -0.04em;
-                margin-bottom: 14px;
-            }
-
-            .page-header p {
-                color: var(--text-secondary);
-                font-size: 1.05rem;
-                max-width: 520px;
-            }
-
-            /* ── Filter Bar ── */
-            .filter-bar {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                flex-wrap: wrap;
-                padding: 28px 0 8px;
-            }
-
-            .filter-pill {
-                background: var(--bg-surface);
-                border: 1.5px solid var(--border);
-                color: var(--text-secondary);
-                padding: 7px 18px;
-                border-radius: var(--r-pill);
-                cursor: pointer;
-                transition: all 0.18s ease;
-                font-size: 0.875rem;
-                font-weight: 500;
-                font-family: 'Inter', sans-serif;
-            }
-
-            .filter-pill:hover {
-                border-color: var(--accent-primary);
-                color: var(--text-main);
-            }
-
-            .filter-pill.active {
-                background: var(--accent-primary);
-                color: white;
-                border-color: var(--accent-primary);
-            }
-
-            .filter-count {
-                font-size: 0.82rem;
-                color: var(--text-muted);
-                margin-left: auto;
-                font-weight: 500;
-            }
-
-            /* ── Projects Card Grid ── */
-            .projects-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-                gap: 24px;
-                padding-bottom: 80px;
-            }
-
-            .project-card {
-                background: var(--bg-surface);
-                border: 1px solid var(--border);
-                border-radius: var(--r-lg);
-                padding: 28px;
-                box-shadow: var(--shadow-xs);
-                transition: all 0.25s var(--ease);
-                display: flex;
-                flex-direction: column;
-                text-decoration: none;
-                color: inherit;
-            }
-
-            .project-card:hover {
-                border-color: var(--border-accent);
-                box-shadow: var(--shadow-md);
-                transform: translateY(-3px);
-            }
-
-            .project-card-top {
-                display: flex;
-                align-items: flex-start;
-                justify-content: space-between;
-                margin-bottom: 16px;
-            }
-
-            .project-icon {
-                width: 46px;
-                height: 46px;
-                border-radius: var(--r-md);
-                background: var(--accent-light);
-                color: var(--accent-primary);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 1.25rem;
-                flex-shrink: 0;
-            }
-
-            .project-cat-badge {
-                display: inline-flex;
-                align-items: center;
-                gap: 5px;
-                font-size: 0.72rem;
-                font-weight: 600;
-                padding: 4px 11px;
-                border-radius: var(--r-pill);
-                font-family: 'Inter', sans-serif;
-                text-transform: uppercase;
-                letter-spacing: 0.06em;
-            }
-
-            .cat-dotnet {
-                background: rgba(74, 106, 154, 0.1);
-                color: var(--slate);
-            }
-
-            .cat-unity {
-                background: rgba(155, 80, 50, 0.1);
-                color: var(--rust);
-            }
-
-            .cat-web {
-                background: rgba(61, 122, 94, 0.1);
-                color: var(--green);
-            }
-
-            .project-title {
-                font-size: 1.1rem;
-                font-weight: 700;
-                color: var(--text-main);
-                margin-bottom: 8px;
-                font-family: 'Syne', sans-serif;
-                line-height: 1.3;
-            }
-
-            .project-desc {
-                font-size: 0.9rem;
-                color: var(--text-secondary);
-                line-height: 1.65;
-                flex: 1;
-                margin-bottom: 20px;
-            }
-
-            .project-tags {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 6px;
-                margin-bottom: 20px;
-            }
-
-            .project-card-footer {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                margin-top: auto;
-                padding-top: 16px;
-                border-top: 1px solid var(--border);
-            }
-
-            .project-view-link {
-                font-size: 0.85rem;
-                font-weight: 600;
-                color: var(--accent-primary);
-                display: flex;
-                align-items: center;
-                gap: 6px;
-                transition: gap 0.2s ease;
-            }
-
-            .project-view-link:hover {
-                gap: 10px;
-            }
-
-            .no-results {
-                grid-column: 1 / -1;
-                text-align: center;
-                padding: 80px 0;
-                color: var(--text-muted);
-            }
-
-            @media (max-width: 640px) {
-                .projects-grid {
-                    grid-template-columns: 1fr;
-                }
-            }
-        </style>
-<meta content="Projects, Portfolio, Developer, Enes Efe Tokta, .NET, Unity, Open Source" name="keywords"/><meta content="Enes Efe Tokta" name="author"/><meta content="website" property="og:type"/><meta content="https://enesefetokta.shop/pages/projects.html" property="og:url"/><meta content="Projects – Enes Efe Tokta | Portfolio" property="og:title"/><meta content="Full project portfolio by Enes Efe Tokta — .NET, Unity, React, and more." property="og:description"/><meta content="en_US" property="og:locale"/><meta content="https://enesefetokta.shop/assets/images/profile/my_profile.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Projects – Enes Efe Tokta | Portfolio" name="twitter:title"/><meta content="Full project portfolio by Enes Efe Tokta — .NET, Unity, React, and more." name="twitter:description"/><meta content="@EnesEfeTokta" name="twitter:creator"/><meta content="https://enesefetokta.shop/assets/images/profile/my_profile.png" name="twitter:image"/><script type="application/ld+json">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="../assets/images/profile/my_profile.png" rel="icon" type="image/png" />
+    <title>Projects – Enes Efe Tokta | Portfolio</title>
+    <meta name="description" content="Full project portfolio by Enes Efe Tokta — .NET, Unity, React, and more." />
+    <link href="https://enesefetokta.shop/pages/projects.html" rel="canonical" />
+    <meta name="keywords" content="Projects, Portfolio, Developer, Enes Efe Tokta, .NET, Unity, Open Source" />
+    <meta name="author" content="Enes Efe Tokta" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://enesefetokta.shop/pages/projects.html" />
+    <meta property="og:title" content="Projects – Enes Efe Tokta | Portfolio" />
+    <meta property="og:description"
+        content="Full project portfolio by Enes Efe Tokta — .NET, Unity, React, and more." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://enesefetokta.shop/assets/images/profile/my_profile.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Projects – Enes Efe Tokta | Portfolio" />
+    <meta name="twitter:description"
+        content="Full project portfolio by Enes Efe Tokta — .NET, Unity, React, and more." />
+    <meta name="twitter:creator" content="@EnesEfeTokta" />
+    <meta name="twitter:image" content="https://enesefetokta.shop/assets/images/profile/my_profile.png" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/styles.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": "Projects – Enes Efe Tokta | Portfolio",
       "description": "Full project portfolio by Enes Efe Tokta — .NET, Unity, React, and more.",
       "url": "https://enesefetokta.shop/pages/projects.html",
-      "author": {
-        "@type": "Person",
-        "name": "Enes Efe Tokta"
-      }
+      "author": { "@type": "Person", "name": "Enes Efe Tokta" }
     }
-    </script></head>
-<body>
-<nav class="navbar nfx-navbar" id="navbar">
-<div class="container">
-<a class="logo" href="../index.html">Enes Efe Tokta</a>
-<ul class="nav-links" id="nav-links">
-<li><a href="../index.html#about">About</a></li>
-<li><a href="work.html">Work</a></li>
-<li><a href="projects.html">Projects</a></li>
-<li><a href="../blog/index.html">Blog</a></li>
-<li><a href="biography.html">Biography</a></li>
-<li><a href="education.html">Education</a></li>
-<li><a href="cv.html">Resume</a></li>
-<li><a href="future-plans.html">Future Plans</a></li>
-<li><a class="nav-cta nfx-nav-cta" href="../index.html#contact">Contact</a></li>
-</ul>
-<button aria-label="Toggle menu" class="mobile-menu-btn" id="mobile-btn">
-<i class="fas fa-bars"></i>
-</button>
-</div>
-</nav>
-<!-- ═══════════ PAGE HEADER ═══════════ -->
-<header class="page-header">
-<div class="container">
-<span class="eyebrow">Portfolio</span>
-<h1>All Projects</h1>
-<p>A complete overview of my work across .NET enterprise solutions, Unity game development, and modern
-                    web
-                    applications.</p>
-</div>
-</header>
-<!-- ═══════════ FILTER + GRID ═══════════ -->
-<section class="section-sm">
-<div class="container">
-<!-- Filter bar -->
-<div class="filter-bar">
-<button class="filter-pill active" data-filter="all">All</button>
-<button class="filter-pill" data-filter="dotnet">.NET</button>
-<button class="filter-pill" data-filter="unity">Unity</button>
-<button class="filter-pill" data-filter="web">Web</button>
-<span class="filter-count" id="project-count"></span>
-</div>
-<!-- Grid -->
-<div class="projects-grid" id="projects-grid">
-<!-- Injected by project-loader.js -->
-</div>
-</div>
-</section>
-<footer class="site-footer nfx-footer">
-<div class="container">
-<div class="footer-top">
-<div>
-<span class="footer-logo">Enes Efe Tokta</span>
-<p class="footer-tagline">
-                            Software Developer · .NET &amp; Unity · Based in Turkey.<br/>
-                            Open to remote opportunities worldwide.
-                        </p>
-</div>
-<div class="footer-social">
-<a aria-label="GitHub" href="https://github.com/EnesEfeTokta" target="_blank"><i class="fab fa-github"></i></a>
-<a aria-label="LinkedIn" href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank"><i class="fab fa-linkedin"></i></a>
-<a aria-label="Medium" href="https://medium.com/@EnesEfeTokta" target="_blank"><i class="fab fa-medium"></i></a>
-<a aria-label="X / Twitter" href="https://x.com/EnesEfeTokta" target="_blank"><i class="fab fa-twitter"></i></a>
-</div>
-</div>
-<div class="footer-bottom">
-<p class="footer-copyright">© 2026 Enes Efe Tokta. Built with modern web technologies.</p>
-<div class="footer-links">
-<a href="biography.html">Biography</a>
-<a href="../blog/index.html">Blog</a>
-<a href="cv.html">Resume</a>
-<a href="../index.html#contact">Contact</a>
-</div>
-</div>
-</div>
-</footer>
-<script src="../assets/js/main.js"></script>
-<script src="../assets/js/projects-data.js"></script>
-<script src="../assets/js/project-loader.js"></script>
+    </script>
+    <style>
+        /* ── Hero ── */
+        .proj-hero {
+            padding-top: calc(var(--nav-h) + 80px);
+            padding-bottom: 72px;
+            background: #000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .proj-hero::before {
+            content: '';
+            position: absolute;
+            top: -120px;
+            right: -120px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(229, 9, 20, 0.07) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .proj-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #e50914;
+            background: rgba(229, 9, 20, 0.1);
+            border: 1px solid rgba(229, 9, 20, 0.25);
+            padding: 5px 14px;
+            border-radius: 999px;
+            margin-bottom: 24px;
+        }
+
+        .proj-hero-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.6rem, 5vw, 4rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 18px;
+        }
+
+        .proj-hero-title em {
+            font-family: 'Playfair Display', serif;
+            color: #e50914;
+            font-style: italic;
+        }
+
+        .proj-hero-lead {
+            font-size: 1.05rem;
+            color: #888;
+            line-height: 1.75;
+            max-width: 540px;
+            margin-bottom: 44px;
+        }
+
+        .proj-stats-bar {
+            display: flex;
+            gap: 0;
+            background: #0d0d0d;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 14px;
+            overflow: hidden;
+            max-width: 580px;
+        }
+
+        .proj-stat {
+            flex: 1;
+            padding: 18px 20px;
+            border-right: 1px solid rgba(255, 255, 255, 0.06);
+            text-align: center;
+        }
+
+        .proj-stat:last-child {
+            border-right: none;
+        }
+
+        .proj-stat-val {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #e50914;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .proj-stat-lbl {
+            font-size: 0.62rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #555;
+        }
+
+        /* ── Filter Bar ── */
+        .proj-filter-section {
+            padding: 48px 0 0;
+        }
+
+        .proj-filter-bar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 36px;
+        }
+
+        .proj-filter-pill {
+            background: #0d0d0d;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #888;
+            padding: 8px 20px;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: all 0.18s ease;
+            font-size: 0.85rem;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .proj-filter-pill:hover {
+            border-color: rgba(229, 9, 20, 0.4);
+            color: #ddd;
+        }
+
+        .proj-filter-pill.active {
+            background: #e50914;
+            color: #fff;
+            border-color: #e50914;
+            box-shadow: 0 4px 16px rgba(229, 9, 20, 0.25);
+        }
+
+        .proj-filter-count {
+            font-size: 0.8rem;
+            color: #444;
+            margin-left: auto;
+            font-weight: 500;
+        }
+
+        /* ── Project Cards ── */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+            padding-bottom: 100px;
+        }
+
+        .project-card {
+            background: #0a0a0a;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 18px;
+            padding: 0;
+            transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--card-accent, rgba(255, 255, 255, 0.1));
+            transition: opacity 0.25s;
+        }
+
+        .project-card:hover {
+            border-color: rgba(255, 255, 255, 0.14);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+            transform: translateY(-4px);
+        }
+
+        .project-card-body {
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .project-card-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 18px;
+        }
+
+        .project-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: var(--icon-bg, rgba(229, 9, 20, 0.1));
+            color: var(--icon-color, #e50914);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .project-cat-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.68rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .cat-dotnet {
+            background: rgba(74, 106, 154, 0.12);
+            color: #6a9fd8;
+        }
+
+        .cat-unity {
+            background: rgba(155, 94, 62, 0.12);
+            color: #c8805a;
+        }
+
+        .cat-web {
+            background: rgba(61, 122, 94, 0.12);
+            color: #5bb08a;
+        }
+
+        .project-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+            font-family: 'Syne', sans-serif;
+            line-height: 1.3;
+        }
+
+        .project-desc {
+            font-size: 0.88rem;
+            color: #777;
+            line-height: 1.65;
+            flex: 1;
+            margin-bottom: 18px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 18px;
+        }
+
+        .project-tag {
+            font-size: 0.68rem;
+            font-weight: 600;
+            padding: 3px 9px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #777;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .project-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .project-view-link {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #e50914;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap 0.2s ease;
+            text-decoration: none;
+        }
+
+        .project-view-link:hover {
+            gap: 10px;
+        }
+
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 80px 0;
+            color: #444;
+        }
+
+        @media (max-width: 640px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .proj-stats-bar {
+                flex-wrap: wrap;
+            }
+
+            .proj-stat {
+                flex: 1 1 40%;
+            }
+        }
+    </style>
+</head>
+
+<body class="nfx-body">
+    <nav class="navbar nfx-navbar" id="navbar">
+        <div class="container">
+            <a class="logo" href="../index.html">Enes Efe Tokta</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="developer-stats.html">Stats</a></li>
+                <li><a href="../blog/index.html">Blog</a></li>
+                <li><a href="biography.html">Biography</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="cv.html">Resume</a></li>
+                <li><a href="future-plans.html">Future Plans</a></li>
+                <li><a class="nav-cta nfx-nav-cta" href="../index.html#contact">Contact</a></li>
+            </ul>
+            <button aria-label="Toggle menu" class="mobile-menu-btn" id="mobile-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ═══════ HERO ═══════ -->
+    <header class="proj-hero">
+        <div class="container">
+            <span class="proj-eyebrow"><i class="fas fa-code"></i> Portfolio</span>
+            <h1 class="proj-hero-title">All <em>Projects</em></h1>
+            <p class="proj-hero-lead">A complete overview of my work across .NET enterprise solutions, Unity game
+                development, and modern web applications. Each project is a lesson, a challenge, and a step forward.</p>
+            <div class="proj-stats-bar">
+                <div class="proj-stat">
+                    <div class="proj-stat-val">10+</div>
+                    <div class="proj-stat-lbl">Projects</div>
+                </div>
+                <div class="proj-stat">
+                    <div class="proj-stat-val">3</div>
+                    <div class="proj-stat-lbl">Categories</div>
+                </div>
+                <div class="proj-stat">
+                    <div class="proj-stat-val">29+</div>
+                    <div class="proj-stat-lbl">Repos</div>
+                </div>
+                <div class="proj-stat">
+                    <div class="proj-stat-val">Open</div>
+                    <div class="proj-stat-lbl">Source</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ═══════ FILTER + GRID ═══════ -->
+    <section class="proj-filter-section">
+        <div class="container">
+            <div class="proj-filter-bar">
+                <button class="proj-filter-pill active" data-filter="all">All</button>
+                <button class="proj-filter-pill" data-filter="dotnet">.NET</button>
+                <button class="proj-filter-pill" data-filter="unity">Unity</button>
+                <button class="proj-filter-pill" data-filter="web">Web</button>
+                <span class="proj-filter-count" id="project-count"></span>
+            </div>
+            <div class="projects-grid" id="projects-grid">
+                <!-- Injected by project-loader.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="site-footer nfx-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div>
+                    <span class="footer-logo">Enes Efe Tokta</span>
+                    <p class="footer-tagline">
+                        Software Developer · .NET &amp; Unity · Based in Turkey.<br />
+                        Open to remote opportunities worldwide.
+                    </p>
+                </div>
+                <div class="footer-social">
+                    <a aria-label="GitHub" href="https://github.com/EnesEfeTokta" target="_blank"><i
+                            class="fab fa-github"></i></a>
+                    <a aria-label="LinkedIn" href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/"
+                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a aria-label="Medium" href="https://medium.com/@EnesEfeTokta" target="_blank"><i
+                            class="fab fa-medium"></i></a>
+                    <a aria-label="X / Twitter" href="https://x.com/EnesEfeTokta" target="_blank"><i
+                            class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Enes Efe Tokta. Built with modern web technologies.</p>
+                <div class="footer-links">
+                    <a href="biography.html">Biography</a>
+                    <a href="developer-stats.html">Stats</a>
+                    <a href="future-plans.html">Future Plans</a>
+                    <a href="../blog/index.html">Blog</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="education.html">Education</a>
+                    <a href="cv.html">Resume</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/projects-data.js"></script>
+    <script src="../assets/js/project-loader.js"></script>
 </body>
-</body></html>
+
+</html>

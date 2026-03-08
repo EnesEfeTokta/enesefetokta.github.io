@@ -1,14 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     const projectsGrid = document.getElementById('projects-grid');
-    const filterPills = document.querySelectorAll('.filter-pill');
+    // Support both old class name (filter-pill) and new class name (proj-filter-pill)
+    const filterPills = document.querySelectorAll('.proj-filter-pill, .filter-pill');
     const projectCountLabel = document.getElementById('project-count');
 
     if (!projectsGrid) return;
 
-    // ── Render on load ──────────────────────────────────────
     renderProjects('all');
 
-    // ── Filter pill clicks ──────────────────────────────────
     filterPills.forEach(pill => {
         pill.addEventListener('click', () => {
             filterPills.forEach(p => p.classList.remove('active'));
@@ -17,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ── Render function ─────────────────────────────────────
     function renderProjects(filter) {
         projectsGrid.innerHTML = '';
 
@@ -48,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ── Card builder ────────────────────────────────────────
     function createProjectCard(project) {
         const card = document.createElement('a');
         card.href = project.link;
@@ -62,20 +59,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const catClass = 'cat-' + (project.category || 'web');
 
+        // Accent line color per category
+        const accentColors = {
+            dotnet: 'rgba(106,159,216,0.6)',
+            unity:  'rgba(200,128,90,0.6)',
+            web:    'rgba(91,176,138,0.6)',
+        };
+        const accent = accentColors[project.category] || '#e50914';
+
+        // Icon bg/color per category
+        const iconStyles = {
+            dotnet: { bg: 'rgba(74,106,154,0.15)', color: '#6a9fd8' },
+            unity:  { bg: 'rgba(155,94,62,0.15)',  color: '#c8805a' },
+            web:    { bg: 'rgba(61,122,94,0.15)',   color: '#5bb08a' },
+        };
+        const icon = iconStyles[project.category] || { bg: 'rgba(229,9,20,0.1)', color: '#e50914' };
+
         const tagsHtml = project.tags
-            .map(tag => `<span class="tag tag-orange">${tag}</span>`)
+            .map(tag => `<span class="project-tag">${tag}</span>`)
             .join('');
 
+        card.style.setProperty('--card-accent', accent);
+
         card.innerHTML = `
-            <div class="project-card-top">
-                <div class="project-icon"><i class="${project.icon}"></i></div>
-                <span class="project-cat-badge ${catClass}">${catLabel}</span>
-            </div>
-            <div class="project-title">${project.title}</div>
-            <p class="project-desc">${project.description}</p>
-            <div class="project-tags">${tagsHtml}</div>
-            <div class="project-card-footer">
-                <span class="project-view-link">View Details <i class="fas fa-arrow-right"></i></span>
+            <div class="project-card-body">
+                <div class="project-card-top">
+                    <div class="project-icon" style="background:${icon.bg}; color:${icon.color};">
+                        <i class="${project.icon}"></i>
+                    </div>
+                    <span class="project-cat-badge ${catClass}">${catLabel}</span>
+                </div>
+                <div class="project-title">${project.title}</div>
+                <p class="project-desc">${project.description}</p>
+                <div class="project-tags">${tagsHtml}</div>
+                <div class="project-card-footer">
+                    <span class="project-view-link">View Details <i class="fas fa-arrow-right"></i></span>
+                </div>
             </div>
         `;
 

@@ -348,6 +348,53 @@ h5 {
     margin-bottom: 36px;
 }
 
+
+.nfx-hero-stats {
+    display: flex;
+    gap: 60px;
+    margin: 20px auto 0;
+    padding: 32px 0;
+    justify-content: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    width: 100%;
+}
+
+.nfx-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.nfx-stat-val {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #e50914;
+    line-height: 1;
+}
+
+.nfx-stat-lbl {
+    font-size: 0.72rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+    .nfx-hero-stats {
+        gap: 24px;
+        margin: 32px 0;
+        justify-content: space-between;
+    }
+
+    .nfx-stat-val {
+        font-size: 1.4rem;
+    }
+}
+
 .nfx-hero-ctas {
     display: flex;
     align-items: center;

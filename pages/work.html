@@ -1,38 +1,122 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <body class="nfx-body">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="../assets/images/profile/my_profile.png" rel="icon" type="image/png"/>
-<title>Work Experience – Enes Efe Tokta | Professional Journey</title>
-<meta content="Professional work experience of Enes Efe Tokta. Software internships and roles in .NET and Unity development." name="description"/>
-<link href="https://enesefetokta.shop/pages/work.html" rel="canonical"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="../assets/css/styles.css" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
-<style>
-            /* ── Page Header ── */
-            .page-header {
-                padding-top: calc(var(--nav-h) + 72px);
-                padding-bottom: 56px;
-                background: var(--grad-hero);
-                border-bottom: 1px solid var(--border);
+
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <link href="../assets/images/profile/my_profile.png" rel="icon" type="image/png" />
+        <title>Work Experience – Enes Efe Tokta | Professional Journey</title>
+        <meta
+            content="Professional work experience of Enes Efe Tokta. Software internships and roles in .NET and Unity development."
+            name="description" />
+        <link href="https://enesefetokta.shop/pages/work.html" rel="canonical" />
+        <link href="https://fonts.googleapis.com" rel="preconnect" />
+        <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap"
+            rel="stylesheet" />
+        <link href="../assets/css/styles.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+        <style>
+            /* ── Hero ── */
+            .work-hero {
+                padding-top: calc(var(--nav-h) + 80px);
+                padding-bottom: 72px;
+                background: #000;
+                position: relative;
+                overflow: hidden;
             }
 
-            .page-header h1 {
-                font-size: clamp(2.2rem, 4vw, 3.4rem);
+            .work-hero::before {
+                content: '';
+                position: absolute;
+                top: -120px;
+                left: -100px;
+                width: 600px;
+                height: 600px;
+                background: radial-gradient(circle, rgba(229, 9, 20, 0.07) 0%, transparent 65%);
+                pointer-events: none;
+            }
+
+            .work-eyebrow {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 0.78rem;
+                font-weight: 700;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+                color: #e50914;
+                background: rgba(229, 9, 20, 0.1);
+                border: 1px solid rgba(229, 9, 20, 0.25);
+                padding: 5px 14px;
+                border-radius: 999px;
+                margin-bottom: 24px;
+            }
+
+            .work-hero-title {
+                font-family: 'Syne', sans-serif;
+                font-size: clamp(2.6rem, 5vw, 4rem);
+                font-weight: 800;
                 letter-spacing: -0.04em;
-                margin-bottom: 14px;
+                color: #fff;
+                line-height: 1.1;
+                margin-bottom: 18px;
             }
 
-            .page-header p {
-                color: var(--text-secondary);
+            .work-hero-title em {
+                font-family: 'Playfair Display', serif;
+                color: #e50914;
+                font-style: italic;
+            }
+
+            .work-hero-lead {
                 font-size: 1.05rem;
-                max-width: 520px;
+                color: #888;
+                line-height: 1.75;
+                max-width: 540px;
+                margin-bottom: 44px;
+            }
+
+            .work-stats-bar {
+                display: flex;
+                gap: 0;
+                background: #0d0d0d;
+                border: 1px solid rgba(255, 255, 255, 0.07);
+                border-radius: 14px;
+                overflow: hidden;
+                max-width: 580px;
+            }
+
+            .work-stat {
+                flex: 1;
+                padding: 18px 20px;
+                border-right: 1px solid rgba(255, 255, 255, 0.06);
+                text-align: center;
+            }
+
+            .work-stat:last-child {
+                border-right: none;
+            }
+
+            .work-stat-val {
+                font-family: 'Syne', sans-serif;
+                font-size: 1.4rem;
+                font-weight: 800;
+                color: #e50914;
+                line-height: 1;
+                margin-bottom: 4px;
+            }
+
+            .work-stat-lbl {
+                font-size: 0.62rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                color: #555;
             }
 
             /* ── Experience Timeline ── */
@@ -168,7 +252,25 @@
                 color: var(--text-muted);
             }
         </style>
-<meta content="Software Developer, Work Experience, Enes Efe Tokta, .NET Developer, Unity Developer" name="keywords"/><meta content="Enes Efe Tokta" name="author"/><meta content="website" property="og:type"/><meta content="https://enesefetokta.shop/pages/work.html" property="og:url"/><meta content="Work Experience – Enes Efe Tokta | Professional Journey" property="og:title"/><meta content="Professional work experience of Enes Efe Tokta. Software internships and roles in .NET and Unity development." property="og:description"/><meta content="en_US" property="og:locale"/><meta content="https://enesefetokta.shop/assets/images/profile/my_profile.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Work Experience – Enes Efe Tokta | Professional Journey" name="twitter:title"/><meta content="Professional work experience of Enes Efe Tokta. Software internships and roles in .NET and Unity development." name="twitter:description"/><meta content="@EnesEfeTokta" name="twitter:creator"/><meta content="https://enesefetokta.shop/assets/images/profile/my_profile.png" name="twitter:image"/><script type="application/ld+json">
+        <meta content="Software Developer, Work Experience, Enes Efe Tokta, .NET Developer, Unity Developer"
+            name="keywords" />
+        <meta content="Enes Efe Tokta" name="author" />
+        <meta content="website" property="og:type" />
+        <meta content="https://enesefetokta.shop/pages/work.html" property="og:url" />
+        <meta content="Work Experience – Enes Efe Tokta | Professional Journey" property="og:title" />
+        <meta
+            content="Professional work experience of Enes Efe Tokta. Software internships and roles in .NET and Unity development."
+            property="og:description" />
+        <meta content="en_US" property="og:locale" />
+        <meta content="https://enesefetokta.shop/assets/images/profile/my_profile.png" property="og:image" />
+        <meta content="summary_large_image" name="twitter:card" />
+        <meta content="Work Experience – Enes Efe Tokta | Professional Journey" name="twitter:title" />
+        <meta
+            content="Professional work experience of Enes Efe Tokta. Software internships and roles in .NET and Unity development."
+            name="twitter:description" />
+        <meta content="@EnesEfeTokta" name="twitter:creator" />
+        <meta content="https://enesefetokta.shop/assets/images/profile/my_profile.png" name="twitter:image" />
+        <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
@@ -180,106 +282,139 @@
         "name": "Enes Efe Tokta"
       }
     }
-    </script></head>
-<body>
-<nav class="navbar nfx-navbar" id="navbar">
-<div class="container">
-<a class="logo" href="../index.html">Enes Efe Tokta</a>
-<ul class="nav-links" id="nav-links">
-<li><a href="../index.html#about">About</a></li>
-<li><a href="work.html">Work</a></li>
-<li><a href="projects.html">Projects</a></li>
-<li><a href="../blog/index.html">Blog</a></li>
-<li><a href="biography.html">Biography</a></li>
-<li><a href="education.html">Education</a></li>
-<li><a href="cv.html">Resume</a></li>
-<li><a href="future-plans.html">Future Plans</a></li>
-<li><a class="nav-cta nfx-nav-cta" href="../index.html#contact">Contact</a></li>
-</ul>
-<button aria-label="Toggle menu" class="mobile-menu-btn" id="mobile-btn">
-<i class="fas fa-bars"></i>
-</button>
-</div>
-</nav>
-<!-- ═══════════ PAGE HEADER ═══════════ -->
-<header class="page-header">
-<div class="container">
-<span class="eyebrow">Professional Journey</span>
-<h1>Work Experience</h1>
-<p>A look at my professional background, internships, and technical roles in the software industry.</p>
-</div>
-</header>
-<main class="container">
-<div class="experience-container">
-<!-- Ministry Internship -->
-<article class="exp-card">
-<div class="exp-header">
-<div class="exp-company">
-<div class="company-logo"><i class="fas fa-landmark"></i></div>
-<div class="exp-info">
-<h3>Software Intern</h3>
-<div class="exp-location">
-<i class="fas fa-map-marker-alt"></i> T.C. Ministry of Environment, Urbanization and
+    </script>
+    </head>
+
+    <body>
+        <nav class="navbar nfx-navbar" id="navbar">
+            <div class="container">
+                <a class="logo" href="../index.html">Enes Efe Tokta</a>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="developer-stats.html">Stats</a></li>
+                    <li><a href="../blog/index.html">Blog</a></li>
+                    <li><a href="biography.html">Biography</a></li>
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="cv.html">Resume</a></li>
+                    <li><a href="future-plans.html">Future Plans</a></li>
+                    <li><a class="nav-cta nfx-nav-cta" href="../index.html#contact">Contact</a></li>
+                </ul>
+                <button aria-label="Toggle menu" class="mobile-menu-btn" id="mobile-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- ═══════════ HERO ═══════════ -->
+        <header class="work-hero">
+            <div class="container">
+                <span class="work-eyebrow"><i class="fas fa-briefcase"></i> Professional Journey</span>
+                <h1 class="work-hero-title">Work <em>Experience</em></h1>
+                <p class="work-hero-lead">A transparent look at my professional background, internships, and technical
+                    roles in the software industry. Every role taught me something irreplaceable.</p>
+                <div class="work-stats-bar">
+                    <div class="work-stat">
+                        <div class="work-stat-val">2</div>
+                        <div class="work-stat-lbl">Roles</div>
+                    </div>
+                    <div class="work-stat">
+                        <div class="work-stat-val">2025</div>
+                        <div class="work-stat-lbl">Latest</div>
+                    </div>
+                    <div class="work-stat">
+                        <div class="work-stat-val"><i class="fas fa-map-marker-alt" style="font-size:1.1rem;"></i></div>
+                        <div class="work-stat-lbl">Turkey</div>
+                    </div>
+                    <div class="work-stat">
+                        <div class="work-stat-val"><i class="fas fa-circle"
+                                style="color:#22c55e; font-size:0.9rem;"></i></div>
+                        <div class="work-stat-lbl">Open to Work</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="container">
+            <div class="experience-container">
+                <!-- Ministry Internship -->
+                <article class="exp-card">
+                    <div class="exp-header">
+                        <div class="exp-company">
+                            <div class="company-logo"><i class="fas fa-landmark"></i></div>
+                            <div class="exp-info">
+                                <h3>Software Intern</h3>
+                                <div class="exp-location">
+                                    <i class="fas fa-map-marker-alt"></i> T.C. Ministry of Environment, Urbanization and
                                     Climate Change
                                 </div>
-</div>
-</div>
-<span class="exp-date">July 2025</span>
-</div>
-<div class="exp-body">
-<p>Developed a backend training project using ASP.NET Core and PostgreSQL, simulating real
+                            </div>
+                        </div>
+                        <span class="exp-date">July 2025</span>
+                    </div>
+                    <div class="exp-body">
+                        <p>Developed a backend training project using ASP.NET Core and PostgreSQL, simulating real
                             public sector workflows. Worked on creating secure, layered architectures for data
                             management systems.</p>
-<ul>
-<li>Implemented RESTful services with ASP.NET Core Web API.</li>
-<li>Designed database schemas for public service tracking using PostgreSQL.</li>
-<li>Applied clean architecture principles to ensure code maintainability and security.</li>
-<li>Gained insights into government-scale software infrastructure and data regulatory
+                        <ul>
+                            <li>Implemented RESTful services with ASP.NET Core Web API.</li>
+                            <li>Designed database schemas for public service tracking using PostgreSQL.</li>
+                            <li>Applied clean architecture principles to ensure code maintainability and security.</li>
+                            <li>Gained insights into government-scale software infrastructure and data regulatory
                                 requirements.</li>
-</ul>
-<div class="exp-tags">
-<span class="exp-tag">ASP.NET Core</span>
-<span class="exp-tag">PostgreSQL</span>
-<span class="exp-tag">Entity Framework Core</span>
-<span class="exp-tag">Clean Architecture</span>
-</div>
-</div>
-</article>
-<!-- Future / Placeholder for direction -->
-<div style="text-align: center; margin-top: 60px;">
-<p style="color: var(--text-muted); font-style: italic;">Seeking new opportunities for Summer 2026
+                        </ul>
+                        <div class="exp-tags">
+                            <span class="exp-tag">ASP.NET Core</span>
+                            <span class="exp-tag">PostgreSQL</span>
+                            <span class="exp-tag">Entity Framework Core</span>
+                            <span class="exp-tag">Clean Architecture</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Future / Placeholder for direction -->
+                <div style="text-align: center; margin-top: 60px;">
+                    <p style="color: var(--text-muted); font-style: italic;">Seeking new opportunities for Summer 2026
                         internships and beyond.</p>
-</div>
-</div>
-</main>
-<footer class="site-footer nfx-footer">
-<div class="container">
-<div class="footer-top">
-<div>
-<span class="footer-logo">Enes Efe Tokta</span>
-<p class="footer-tagline">
-                            Software Developer · .NET &amp; Unity · Based in Turkey.<br/>
+                </div>
+            </div>
+        </main>
+        <!-- ═══════════════ FOOTER ═══════════════ -->
+        <footer class="site-footer nfx-footer">
+            <div class="container">
+                <div class="footer-top">
+                    <div>
+                        <span class="footer-logo">Enes Efe Tokta</span>
+                        <p class="footer-tagline">
+                            Software Developer · .NET &amp; Unity · Based in Turkey.<br />
                             Open to remote opportunities worldwide.
                         </p>
-</div>
-<div class="footer-social">
-<a aria-label="GitHub" href="https://github.com/EnesEfeTokta" target="_blank"><i class="fab fa-github"></i></a>
-<a aria-label="LinkedIn" href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank"><i class="fab fa-linkedin"></i></a>
-<a aria-label="Medium" href="https://medium.com/@EnesEfeTokta" target="_blank"><i class="fab fa-medium"></i></a>
-<a aria-label="X / Twitter" href="https://x.com/EnesEfeTokta" target="_blank"><i class="fab fa-twitter"></i></a>
-</div>
-</div>
-<div class="footer-bottom">
-<p class="footer-copyright">© 2026 Enes Efe Tokta. Built with modern web technologies.</p>
-<div class="footer-links">
-<a href="biography.html">Biography</a>
-<a href="../blog/index.html">Blog</a>
-<a href="cv.html">Resume</a>
-<a href="../index.html#contact">Contact</a>
-</div>
-</div>
-</div>
-</footer>
-<script src="../assets/js/main.js"></script>
-</body>
-</body></html>
+                    </div>
+                    <div class="footer-social">
+                        <a aria-label="GitHub" href="https://github.com/EnesEfeTokta" target="_blank"><i
+                                class="fab fa-github"></i></a>
+                        <a aria-label="LinkedIn" href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/"
+                            target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a aria-label="Medium" href="https://medium.com/@EnesEfeTokta" target="_blank"><i
+                                class="fab fa-medium"></i></a>
+                        <a aria-label="X / Twitter" href="https://x.com/EnesEfeTokta" target="_blank"><i
+                                class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="footer-copyright">© 2026 Enes Efe Tokta. Built with modern web technologies.</p>
+                    <div class="footer-links">
+                        <a href="biography.html">Biography</a>
+                        <a href="developer-stats.html">Stats</a>
+                        <a href="future-plans.html">Future Plans</a>
+                        <a href="../blog/index.html">Blog</a>
+                        <a href="projects.html">Projects</a>
+                        <a href="education.html">Education</a>
+                        <a href="cv.html">Resume</a>
+                        <a href="../index.html#contact">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="../assets/js/main.js"></script>
+    </body>
+
+</html>
