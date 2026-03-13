@@ -1336,9 +1336,36 @@
                         </div>
                     </div>
                     <div class="lang-bar-row">
+                        <div class="lang-icon" style="background:linear-gradient(135deg,#094eb4,#064ab1)">KT</div>
+                        <div class="lang-meta">
+                            <div class="lang-name">Kotlin &nbsp;<span class="lang-pct">&lt;1%</span></div>
+                            <div class="lang-track">
+                                <div class="lang-fill" style="width:1%;background:#094eb4"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lang-bar-row">
+                        <div class="lang-icon" style="background:linear-gradient(135deg,#0db61b,#0ac241)">PY</div>
+                        <div class="lang-meta">
+                            <div class="lang-name">Python &nbsp;<span class="lang-pct">&lt;1%</span></div>
+                            <div class="lang-track">
+                                <div class="lang-fill" style="width:1%;background:#0db61b"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lang-bar-row">
+                        <div class="lang-icon" style="background:linear-gradient(135deg,#f4f13f,#e9e613)">DT</div>
+                        <div class="lang-meta">
+                            <div class="lang-name">Dart &nbsp;<span class="lang-pct">&lt;1%</span></div>
+                            <div class="lang-track">
+                                <div class="lang-fill" style="width:1%;background:#f4f13f"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lang-bar-row">
                         <div class="lang-icon" style="background:linear-gradient(135deg,#f43f5e,#e11d48)">OT</div>
                         <div class="lang-meta">
-                            <div class="lang-name">Other &nbsp;<span class="lang-pct">1%</span></div>
+                            <div class="lang-name">Others &nbsp;<span class="lang-pct">&lt;1%</span></div>
                             <div class="lang-track">
                                 <div class="lang-fill" style="width:1%;background:#f43f5e"></div>
                             </div>
@@ -1736,10 +1763,10 @@
         new Chart(langCtx, {
             type: 'bar',
             data: {
-                labels: ['C#', 'TypeScript', 'HTML/CSS', 'JavaScript', 'Other'],
+                labels: ['C#', 'TypeScript', 'HTML/CSS', 'JavaScript', 'Kotlin', 'Python', 'Dart'],
                 datasets: [{
-                    label: '% Usage', data: [70, 16, 15, 1, 1],
-                    backgroundColor: ['#e50914', '#8b5cf6', '#f59e0b', '#10b981', '#f43f5e'], borderRadius: 6, borderSkipped: false
+                    label: '% Usage', data: [70, 16, 15, 1, 1, 1, 1],
+                    backgroundColor: ['#e50914', '#8b5cf6', '#f59e0b', '#10b981', '#f43f5e', '#f43f5e', '#f43f5e'], borderRadius: 6, borderSkipped: false
                 }]
             },
             options: {
