@@ -1,0 +1,6 @@
+/* Global custom tailwind-less Next.js overrides (if any) */
+
+:root {
+  --font-inter: 'Inter', sans-serif;
+  --font-syne: 'Syne', sans-serif;
+}
