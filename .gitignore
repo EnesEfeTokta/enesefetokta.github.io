@@ -1,0 +1,51 @@
+# Dependencies
+backend/node_modules
+backend/.pnp
+backend/.pnp.js
+backend/.yarn/install-state.gz
+
+frontend/node_modules
+frontend/.pnp
+frontend/.pnp.js
+frontend/.yarn/install-state.gz
+
+# Testing
+/coverage
+
+# Next.js
+/.next/
+/out/
+
+# Production
+/build
+/dist
+
+# SQLite and Prisma
+*.db
+*.db-journal
+/backend/prisma/migrations
+/backend/node_modules/.prisma
+
+# Environment Variables
+.env
+.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.staging.local
+
+# Debug and Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Misc
+.DS_Store
+*.pem
+*.tsbuildinfo
+next-env.d.ts
+.vercel
+.vscode/
+.idea/
