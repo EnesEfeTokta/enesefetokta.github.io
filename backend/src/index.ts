@@ -6,15 +6,13 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors({
-  origin: "http://localhost:3000", // Allow Next.js frontend requests
+  origin: "http://localhost:3000",
   credentials: true
 }));
 app.use(express.json());
 
-// API Routes
 app.use("/api", apiRoutes);
 
-// Health check endpoint
 app.get("/health", (req: Request, res: Response) => {
   res.json({ status: "healthy", timestamp: new Date().toISOString() });
 });

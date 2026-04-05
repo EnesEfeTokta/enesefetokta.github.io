@@ -17,7 +17,7 @@ export interface Project extends BaseEntity {
   startDate: string;
   endDate?: string;
   isFeatured: boolean;
-  category: "dotnet" | "unity" | "web" | "mobile"; 
+  category: "dotnet" | "unity" | "web" | "mobile";
 }
 
 export interface BlogPost extends BaseEntity {
@@ -54,10 +54,10 @@ export interface PersonalDevelopment extends BaseEntity {
   description: string;
   tags: string[];
   icon: string;
-  modules: { 
-    title: string; 
-    description?: string; 
-    isFinished: boolean; 
+  modules: {
+    title: string;
+    description?: string;
+    isFinished: boolean;
     hours?: number;
   }[];
   certificateLink?: string;
@@ -83,7 +83,7 @@ export interface User extends BaseEntity {
   lastName: string;
   email: string;
   passwordHash: string;
-  role: "admin" | "editor"; 
+  role: "admin" | "editor";
   avatar?: string;
 }
 
