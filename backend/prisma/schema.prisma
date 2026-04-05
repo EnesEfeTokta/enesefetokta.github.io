@@ -13,7 +13,7 @@ model Project {
   slug        String   @unique
   description String
   details     String
-  tags        Json     // string[]
+  tags        String
   icon        String
   image       String?
   githubLink  String?
@@ -32,7 +32,7 @@ model BlogPost {
   slug        String   @unique
   description String
   content     String
-  tags        Json     // string[]
+  tags        String
   coverImage  String
   readTime    Int
   category    String   // enum-like
@@ -51,7 +51,7 @@ model Experience {
   employmentType  String   // enum-like
   description     String
   details         String
-  tags            Json     // string[]
+  tags            String
   icon            String
   link            String?
   startDate       DateTime
@@ -66,7 +66,7 @@ model PersonalDevelopment {
   title           String
   provider        String
   description     String
-  tags            Json     // string[]
+  tags            String
   icon            String
   modules         Json     // array of objects
   certificateLink String?
