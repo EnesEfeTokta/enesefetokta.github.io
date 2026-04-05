@@ -1,6 +1,5 @@
 import { Request, Response } from 'express';
 import prisma from '../db/prisma';
-import { Experience as ExperienceDTO } from '../models/types';
 import { createExperienceSchema, updateExperienceSchema } from '../schemas/experience.schema';
 
 export const getAllExperiences = async (req: Request, res: Response) => {
@@ -8,7 +7,7 @@ export const getAllExperiences = async (req: Request, res: Response) => {
         const experiences = await prisma.experience.findMany({
             orderBy: { startDate: 'desc' },
         });
-        res.json({ success: true, data: experiences });
+        res.json({ success: true, data: experiences.map(formatExperience) });
     } catch (error) {
         res.status(500).json({ success: false, message: "Error fetching experiences" });
 
@@ -23,7 +22,7 @@ export const getExperienceById = async (req: Request, res: Response) => {
         if (!experience) {
             return res.status(404).json({ success: false, message: "Experience not found" });
         }
-        res.json({ success: true, data: experience });
+        res.json({ success: true, data: formatExperience(experience) });
     } catch (error) {
         res.status(500).json({ success: false, message: "Error fetching experience" });
     }
@@ -35,7 +34,7 @@ export const createExperience = async (req: Request, res: Response) => {
         if (!validation.success) {
             return res.status(400).json({ success: false, message: "Invalid data", errors: validation.error.issues });
         }
-        const data: ExperienceDTO = req.body;
+        const data = validation.data;
         const newExperience = await prisma.experience.create({
             data: {
                 title: data.title,
@@ -53,7 +52,7 @@ export const createExperience = async (req: Request, res: Response) => {
                 endDate: data.endDate ? new Date(data.endDate) : null,
             },
         });
-        res.status(201).json({ success: true, data: newExperience });
+        res.status(201).json({ success: true, data: formatExperience(newExperience) });
     } catch (error) {
         res.status(500).json({ success: false, message: "Error creating experience" });
     }
@@ -65,7 +64,7 @@ export const updateExperience = async (req: Request, res: Response) => {
         if (!validation.success) {
             return res.status(400).json({ success: false, message: "Invalid data", errors: validation.error.issues });
         }
-        const data: ExperienceDTO = req.body;
+        const data = validation.data;
         const updatedExperience = await prisma.experience.update({
             where: { id: req.params.id },
             data: {
@@ -84,7 +83,7 @@ export const updateExperience = async (req: Request, res: Response) => {
                 endDate: data.endDate ? new Date(data.endDate) : undefined,
             },
         });
-        res.json({ success: true, data: updatedExperience });
+        res.json({ success: true, data: formatExperience(updatedExperience) });
     } catch (error) {
         res.status(500).json({ success: false, message: "Error updating experience" });
     }
@@ -100,3 +99,13 @@ export const deleteExperience = async (req: Request, res: Response) => {
         res.status(500).json({ success: false, message: "Error deleting experience" });
     }
 };
+
+const formatExperience = (experience: any) => ({
+    ...experience,
+    tags: experience.tags.split(','),
+    startDate: experience.startDate.toISOString(),
+    endDate: experience.endDate?.toISOString(),
+    createdAt: experience.createdAt.toISOString(),
+    updatedAt: experience.updatedAt.toISOString(),
+    category: experience.category as "work" | "internship" | "volunteer" | "other",
+}); 

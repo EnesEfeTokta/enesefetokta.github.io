@@ -1,51 +1,75 @@
+# ------------------------------
 # Dependencies
-backend/node_modules
-backend/.pnp
-backend/.pnp.js
-backend/.yarn/install-state.gz
+# ------------------------------
+**/node_modules/
+**/.pnp
+**/.pnp.js
 
-frontend/node_modules
-frontend/.pnp
-frontend/.pnp.js
-frontend/.yarn/install-state.gz
+# Yarn v2+
+**/.yarn/*
+!**/.yarn/patches
+!**/.yarn/plugins
+!**/.yarn/releases
+!**/.yarn/sdks
+!**/.yarn/versions
 
-# Testing
-/coverage
+# ------------------------------
+# Build outputs and caches
+# ------------------------------
+backend/dist/
+frontend/.next/
+frontend/out/
+frontend/.turbo/
 
-# Next.js
-/.next/
-/out/
+coverage/
+backend/coverage/
+frontend/coverage/
 
-# Production
-/build
-/dist
+build/
+dist/
+.cache/
 
-# SQLite and Prisma
+# ------------------------------
+# TypeScript
+# ------------------------------
+*.tsbuildinfo
+next-env.d.ts
+
+# ------------------------------
+# Database and local runtime files
+# ------------------------------
 *.db
 *.db-journal
-/backend/prisma/migrations
-/backend/node_modules/.prisma
+backend/prisma/*.db*
+backend/node_modules/.prisma/
 
-# Environment Variables
+# ------------------------------
+# Environment variables
+# ------------------------------
 .env
-.env*.local
-.env.development.local
-.env.test.local
-.env.production.local
-.env.staging.local
+.env.*
+!.env.example
+!.env.*.example
 
-# Debug and Logs
+# ------------------------------
+# Logs
+# ------------------------------
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-*.log
 
-# Misc
+# ------------------------------
+# Editor and OS files
+# ------------------------------
 .DS_Store
-*.pem
-*.tsbuildinfo
-next-env.d.ts
-.vercel
-.vscode/
+Thumbs.db
 .idea/
+.vscode/
+
+# ------------------------------
+# Deployment and keys
+# ------------------------------
+.vercel/
+*.pem
