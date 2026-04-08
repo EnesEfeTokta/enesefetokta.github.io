@@ -48,6 +48,11 @@ import {
     updateStatistics ,
     getStatisticsGitHubLatest
 } from "../controllers/statistics.controller";
+import {
+    getAllCommunications,
+    getAllCommunicationsByIsRead,
+    updateCommunicationReadById
+} from "../controllers/communication.controller";
 
 const router = Router();
 
@@ -92,5 +97,9 @@ router.get("/statistics/:id", getStatisticsById);
 router.post("/statistics", createStatistics);
 router.put("/statistics/:id", updateStatistics);
 router.get("/statistics/github-latest", getStatisticsGitHubLatest);
+
+router.get("/communications", getAllCommunications);
+router.get("/communications/:isRead", getAllCommunicationsByIsRead);
+router.put("/communication/:id", updateCommunicationReadById);
 
 export default router;

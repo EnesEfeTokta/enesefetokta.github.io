@@ -1,8 +1,6 @@
 import { Octokit } from "octokit";
 import prisma from "../db/prisma";
 import { GitHubStatistics } from "../models/types";
-import { object } from "zod";
-import { th } from "zod/v4/locales";
 
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 const username = process.env.GITHUB_USERNAME || "enesefetokta";
