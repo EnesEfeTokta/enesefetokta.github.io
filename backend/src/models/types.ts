@@ -2,7 +2,7 @@ interface BaseEntity {
   id: string;
   createdAt: string;
   updatedAt: string;
-}
+};
 
 export interface Project extends BaseEntity {
   title: string;
@@ -18,7 +18,7 @@ export interface Project extends BaseEntity {
   endDate?: string;
   isFeatured: boolean;
   category: "dotnet" | "unity" | "web" | "mobile";
-}
+};
 
 export interface BlogPost extends BaseEntity {
   title: string;
@@ -31,7 +31,7 @@ export interface BlogPost extends BaseEntity {
   category: "dotnet" | "unity" | "web" | "general" | "tutorial" | "opinion";
   authorId: string;
   isPublished: boolean;
-}
+};
 
 export interface Experience extends BaseEntity {
   title: string;
@@ -46,7 +46,7 @@ export interface Experience extends BaseEntity {
   startDate: string;
   endDate?: string;
   category: "work" | "education" | "volunteer";
-}
+};
 
 export interface PersonalDevelopment extends BaseEntity {
   title: string;
@@ -64,7 +64,7 @@ export interface PersonalDevelopment extends BaseEntity {
   startDate: string;
   endDate?: string;
   category: "course" | "self-study" | "workshop" | "other";
-}
+};
 
 export interface Certification extends BaseEntity {
   title: string;
@@ -76,7 +76,7 @@ export interface Certification extends BaseEntity {
   link: string;
   icon: string;
   category: "professional" | "academic" | "other";
-}
+};
 
 export interface User extends BaseEntity {
   firstName: string;
@@ -85,7 +85,7 @@ export interface User extends BaseEntity {
   passwordHash: string;
   role: "admin" | "editor";
   avatar?: string;
-}
+};
 
 export interface Statistics extends BaseEntity {
   socialMetrics: {
@@ -96,7 +96,7 @@ export interface Statistics extends BaseEntity {
   universityMetrics: {
     gpa: number;
   };
-}
+};
 
 export interface GitHubStatistics extends BaseEntity {
   totalRepositories: number;
@@ -107,4 +107,12 @@ export interface GitHubStatistics extends BaseEntity {
   totalStars: number;
   followersCount: number;
   issues: { open: number; closed: number; };
-}
+};
+
+export interface Communication extends BaseEntity {
+  senderEmail: string;
+  senderName: string;
+  subject: string;
+  message: string;
+  isRead: boolean;
+};

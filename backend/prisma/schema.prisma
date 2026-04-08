@@ -130,3 +130,13 @@ model GitHubSnapshot {
   warnings          Json?
   createdAt         DateTime @default(now())
 }
+
+model Communication {
+  id                String   @id @default(uuid())
+  senderName        String
+  senderEmail       String
+  subject           String
+  body              String
+  isRead            Boolean  @default(false)
+  createdAt         DateTime @default(now())
+}
