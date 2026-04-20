@@ -11,6 +11,10 @@ document.addEventListener('DOMContentLoaded', function () {
         mobileMenuBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             navLinks.classList.toggle('mobile-open');
+            const navbar = document.querySelector('.navbar');
+            if (navbar) {
+                navbar.classList.toggle('mobile-open-bg');
+            }
             const icon = mobileMenuBtn.querySelector('i');
             if (navLinks.classList.contains('mobile-open')) {
                 icon.className = 'fas fa-times';
@@ -26,6 +30,10 @@ document.addEventListener('DOMContentLoaded', function () {
             !mobileMenuBtn.contains(e.target) &&
             !navLinks.contains(e.target)) {
             navLinks.classList.remove('mobile-open');
+            const navbar = document.querySelector('.navbar');
+            if (navbar) {
+                navbar.classList.remove('mobile-open-bg');
+            }
             const icon = mobileMenuBtn.querySelector('i');
             if (icon) icon.className = 'fas fa-bars';
         }
@@ -44,12 +52,16 @@ document.addEventListener('DOMContentLoaded', function () {
             if (targetId === '#') return;
             const target = document.querySelector(targetId);
             if (target) {
-                const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 68;
+                const navbarObj = document.querySelector('.navbar');
+                const navbarHeight = navbarObj?.offsetHeight || 68;
                 window.scrollTo({
                     top: target.offsetTop - navbarHeight - 20,
                     behavior: 'smooth'
                 });
                 navLinks?.classList.remove('mobile-open');
+                if (navbarObj) {
+                    navbarObj.classList.remove('mobile-open-bg');
+                }
                 const icon = mobileMenuBtn?.querySelector('i');
                 if (icon) icon.className = 'fas fa-bars';
             }
