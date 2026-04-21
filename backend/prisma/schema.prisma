@@ -7,104 +7,6 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model Project {
-  id          String   @id @default(uuid())
-  title       String
-  slug        String   @unique
-  description String
-  details     String
-  tags        String
-  icon        String
-  image       String?
-  githubLink  String?
-  liveLink    String?
-  startDate   DateTime
-  endDate     DateTime?
-  isFeatured  Boolean
-  category    String   // enum-like
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-}
-
-model BlogPost {
-  id          String   @id @default(uuid())
-  title       String
-  slug        String   @unique
-  description String
-  content     String
-  tags        String
-  coverImage  String
-  readTime    Int
-  category    String   // enum-like
-  authorId    String
-  author      User     @relation(fields: [authorId], references: [id])
-  isPublished Boolean
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-}
-
-model Experience {
-  id              String   @id @default(uuid())
-  title           String
-  company         String
-  location        String
-  employmentType  String   // enum-like
-  description     String
-  details         String
-  tags            String
-  icon            String
-  link            String?
-  startDate       DateTime
-  endDate         DateTime?
-  category        String   // enum-like
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
-}
-
-model PersonalDevelopment {
-  id              String   @id @default(uuid())
-  title           String
-  provider        String
-  description     String
-  tags            String
-  icon            String
-  modules         Json     // array of objects
-  certificateLink String?
-  startDate       DateTime
-  endDate         DateTime?
-  category        String   // enum-like
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
-}
-
-model Certification {
-  id            String   @id @default(uuid())
-  title         String
-  issuer        String
-  description   String
-  issueDate     DateTime
-  expiryDate    DateTime?
-  credentialId  String?
-  link          String
-  icon          String
-  category      String   // enum-like
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
-}
-
-model User {
-  id            String     @id @default(uuid())
-  firstName     String
-  lastName      String
-  email         String     @unique
-  passwordHash  String
-  role          String     // enum-like
-  avatar        String?
-  blogPosts     BlogPost[]
-  createdAt     DateTime   @default(now())
-  updatedAt     DateTime   @updatedAt
-}
-
 model Statistics {
   id                String   @id @default(uuid())
   socialMetrics     Json     // nested objects
@@ -128,15 +30,5 @@ model GitHubSnapshot {
   closedIssuesCount Int      @default(0)
   rateLimit         Json?
   warnings          Json?
-  createdAt         DateTime @default(now())
-}
-
-model Communication {
-  id                String   @id @default(uuid())
-  senderName        String
-  senderEmail       String
-  subject           String
-  body              String
-  isRead            Boolean  @default(false)
   createdAt         DateTime @default(now())
 }
