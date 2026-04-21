@@ -6,7 +6,7 @@ import { createProjectSchema, updateProjectSchema } from "../schemas/project.sch
 export const getAllProjects = async (req: Request, res: Response) => {
   try {
     const projects = await prisma.project.findMany();
-    const formatted = projects.map(p => ({
+    const formatted = projects.map((p: any) => ({
       ...p,
       startDate: p.startDate.toISOString(),
       endDate: p.endDate?.toISOString(),
@@ -19,7 +19,7 @@ export const getAllProjects = async (req: Request, res: Response) => {
   }
 };
 
-export const getProjectById = async (req: Request, res:Response) => {
+export const getProjectById = async (req: Request, res: Response) => {
   try {
     const project = await prisma.project.findFirst({
       where: { id: req.params.id },
