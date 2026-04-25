@@ -115,22 +115,9 @@ export const getStatisticsGitHubLatest = async (req: Request, res: Response) => 
 const formatStatistics = (stat: any) => {
     return {
         id: stat.id,
-        socialMetrics: {
-            linkedIn: {
-                followers: stat.linkedInFollowers,
-                connections: stat.linkedInConnections,
-            },
-            medium: {
-                views: stat.mediumViews,
-                followers: stat.mediumFollowers,
-            },
-            youtube: {
-                subscribers: stat.youtubeSubscribers,
-                views: stat.youtubeViews,
-            },
-        },
-        universityMetrics: {
-            gpa: stat.gpa,
-        }
+        socialMetrics: stat.socialMetrics,
+        universityMetrics: stat.universityMetrics,
+        createdAt: stat.createdAt.toISOString(),
+        updatedAt: stat.updatedAt.toISOString(),
     };
 };
