@@ -18,6 +18,17 @@
   <meta content="index, follow" name="robots" />
   <!-- Canonical -->
   <link href="https://enesefetokta.shop/" rel="canonical" />
+  <!-- RFC 8288 Link Relations for Agent Discovery -->
+  <!-- api-catalog: RFC 9727 machine-readable API/resource catalog -->
+  <link href="/.well-known/api-catalog" rel="api-catalog" type="application/linkset+json" />
+  <!-- service-doc: human/agent-readable documentation of this site -->
+  <link href="/index.md" rel="service-doc" type="text/markdown" />
+  <!-- describedby: agent skills discovery index -->
+  <link href="/.well-known/agent-skills/index.json" rel="describedby" type="application/json" />
+  <!-- MCP Server Card for AI agent discovery -->
+  <link href="/.well-known/mcp/server-card.json" rel="describedby" type="application/json" />
+  <!-- llmstxt: LLM-friendly site overview -->
+  <link href="/llms.txt" rel="describedby" type="text/plain" />
   <!-- Open Graph -->
   <meta content="website" property="og:type" />
   <meta content="https://enesefetokta.shop/" property="og:url" />
@@ -552,6 +563,8 @@
   <script src="assets/js/about-carousel.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/particles.js"></script>
+  <!-- WebMCP: Expose portfolio tools to AI agents via the browser (W3C WebMCP API) -->
+  <script src="assets/js/webmcp.js"></script>
 </body>
 
 </html>

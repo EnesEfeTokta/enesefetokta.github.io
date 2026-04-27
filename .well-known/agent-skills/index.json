@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "name": "Enes Efe Tokta Portfolio",
+  "description": "Agent skills discovery index for the Enes Efe Tokta portfolio website (enesefetokta.shop). Contains skills for accessing portfolio data including projects, bio, contact info, and developer statistics.",
+  "skills": [
+    {
+      "name": "portfolio-info",
+      "type": "skill-md",
+      "description": "Provides structured access to Enes Efe Tokta's portfolio data: personal info, skills, project list, blog posts, and contact details.",
+      "url": "https://enesefetokta.shop/.well-known/agent-skills/portfolio-info/SKILL.md",
+      "digest": "sha256:2e80a40ea373bc73c2102319e7752954da4e7a0b29a70ab90ab07516a308ec3e"
+    }
+  ]
+}

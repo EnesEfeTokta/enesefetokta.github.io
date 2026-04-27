@@ -1,0 +1,24 @@
+# Enes Efe Tokta — Portfolio
+
+> Portfolio site for Enes Efe Tokta, Unity & .NET Software Developer based in Turkey.
+
+## What is this site?
+
+This is the personal portfolio and blog of Enes Efe Tokta, a software developer specializing
+in Unity 3D game development and .NET enterprise backend systems.
+
+## Key pages
+
+- /index.html — Homepage with hero, skills, featured projects, blog showcase, contact
+- /pages/projects.html — Full project portfolio
+- /pages/work.html — Work experience
+- /pages/biography.html — Personal biography
+- /pages/education.html — Educational background
+- /pages/cv.html — Resume/CV
+- /pages/developer-stats.html — GitHub developer statistics
+- /pages/future-plans.html — Career and project roadmap
+- /blog/index.html — Blog index
+
+## Markdown version of homepage
+
+/index.md — Full portfolio in Markdown format

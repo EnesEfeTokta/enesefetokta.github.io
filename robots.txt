@@ -9,3 +9,9 @@ Sitemap: https://enesefetokta.shop/sitemap.xml
 
 # Crawl-delay (optional, usually not needed for GitHub Pages)
 # Crawl-delay: 1
+
+# Content Signals — AI content usage preferences (https://contentsignals.org/)
+# search=yes: indexing by search engines is permitted
+# ai-train=no: training AI/ML models on this content is not permitted
+# ai-input=no: using this content as direct AI input/retrieval context is discouraged
+Content-Signal: ai-train=no, search=yes, ai-input=no

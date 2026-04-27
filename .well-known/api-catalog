@@ -1,0 +1,37 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://enesefetokta.shop/",
+      "service-doc": [
+        {
+          "href": "https://enesefetokta.shop/pages/projects.html",
+          "type": "text/html"
+        }
+      ],
+      "describedby": [
+        {
+          "href": "https://enesefetokta.shop/.well-known/agent-skills/index.json",
+          "type": "application/json"
+        }
+      ]
+    },
+    {
+      "anchor": "https://enesefetokta.shop/sitemap.xml",
+      "service-doc": [
+        {
+          "href": "https://enesefetokta.shop/sitemap.xml",
+          "type": "application/xml"
+        }
+      ]
+    },
+    {
+      "anchor": "https://enesefetokta.shop/index.md",
+      "service-doc": [
+        {
+          "href": "https://enesefetokta.shop/index.md",
+          "type": "text/markdown"
+        }
+      ]
+    }
+  ]
+}

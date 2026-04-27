@@ -1,0 +1,85 @@
+{
+  "serverInfo": {
+    "name": "Enes Efe Tokta Portfolio",
+    "version": "1.0.0",
+    "description": "Portfolio website of Enes Efe Tokta — Unity & .NET Developer. Provides structured access to portfolio data including projects, blog posts, CV, and contact information.",
+    "contact": {
+      "email": "enesefetokta009@gmail.com",
+      "url": "https://enesefetokta.shop/"
+    }
+  },
+  "transport": {
+    "type": "http",
+    "endpoint": "https://enesefetokta.shop/mcp"
+  },
+  "capabilities": {
+    "tools": [
+      {
+        "name": "get_portfolio_info",
+        "description": "Returns structured information about Enes Efe Tokta including skills, experience, and contact details.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {},
+          "required": []
+        }
+      },
+      {
+        "name": "get_projects",
+        "description": "Returns a list of software and game development projects by Enes Efe Tokta.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "category": {
+              "type": "string",
+              "description": "Filter projects by category: 'game', 'backend', 'fullstack'",
+              "enum": ["game", "backend", "fullstack"]
+            }
+          },
+          "required": []
+        }
+      },
+      {
+        "name": "get_blog_posts",
+        "description": "Returns a list of blog posts published by Enes Efe Tokta on Medium.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {},
+          "required": []
+        }
+      },
+      {
+        "name": "get_contact_info",
+        "description": "Returns contact information and social media links for Enes Efe Tokta.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {},
+          "required": []
+        }
+      }
+    ],
+    "resources": [
+      {
+        "name": "portfolio_markdown",
+        "description": "Full portfolio content as Markdown",
+        "uri": "https://enesefetokta.shop/index.md",
+        "mimeType": "text/markdown"
+      },
+      {
+        "name": "sitemap",
+        "description": "XML sitemap of all portfolio pages",
+        "uri": "https://enesefetokta.shop/sitemap.xml",
+        "mimeType": "application/xml"
+      },
+      {
+        "name": "cv",
+        "description": "Curriculum Vitae / Resume page",
+        "uri": "https://enesefetokta.shop/pages/cv.html",
+        "mimeType": "text/html"
+      }
+    ],
+    "prompts": []
+  },
+  "legal": {
+    "contentSignals": "ai-train=no, search=yes, ai-input=no"
+  }
+}
