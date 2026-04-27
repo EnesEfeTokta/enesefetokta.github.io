@@ -99,6 +99,9 @@ best practices.
 | MCP Server Card | https://enesefetokta.shop/.well-known/mcp/server-card.json | application/json |
 | Agent Skills | https://enesefetokta.shop/.well-known/agent-skills/index.json | application/json |
 | Portfolio Skill | https://enesefetokta.shop/.well-known/agent-skills/portfolio-info/SKILL.md | text/markdown |
+| OpenID Configuration | https://enesefetokta.shop/.well-known/openid-configuration | application/json |
+| OAuth Server Metadata | https://enesefetokta.shop/.well-known/oauth-authorization-server | application/json |
+| OAuth Protected Resource | https://enesefetokta.shop/.well-known/oauth-protected-resource | application/json |
 | robots.txt | https://enesefetokta.shop/robots.txt | text/plain |
 
 ---

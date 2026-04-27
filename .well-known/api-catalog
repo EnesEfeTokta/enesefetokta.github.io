@@ -2,7 +2,17 @@
   "linkset": [
     {
       "anchor": "https://enesefetokta.shop/",
+      "service-desc": [
+        {
+          "href": "https://enesefetokta.shop/.well-known/agent-skills/index.json",
+          "type": "application/json"
+        }
+      ],
       "service-doc": [
+        {
+          "href": "https://enesefetokta.shop/index.md",
+          "type": "text/markdown"
+        },
         {
           "href": "https://enesefetokta.shop/pages/projects.html",
           "type": "text/html"
@@ -10,14 +20,20 @@
       ],
       "describedby": [
         {
-          "href": "https://enesefetokta.shop/.well-known/agent-skills/index.json",
+          "href": "https://enesefetokta.shop/.well-known/mcp/server-card.json",
           "type": "application/json"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://enesefetokta.shop/",
+          "type": "text/html"
         }
       ]
     },
     {
       "anchor": "https://enesefetokta.shop/sitemap.xml",
-      "service-doc": [
+      "service-desc": [
         {
           "href": "https://enesefetokta.shop/sitemap.xml",
           "type": "application/xml"
@@ -25,10 +41,16 @@
       ]
     },
     {
-      "anchor": "https://enesefetokta.shop/index.md",
+      "anchor": "https://enesefetokta.shop/.well-known/mcp/server-card.json",
+      "service-desc": [
+        {
+          "href": "https://enesefetokta.shop/.well-known/mcp/server-card.json",
+          "type": "application/json"
+        }
+      ],
       "service-doc": [
         {
-          "href": "https://enesefetokta.shop/index.md",
+          "href": "https://enesefetokta.shop/.well-known/agent-skills/portfolio-info/SKILL.md",
           "type": "text/markdown"
         }
       ]

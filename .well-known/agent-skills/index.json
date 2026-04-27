@@ -1,5 +1,5 @@
 {
-  "schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
   "name": "Enes Efe Tokta Portfolio",
   "description": "Agent skills discovery index for the Enes Efe Tokta portfolio website (enesefetokta.shop). Contains skills for accessing portfolio data including projects, bio, contact info, and developer statistics.",
   "skills": [

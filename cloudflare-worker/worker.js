@@ -1,12 +1,15 @@
 /**
- * Cloudflare Worker — Agent-Ready Header Injection
+ * Cloudflare Worker — Agent-Ready Header Injection & Content Negotiation
  *
  * This worker intercepts all requests to enesefetokta.shop and:
  *
  * 1. Injects RFC 8288 `Link` headers on every HTML response for agent discovery
  * 2. Handles `Accept: text/markdown` content negotiation — returns /index.md
  *    with `Content-Type: text/markdown` when agents request the homepage
- * 3. Sets correct `Content-Type` for /.well-known/api-catalog (application/linkset+json)
+ * 3. Sets correct `Content-Type` for all /.well-known/* JSON endpoints
+ *    (GitHub Pages serves them as text/plain)
+ * 4. Serves OAuth/OIDC discovery, Protected Resource, and JWKS metadata
+ *    with correct Content-Type headers
  *
  * Deploy via Cloudflare Dashboard → Workers & Pages → Create Worker
  * Then add a Route: *enesefetokta.shop/* → this worker
@@ -18,16 +21,38 @@
 const ORIGIN = 'https://enesefetokta.shop';
 
 /**
- * RFC 8288 Link header value — advertises agent-readable resources
+ * RFC 8288 Link header value — advertises agent-readable resources.
  * Multiple relations are comma-separated per the spec.
+ *
+ * Relations used:
+ *   - api-catalog   (RFC 9727) → API Catalog discovery
+ *   - service-doc   → Human-readable documentation
+ *   - describedby   → Machine-readable descriptions
  */
 const LINK_HEADERS = [
   '</.well-known/api-catalog>; rel="api-catalog"',
   '</index.md>; rel="service-doc"; type="text/markdown"',
   '</.well-known/agent-skills/index.json>; rel="describedby"; type="application/json"',
   '</.well-known/mcp/server-card.json>; rel="describedby"; type="application/json"',
+  '</.well-known/openid-configuration>; rel="openid-configuration"; type="application/json"',
+  '</.well-known/oauth-protected-resource>; rel="oauth-protected-resource"; type="application/json"',
   '</llms.txt>; rel="describedby"; type="text/plain"',
 ].join(', ');
+
+/**
+ * Content-Type overrides for /.well-known/* paths.
+ * GitHub Pages serves extensionless files as text/plain or application/octet-stream;
+ * agents expect the correct MIME types.
+ */
+const WELL_KNOWN_CONTENT_TYPES = {
+  '/.well-known/api-catalog': 'application/linkset+json; charset=utf-8',
+  '/.well-known/openid-configuration': 'application/json; charset=utf-8',
+  '/.well-known/oauth-authorization-server': 'application/json; charset=utf-8',
+  '/.well-known/oauth-protected-resource': 'application/json; charset=utf-8',
+  '/.well-known/jwks.json': 'application/json; charset=utf-8',
+  '/.well-known/mcp/server-card.json': 'application/json; charset=utf-8',
+  '/.well-known/agent-skills/index.json': 'application/json; charset=utf-8',
+};
 
 export default {
   async fetch(request, env, ctx) {
@@ -71,11 +96,12 @@ export default {
     // Clone headers so we can mutate them
     const newHeaders = new Headers(response.headers);
 
-    // ─── Fix Content-Type for /.well-known/api-catalog ─────────────────────
-    // GitHub Pages serves this as text/plain or application/octet-stream;
-    // agents expect application/linkset+json.
-    if (url.pathname === '/.well-known/api-catalog') {
-      newHeaders.set('Content-Type', 'application/linkset+json; charset=utf-8');
+    // ─── Fix Content-Type for /.well-known/* endpoints ─────────────────────
+    // GitHub Pages serves extensionless files as text/plain or octet-stream;
+    // agents expect the correct MIME types per their respective RFCs.
+    const overrideType = WELL_KNOWN_CONTENT_TYPES[url.pathname];
+    if (overrideType) {
+      newHeaders.set('Content-Type', overrideType);
     }
 
     // ─── Inject Link headers on HTML responses ──────────────────────────────
@@ -84,6 +110,14 @@ export default {
       newHeaders.set('Link', LINK_HEADERS);
       // Add Vary so caches know this response may differ by Accept
       newHeaders.append('Vary', 'Accept');
+    }
+
+    // ─── CORS for machine-readable endpoints ───────────────────────────────
+    // Allow agents from any origin to access discovery endpoints
+    if (url.pathname.startsWith('/.well-known/')) {
+      newHeaders.set('Access-Control-Allow-Origin', '*');
+      newHeaders.set('Access-Control-Allow-Methods', 'GET, HEAD, OPTIONS');
+      newHeaders.set('Access-Control-Allow-Headers', 'Accept, Content-Type');
     }
 
     // ─── Content-Signal header (informational) ──────────────────────────────

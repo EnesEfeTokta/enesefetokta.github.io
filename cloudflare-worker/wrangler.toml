@@ -2,6 +2,12 @@ name = "enesefetokta-agent-headers"
 main = "worker.js"
 compatibility_date = "2024-01-01"
 
+# Route for www subdomain
+[[routes]]
+pattern = "*www.enesefetokta.shop/*"
+zone_name = "enesefetokta.shop"
+
+# Route for apex domain
 [[routes]]
 pattern = "*enesefetokta.shop/*"
 zone_name = "enesefetokta.shop"

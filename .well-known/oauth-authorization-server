@@ -1,0 +1,12 @@
+{
+  "issuer": "https://enesefetokta.shop",
+  "authorization_endpoint": "https://enesefetokta.shop/oauth/authorize",
+  "token_endpoint": "https://enesefetokta.shop/oauth/token",
+  "jwks_uri": "https://enesefetokta.shop/.well-known/jwks.json",
+  "response_types_supported": ["code"],
+  "grant_types_supported": ["authorization_code", "client_credentials"],
+  "scopes_supported": ["read:portfolio", "read:projects", "read:blog"],
+  "token_endpoint_auth_methods_supported": ["client_secret_basic", "client_secret_post"],
+  "service_documentation": "https://enesefetokta.shop/index.md",
+  "code_challenge_methods_supported": ["S256"]
+}

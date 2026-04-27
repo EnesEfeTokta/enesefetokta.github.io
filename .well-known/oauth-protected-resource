@@ -1,0 +1,7 @@
+{
+  "resource": "https://enesefetokta.shop",
+  "authorization_servers": ["https://enesefetokta.shop"],
+  "scopes_supported": ["read:portfolio", "read:projects", "read:blog"],
+  "bearer_methods_supported": ["header"],
+  "resource_documentation": "https://enesefetokta.shop/index.md"
+}
