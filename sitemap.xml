@@ -99,6 +99,18 @@
   </url>
   <!-- Blog Posts (Chronological Order: Newest → Oldest) -->
   <url>
+    <loc>https://enesefetokta.shop/blog/posts/ef-core-beloved-tool.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://enesefetokta.shop/blog/posts/web-security.html</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://enesefetokta.shop/blog/posts/string-vs-stringbuilder.html</loc>
     <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../assets/images/profile/my_profile.png">
+    <link rel="apple-touch-icon" href="../../assets/images/profile/my_profile.png">
+
+    <!-- Primary Meta Tags -->
+    <title>Entity Framework Core: Perhaps the Most Beloved Tool of the .NET World | Enes Efe Tokta</title>
+    <meta name="title" content="Entity Framework Core: Perhaps the Most Beloved Tool of the .NET World">
+    <meta name="description"
+        content="Exploring why Entity Framework Core is so beloved in the .NET ecosystem, covering ORMs, Code-First, performance tips, and the N+1 problem.">
+    <meta name="keywords"
+        content="Entity Framework Core, .NET, C#, Database, ORM, Software Development, Software Architecture, ASP.NET Core">
+    <meta name="author" content="Enes Efe Tokta">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://enesefetokta.shop/blog/posts/ef-core-beloved-tool.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://enesefetokta.shop/blog/posts/ef-core-beloved-tool.html">
+    <meta property="og:title" content="Entity Framework Core: Perhaps the Most Beloved Tool of the .NET World">
+    <meta property="og:description"
+        content="Exploring why Entity Framework Core is so beloved in the .NET ecosystem, covering ORMs, performance tips, and the N+1 problem.">
+    <meta property="og:image" content="https://enesefetokta.shop/assets/images/profile/my_profile.png">
+    <meta property="article:published_time" content="2026-04-14T00:00:00Z">
+    <meta property="article:author" content="Enes Efe Tokta">
+    <meta property="article:section" content="Opinion">
+    <meta property="article:tag" content="Artificial Intelligence">
+    <meta property="article:tag" content="Career">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://enesefetokta.shop/blog/posts/ef-core-beloved-tool.html">
+    <meta name="twitter:title" content="Entity Framework Core: Perhaps the Most Beloved Tool of the .NET World">
+    <meta name="twitter:description" content="Exploring why Entity Framework Core is so beloved in the .NET ecosystem.">
+    <meta name="twitter:image" content="https://enesefetokta.shop/assets/images/profile/my_profile.png">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/blog-post.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Entity Framework Core: Perhaps the Most Beloved Tool of the .NET World",
+      "image": "https://enesefetokta.shop/assets/images/profile/my_profile.png",
+      "author": {
+        "@type": "Person",
+        "name": "Enes Efe Tokta",
+        "url": "https://enesefetokta.shop/",
+        "affiliation": "Atatürk University - Information Systems and Technologies"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Enes Efe Tokta",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://enesefetokta.shop/assets/images/profile/my_profile.png"
+        }
+      },
+      "datePublished": "2026-04-14",
+      "dateModified": "2026-04-14",
+      "description": "Exploring why Entity Framework Core is so beloved in the .NET ecosystem, covering ORMs, performance tips, and the N+1 problem.",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://enesefetokta.shop/blog/posts/ef-core-beloved-tool.html"
+      },
+      "keywords": "Entity Framework Core, .NET, Database, Software Architecture"
+    }
+    </script>
+</head>
+
+<body class="nfx-body">
+    <nav class="navbar nfx-navbar" id="navbar">
+        <div class="container">
+            <a href="../../index.html" class="logo">Enes Efe Tokta</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../../index.html#about">About</a></li>
+                <li><a href="../../pages/work.html">Work</a></li>
+                <li><a href="../../pages/projects.html">Projects</a></li>
+                <li><a href="../../pages/developer-stats.html">Stats</a></li>
+                <li><a href="../index.html">Blog</a></li>
+
+                <li><a href="../../pages/biography.html">Biography</a></li>
+                <li><a href="../../pages/developer-stats.html">Stats</a></li>
+                <li><a href="../../pages/education.html">Education</a></li>
+                <li><a href="../../pages/cv.html">Resume</a></li>
+                <li><a href="../../pages/future-plans.html">Future Plans</a></li>
+
+                <li><a href="../../index.html#contact" class="nav-cta nfx-nav-cta">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobile-btn" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Blog Post -->
+    <section class="section-padding" style="padding-top: 120px;">
+        <div class="container">
+            <div class="blog-post">
+
+                <!-- Back Button -->
+                <a href="../index.html" class="back-to-blog">
+                    <i class="fas fa-arrow-left"></i> Back to Blog
+                </a>
+
+                <!-- Blog Header -->
+                <header class="blog-header">
+                    <h1 class="blog-title">Entity Framework Core: Perhaps the Most Beloved Tool of the .NET World</h1>
+
+                    <div class="blog-meta-info">
+                        <div class="author-info">
+                            <img src="https://enesefetokta.shop/assets/images/profile/my_profile.png"
+                                alt="Enes Efe Tokta" class="author-avatar">
+                            <div class="author-details">
+                                <h4>Enes Efe Tokta</h4>
+                                <p>Apr 14, 2026 • 5 min read</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-tags-container">
+                        <span class="blog-tag">Dotnet</span>
+                        <span class="blog-tag">Database</span>
+                        <span class="blog-tag">Entity Framework Core</span>
+                        <span class="blog-tag">Software Architecture</span>
+                    </div>
+                </header>
+
+                <!-- Cover Image -->
+                <figure class="blog-cover-image"
+                    style="margin: 32px 0; border-radius: 16px; overflow: hidden; line-height: 0;">
+                    <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*AjXVD3fZDkbEcyUL4-rcvQ.png"
+                        alt="Entity Framework Core"
+                        style="width: 100%; max-height: 420px; object-fit: cover; display: block;">
+                </figure>
+
+                <!-- Blog Content -->
+                <article class="blog-content">
+
+                    <p>Entity Framework Core (EF Core) has become one of the most widely used and appreciated tools in the ASP.NET ecosystem since its release. By shielding us from the complexities of SQL, EF Core allows us to write queries in C# that align with modern software development principles, making them both clean and highly readable.</p>
+
+                    <h2>Why EF Core?</h2>
+                    <p>Over time, as cyberattacks have evolved, systems have become much more resilient against threats like SQL Injection. EF Core’s role isn’t limited to simple CRUD operations; it also enables us to perform complex LINQ queries with ease.</p>
+                    <p>In the past, interacting with a database was a laborious task. ORMs (Object-Relational Mapping) have significantly reduced this burden. However, we must remember that ORMs — and specifically EF Core — are helper tools. They are not perfect, and they are not suitable for every single scenario.</p>
+                    <p>It is not enough to just know how to write queries. Understanding what happens behind the scenes and how it impacts system resources is critical. In this article, we will explore these key points.</p>
+
+                    <h2>What is an ORM and Why is EF Core Important?</h2>
+                    <h3>The Purpose of ORMs</h3>
+                    <p>ORMs were created to provide database access directly through object-oriented programming rather than writing manual SQL queries. Before ORMs, developers relied on lower-level technologies like SQL, JDBC, or ADO.NET.</p>
+                    <p>Benefits of ORMs:</p>
+                    <ul>
+                        <li>Establish a solid bridge between the database and the software.</li>
+                        <li>Increase project durability and maintainability.</li>
+                        <li>Reduce dependency on specific database technologies.</li>
+                        <li>Minimize code duplication.</li>
+                    </ul>
+
+                    <h3>Advantages of EF Core</h3>
+                    <p>With EF Core, .NET projects:</p>
+                    <ul>
+                        <li>Communicate with the database more securely.</li>
+                        <li>Utilize modern and readable code.</li>
+                        <li>Achieve more with less code.</li>
+                        <li>Ensure type safety.</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-info-circle"></i> Note</h4>
+                        <p>EF Core is not a “silver bullet.” In projects requiring extreme performance or very specific, highly optimized queries, Raw SQL may still be preferred.</p>
+                    </div>
+
+                    <h2>Core Components of EF Core</h2>
+                    <p>EF Core derives its power from three main components:</p>
+                    <ul>
+                        <li><strong>DbContext:</strong> The heart of EF Core. It manages the connection and serves as the primary gateway for database communication.</li>
+                        <li><strong>DbSet&lt;T&gt;:</strong> Represents a specific table in the database, behaving like a generic collection.</li>
+                        <li><strong>POCO (Plain Old CLR Object):</strong> The C# class representation of database tables, consisting primarily of simple properties.</li>
+                    </ul>
+
+                    <h2>Code-First vs. Database-First</h2>
+                    <ul>
+                        <li><strong>Code-First (Most Preferred):</strong> You generate the database from C# classes. This is the most flexible and popular method in modern development.</li>
+                        <li><strong>Database-First:</strong> You automatically generate C# classes from an existing database. However, this can sometimes lead to type-mismatch issues or synchronization hurdles.</li>
+                    </ul>
+
+                    <h2>How EF Core Works: The Lifecycle of a Query</h2>
+                    <p>When a database query is executed, these steps take place:</p>
+                    <ol>
+                        <li><strong>LINQ Querying:</strong> The developer writes the query in C# using LINQ.</li>
+                        <li><strong>Translation:</strong> EF Core translates the LINQ expression into a provider-specific SQL query.</li>
+                        <li><strong>Execution:</strong> The SQL query is sent to the database.</li>
+                        <li><strong>Materialization:</strong> The raw data returning from the database is transformed back into C# objects.</li>
+                        <li><strong>Tracking &amp; Saving:</strong> EF Core tracks changes made to these objects. Changes are only persisted once <code>SaveChanges()</code> is called.</li>
+                    </ol>
+
+                    <h2>Migrations: Version Control for Your Schema</h2>
+                    <p>Migrations act as a version control system for your database. They keep a C# history of your tables, relationships, and structures.</p>
+                    <p>Benefits of Migrations:</p>
+                    <ul>
+                        <li>Tracks the evolution of the database schema.</li>
+                        <li>Allows you to roll back to a specific version at any time.</li>
+                        <li>Ensures a consistent database environment across the entire development team.</li>
+                    </ul>
+
+                    <h2>Performance: Using No-Tracking</h2>
+                    <p>By default, EF Core “tracks” every object retrieved from the database. While useful for updates, this causes overhead for read-only scenarios.</p>
+                    <p><strong>The AsNoTracking() Method:</strong> If your goal is only to read and display data, you should use <code>AsNoTracking()</code>:</p>
+
+                    <pre style="background: #1e1e1e; color: #d4d4d4; padding: 15px; border-radius: 8px; overflow-x: auto;"><code>var data = _context.Users.AsNoTracking().ToList();</code></pre>
+
+                    <p>This reduces memory consumption and speeds up execution by skipping the tracking logic.</p>
+
+                    <h2>IEnumerable vs. IQueryable: A Critical Distinction</h2>
+                    <ul>
+                        <li><strong>IEnumerable:</strong> Designed for in-memory collections. It fetches the entire dataset from the database and filters it in the application memory.</li>
+                        <li><strong>IQueryable:</strong> Designed for remote data sources. The query is executed directly on the database server, and only the required rows are fetched.</li>
+                    </ul>
+
+                    <p>Practical Example:</p>
+                    <pre style="background: #1e1e1e; color: #d4d4d4; padding: 15px; border-radius: 8px; overflow-x: auto;"><code>// WRONG - All rows are pulled into memory first
+var highEarners = _context.Employees
+    .ToList() // Execution happens here; pulls everything
+    .Where(e => e.Salary > 50000) 
+    .ToList();
+
+// RIGHT - Filtering happens at the Database level
+var highEarners = _context.Employees
+    .Where(e => e.Salary > 50000) // Optimized SQL is generated
+    .ToList();</code></pre>
+
+                    <h2>The N+1 Problem</h2>
+                    <p>Imagine an e-commerce site where you want to list products along with their owners:</p>
+                    <ul>
+                        <li><code>SELECT * FROM Products;</code> → This query returns a list of products (represented by "1").</li>
+                        <li><code>SELECT * FROM Owners WHERE Id = @OwnerId;</code> → This query fetches the owner for a specific product (represented by "N").</li>
+                    </ul>
+                    <p>If you have 10 products, you will hit the database 11 (1+10) times. If you have 1000 products, you hit it 1001 times. This is a performance disaster. To solve this, we have three main strategies:</p>
+
+                    <h3>1. Eager Loading</h3>
+                    <p>This is the most common and safest solution. You tell EF Core: “Bring the owner along with the product.”</p>
+                    <pre style="background: #1e1e1e; color: #d4d4d4; padding: 15px; border-radius: 8px; overflow-x: auto;"><code>var products = _context.Products
+    .Include(p => p.Owner) // This acts as a SQL JOIN
+    .ToList();</code></pre>
+                    <p>Using <code>.Include()</code> generates a single query with a JOIN, fetching all related data in one go.</p>
+
+                    <h3>2. Explicit Loading</h3>
+                    <p>You fetch the main data first and load the related data manually only when needed.</p>
+                    <pre style="background: #1e1e1e; color: #d4d4d4; padding: 15px; border-radius: 8px; overflow-x: auto;"><code>var product = _context.Products.First();
+// ... logic ...
+_context.Entry(product).Reference(p => p.Owner).Load(); // Fetches only this product's owner</code></pre>
+                    <p>Useful when you don’t always need the related data, but remember that every <code>.Load()</code> call is an extra trip to the database.</p>
+
+                    <h3>3. Lazy Loading</h3>
+                    <p>This loads related data automatically the moment you access the property. However, it is rarely used in modern high-performance applications because it can accidentally trigger the N+1 problem inside loops.</p>
+
+                    <h2>The Pitfall of .Include(): Cartesian Explosion</h2>
+                    <p>While <code>.Include()</code> is powerful, it’s not a miracle. If a Product has 10 Comments and 5 Tags, including both will cause the database to return a massive, redundant result set (multiplying the rows).</p>
+                    <p>The solution is the <code>.AsSplitQuery()</code> method. It breaks the giant JOIN into 2 or 3 logical, smaller queries and joins them on the code side.</p>
+                    <pre style="background: #1e1e1e; color: #d4d4d4; padding: 15px; border-radius: 8px; overflow-x: auto;"><code>var products = _context.Products
+    .Include(p => p.Comments)
+    .Include(p => p.Tags)
+    .AsSplitQuery() // Prevents Cartesian Explosion
+    .ToList();</code></pre>
+
+                    <h2>Conclusion</h2>
+                    <p>Entity Framework Core is a phenomenal tool in the .NET ecosystem. However, using it effectively requires understanding its internal mechanics, optimizing queries, and avoiding common performance traps. By mastering these concepts, you can build secure, fast, and maintainable applications.</p>
+
+</article>
+
+                <!-- Share Section -->
+                <div class="share-section">
+                    <h3 style="margin-bottom: 16px;">Share this article</h3>
+                    <div class="share-buttons">
+                        <a href="https://twitter.com/intent/tweet?text=Entity%20Framework%20Core%3A%20Perhaps%20the%20Most%20Beloved%20Tool%20of%20the%20.NET%20World&url=https://enesefetokta.shop/blog/posts/ef-core-beloved-tool.html"
+                            target="_blank" class="share-btn share-twitter">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://enesefetokta.shop/blog/posts/ef-core-beloved-tool.html"
+                            target="_blank" class="share-btn share-linkedin">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://enesefetokta.shop/blog/posts/ef-core-beloved-tool.html"
+                            target="_blank" class="share-btn share-facebook">
+                            <i class="fab fa-facebook"></i> Facebook
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="site-footer nfx-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div>
+                    <span class="footer-logo">Enes Efe Tokta</span>
+                    <p class="footer-tagline">
+                        Software Developer · .NET &amp; Unity · Based in Turkey.<br />
+                        Open to remote opportunities worldwide.
+                    </p>
+                </div>
+                <div class="footer-social">
+                    <a aria-label="GitHub" href="https://github.com/EnesEfeTokta" target="_blank"><i
+                            class="fab fa-github"></i></a>
+                    <a aria-label="LinkedIn" href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/"
+                        target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a aria-label="Medium" href="https://medium.com/@EnesEfeTokta" target="_blank"><i
+                            class="fab fa-medium"></i></a>
+                    <a aria-label="X / Twitter" href="https://x.com/EnesEfeTokta" target="_blank"><i
+                            class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Enes Efe Tokta. Built with modern web technologies.</p>
+                <div class="footer-links">
+                    <a href="../../pages/biography.html">Biography</a>
+                    <a href="../../pages/developer-stats.html">Stats</a>
+                    <a href="../../pages/future-plans.html">Future Plans</a>
+                    <a href="../index.html">Blog</a>
+                    <a href="../../pages/projects.html">Projects</a>
+                    <a href="../../pages/education.html">Education</a>
+                    <a href="../../pages/cv.html">Resume</a>
+                    <a href="../../index.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>
