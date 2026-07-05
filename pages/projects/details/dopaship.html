@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <!-- Favicon -->
+    <link href="../../../assets/images/profile/my_profile.png" rel="icon" type="image/png" />
+    <link href="../../../assets/images/profile/my_profile.png" rel="apple-touch-icon" />
+    <title>DopaShip: Fake Shop - Alışveriş Terapisi Simülasyonu | Enes Efe Tokta</title>
+    <!-- Stylesheets -->
+    <link href="../../../assets/css/styles.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <meta content="DopaShip: Fake Shop, kredi kartı borcu veya gerçek harcamalar olmadan alışveriş terapisi yapmanızı sağlayan eğlenceli bir mobil simülasyondur." name="description" />
+    <meta content="DopaShip, Fake Shop, Alışveriş Terapisi, Dopamin, Simülasyon Uygulaması, Android Alışveriş Oyunu" name="keywords" />
+    <meta content="Enes Efe Tokta" name="author" />
+    <link href="https://enesefetokta.shop/pages/projects/details/dopaship.html" rel="canonical" />
+    <meta content="website" property="og:type" />
+    <meta content="https://enesefetokta.shop/pages/projects/details/dopaship.html" property="og:url" />
+    <meta content="DopaShip: Fake Shop - Kendi Alışveriş Dünyanızı Simüle Edin" property="og:title" />
+    <meta content="Gerçek para harcamadan sepetinizi dilediğiniz gibi doldurun. Alışverişin getirdiği o dopamin hissini stressiz ve güvenli bir şekilde yaşayın." property="og:description" />
+    <meta content="tr_TR" property="og:locale" />
+    <meta content="https://enesefetokta.shop/assets/images/profile/my_profile.png" property="og:image" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta content="DopaShip: Fake Shop - Alışveriş Terapisi Simülasyonu" name="twitter:title" />
+    <meta content="Gerçek para harcamadan alışverişin keyfini çıkarın. DopaShip ile limit yok, borç yok, sadece eğlence var." name="twitter:description" />
+    <meta content="https://enesefetokta.shop/assets/images/profile/my_profile.png" name="twitter:image" />
+</head>
+
+<body class="nfx-body">
+    <nav class="navbar nfx-navbar" id="navbar">
+        <div class="container">
+            <a class="logo" href="../../../index.html">Enes Efe Tokta</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../../../index.html#about">Hakkımda</a></li>
+                <li><a href="../../../pages/work.html">Deneyim</a></li>
+                <li><a href="../../../pages/projects.html">Projeler</a></li>
+                <li><a href="../../../pages/developer-stats.html">İstatistikler</a></li>
+                <li><a href="../../../blog/index.html">Blog</a></li>
+                <li><a href="../../../pages/biography.html">Biyografi</a></li>
+                <li><a href="../../../pages/education.html">Eğitim</a></li>
+                <li><a href="../../../pages/cv.html">Özgeçmiş</a></li>
+                <li><a href="../../../pages/future-plans.html">Gelecek Planları</a></li>
+                <li><a class="nav-cta nfx-nav-cta" href="../../../index.html#contact">İletişim</a></li>
+            </ul>
+            <button aria-label="Menüyü aç/kapat" class="mobile-menu-btn" id="mobile-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Custom Styles for DopaShip -->
+    <style>
+        :root {
+            --dopa-primary: #ff477e;
+            --dopa-secondary: #d946ef;
+            --dopa-accent: #8b5cf6;
+            --dopa-bg: #09090b;
+            --dopa-card-bg: #121216;
+            --dopa-border: rgba(255, 71, 126, 0.15);
+            --dopa-gradient: linear-gradient(135deg, var(--dopa-primary) 0%, var(--dopa-secondary) 100%);
+        }
+
+        .hero-dopa {
+            padding: 160px 0 100px;
+            background: radial-gradient(circle at 80% 20%, rgba(217, 70, 239, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 20% 80%, rgba(255, 71, 126, 0.12) 0%, transparent 50%),
+                        var(--dopa-bg);
+            text-align: center;
+            border-bottom: 1px solid var(--dopa-border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-dopa::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(transparent 70%, var(--dopa-bg));
+            pointer-events: none;
+        }
+
+        .dopa-logo-container {
+            width: 96px;
+            height: 96px;
+            border-radius: 24px;
+            background: var(--dopa-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            box-shadow: 0 12px 30px rgba(255, 71, 126, 0.4);
+            font-size: 3rem;
+            color: white;
+            animation: bounce 3s infinite alternate;
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+
+        .dopa-badge-row {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .dopa-badge {
+            padding: 8px 18px;
+            border-radius: 99px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            background: rgba(255, 71, 126, 0.1);
+            border: 1px solid rgba(255, 71, 126, 0.25);
+            color: var(--dopa-primary);
+            backdrop-filter: blur(8px);
+        }
+
+        .dopa-btn-primary {
+            background: var(--dopa-gradient);
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            font-weight: 700;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(255, 71, 126, 0.3);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .dopa-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(255, 71, 126, 0.55);
+        }
+
+        .dopa-btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: #ddd;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 14px 32px;
+            font-weight: 600;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .dopa-btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .shopping-demo-container {
+            background: var(--dopa-card-bg);
+            border: 1px solid var(--dopa-border);
+            border-radius: 24px;
+            padding: 24px;
+            margin: 40px auto 0;
+            max-width: 500px;
+            text-align: left;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            position: relative;
+        }
+
+        .demo-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .demo-wallet {
+            font-weight: 700;
+            color: #10b981;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .demo-items {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .demo-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 12px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s ease;
+        }
+
+        .demo-item-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .demo-item-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: white;
+        }
+
+        .demo-item-sub {
+            font-size: 0.75rem;
+            color: #71717a;
+        }
+
+        .demo-buy-btn {
+            background: var(--dopa-gradient);
+            border: none;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .demo-buy-btn:hover {
+            opacity: 0.9;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin: 60px 0;
+        }
+
+        .bento-card {
+            background: var(--dopa-card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bento-card:hover {
+            border-color: rgba(255, 71, 126, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .bento-card-icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--dopa-primary) 0%, var(--dopa-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .bento-card h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: white;
+        }
+
+        .bento-card p {
+            color: #a1a1aa;
+            font-size: 0.92rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .col-span-2 {
+            grid-column: span 2;
+        }
+
+        .step-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .step-item {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(255, 71, 126, 0.1);
+            border: 2px solid var(--dopa-primary);
+            color: var(--dopa-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            box-shadow: 0 0 15px rgba(255, 71, 126, 0.2);
+        }
+
+        .step-item h4 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .step-item p {
+            color: #888;
+            font-size: 0.88rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .toast-notification {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: #10b981;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transform: translateY(30px);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .toast-notification.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .bento-grid, .step-row {
+                grid-template-columns: 1fr;
+            }
+            .col-span-2 {
+                grid-column: span 1;
+            }
+        }
+    </style>
+
+    <!-- ═══════ HERO ═══════ -->
+    <header class="hero-dopa">
+        <div class="container" style="max-width: 900px;">
+            <div class="dopa-badge-row">
+                <div class="dopa-badge"><i class="fab fa-android"></i> Android Uygulaması</div>
+                <div class="dopa-badge"><i class="fas fa-shopping-bag"></i> Alışveriş Simülasyonu</div>
+                <div class="dopa-badge"><i class="fas fa-smile"></i> Stressiz Eğlence</div>
+            </div>
+            <div class="dopa-logo-container">
+                <i class="fas fa-shopping-bag"></i>
+            </div>
+            <h1 style="font-family: 'Syne', sans-serif; font-size: clamp(2.8rem, 8vw, 4.5rem); font-weight: 800; margin-bottom: 24px; color: white; line-height: 1.1;">
+                DopaShip: Fake Shop
+            </h1>
+            <p style="font-size: 1.25rem; color: #a1a1aa; line-height: 1.6; margin-bottom: 40px; font-weight: 500; max-width: 750px; margin-left: auto; margin-right: auto;">
+                Gerçek harcamalar yok. Gerçek kredi kartı borçları yok. Sadece alışveriş sepetini doldurmanın ve ödül mekanizmasını tetiklemenin getirdiği o saf dopamin hissi!
+            </p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a class="dopa-btn-primary" href="#">
+                    <i class="fab fa-google-play"></i> Google Play'den İndir (Yakında)
+                </a>
+                <a class="dopa-btn-secondary" href="dopaship-privacy.html">
+                    <i class="fas fa-shield-alt"></i> Gizlilik Politikası
+                </a>
+            </div>
+
+            <!-- Interactive Demo Box -->
+            <div class="shopping-demo-container">
+                <div class="demo-header">
+                    <span style="font-weight: 600; color: #fff; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Demo Deneyimi</span>
+                    <div class="demo-wallet">
+                        <i class="fas fa-wallet"></i> <span id="wallet-balance">$100,000</span>
+                    </div>
+                </div>
+                <div class="demo-items">
+                    <div class="demo-item">
+                        <div class="demo-item-info">
+                            <span class="demo-item-name">🪐 Özel Tasarım Mars Villası</span>
+                            <span class="demo-item-sub">Kendi kraterinizde lüks yaşam</span>
+                        </div>
+                        <button class="demo-buy-btn" data-price="45000">Sanal Satın Al ($45k)</button>
+                    </div>
+                    <div class="demo-item">
+                        <div class="demo-item-info">
+                            <span class="demo-item-name">🦖 Evcil Dinozor Yumurtası</span>
+                            <span class="demo-item-sub">Kuluçka kiti dahildir</span>
+                        </div>
+                        <button class="demo-buy-btn" data-price="12000">Sanal Satın Al ($12k)</button>
+                    </div>
+                    <div class="demo-item">
+                        <div class="demo-item-info">
+                            <span class="demo-item-name">🕶️ Zaman Yolcusu Güneş Gözlüğü</span>
+                            <span class="demo-item-sub">Geleceği şık bir şekilde görün</span>
+                        </div>
+                        <button class="demo-buy-btn" data-price="3500">Sanal Satın Al ($3.5k)</button>
+                    </div>
+                </div>
+                <div class="toast-notification" id="toast-notif">
+                    <i class="fas fa-check-circle"></i> <span id="toast-text">Satın alma başarılı! Dopamin salgılandı.</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container" style="max-width: 1000px; padding-top: 80px; padding-bottom: 100px;">
+        
+        <!-- App Concept Section -->
+        <section style="margin-bottom: 100px;">
+            <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 50px; align-items: center;">
+                <div>
+                    <span style="color: var(--dopa-primary); text-transform: uppercase; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em;">Konsept</span>
+                    <h2 style="font-family: 'Syne', sans-serif; font-size: 2.2rem; margin-top: 10px; margin-bottom: 24px; color: white;">
+                        Alışveriş Terapisi, Sıfır Maliyet
+                    </h2>
+                    <p style="color: #a1a1aa; line-height: 1.8; margin-bottom: 20px;">
+                        Tüketim toplumunun en büyük dürtülerinden biri olan "satın alma ve sahip olma" arzusunu hiç para harcamadan tatmin edebilir misiniz? DopaShip tam olarak bu sorudan yola çıkarak tasarlandı. 
+                    </p>
+                    <p style="color: #a1a1aa; line-height: 1.8; margin-bottom: 20px;">
+                        Günümüzün çılgın alışveriş dünyasında sepeti doldurup siparişi onaylama tuşuna bastığınız an salgılanan dopamini, hiçbir finansal risk almadan ve bütçenizi zorlamadan simüle edin.
+                    </p>
+                </div>
+                <div style="display: flex; justify-content: center;">
+                    <div style="position: relative; width: 220px; height: 220px; background: radial-gradient(circle, rgba(255, 71, 126, 0.15) 0%, transparent 70%); display: flex; align-items: center; justify-content: center; border-radius: 50%;">
+                        <i class="fas fa-shopping-cart" style="font-size: 5rem; color: var(--dopa-primary); filter: drop-shadow(0 0 20px rgba(255,71,126,0.4));"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Bento Grid -->
+        <section style="margin-bottom: 100px;">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <span style="color: var(--dopa-secondary); text-transform: uppercase; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em;">Özellikler</span>
+                <h2 style="font-family: 'Syne', sans-serif; font-size: 2.2rem; margin-top: 10px; color: white;">Keşfedilecek Çok Şey Var</h2>
+            </div>
+            
+            <div class="bento-grid">
+                <div class="bento-card col-span-2">
+                    <div class="bento-card-icon"><i class="fas fa-gem"></i></div>
+                    <h3>Hayal Gücünün Sınırlarındaki Ürünler</h3>
+                    <p>Gerçek mağazalarda bulamayacağınız absürt, lüks ve yaratıcı binlerce hayali ürün. Özel jetlerden evcil dinozorlara kadar dilediğiniz her şeyi sepetinize ekleyebilir ve satın alma heyecanını yaşayabilirsiniz.</p>
+                </div>
+                <div class="bento-card">
+                    <div class="bento-card-icon"><i class="fas fa-piggy-bank"></i></div>
+                    <h3>Sıfır Gerçek Finansal Risk</h3>
+                    <p>Uygulama içinde gerçek para, gizli abonelikler veya can sıkıcı reklamlar bulunmaz. Cüzdanınızdaki sanal parayla bütçenizi dilediğiniz gibi yönetin.</p>
+                </div>
+                <div class="bento-card">
+                    <div class="bento-card-icon"><i class="fas fa-chart-pie"></i></div>
+                    <h3>Dopamin ve Harcama İstatistikleri</h3>
+                    <p>Yaptığınız hayali alışverişlerin size ne kadar dopamin kazandırdığını ve harcama alışkanlıklarınızı eğlenceli grafiklerle takip edin.</p>
+                </div>
+                <div class="bento-card col-span-2">
+                    <div class="bento-card-icon"><i class="fas fa-gift"></i></div>
+                    <h3>Koleksiyonlar ve Başarımlar</h3>
+                    <p>Nadir ve efsanevi hayali ürünleri toplayarak kendi gizli koleksiyonlarınızı oluşturun. Alışveriş çılgınlığınızı seviye atlatarak taçlandırın ve yeni başarımların kilidini açın.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section style="margin-bottom: 100px;">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <span style="color: var(--dopa-accent); text-transform: uppercase; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em;">Nasıl Çalışır?</span>
+                <h2 style="font-family: 'Syne', sans-serif; font-size: 2.2rem; margin-top: 10px; color: white;">3 Basit Adımda Alışveriş Deneyimi</h2>
+            </div>
+            
+            <div class="step-row">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h4>Sanal Bütçenizi Alın</h4>
+                    <p>Uygulamayı açtığınız anda hesabınıza yüklenen yüksek miktarda sanal para ile bütçenizi oluşturun.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h4>Sepetinizi Doldurun</h4>
+                    <p>Kategoriler arasında gezinin, hayalinizdeki absürt veya ultra lüks ürünleri sepetinize ekleyin.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h4>Ödül Hissini Yaşayın</h4>
+                    <p>Kredi kartı ekstresi korkusu olmadan siparişinizi onaylayın ve sanal koleksiyonunuzun keyfini çıkarın.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Disclaimer / Info Note -->
+        <section style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); padding: 40px; border-radius: 24px; text-align: center; max-width: 800px; margin: 0 auto;">
+            <h3 style="font-family: 'Syne', sans-serif; margin-bottom: 15px; color: white;"><i class="fas fa-exclamation-triangle" style="color: var(--dopa-primary); margin-right: 10px;"></i> Önemli Bilgilendirme</h3>
+            <p style="color: #a1a1aa; line-height: 1.7; margin: 0 auto; max-width: 650px; font-size: 0.95rem;">
+                DopaShip: Fake Shop, tamamen eğlence ve eğitim amacıyla geliştirilmiş bir simülasyon uygulamasıdır. Uygulama içerisinde gösterilen ürünler, satıcılar ve işlemler gerçek dışıdır. Uygulama içerisinde <strong>gerçek para kullanılmamaktadır</strong> ve herhangi bir ürün teslimatı yapılmamaktadır.
+            </p>
+        </section>
+        
+    </main>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="site-footer nfx-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div>
+                    <span class="footer-logo">Enes Efe Tokta</span>
+                    <p class="footer-tagline">
+                        Software Developer · .NET &amp; Unity · Based in Turkey.<br />
+                        Open to remote opportunities worldwide.
+                    </p>
+                </div>
+                <div class="footer-social">
+                    <a aria-label="GitHub" href="https://github.com/EnesEfeTokta" target="_blank"><i class="fab fa-github"></i></a>
+                    <a aria-label="LinkedIn" href="https://www.linkedin.com/in/enes-efe-tokta-6567151b5/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a aria-label="Medium" href="https://medium.com/@EnesEfeTokta" target="_blank"><i class="fab fa-medium"></i></a>
+                    <a aria-label="X / Twitter" href="https://x.com/EnesEfeTokta" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Enes Efe Tokta. Built with modern web technologies.</p>
+                <div class="footer-links">
+                    <a href="../../../pages/biography.html">Biyografi</a>
+                    <a href="../../../pages/developer-stats.html">İstatistikler</a>
+                    <a href="../../../pages/future-plans.html">Gelecek Planları</a>
+                    <a href="../../../blog/index.html">Blog</a>
+                    <a href="../../../pages/projects.html">Projeler</a>
+                    <a href="../../../pages/education.html">Eğitim</a>
+                    <a href="../../../pages/cv.html">Özgeçmiş</a>
+                    <a href="../../../index.html#contact">İletişim</a>
+                    <a href="dopaship-privacy.html" style="color: var(--dopa-primary); font-weight: 600;">Gizlilik Politikası</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../../assets/js/main.js"></script>
+    <script>
+        // Simple Interactive Demo Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            let balance = 100000;
+            const balanceLabel = document.getElementById('wallet-balance');
+            const toast = document.getElementById('toast-notif');
+            const toastText = document.getElementById('toast-text');
+            const buyButtons = document.querySelectorAll('.demo-buy-btn');
+
+            buyButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const price = parseInt(btn.dataset.price);
+                    if (balance >= price) {
+                        balance -= price;
+                        balanceLabel.textContent = '$' + balance.toLocaleString();
+                        
+                        // Disable button to prevent double buying in demo
+                        btn.textContent = 'Satın Alındı! 🎉';
+                        btn.style.background = '#059669';
+                        btn.style.cursor = 'default';
+                        btn.disabled = true;
+
+                        // Trigger toast
+                        toastText.textContent = 'Satın alma başarılı! Dopamin salgılandı. (Sanal Bakiye Azaldı)';
+                        toast.classList.add('active');
+                        setTimeout(() => {
+                            toast.classList.remove('active');
+                        }, 3000);
+                    } else {
+                        toastText.textContent = 'Yetersiz sanal bakiye! Başka ürün deneyin.';
+                        toast.style.background = '#ef4444';
+                        toast.classList.add('active');
+                        setTimeout(() => {
+                            toast.classList.remove('active');
+                            toast.style.background = '#10b981';
+                        }, 3000);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -84,6 +84,15 @@ const projectsData = [
         icon: "fas fa-bell",
         link: "projects/details/fertile-notify.html",
         category: "dotnet"
+    },
+    {
+        id: "dopaship",
+        title: "DopaShip: Fake Shop",
+        description: "A shopping simulation mobile application designed to satisfy retail therapy cravings and explore dopamine loops with zero real-world cost.",
+        tags: ["Android App", "UI/UX Design", "Simulation"],
+        icon: "fas fa-shopping-bag",
+        link: "projects/details/dopaship.html",
+        category: "web"
     }
 ];
 
