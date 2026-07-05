@@ -89,10 +89,10 @@ const projectsData = [
         id: "dopaship",
         title: "DopaShip: Fake Shop",
         description: "A realistic shopping simulation game designed to satisfy retail therapy cravings and explore dopamine loops with zero real-world cost. Features fake products, delivery tracking, mock payments, and a simulated customer service chatbot.",
-        tags: ["Android Game", "Simulation", "UI/UX"],
+        tags: ["React Native", "Android Game", "Simulation"],
         icon: "fas fa-shopping-bag",
         link: "projects/details/dopaship.html",
-        category: "unity"
+        category: "web"
     }
 ];
 
